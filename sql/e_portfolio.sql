@@ -188,7 +188,7 @@ DROP TABLE IF EXISTS `portfolio_skills`;
 CREATE TABLE `portfolio_skills` (
   `entry_id` int(11) NOT NULL,
   `skill_id` int(11) NOT NULL,
-  KEY `fk_port_skill_portfolio_entry` (`entry_id`),
+  PRIMARY KEY (`entry_id`,`skill_id`),
   KEY `fk_port_skill_skills` (`skill_id`),
   CONSTRAINT `fk_port_skill_portfolio_entry` FOREIGN KEY (`entry_id`) REFERENCES `portfolio_entries` (`entry_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_port_skill_skills` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`skill_id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -297,4 +297,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-07 12:10:05
+-- Dump completed on 2026-10-07 14:38:27
