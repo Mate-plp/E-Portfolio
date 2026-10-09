@@ -208,5 +208,4 @@ Public Class Register
         Form1.Show()
 
     End Sub
-
 End Class

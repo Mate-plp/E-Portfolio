@@ -23,189 +23,189 @@ Partial Class Register
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Register))
-        Me.lblTitle = New System.Windows.Forms.Label()
-        Me.lblUsername = New System.Windows.Forms.Label()
-        Me.lblPassword = New System.Windows.Forms.Label()
-        Me.lblConfirmPassword = New System.Windows.Forms.Label()
-        Me.txtUsername = New System.Windows.Forms.TextBox()
-        Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.txtConfirmPassword = New System.Windows.Forms.TextBox()
-        Me.chkShowPassword = New System.Windows.Forms.CheckBox()
-        Me.lblPasswordStrength = New System.Windows.Forms.Label()
-        Me.btnRegister = New System.Windows.Forms.Button()
-        Me.btnBack = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel1.SuspendLayout()
-        Me.SuspendLayout()
-        '
-        'lblTitle
-        '
-        Me.lblTitle.AutoSize = True
-        Me.lblTitle.BackColor = System.Drawing.Color.Transparent
-        Me.lblTitle.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.ForeColor = System.Drawing.Color.White
-        Me.lblTitle.Location = New System.Drawing.Point(115, 34)
-        Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(339, 54)
-        Me.lblTitle.TabIndex = 0
-        Me.lblTitle.Text = "CREATE CCOUNT"
-        '
-        'lblUsername
-        '
-        Me.lblUsername.AutoSize = True
-        Me.lblUsername.BackColor = System.Drawing.Color.Transparent
-        Me.lblUsername.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsername.ForeColor = System.Drawing.Color.White
-        Me.lblUsername.Location = New System.Drawing.Point(87, 118)
-        Me.lblUsername.Name = "lblUsername"
-        Me.lblUsername.Size = New System.Drawing.Size(89, 23)
-        Me.lblUsername.TabIndex = 1
-        Me.lblUsername.Text = "Username"
-        '
-        'lblPassword
-        '
-        Me.lblPassword.AutoSize = True
-        Me.lblPassword.BackColor = System.Drawing.Color.Transparent
-        Me.lblPassword.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPassword.ForeColor = System.Drawing.Color.White
-        Me.lblPassword.Location = New System.Drawing.Point(88, 192)
-        Me.lblPassword.Name = "lblPassword"
-        Me.lblPassword.Size = New System.Drawing.Size(85, 23)
-        Me.lblPassword.TabIndex = 2
-        Me.lblPassword.Text = "Password"
-        '
-        'lblConfirmPassword
-        '
-        Me.lblConfirmPassword.AutoSize = True
-        Me.lblConfirmPassword.BackColor = System.Drawing.Color.Transparent
-        Me.lblConfirmPassword.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblConfirmPassword.ForeColor = System.Drawing.Color.White
-        Me.lblConfirmPassword.Location = New System.Drawing.Point(89, 261)
-        Me.lblConfirmPassword.Name = "lblConfirmPassword"
-        Me.lblConfirmPassword.Size = New System.Drawing.Size(156, 23)
-        Me.lblConfirmPassword.TabIndex = 3
-        Me.lblConfirmPassword.Text = "Confirm Password"
-        '
-        'txtUsername
-        '
-        Me.txtUsername.BackColor = System.Drawing.Color.White
-        Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtUsername.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsername.ForeColor = System.Drawing.Color.Black
-        Me.txtUsername.Location = New System.Drawing.Point(91, 145)
-        Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(400, 24)
-        Me.txtUsername.TabIndex = 4
-        '
-        'txtPassword
-        '
-        Me.txtPassword.BackColor = System.Drawing.Color.White
-        Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtPassword.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.ForeColor = System.Drawing.Color.Black
-        Me.txtPassword.Location = New System.Drawing.Point(93, 216)
-        Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(398, 24)
-        Me.txtPassword.TabIndex = 5
-        '
-        'txtConfirmPassword
-        '
-        Me.txtConfirmPassword.BackColor = System.Drawing.Color.White
-        Me.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtConfirmPassword.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtConfirmPassword.ForeColor = System.Drawing.Color.Black
-        Me.txtConfirmPassword.Location = New System.Drawing.Point(93, 286)
-        Me.txtConfirmPassword.Name = "txtConfirmPassword"
-        Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtConfirmPassword.Size = New System.Drawing.Size(398, 24)
-        Me.txtConfirmPassword.TabIndex = 6
-        '
-        'chkShowPassword
-        '
-        Me.chkShowPassword.AutoSize = True
-        Me.chkShowPassword.ForeColor = System.Drawing.Color.White
-        Me.chkShowPassword.Location = New System.Drawing.Point(96, 322)
-        Me.chkShowPassword.Name = "chkShowPassword"
-        Me.chkShowPassword.Size = New System.Drawing.Size(125, 20)
-        Me.chkShowPassword.TabIndex = 7
-        Me.chkShowPassword.Text = "Show Password"
-        Me.chkShowPassword.UseVisualStyleBackColor = True
-        '
-        'lblPasswordStrength
-        '
-        Me.lblPasswordStrength.AutoSize = True
-        Me.lblPasswordStrength.BackColor = System.Drawing.Color.Transparent
-        Me.lblPasswordStrength.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPasswordStrength.ForeColor = System.Drawing.Color.White
-        Me.lblPasswordStrength.Location = New System.Drawing.Point(92, 397)
-        Me.lblPasswordStrength.Name = "lblPasswordStrength"
-        Me.lblPasswordStrength.Size = New System.Drawing.Size(166, 23)
-        Me.lblPasswordStrength.TabIndex = 8
-        Me.lblPasswordStrength.Text = "Password Strength:"
-        '
-        'btnRegister
-        '
-        Me.btnRegister.BackColor = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(105, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.btnRegister.FlatAppearance.BorderSize = 0
-        Me.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegister.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegister.ForeColor = System.Drawing.Color.White
-        Me.btnRegister.Location = New System.Drawing.Point(201, 449)
-        Me.btnRegister.Name = "btnRegister"
-        Me.btnRegister.Size = New System.Drawing.Size(146, 55)
-        Me.btnRegister.TabIndex = 9
-        Me.btnRegister.Text = "REGISTER"
-        Me.btnRegister.UseVisualStyleBackColor = False
-        '
-        'btnBack
-        '
-        Me.btnBack.BackColor = System.Drawing.Color.Transparent
-        Me.btnBack.FlatAppearance.BorderSize = 0
-        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBack.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBack.ForeColor = System.Drawing.Color.White
-        Me.btnBack.Location = New System.Drawing.Point(183, 541)
-        Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(188, 36)
-        Me.btnBack.TabIndex = 10
-        Me.btnBack.Text = "BACK TO LOGIN"
-        Me.btnBack.UseVisualStyleBackColor = False
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(44, Byte), Integer))
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.btnBack)
-        Me.Panel1.Controls.Add(Me.lblTitle)
-        Me.Panel1.Controls.Add(Me.btnRegister)
-        Me.Panel1.Controls.Add(Me.lblUsername)
-        Me.Panel1.Controls.Add(Me.lblPasswordStrength)
-        Me.Panel1.Controls.Add(Me.txtUsername)
-        Me.Panel1.Controls.Add(Me.chkShowPassword)
-        Me.Panel1.Controls.Add(Me.lblPassword)
-        Me.Panel1.Controls.Add(Me.txtConfirmPassword)
-        Me.Panel1.Controls.Add(Me.txtPassword)
-        Me.Panel1.Controls.Add(Me.lblConfirmPassword)
-        Me.Panel1.Location = New System.Drawing.Point(684, 187)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(550, 700)
-        Me.Panel1.TabIndex = 11
-        '
-        'Register
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(1812, 1055)
-        Me.Controls.Add(Me.Panel1)
-        Me.Name = "Register"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Registraion Form"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.ResumeLayout(False)
+        lblTitle = New Label()
+        lblUsername = New Label()
+        lblPassword = New Label()
+        lblConfirmPassword = New Label()
+        txtUsername = New TextBox()
+        txtPassword = New TextBox()
+        txtConfirmPassword = New TextBox()
+        chkShowPassword = New CheckBox()
+        lblPasswordStrength = New Label()
+        btnRegister = New Button()
+        btnBack = New Button()
+        Panel1 = New Panel()
+        Panel1.SuspendLayout()
+        SuspendLayout()
+        ' 
+        ' lblTitle
+        ' 
+        lblTitle.AutoSize = True
+        lblTitle.BackColor = Color.Transparent
+        lblTitle.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTitle.ForeColor = Color.White
+        lblTitle.Location = New Point(101, 32)
+        lblTitle.Name = "lblTitle"
+        lblTitle.Size = New Size(297, 45)
+        lblTitle.TabIndex = 0
+        lblTitle.Text = "CREATE ACCOUNT"
+        ' 
+        ' lblUsername
+        ' 
+        lblUsername.AutoSize = True
+        lblUsername.BackColor = Color.Transparent
+        lblUsername.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblUsername.ForeColor = Color.White
+        lblUsername.Location = New Point(76, 111)
+        lblUsername.Name = "lblUsername"
+        lblUsername.Size = New Size(76, 19)
+        lblUsername.TabIndex = 1
+        lblUsername.Text = "Username"
+        ' 
+        ' lblPassword
+        ' 
+        lblPassword.AutoSize = True
+        lblPassword.BackColor = Color.Transparent
+        lblPassword.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPassword.ForeColor = Color.White
+        lblPassword.Location = New Point(77, 180)
+        lblPassword.Name = "lblPassword"
+        lblPassword.Size = New Size(73, 19)
+        lblPassword.TabIndex = 2
+        lblPassword.Text = "Password"
+        ' 
+        ' lblConfirmPassword
+        ' 
+        lblConfirmPassword.AutoSize = True
+        lblConfirmPassword.BackColor = Color.Transparent
+        lblConfirmPassword.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblConfirmPassword.ForeColor = Color.White
+        lblConfirmPassword.Location = New Point(78, 245)
+        lblConfirmPassword.Name = "lblConfirmPassword"
+        lblConfirmPassword.Size = New Size(131, 19)
+        lblConfirmPassword.TabIndex = 3
+        lblConfirmPassword.Text = "Confirm Password"
+        ' 
+        ' txtUsername
+        ' 
+        txtUsername.BackColor = Color.White
+        txtUsername.BorderStyle = BorderStyle.None
+        txtUsername.Font = New Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtUsername.ForeColor = Color.Black
+        txtUsername.Location = New Point(80, 136)
+        txtUsername.Name = "txtUsername"
+        txtUsername.Size = New Size(350, 20)
+        txtUsername.TabIndex = 4
+        ' 
+        ' txtPassword
+        ' 
+        txtPassword.BackColor = Color.White
+        txtPassword.BorderStyle = BorderStyle.None
+        txtPassword.Font = New Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtPassword.ForeColor = Color.Black
+        txtPassword.Location = New Point(81, 202)
+        txtPassword.Name = "txtPassword"
+        txtPassword.PasswordChar = "*"c
+        txtPassword.Size = New Size(348, 20)
+        txtPassword.TabIndex = 5
+        ' 
+        ' txtConfirmPassword
+        ' 
+        txtConfirmPassword.BackColor = Color.White
+        txtConfirmPassword.BorderStyle = BorderStyle.None
+        txtConfirmPassword.Font = New Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtConfirmPassword.ForeColor = Color.Black
+        txtConfirmPassword.Location = New Point(81, 268)
+        txtConfirmPassword.Name = "txtConfirmPassword"
+        txtConfirmPassword.PasswordChar = "*"c
+        txtConfirmPassword.Size = New Size(348, 20)
+        txtConfirmPassword.TabIndex = 6
+        ' 
+        ' chkShowPassword
+        ' 
+        chkShowPassword.AutoSize = True
+        chkShowPassword.ForeColor = Color.White
+        chkShowPassword.Location = New Point(84, 302)
+        chkShowPassword.Name = "chkShowPassword"
+        chkShowPassword.Size = New Size(108, 19)
+        chkShowPassword.TabIndex = 7
+        chkShowPassword.Text = "Show Password"
+        chkShowPassword.UseVisualStyleBackColor = True
+        ' 
+        ' lblPasswordStrength
+        ' 
+        lblPasswordStrength.AutoSize = True
+        lblPasswordStrength.BackColor = Color.Transparent
+        lblPasswordStrength.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPasswordStrength.ForeColor = Color.White
+        lblPasswordStrength.Location = New Point(80, 372)
+        lblPasswordStrength.Name = "lblPasswordStrength"
+        lblPasswordStrength.Size = New Size(138, 19)
+        lblPasswordStrength.TabIndex = 8
+        lblPasswordStrength.Text = "Password Strength:"
+        ' 
+        ' btnRegister
+        ' 
+        btnRegister.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnRegister.FlatAppearance.BorderSize = 0
+        btnRegister.FlatStyle = FlatStyle.Flat
+        btnRegister.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnRegister.ForeColor = Color.White
+        btnRegister.Location = New Point(176, 421)
+        btnRegister.Name = "btnRegister"
+        btnRegister.Size = New Size(128, 52)
+        btnRegister.TabIndex = 9
+        btnRegister.Text = "REGISTER"
+        btnRegister.UseVisualStyleBackColor = False
+        ' 
+        ' btnBack
+        ' 
+        btnBack.BackColor = Color.Transparent
+        btnBack.FlatAppearance.BorderSize = 0
+        btnBack.FlatStyle = FlatStyle.Flat
+        btnBack.Font = New Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnBack.ForeColor = Color.White
+        btnBack.Location = New Point(160, 507)
+        btnBack.Name = "btnBack"
+        btnBack.Size = New Size(164, 34)
+        btnBack.TabIndex = 10
+        btnBack.Text = "BACK TO LOGIN"
+        btnBack.UseVisualStyleBackColor = False
+        ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.FromArgb(CByte(5), CByte(53), CByte(44))
+        Panel1.BorderStyle = BorderStyle.Fixed3D
+        Panel1.Controls.Add(btnBack)
+        Panel1.Controls.Add(lblTitle)
+        Panel1.Controls.Add(btnRegister)
+        Panel1.Controls.Add(lblUsername)
+        Panel1.Controls.Add(lblPasswordStrength)
+        Panel1.Controls.Add(txtUsername)
+        Panel1.Controls.Add(chkShowPassword)
+        Panel1.Controls.Add(lblPassword)
+        Panel1.Controls.Add(txtConfirmPassword)
+        Panel1.Controls.Add(txtPassword)
+        Panel1.Controls.Add(lblConfirmPassword)
+        Panel1.Location = New Point(598, 175)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(482, 656)
+        Panel1.TabIndex = 11
+        ' 
+        ' Register
+        ' 
+        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        ClientSize = New Size(1586, 989)
+        Controls.Add(Panel1)
+        Name = "Register"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "Registraion Form"
+        WindowState = FormWindowState.Maximized
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
+        ResumeLayout(False)
 
     End Sub
 

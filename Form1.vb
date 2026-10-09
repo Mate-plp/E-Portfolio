@@ -1,7 +1,6 @@
 ﻿Imports System.Drawing.Drawing2D
 
 Public Class Form1
-
     Private failedAttempts As Integer = 0
     Private Const MaxAttempts As Integer = 3
 
@@ -118,17 +117,11 @@ Public Class Form1
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
 
-        Dim result As DialogResult = MessageBox.Show(
-            "Are you sure you want to exit?",
-            "Exit Application",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question
-        )
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to exit?", "Exit Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If result = DialogResult.Yes Then
             Application.Exit()
         End If
 
     End Sub
-
 End Class
