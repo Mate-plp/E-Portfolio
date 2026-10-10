@@ -199,6 +199,7 @@ Partial Class Register
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         ClientSize = New Size(1586, 989)
         Controls.Add(Panel1)
+        DoubleBuffered = True
         Name = "Register"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Registraion Form"

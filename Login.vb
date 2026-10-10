@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing.Drawing2D
 
-Public Class Form1
+Public Class Login
     Private failedAttempts As Integer = 0
     Private Const MaxAttempts As Integer = 3
 

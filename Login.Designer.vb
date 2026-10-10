@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class Login
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         lblUsername = New Label()
         lblPassword = New Label()
         txtUsername = New TextBox()
@@ -183,7 +183,7 @@ Partial Class Form1
         Label1.TabIndex = 10
         Label1.Text = "Dont have an account? Click Here"
         ' 
-        ' Form1
+        ' Login
         ' 
         AutoScaleDimensions = New SizeF(8.0F, 19.0F)
         AutoScaleMode = AutoScaleMode.Font
@@ -202,10 +202,11 @@ Partial Class Form1
         Controls.Add(txtPassword)
         Controls.Add(lblPassword)
         Controls.Add(lblUsername)
+        DoubleBuffered = True
         Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(4, 5, 4, 5)
-        Name = "Form1"
+        Name = "Login"
         Text = "LogIn"
         TopMost = True
         WindowState = FormWindowState.Maximized

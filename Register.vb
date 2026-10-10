@@ -198,14 +198,14 @@ Public Class Register
         lblPasswordStrength.Text = "Password Strength:"
 
         Me.Hide()
-        Form1.Show()
+        Login.Show()
 
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
 
         Me.Hide()
-        Form1.Show()
+        Login.Show()
 
     End Sub
 End Class
