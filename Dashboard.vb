@@ -67,7 +67,6 @@
             Me.Hide()
             Dim loginForm As New Login()
             loginForm.ShowDialog()
-            Me.Close()
         End If
     End Sub
 End Class
