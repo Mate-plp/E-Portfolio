@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmDashboard
+Partial Class Dashboard
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -189,9 +189,9 @@ Partial Class frmDashboard
         pnlContent.Size = New Size(1064, 621)
         pnlContent.TabIndex = 0
         ' 
-        ' frmDashboard
+        ' Dashboard
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1264, 681)
         Controls.Add(pnlContent)
@@ -200,7 +200,7 @@ Partial Class frmDashboard
         DoubleBuffered = True
         MaximumSize = New Size(1920, 1080)
         MinimumSize = New Size(1280, 720)
-        Name = "frmDashboard"
+        Name = "Dashboard"
         Text = "Dashboard"
         pnlSidebar.ResumeLayout(False)
         pnlPortfolio.ResumeLayout(False)

@@ -1,4 +1,4 @@
-﻿Public Class frmDashboard
+﻿Public Class Dashboard
 
     Private Sub frmDashboardLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         ShowPage(New ucDashboard(), btnDashboard)

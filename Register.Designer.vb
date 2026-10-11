@@ -42,7 +42,7 @@ Partial Class Register
         ' 
         lblTitle.AutoSize = True
         lblTitle.BackColor = Color.Transparent
-        lblTitle.Font = New Font("Segoe UI", 24.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTitle.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblTitle.ForeColor = Color.White
         lblTitle.Location = New Point(101, 32)
         lblTitle.Name = "lblTitle"
@@ -152,7 +152,7 @@ Partial Class Register
         btnRegister.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnRegister.FlatAppearance.BorderSize = 0
         btnRegister.FlatStyle = FlatStyle.Flat
-        btnRegister.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnRegister.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnRegister.ForeColor = Color.White
         btnRegister.Location = New Point(176, 421)
         btnRegister.Name = "btnRegister"
@@ -198,7 +198,7 @@ Partial Class Register
         ' 
         ' Register
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Zoom
