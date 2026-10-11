@@ -38,11 +38,12 @@ Partial Class Login
         ' 
         ' lblUsername
         ' 
+        lblUsername.Anchor = AnchorStyles.None
         lblUsername.AutoSize = True
         lblUsername.BackColor = Color.Transparent
         lblUsername.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblUsername.ForeColor = Color.White
-        lblUsername.Location = New Point(354, 240)
+        lblUsername.Location = New Point(412, 249)
         lblUsername.Margin = New Padding(4, 0, 4, 0)
         lblUsername.Name = "lblUsername"
         lblUsername.Size = New Size(80, 19)
@@ -51,11 +52,12 @@ Partial Class Login
         ' 
         ' lblPassword
         ' 
+        lblPassword.Anchor = AnchorStyles.None
         lblPassword.AutoSize = True
         lblPassword.BackColor = Color.Transparent
         lblPassword.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblPassword.ForeColor = Color.White
-        lblPassword.Location = New Point(354, 359)
+        lblPassword.Location = New Point(416, 372)
         lblPassword.Margin = New Padding(4, 0, 4, 0)
         lblPassword.Name = "lblPassword"
         lblPassword.Size = New Size(77, 19)
@@ -64,11 +66,12 @@ Partial Class Login
         ' 
         ' txtUsername
         ' 
+        txtUsername.Anchor = AnchorStyles.None
         txtUsername.BackColor = Color.White
         txtUsername.BorderStyle = BorderStyle.FixedSingle
         txtUsername.Font = New Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         txtUsername.ForeColor = Color.Black
-        txtUsername.Location = New Point(354, 273)
+        txtUsername.Location = New Point(412, 273)
         txtUsername.Margin = New Padding(4, 5, 4, 5)
         txtUsername.Name = "txtUsername"
         txtUsername.Size = New Size(453, 27)
@@ -76,11 +79,12 @@ Partial Class Login
         ' 
         ' txtPassword
         ' 
+        txtPassword.Anchor = AnchorStyles.None
         txtPassword.BackColor = Color.White
         txtPassword.BorderStyle = BorderStyle.FixedSingle
         txtPassword.Font = New Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         txtPassword.ForeColor = Color.Black
-        txtPassword.Location = New Point(358, 396)
+        txtPassword.Location = New Point(416, 396)
         txtPassword.Margin = New Padding(4, 5, 4, 5)
         txtPassword.Name = "txtPassword"
         txtPassword.PasswordChar = "*"c
@@ -89,11 +93,12 @@ Partial Class Login
         ' 
         ' chkShowPassword
         ' 
+        chkShowPassword.Anchor = AnchorStyles.None
         chkShowPassword.AutoSize = True
         chkShowPassword.BackColor = Color.Transparent
         chkShowPassword.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         chkShowPassword.ForeColor = Color.White
-        chkShowPassword.Location = New Point(358, 455)
+        chkShowPassword.Location = New Point(416, 433)
         chkShowPassword.Margin = New Padding(4, 5, 4, 5)
         chkShowPassword.Name = "chkShowPassword"
         chkShowPassword.Size = New Size(112, 19)
@@ -103,11 +108,12 @@ Partial Class Login
         ' 
         ' btnLogin
         ' 
+        btnLogin.Anchor = AnchorStyles.None
         btnLogin.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnLogin.FlatAppearance.BorderSize = 0
         btnLogin.FlatStyle = FlatStyle.Flat
         btnLogin.ForeColor = Color.White
-        btnLogin.Location = New Point(430, 498)
+        btnLogin.Location = New Point(475, 498)
         btnLogin.Margin = New Padding(4, 5, 4, 5)
         btnLogin.Name = "btnLogin"
         btnLogin.Size = New Size(330, 45)
@@ -117,12 +123,13 @@ Partial Class Login
         ' 
         ' btnRegister
         ' 
+        btnRegister.Anchor = AnchorStyles.None
         btnRegister.BackColor = Color.Transparent
         btnRegister.FlatAppearance.BorderSize = 0
         btnRegister.FlatStyle = FlatStyle.Flat
         btnRegister.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnRegister.ForeColor = Color.White
-        btnRegister.Location = New Point(508, 604)
+        btnRegister.Location = New Point(553, 604)
         btnRegister.Margin = New Padding(4, 5, 4, 5)
         btnRegister.Name = "btnRegister"
         btnRegister.Size = New Size(174, 50)
@@ -132,12 +139,13 @@ Partial Class Login
         ' 
         ' btnExit
         ' 
+        btnExit.Anchor = AnchorStyles.None
         btnExit.BackColor = Color.Transparent
         btnExit.FlatAppearance.BorderSize = 0
         btnExit.FlatStyle = FlatStyle.Flat
         btnExit.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnExit.ForeColor = Color.White
-        btnExit.Location = New Point(538, 664)
+        btnExit.Location = New Point(589, 664)
         btnExit.Margin = New Padding(4, 5, 4, 5)
         btnExit.Name = "btnExit"
         btnExit.Size = New Size(103, 36)
@@ -147,11 +155,12 @@ Partial Class Login
         ' 
         ' lblWelcome
         ' 
+        lblWelcome.Anchor = AnchorStyles.None
         lblWelcome.AutoSize = True
         lblWelcome.BackColor = Color.Transparent
         lblWelcome.Font = New Font("Segoe UI", 24.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblWelcome.ForeColor = Color.White
-        lblWelcome.Location = New Point(326, 104)
+        lblWelcome.Location = New Point(326, 160)
         lblWelcome.Margin = New Padding(4, 0, 4, 0)
         lblWelcome.Name = "lblWelcome"
         lblWelcome.Size = New Size(238, 45)
@@ -160,11 +169,12 @@ Partial Class Login
         ' 
         ' lblSubtitle
         ' 
+        lblSubtitle.Anchor = AnchorStyles.None
         lblSubtitle.AutoSize = True
         lblSubtitle.BackColor = Color.Transparent
         lblSubtitle.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblSubtitle.ForeColor = Color.White
-        lblSubtitle.Location = New Point(338, 167)
+        lblSubtitle.Location = New Point(363, 205)
         lblSubtitle.Margin = New Padding(4, 0, 4, 0)
         lblSubtitle.Name = "lblSubtitle"
         lblSubtitle.Size = New Size(201, 25)
@@ -173,15 +183,16 @@ Partial Class Login
         ' 
         ' Label1
         ' 
+        Label1.Anchor = AnchorStyles.None
         Label1.AutoSize = True
         Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.White
-        Label1.Location = New Point(495, 583)
+        Label1.Location = New Point(576, 584)
         Label1.Name = "Label1"
-        Label1.Size = New Size(185, 15)
+        Label1.Size = New Size(128, 15)
         Label1.TabIndex = 10
-        Label1.Text = "Dont have an account? Click Here"
+        Label1.Text = "Dont have an account?"
         ' 
         ' Login
         ' 
@@ -189,8 +200,8 @@ Partial Class Login
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
-        BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(1661, 920)
+        BackgroundImageLayout = ImageLayout.Zoom
+        ClientSize = New Size(1280, 720)
         Controls.Add(txtUsername)
         Controls.Add(Label1)
         Controls.Add(lblSubtitle)
@@ -204,12 +215,12 @@ Partial Class Login
         Controls.Add(lblUsername)
         DoubleBuffered = True
         Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(4, 5, 4, 5)
+        MaximumSize = New Size(1920, 1080)
+        MinimumSize = New Size(1280, 720)
         Name = "Login"
         Text = "LogIn"
         TopMost = True
-        WindowState = FormWindowState.Maximized
         ResumeLayout(False)
         PerformLayout()
 

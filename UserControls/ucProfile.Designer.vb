@@ -23,28 +23,42 @@ Partial Class ucProfile
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Label1 = New Label()
+        Label2 = New Label()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(348, 201)
+        Label1.Dock = DockStyle.Right
+        Label1.Location = New Point(959, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(51, 15)
         Label1.TabIndex = 1
         Label1.Text = "PROFILE"
         ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Dock = DockStyle.Bottom
+        Label2.Location = New Point(0, 569)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(51, 15)
+        Label2.TabIndex = 2
+        Label2.Text = "PROFILE"
+        ' 
         ' ucProfile
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        Controls.Add(Label2)
         Controls.Add(Label1)
         Name = "ucProfile"
-        Size = New Size(746, 416)
+        Size = New Size(1010, 584)
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 
 End Class

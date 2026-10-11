@@ -41,14 +41,16 @@ Partial Class frmDashboard
         ' 
         ' pnlSidebar
         ' 
+        pnlSidebar.AutoScroll = True
         pnlSidebar.Controls.Add(btnGrades)
         pnlSidebar.Controls.Add(pnlPortfolio)
         pnlSidebar.Controls.Add(btnLogout)
         pnlSidebar.Controls.Add(btnProfile)
         pnlSidebar.Controls.Add(btnDashboard)
-        pnlSidebar.Location = New Point(12, 118)
+        pnlSidebar.Dock = DockStyle.Left
+        pnlSidebar.Location = New Point(0, 60)
         pnlSidebar.Name = "pnlSidebar"
-        pnlSidebar.Size = New Size(200, 320)
+        pnlSidebar.Size = New Size(200, 621)
         pnlSidebar.TabIndex = 0
         ' 
         ' btnGrades
@@ -124,7 +126,7 @@ Partial Class frmDashboard
         btnLogout.FlatAppearance.BorderSize = 0
         btnLogout.FlatStyle = FlatStyle.Flat
         btnLogout.ForeColor = Color.Black
-        btnLogout.Location = New Point(0, 270)
+        btnLogout.Location = New Point(0, 571)
         btnLogout.Name = "btnLogout"
         btnLogout.Size = New Size(200, 50)
         btnLogout.TabIndex = 4
@@ -163,15 +165,16 @@ Partial Class frmDashboard
         ' pnlHeader
         ' 
         pnlHeader.Controls.Add(lblTitle)
-        pnlHeader.Location = New Point(275, 38)
+        pnlHeader.Dock = DockStyle.Top
+        pnlHeader.Location = New Point(0, 0)
         pnlHeader.Name = "pnlHeader"
-        pnlHeader.Size = New Size(278, 60)
+        pnlHeader.Size = New Size(1264, 60)
         pnlHeader.TabIndex = 0
         ' 
         ' lblTitle
         ' 
         lblTitle.AutoSize = True
-        lblTitle.Location = New Point(112, 26)
+        lblTitle.Location = New Point(617, 23)
         lblTitle.Name = "lblTitle"
         lblTitle.Size = New Size(30, 15)
         lblTitle.TabIndex = 0
@@ -180,21 +183,23 @@ Partial Class frmDashboard
         ' 
         ' pnlContent
         ' 
-        pnlContent.Anchor = AnchorStyles.None
-        pnlContent.Location = New Point(218, 132)
+        pnlContent.Dock = DockStyle.Fill
+        pnlContent.Location = New Point(200, 60)
         pnlContent.Name = "pnlContent"
-        pnlContent.Size = New Size(570, 306)
+        pnlContent.Size = New Size(1064, 621)
         pnlContent.TabIndex = 0
         ' 
         ' frmDashboard
         ' 
         AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(1264, 681)
         Controls.Add(pnlContent)
-        Controls.Add(pnlHeader)
         Controls.Add(pnlSidebar)
+        Controls.Add(pnlHeader)
         DoubleBuffered = True
+        MaximumSize = New Size(1920, 1080)
+        MinimumSize = New Size(1280, 720)
         Name = "frmDashboard"
         Text = "Dashboard"
         pnlSidebar.ResumeLayout(False)

@@ -29,20 +29,20 @@ Partial Class Register
         lblConfirmPassword = New Label()
         txtUsername = New TextBox()
         txtPassword = New TextBox()
-        txtConfirmPassword = New TextBox()
+        txtConfirm = New TextBox()
         chkShowPassword = New CheckBox()
         lblPasswordStrength = New Label()
         btnRegister = New Button()
         btnBack = New Button()
-        Panel1 = New Panel()
-        Panel1.SuspendLayout()
+        pnlCreateAcc = New Panel()
+        pnlCreateAcc.SuspendLayout()
         SuspendLayout()
         ' 
         ' lblTitle
         ' 
         lblTitle.AutoSize = True
         lblTitle.BackColor = Color.Transparent
-        lblTitle.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTitle.Font = New Font("Segoe UI", 24.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblTitle.ForeColor = Color.White
         lblTitle.Location = New Point(101, 32)
         lblTitle.Name = "lblTitle"
@@ -90,6 +90,7 @@ Partial Class Register
         ' 
         txtUsername.BackColor = Color.White
         txtUsername.BorderStyle = BorderStyle.None
+        txtUsername.Cursor = Cursors.IBeam
         txtUsername.Font = New Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         txtUsername.ForeColor = Color.Black
         txtUsername.Location = New Point(80, 136)
@@ -101,6 +102,7 @@ Partial Class Register
         ' 
         txtPassword.BackColor = Color.White
         txtPassword.BorderStyle = BorderStyle.None
+        txtPassword.Cursor = Cursors.IBeam
         txtPassword.Font = New Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         txtPassword.ForeColor = Color.Black
         txtPassword.Location = New Point(81, 202)
@@ -109,17 +111,18 @@ Partial Class Register
         txtPassword.Size = New Size(348, 20)
         txtPassword.TabIndex = 5
         ' 
-        ' txtConfirmPassword
+        ' txtConfirm
         ' 
-        txtConfirmPassword.BackColor = Color.White
-        txtConfirmPassword.BorderStyle = BorderStyle.None
-        txtConfirmPassword.Font = New Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtConfirmPassword.ForeColor = Color.Black
-        txtConfirmPassword.Location = New Point(81, 268)
-        txtConfirmPassword.Name = "txtConfirmPassword"
-        txtConfirmPassword.PasswordChar = "*"c
-        txtConfirmPassword.Size = New Size(348, 20)
-        txtConfirmPassword.TabIndex = 6
+        txtConfirm.BackColor = Color.White
+        txtConfirm.BorderStyle = BorderStyle.None
+        txtConfirm.Cursor = Cursors.IBeam
+        txtConfirm.Font = New Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtConfirm.ForeColor = Color.Black
+        txtConfirm.Location = New Point(81, 268)
+        txtConfirm.Name = "txtConfirm"
+        txtConfirm.PasswordChar = "*"c
+        txtConfirm.Size = New Size(348, 20)
+        txtConfirm.TabIndex = 6
         ' 
         ' chkShowPassword
         ' 
@@ -149,7 +152,7 @@ Partial Class Register
         btnRegister.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnRegister.FlatAppearance.BorderSize = 0
         btnRegister.FlatStyle = FlatStyle.Flat
-        btnRegister.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnRegister.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnRegister.ForeColor = Color.White
         btnRegister.Location = New Point(176, 421)
         btnRegister.Name = "btnRegister"
@@ -172,40 +175,43 @@ Partial Class Register
         btnBack.Text = "BACK TO LOGIN"
         btnBack.UseVisualStyleBackColor = False
         ' 
-        ' Panel1
+        ' pnlCreateAcc
         ' 
-        Panel1.BackColor = Color.FromArgb(CByte(5), CByte(53), CByte(44))
-        Panel1.BorderStyle = BorderStyle.Fixed3D
-        Panel1.Controls.Add(btnBack)
-        Panel1.Controls.Add(lblTitle)
-        Panel1.Controls.Add(btnRegister)
-        Panel1.Controls.Add(lblUsername)
-        Panel1.Controls.Add(lblPasswordStrength)
-        Panel1.Controls.Add(txtUsername)
-        Panel1.Controls.Add(chkShowPassword)
-        Panel1.Controls.Add(lblPassword)
-        Panel1.Controls.Add(txtConfirmPassword)
-        Panel1.Controls.Add(txtPassword)
-        Panel1.Controls.Add(lblConfirmPassword)
-        Panel1.Location = New Point(598, 175)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(482, 656)
-        Panel1.TabIndex = 11
+        pnlCreateAcc.Anchor = AnchorStyles.None
+        pnlCreateAcc.BackColor = Color.FromArgb(CByte(5), CByte(53), CByte(44))
+        pnlCreateAcc.BorderStyle = BorderStyle.Fixed3D
+        pnlCreateAcc.Controls.Add(btnBack)
+        pnlCreateAcc.Controls.Add(lblTitle)
+        pnlCreateAcc.Controls.Add(btnRegister)
+        pnlCreateAcc.Controls.Add(lblUsername)
+        pnlCreateAcc.Controls.Add(lblPasswordStrength)
+        pnlCreateAcc.Controls.Add(txtUsername)
+        pnlCreateAcc.Controls.Add(chkShowPassword)
+        pnlCreateAcc.Controls.Add(lblPassword)
+        pnlCreateAcc.Controls.Add(txtConfirm)
+        pnlCreateAcc.Controls.Add(txtPassword)
+        pnlCreateAcc.Controls.Add(lblConfirmPassword)
+        pnlCreateAcc.Location = New Point(391, 12)
+        pnlCreateAcc.Name = "pnlCreateAcc"
+        pnlCreateAcc.Size = New Size(482, 656)
+        pnlCreateAcc.TabIndex = 11
         ' 
         ' Register
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
-        ClientSize = New Size(1586, 989)
-        Controls.Add(Panel1)
+        BackgroundImageLayout = ImageLayout.Zoom
+        ClientSize = New Size(1264, 681)
+        Controls.Add(pnlCreateAcc)
         DoubleBuffered = True
+        MaximumSize = New Size(1920, 1080)
+        MinimumSize = New Size(1280, 720)
         Name = "Register"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Registraion Form"
-        WindowState = FormWindowState.Maximized
-        Panel1.ResumeLayout(False)
-        Panel1.PerformLayout()
+        pnlCreateAcc.ResumeLayout(False)
+        pnlCreateAcc.PerformLayout()
         ResumeLayout(False)
 
     End Sub
@@ -216,10 +222,10 @@ Partial Class Register
     Friend WithEvents lblConfirmPassword As Label
     Friend WithEvents txtUsername As TextBox
     Friend WithEvents txtPassword As TextBox
-    Friend WithEvents txtConfirmPassword As TextBox
+    Friend WithEvents txtConfirm As TextBox
     Friend WithEvents chkShowPassword As CheckBox
     Friend WithEvents lblPasswordStrength As Label
     Friend WithEvents btnRegister As Button
     Friend WithEvents btnBack As Button
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents pnlCreateAcc As Panel
 End Class
