@@ -69,4 +69,16 @@
             loginForm.ShowDialog()
         End If
     End Sub
+
+    Private Sub lblTitle_Click(sender As Object, e As EventArgs) Handles lblTitle.Click
+
+    End Sub
+
+    Private Sub pnlSidebar_Paint(sender As Object, e As PaintEventArgs) Handles pnlSidebar.Paint
+
+    End Sub
+
+    Private Sub PapnlBannernel_Paint(sender As Object, e As PaintEventArgs) Handles PapnlBannernel.Paint
+
+    End Sub
 End Class
