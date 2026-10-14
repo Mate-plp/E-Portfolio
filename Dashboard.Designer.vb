@@ -37,16 +37,11 @@ Partial Class Dashboard
         picLogo = New PictureBox()
         lblTitle = New Label()
         pnlContent = New Panel()
-        pnlGradesCard = New Panel()
-        pnlPortfolioCard = New Panel()
-        pnlActivitiesCard = New Panel()
-        PapnlBannernel = New Panel()
         pnlSidebar.SuspendLayout()
         pnlPortfolio.SuspendLayout()
         pnlHeader.SuspendLayout()
         PnlHead.SuspendLayout()
         CType(picLogo, ComponentModel.ISupportInitialize).BeginInit()
-        pnlContent.SuspendLayout()
         SuspendLayout()
         ' 
         ' pnlSidebar
@@ -229,10 +224,6 @@ Partial Class Dashboard
         ' pnlContent
         ' 
         pnlContent.BackColor = Color.WhiteSmoke
-        pnlContent.Controls.Add(pnlGradesCard)
-        pnlContent.Controls.Add(pnlPortfolioCard)
-        pnlContent.Controls.Add(pnlActivitiesCard)
-        pnlContent.Controls.Add(PapnlBannernel)
         pnlContent.Dock = DockStyle.Fill
         pnlContent.ForeColor = SystemColors.ControlText
         pnlContent.Location = New Point(0, 0)
@@ -240,44 +231,6 @@ Partial Class Dashboard
         pnlContent.Padding = New Padding(13, 11, 13, 11)
         pnlContent.Size = New Size(1264, 681)
         pnlContent.TabIndex = 0
-        ' 
-        ' pnlGradesCard
-        ' 
-        pnlGradesCard.BorderStyle = BorderStyle.FixedSingle
-        pnlGradesCard.Location = New Point(227, 236)
-        pnlGradesCard.Margin = New Padding(3, 2, 3, 2)
-        pnlGradesCard.Name = "pnlGradesCard"
-        pnlGradesCard.Size = New Size(314, 378)
-        pnlGradesCard.TabIndex = 1
-        ' 
-        ' pnlPortfolioCard
-        ' 
-        pnlPortfolioCard.BorderStyle = BorderStyle.FixedSingle
-        pnlPortfolioCard.Location = New Point(934, 236)
-        pnlPortfolioCard.Margin = New Padding(3, 2, 3, 2)
-        pnlPortfolioCard.Name = "pnlPortfolioCard"
-        pnlPortfolioCard.Size = New Size(314, 378)
-        pnlPortfolioCard.TabIndex = 3
-        ' 
-        ' pnlActivitiesCard
-        ' 
-        pnlActivitiesCard.BorderStyle = BorderStyle.FixedSingle
-        pnlActivitiesCard.Location = New Point(581, 236)
-        pnlActivitiesCard.Margin = New Padding(3, 2, 3, 2)
-        pnlActivitiesCard.Name = "pnlActivitiesCard"
-        pnlActivitiesCard.Size = New Size(314, 378)
-        pnlActivitiesCard.TabIndex = 2
-        ' 
-        ' PapnlBannernel
-        ' 
-        PapnlBannernel.BackColor = Color.DarkGreen
-        PapnlBannernel.BackgroundImage = CType(resources.GetObject("PapnlBannernel.BackgroundImage"), Image)
-        PapnlBannernel.BackgroundImageLayout = ImageLayout.Stretch
-        PapnlBannernel.Location = New Point(227, 92)
-        PapnlBannernel.Margin = New Padding(3, 2, 3, 2)
-        PapnlBannernel.Name = "PapnlBannernel"
-        PapnlBannernel.Size = New Size(1022, 122)
-        PapnlBannernel.TabIndex = 0
         ' 
         ' Dashboard
         ' 
@@ -301,7 +254,6 @@ Partial Class Dashboard
         PnlHead.ResumeLayout(False)
         PnlHead.PerformLayout()
         CType(picLogo, ComponentModel.ISupportInitialize).EndInit()
-        pnlContent.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -319,8 +271,4 @@ Partial Class Dashboard
     Friend WithEvents btnDashboard As Button
     Friend WithEvents PnlHead As Panel
     Friend WithEvents picLogo As PictureBox
-    Friend WithEvents PapnlBannernel As Panel
-    Friend WithEvents pnlActivitiesCard As Panel
-    Friend WithEvents pnlGradesCard As Panel
-    Friend WithEvents pnlPortfolioCard As Panel
 End Class

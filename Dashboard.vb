@@ -78,7 +78,7 @@
 
     End Sub
 
-    Private Sub PapnlBannernel_Paint(sender As Object, e As PaintEventArgs) Handles PapnlBannernel.Paint
+    Private Sub PapnlBannernel_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
 End Class
