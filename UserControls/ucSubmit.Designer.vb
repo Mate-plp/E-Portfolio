@@ -30,7 +30,8 @@ Partial Class ucSubmit
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(0, 0)
+        Label1.Dock = DockStyle.Right
+        Label1.Location = New Point(1017, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(55, 15)
         Label1.TabIndex = 1
@@ -39,7 +40,8 @@ Partial Class ucSubmit
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(608, 333)
+        Label2.Dock = DockStyle.Fill
+        Label2.Location = New Point(0, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(55, 15)
         Label2.TabIndex = 2
@@ -48,7 +50,8 @@ Partial Class ucSubmit
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(1215, 666)
+        Label3.Dock = DockStyle.Bottom
+        Label3.Location = New Point(0, 591)
         Label3.Name = "Label3"
         Label3.Size = New Size(55, 15)
         Label3.TabIndex = 3
@@ -63,7 +66,7 @@ Partial Class ucSubmit
         Controls.Add(Label2)
         Controls.Add(Label1)
         Name = "ucSubmit"
-        Size = New Size(1273, 681)
+        Size = New Size(1072, 606)
         ResumeLayout(False)
         PerformLayout()
     End Sub
