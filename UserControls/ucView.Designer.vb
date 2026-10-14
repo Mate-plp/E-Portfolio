@@ -38,6 +38,7 @@ Partial Class ucView
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        AutoSize = True
         Controls.Add(Label1)
         Name = "ucView"
         Size = New Size(1264, 681)

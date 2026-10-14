@@ -50,6 +50,7 @@ Partial Class ucProfile
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        AutoSize = True
         Controls.Add(Label2)
         Controls.Add(Label1)
         Name = "ucProfile"

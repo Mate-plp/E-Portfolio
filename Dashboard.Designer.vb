@@ -49,7 +49,7 @@ Partial Class Dashboard
         pnlSidebar.AutoScroll = True
         pnlSidebar.BackColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
         pnlSidebar.BackgroundImage = CType(resources.GetObject("pnlSidebar.BackgroundImage"), Image)
-        pnlSidebar.BackgroundImageLayout = ImageLayout.Stretch
+        pnlSidebar.BackgroundImageLayout = ImageLayout.Zoom
         pnlSidebar.Controls.Add(btnGrades)
         pnlSidebar.Controls.Add(pnlPortfolio)
         pnlSidebar.Controls.Add(btnLogout)
@@ -188,9 +188,10 @@ Partial Class Dashboard
         ' 
         PnlHead.BackColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
         PnlHead.BackgroundImage = CType(resources.GetObject("PnlHead.BackgroundImage"), Image)
+        PnlHead.BackgroundImageLayout = ImageLayout.Zoom
         PnlHead.Controls.Add(picLogo)
         PnlHead.Controls.Add(lblTitle)
-        PnlHead.Dock = DockStyle.Fill
+        PnlHead.Dock = DockStyle.Top
         PnlHead.Location = New Point(0, 0)
         PnlHead.Margin = New Padding(3, 2, 3, 2)
         PnlHead.Name = "PnlHead"
@@ -224,12 +225,13 @@ Partial Class Dashboard
         ' pnlContent
         ' 
         pnlContent.BackColor = Color.WhiteSmoke
+        pnlContent.BackgroundImageLayout = ImageLayout.Zoom
         pnlContent.Dock = DockStyle.Fill
         pnlContent.ForeColor = SystemColors.ControlText
-        pnlContent.Location = New Point(0, 0)
+        pnlContent.Location = New Point(192, 75)
         pnlContent.Name = "pnlContent"
         pnlContent.Padding = New Padding(13, 11, 13, 11)
-        pnlContent.Size = New Size(1264, 681)
+        pnlContent.Size = New Size(1072, 606)
         pnlContent.TabIndex = 0
         ' 
         ' Dashboard
@@ -238,16 +240,15 @@ Partial Class Dashboard
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.WhiteSmoke
         ClientSize = New Size(1264, 681)
+        Controls.Add(pnlContent)
         Controls.Add(pnlSidebar)
         Controls.Add(pnlHeader)
-        Controls.Add(pnlContent)
         DoubleBuffered = True
         MaximumSize = New Size(1920, 1078)
         MinimumSize = New Size(898, 586)
         Name = "Dashboard"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Dashboard"
-        WindowState = FormWindowState.Maximized
         pnlSidebar.ResumeLayout(False)
         pnlPortfolio.ResumeLayout(False)
         pnlHeader.ResumeLayout(False)
