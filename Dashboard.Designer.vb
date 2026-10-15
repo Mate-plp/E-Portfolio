@@ -56,9 +56,10 @@ Partial Class Dashboard
         pnlSidebar.Controls.Add(btnProfile)
         pnlSidebar.Controls.Add(btnDashboard)
         pnlSidebar.Dock = DockStyle.Left
-        pnlSidebar.Location = New Point(0, 75)
+        pnlSidebar.Location = New Point(0, 100)
+        pnlSidebar.Margin = New Padding(3, 4, 3, 4)
         pnlSidebar.Name = "pnlSidebar"
-        pnlSidebar.Size = New Size(192, 606)
+        pnlSidebar.Size = New Size(219, 808)
         pnlSidebar.TabIndex = 0
         ' 
         ' btnGrades
@@ -68,9 +69,10 @@ Partial Class Dashboard
         btnGrades.FlatAppearance.BorderSize = 0
         btnGrades.FlatStyle = FlatStyle.Flat
         btnGrades.ForeColor = Color.White
-        btnGrades.Location = New Point(0, 150)
+        btnGrades.Location = New Point(0, 201)
+        btnGrades.Margin = New Padding(3, 4, 3, 4)
         btnGrades.Name = "btnGrades"
-        btnGrades.Size = New Size(192, 50)
+        btnGrades.Size = New Size(219, 67)
         btnGrades.TabIndex = 6
         btnGrades.Text = "Grades"
         btnGrades.TextAlign = ContentAlignment.MiddleLeft
@@ -82,9 +84,10 @@ Partial Class Dashboard
         pnlPortfolio.Controls.Add(btnSubmit)
         pnlPortfolio.Controls.Add(btnPortfolio)
         pnlPortfolio.Dock = DockStyle.Top
-        pnlPortfolio.Location = New Point(0, 100)
+        pnlPortfolio.Location = New Point(0, 134)
+        pnlPortfolio.Margin = New Padding(3, 4, 3, 4)
         pnlPortfolio.Name = "pnlPortfolio"
-        pnlPortfolio.Size = New Size(192, 50)
+        pnlPortfolio.Size = New Size(219, 67)
         pnlPortfolio.TabIndex = 5
         ' 
         ' btnView
@@ -93,9 +96,10 @@ Partial Class Dashboard
         btnView.FlatAppearance.BorderSize = 0
         btnView.FlatStyle = FlatStyle.Flat
         btnView.ForeColor = Color.Black
-        btnView.Location = New Point(0, 90)
+        btnView.Location = New Point(0, 120)
+        btnView.Margin = New Padding(3, 4, 3, 4)
         btnView.Name = "btnView"
-        btnView.Size = New Size(192, 40)
+        btnView.Size = New Size(219, 53)
         btnView.TabIndex = 8
         btnView.Text = "View Activities"
         btnView.TextAlign = ContentAlignment.MiddleLeft
@@ -107,9 +111,10 @@ Partial Class Dashboard
         btnSubmit.FlatAppearance.BorderSize = 0
         btnSubmit.FlatStyle = FlatStyle.Flat
         btnSubmit.ForeColor = Color.Black
-        btnSubmit.Location = New Point(0, 50)
+        btnSubmit.Location = New Point(0, 67)
+        btnSubmit.Margin = New Padding(3, 4, 3, 4)
         btnSubmit.Name = "btnSubmit"
-        btnSubmit.Size = New Size(192, 40)
+        btnSubmit.Size = New Size(219, 53)
         btnSubmit.TabIndex = 7
         btnSubmit.Text = "Submit Activity"
         btnSubmit.TextAlign = ContentAlignment.MiddleLeft
@@ -123,8 +128,9 @@ Partial Class Dashboard
         btnPortfolio.FlatStyle = FlatStyle.Flat
         btnPortfolio.ForeColor = Color.White
         btnPortfolio.Location = New Point(0, 0)
+        btnPortfolio.Margin = New Padding(3, 4, 3, 4)
         btnPortfolio.Name = "btnPortfolio"
-        btnPortfolio.Size = New Size(192, 50)
+        btnPortfolio.Size = New Size(219, 67)
         btnPortfolio.TabIndex = 6
         btnPortfolio.Text = "Portfolio"
         btnPortfolio.TextAlign = ContentAlignment.MiddleLeft
@@ -137,9 +143,10 @@ Partial Class Dashboard
         btnLogout.FlatAppearance.BorderSize = 0
         btnLogout.FlatStyle = FlatStyle.Flat
         btnLogout.ForeColor = Color.White
-        btnLogout.Location = New Point(0, 554)
+        btnLogout.Location = New Point(0, 340)
+        btnLogout.Margin = New Padding(5, 10, 10, 10)
         btnLogout.Name = "btnLogout"
-        btnLogout.Size = New Size(192, 52)
+        btnLogout.Size = New Size(219, 468)
         btnLogout.TabIndex = 4
         btnLogout.Text = "Log Out"
         btnLogout.TextAlign = ContentAlignment.MiddleLeft
@@ -152,9 +159,10 @@ Partial Class Dashboard
         btnProfile.FlatAppearance.BorderSize = 0
         btnProfile.FlatStyle = FlatStyle.Flat
         btnProfile.ForeColor = Color.White
-        btnProfile.Location = New Point(0, 50)
+        btnProfile.Location = New Point(0, 67)
+        btnProfile.Margin = New Padding(3, 4, 3, 4)
         btnProfile.Name = "btnProfile"
-        btnProfile.Size = New Size(192, 50)
+        btnProfile.Size = New Size(219, 67)
         btnProfile.TabIndex = 0
         btnProfile.Text = "Profile"
         btnProfile.TextAlign = ContentAlignment.MiddleLeft
@@ -168,8 +176,9 @@ Partial Class Dashboard
         btnDashboard.FlatStyle = FlatStyle.Flat
         btnDashboard.ForeColor = Color.White
         btnDashboard.Location = New Point(0, 0)
+        btnDashboard.Margin = New Padding(3, 4, 3, 4)
         btnDashboard.Name = "btnDashboard"
-        btnDashboard.Size = New Size(192, 50)
+        btnDashboard.Size = New Size(219, 67)
         btnDashboard.TabIndex = 7
         btnDashboard.Text = "Dashboard"
         btnDashboard.TextAlign = ContentAlignment.MiddleLeft
@@ -180,8 +189,9 @@ Partial Class Dashboard
         pnlHeader.Controls.Add(PnlHead)
         pnlHeader.Dock = DockStyle.Top
         pnlHeader.Location = New Point(0, 0)
+        pnlHeader.Margin = New Padding(3, 4, 3, 4)
         pnlHeader.Name = "pnlHeader"
-        pnlHeader.Size = New Size(1264, 75)
+        pnlHeader.Size = New Size(1445, 100)
         pnlHeader.TabIndex = 0
         ' 
         ' PnlHead
@@ -193,19 +203,17 @@ Partial Class Dashboard
         PnlHead.Controls.Add(lblTitle)
         PnlHead.Dock = DockStyle.Top
         PnlHead.Location = New Point(0, 0)
-        PnlHead.Margin = New Padding(3, 2, 3, 2)
         PnlHead.Name = "PnlHead"
-        PnlHead.Size = New Size(1264, 75)
+        PnlHead.Size = New Size(1445, 100)
         PnlHead.TabIndex = 1
         ' 
         ' picLogo
         ' 
         picLogo.BackColor = Color.Transparent
         picLogo.Image = CType(resources.GetObject("picLogo.Image"), Image)
-        picLogo.Location = New Point(16, 5)
-        picLogo.Margin = New Padding(3, 2, 3, 2)
+        picLogo.Location = New Point(18, 7)
         picLogo.Name = "picLogo"
-        picLogo.Size = New Size(79, 64)
+        picLogo.Size = New Size(90, 85)
         picLogo.SizeMode = PictureBoxSizeMode.Zoom
         picLogo.TabIndex = 0
         picLogo.TabStop = False
@@ -215,9 +223,9 @@ Partial Class Dashboard
         lblTitle.AutoSize = True
         lblTitle.BackColor = Color.Transparent
         lblTitle.ForeColor = Color.White
-        lblTitle.Location = New Point(115, 28)
+        lblTitle.Location = New Point(131, 37)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(30, 15)
+        lblTitle.Size = New Size(38, 20)
         lblTitle.TabIndex = 0
         lblTitle.Text = "Title"
         lblTitle.TextAlign = ContentAlignment.MiddleCenter
@@ -228,24 +236,26 @@ Partial Class Dashboard
         pnlContent.BackgroundImageLayout = ImageLayout.Zoom
         pnlContent.Dock = DockStyle.Fill
         pnlContent.ForeColor = SystemColors.ControlText
-        pnlContent.Location = New Point(192, 75)
+        pnlContent.Location = New Point(219, 100)
+        pnlContent.Margin = New Padding(3, 4, 3, 4)
         pnlContent.Name = "pnlContent"
-        pnlContent.Padding = New Padding(13, 11, 13, 11)
-        pnlContent.Size = New Size(1072, 606)
+        pnlContent.Padding = New Padding(15, 15, 15, 15)
+        pnlContent.Size = New Size(1226, 808)
         pnlContent.TabIndex = 0
         ' 
         ' Dashboard
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.WhiteSmoke
-        ClientSize = New Size(1264, 681)
+        ClientSize = New Size(1445, 908)
         Controls.Add(pnlContent)
         Controls.Add(pnlSidebar)
         Controls.Add(pnlHeader)
         DoubleBuffered = True
-        MaximumSize = New Size(1920, 1078)
-        MinimumSize = New Size(898, 586)
+        Margin = New Padding(3, 4, 3, 4)
+        MaximumSize = New Size(2192, 1422)
+        MinimumSize = New Size(1024, 766)
         Name = "Dashboard"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Dashboard"
