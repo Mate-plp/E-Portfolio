@@ -11,6 +11,8 @@
             Return
         End If
 
+
+
         Dim DashboardForm As New Dashboard()
         DashboardForm.Show()
         Me.Close()
