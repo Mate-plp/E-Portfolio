@@ -22,30 +22,16 @@ Partial Class ucView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Label1 = New Label()
         SuspendLayout()
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(50, 68)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(34, 15)
-        Label1.TabIndex = 1
-        Label1.Text = "VIEW"
         ' 
         ' ucView
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
-        Controls.Add(Label1)
         Name = "ucView"
         Size = New Size(1728, 1005)
         ResumeLayout(False)
-        PerformLayout()
     End Sub
-
-    Friend WithEvents Label1 As Label
 
 End Class

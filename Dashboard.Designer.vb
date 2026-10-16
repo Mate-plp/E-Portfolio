@@ -58,7 +58,7 @@ Partial Class Dashboard
         pnlSidebar.Dock = DockStyle.Left
         pnlSidebar.Location = New Point(0, 75)
         pnlSidebar.Name = "pnlSidebar"
-        pnlSidebar.Padding = New Padding(0, 0, 0, 161)
+        pnlSidebar.Padding = New Padding(0, 0, 0, 300)
         pnlSidebar.Size = New Size(192, 1005)
         pnlSidebar.TabIndex = 0
         ' 
@@ -139,7 +139,7 @@ Partial Class Dashboard
         btnLogout.FlatAppearance.BorderSize = 0
         btnLogout.FlatStyle = FlatStyle.Flat
         btnLogout.ForeColor = Color.White
-        btnLogout.Location = New Point(0, 794)
+        btnLogout.Location = New Point(0, 655)
         btnLogout.Margin = New Padding(4, 8, 9, 8)
         btnLogout.Name = "btnLogout"
         btnLogout.Size = New Size(192, 50)
