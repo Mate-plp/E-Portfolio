@@ -47,6 +47,7 @@ Partial Class ucDashboard
         lblSubjectsCount = New Label()
         lblSubjectsTitle = New Label()
         PictureBox2 = New PictureBox()
+        ProgressBar1 = New ProgressBar()
         Panel4.SuspendLayout()
         pnlActivityCard.SuspendLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
@@ -69,6 +70,7 @@ Partial Class ucDashboard
         ' 
         ' Panel4
         ' 
+        Panel4.Controls.Add(ProgressBar1)
         Panel4.Controls.Add(pnlActivityCard)
         Panel4.Controls.Add(pnlTasksCard)
         Panel4.Controls.Add(pnlGPACard)
@@ -307,6 +309,13 @@ Partial Class ucDashboard
         PictureBox2.TabIndex = 2
         PictureBox2.TabStop = False
         ' 
+        ' ProgressBar1
+        ' 
+        ProgressBar1.Location = New Point(23, 461)
+        ProgressBar1.Name = "ProgressBar1"
+        ProgressBar1.Size = New Size(1226, 47)
+        ProgressBar1.TabIndex = 7
+        ' 
         ' ucDashboard
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -357,5 +366,6 @@ Partial Class ucDashboard
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents ProgressBar1 As ProgressBar
 
 End Class
