@@ -18,15 +18,15 @@
 
     Private Sub HighlightButton(active As Button)
         ResetButtons(pnlSidebar)
-        active.BackColor = Color.FromArgb(10, 100, 50) 'selected
+        active.BackColor = Color.FromArgb(255, 255, 255) 'selected
     End Sub
 
     Private Sub ResetButtons(parent As Control)
         For Each ctrl As Control In parent.Controls
             If TypeOf ctrl Is Button Then
                 ctrl.BackColor = If(ctrl.Parent Is pnlPortfolio AndAlso ctrl IsNot btnPortfolio,
-                                Color.FromArgb(224, 224, 224), 'unselected sub buttons
-                                Color.FromArgb(110, 111, 110)) 'unselected main buttons
+                                Color.FromArgb(255, 255, 255), 'unselected sub buttons
+                                Color.FromArgb(255, 255, 255)) 'unselected main buttons
             ElseIf ctrl.HasChildren Then
                 ResetButtons(ctrl)
             End If

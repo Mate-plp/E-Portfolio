@@ -59,7 +59,8 @@ Partial Class Dashboard
         pnlSidebar.Location = New Point(0, 100)
         pnlSidebar.Margin = New Padding(3, 4, 3, 4)
         pnlSidebar.Name = "pnlSidebar"
-        pnlSidebar.Size = New Size(219, 808)
+        pnlSidebar.Padding = New Padding(0, 0, 0, 215)
+        pnlSidebar.Size = New Size(219, 915)
         pnlSidebar.TabIndex = 0
         ' 
         ' btnGrades
@@ -80,6 +81,7 @@ Partial Class Dashboard
         ' 
         ' pnlPortfolio
         ' 
+        pnlPortfolio.BackColor = Color.Transparent
         pnlPortfolio.Controls.Add(btnView)
         pnlPortfolio.Controls.Add(btnSubmit)
         pnlPortfolio.Controls.Add(btnPortfolio)
@@ -143,10 +145,10 @@ Partial Class Dashboard
         btnLogout.FlatAppearance.BorderSize = 0
         btnLogout.FlatStyle = FlatStyle.Flat
         btnLogout.ForeColor = Color.White
-        btnLogout.Location = New Point(0, 340)
+        btnLogout.Location = New Point(0, 633)
         btnLogout.Margin = New Padding(5, 10, 10, 10)
         btnLogout.Name = "btnLogout"
-        btnLogout.Size = New Size(219, 468)
+        btnLogout.Size = New Size(219, 67)
         btnLogout.TabIndex = 4
         btnLogout.Text = "Log Out"
         btnLogout.TextAlign = ContentAlignment.MiddleLeft
@@ -191,7 +193,7 @@ Partial Class Dashboard
         pnlHeader.Location = New Point(0, 0)
         pnlHeader.Margin = New Padding(3, 4, 3, 4)
         pnlHeader.Name = "pnlHeader"
-        pnlHeader.Size = New Size(1445, 100)
+        pnlHeader.Size = New Size(1474, 100)
         pnlHeader.TabIndex = 0
         ' 
         ' PnlHead
@@ -204,7 +206,7 @@ Partial Class Dashboard
         PnlHead.Dock = DockStyle.Top
         PnlHead.Location = New Point(0, 0)
         PnlHead.Name = "PnlHead"
-        PnlHead.Size = New Size(1445, 100)
+        PnlHead.Size = New Size(1474, 100)
         PnlHead.TabIndex = 1
         ' 
         ' picLogo
@@ -223,7 +225,7 @@ Partial Class Dashboard
         lblTitle.AutoSize = True
         lblTitle.BackColor = Color.Transparent
         lblTitle.ForeColor = Color.White
-        lblTitle.Location = New Point(131, 37)
+        lblTitle.Location = New Point(135, 37)
         lblTitle.Name = "lblTitle"
         lblTitle.Size = New Size(38, 20)
         lblTitle.TabIndex = 0
@@ -239,8 +241,8 @@ Partial Class Dashboard
         pnlContent.Location = New Point(219, 100)
         pnlContent.Margin = New Padding(3, 4, 3, 4)
         pnlContent.Name = "pnlContent"
-        pnlContent.Padding = New Padding(15, 15, 15, 15)
-        pnlContent.Size = New Size(1226, 808)
+        pnlContent.Padding = New Padding(15)
+        pnlContent.Size = New Size(1255, 915)
         pnlContent.TabIndex = 0
         ' 
         ' Dashboard
@@ -248,7 +250,7 @@ Partial Class Dashboard
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.WhiteSmoke
-        ClientSize = New Size(1445, 908)
+        ClientSize = New Size(1474, 1015)
         Controls.Add(pnlContent)
         Controls.Add(pnlSidebar)
         Controls.Add(pnlHeader)
