@@ -41,7 +41,7 @@ Partial Class ucView
         AutoSize = True
         Controls.Add(Label1)
         Name = "ucView"
-        Size = New Size(1088, 645)
+        Size = New Size(1728, 1005)
         ResumeLayout(False)
         PerformLayout()
     End Sub

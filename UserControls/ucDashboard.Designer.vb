@@ -63,7 +63,7 @@ Partial Class ucDashboard
         Panel2.Location = New Point(0, 0)
         Panel2.Margin = New Padding(3, 2, 3, 2)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(0, 645)
+        Panel2.Size = New Size(0, 1005)
         Panel2.TabIndex = 3
         ' 
         ' pnlActivityCard
@@ -74,7 +74,7 @@ Partial Class ucDashboard
         pnlActivityCard.Controls.Add(lblActivitySubtitle)
         pnlActivityCard.Controls.Add(lblActivityValue)
         pnlActivityCard.Controls.Add(lblActivityTitle)
-        pnlActivityCard.Location = New Point(279, 201)
+        pnlActivityCard.Location = New Point(599, 201)
         pnlActivityCard.Margin = New Padding(3, 2, 3, 2)
         pnlActivityCard.Name = "pnlActivityCard"
         pnlActivityCard.Size = New Size(220, 100)
@@ -128,7 +128,7 @@ Partial Class ucDashboard
         pnlTasksCard.Controls.Add(lblTasksSubtitle)
         pnlTasksCard.Controls.Add(lblTasksCount)
         pnlTasksCard.Controls.Add(lblTasksTitle)
-        pnlTasksCard.Location = New Point(519, 201)
+        pnlTasksCard.Location = New Point(839, 201)
         pnlTasksCard.Margin = New Padding(3, 2, 3, 2)
         pnlTasksCard.Name = "pnlTasksCard"
         pnlTasksCard.Size = New Size(220, 100)
@@ -183,7 +183,7 @@ Partial Class ucDashboard
         pnlGPACard.Controls.Add(lblGPASubtitle)
         pnlGPACard.Controls.Add(lblGPAValue)
         pnlGPACard.Controls.Add(lblGPATitle)
-        pnlGPACard.Location = New Point(763, 201)
+        pnlGPACard.Location = New Point(1083, 201)
         pnlGPACard.Margin = New Padding(3, 2, 3, 2)
         pnlGPACard.Name = "pnlGPACard"
         pnlGPACard.Size = New Size(220, 100)
@@ -246,7 +246,7 @@ Partial Class ucDashboard
         pnlSubjectsCard.Controls.Add(lblSubjectsSubtitle)
         pnlSubjectsCard.Controls.Add(lblSubjectsCount)
         pnlSubjectsCard.Controls.Add(lblSubjectsTitle)
-        pnlSubjectsCard.Location = New Point(30, 201)
+        pnlSubjectsCard.Location = New Point(350, 201)
         pnlSubjectsCard.Margin = New Padding(3, 2, 3, 2)
         pnlSubjectsCard.Name = "pnlSubjectsCard"
         pnlSubjectsCard.Size = New Size(220, 100)
@@ -300,7 +300,7 @@ Partial Class ucDashboard
         PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), Image)
         PictureBox2.BackgroundImageLayout = ImageLayout.Zoom
         PictureBox2.InitialImage = CType(resources.GetObject("PictureBox2.InitialImage"), Image)
-        PictureBox2.Location = New Point(30, 16)
+        PictureBox2.Location = New Point(350, 16)
         PictureBox2.Margin = New Padding(3, 2, 3, 2)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(953, 154)
@@ -319,7 +319,7 @@ Partial Class ucDashboard
         Controls.Add(PictureBox2)
         Controls.Add(Panel2)
         Name = "ucDashboard"
-        Size = New Size(1088, 645)
+        Size = New Size(1728, 1005)
         pnlActivityCard.ResumeLayout(False)
         pnlActivityCard.PerformLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
