@@ -30,7 +30,7 @@ Partial Class ucProfile
         ' 
         Label1.AutoSize = True
         Label1.Dock = DockStyle.Right
-        Label1.Location = New Point(1021, 0)
+        Label1.Location = New Point(1037, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(51, 15)
         Label1.TabIndex = 1
@@ -40,7 +40,7 @@ Partial Class ucProfile
         ' 
         Label2.AutoSize = True
         Label2.Dock = DockStyle.Bottom
-        Label2.Location = New Point(0, 591)
+        Label2.Location = New Point(0, 630)
         Label2.Name = "Label2"
         Label2.Size = New Size(51, 15)
         Label2.TabIndex = 2
@@ -54,7 +54,7 @@ Partial Class ucProfile
         Controls.Add(Label2)
         Controls.Add(Label1)
         Name = "ucProfile"
-        Size = New Size(1072, 606)
+        Size = New Size(1088, 645)
         ResumeLayout(False)
         PerformLayout()
     End Sub

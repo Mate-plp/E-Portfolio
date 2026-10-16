@@ -41,7 +41,7 @@ Partial Class ucGrades
         AutoSize = True
         Controls.Add(Label1)
         Name = "ucGrades"
-        Size = New Size(1072, 606)
+        Size = New Size(1088, 645)
         ResumeLayout(False)
         PerformLayout()
     End Sub
