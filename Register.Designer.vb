@@ -191,7 +191,7 @@ Partial Class Register
         pnlCreateAcc.Controls.Add(txtConfirm)
         pnlCreateAcc.Controls.Add(txtPassword)
         pnlCreateAcc.Controls.Add(lblConfirmPassword)
-        pnlCreateAcc.Location = New Point(391, 12)
+        pnlCreateAcc.Location = New Point(719, 212)
         pnlCreateAcc.Name = "pnlCreateAcc"
         pnlCreateAcc.Size = New Size(482, 656)
         pnlCreateAcc.TabIndex = 11
@@ -202,14 +202,16 @@ Partial Class Register
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Zoom
-        ClientSize = New Size(1264, 681)
+        ClientSize = New Size(1920, 1080)
         Controls.Add(pnlCreateAcc)
         DoubleBuffered = True
+        FormBorderStyle = FormBorderStyle.None
         MaximumSize = New Size(1920, 1080)
         MinimumSize = New Size(1280, 720)
         Name = "Register"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Registraion Form"
+        WindowState = FormWindowState.Maximized
         pnlCreateAcc.ResumeLayout(False)
         pnlCreateAcc.PerformLayout()
         ResumeLayout(False)
