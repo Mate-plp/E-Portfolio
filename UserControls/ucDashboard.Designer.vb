@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ucDashboard
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class ucDashboard
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucDashboard))
         Panel2 = New Panel()
@@ -46,6 +46,8 @@ Partial Class ucDashboard
         lblSubjectsCount = New Label()
         lblSubjectsTitle = New Label()
         PictureBox2 = New PictureBox()
+        ProgressBar1 = New ProgressBar()
+        Panel4.SuspendLayout()
         pnlActivityCard.SuspendLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
         pnlTasksCard.SuspendLayout()
@@ -65,6 +67,20 @@ Partial Class ucDashboard
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(0, 1005)
         Panel2.TabIndex = 3
+        ' 
+        ' Panel4
+        ' 
+        Panel4.Controls.Add(ProgressBar1)
+        Panel4.Controls.Add(pnlActivityCard)
+        Panel4.Controls.Add(pnlTasksCard)
+        Panel4.Controls.Add(pnlGPACard)
+        Panel4.Controls.Add(pnlSubjectsCard)
+        Panel4.Controls.Add(PictureBox2)
+        Panel4.Dock = DockStyle.Fill
+        Panel4.Location = New Point(0, 0)
+        Panel4.Name = "Panel4"
+        Panel4.Size = New Size(1492, 1062)
+        Panel4.TabIndex = 6
         ' 
         ' pnlActivityCard
         ' 
@@ -103,7 +119,7 @@ Partial Class ucDashboard
         ' lblActivityValue
         ' 
         lblActivityValue.AutoSize = True
-        lblActivityValue.Font = New Font("Segoe UI", 9F)
+        lblActivityValue.Font = New Font("Segoe UI", 9.0F)
         lblActivityValue.Location = New Point(115, 33)
         lblActivityValue.Name = "lblActivityValue"
         lblActivityValue.Size = New Size(81, 15)
@@ -113,7 +129,7 @@ Partial Class ucDashboard
         ' lblActivityTitle
         ' 
         lblActivityTitle.AutoSize = True
-        lblActivityTitle.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblActivityTitle.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblActivityTitle.Location = New Point(116, 8)
         lblActivityTitle.Name = "lblActivityTitle"
         lblActivityTitle.Size = New Size(81, 15)
@@ -167,7 +183,7 @@ Partial Class ucDashboard
         ' lblTasksTitle
         ' 
         lblTasksTitle.AutoSize = True
-        lblTasksTitle.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTasksTitle.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblTasksTitle.Location = New Point(94, 8)
         lblTasksTitle.Name = "lblTasksTitle"
         lblTasksTitle.Size = New Size(92, 15)
@@ -231,7 +247,7 @@ Partial Class ucDashboard
         ' lblGPATitle
         ' 
         lblGPATitle.AutoSize = True
-        lblGPATitle.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblGPATitle.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblGPATitle.Location = New Point(95, 8)
         lblGPATitle.Name = "lblGPATitle"
         lblGPATitle.Size = New Size(76, 15)
@@ -286,7 +302,7 @@ Partial Class ucDashboard
         ' lblSubjectsTitle
         ' 
         lblSubjectsTitle.AutoSize = True
-        lblSubjectsTitle.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblSubjectsTitle.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblSubjectsTitle.Location = New Point(97, 8)
         lblSubjectsTitle.Name = "lblSubjectsTitle"
         lblSubjectsTitle.Size = New Size(84, 15)
@@ -307,9 +323,16 @@ Partial Class ucDashboard
         PictureBox2.TabIndex = 2
         PictureBox2.TabStop = False
         ' 
+        ' ProgressBar1
+        ' 
+        ProgressBar1.Location = New Point(23, 461)
+        ProgressBar1.Name = "ProgressBar1"
+        ProgressBar1.Size = New Size(1226, 47)
+        ProgressBar1.TabIndex = 7
+        ' 
         ' ucDashboard
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         Controls.Add(pnlTasksCard)
@@ -358,5 +381,6 @@ Partial Class ucDashboard
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents ProgressBar1 As ProgressBar
 
 End Class

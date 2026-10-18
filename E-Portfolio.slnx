@@ -1,3 +1,6 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Class1.vb" />
+  </Folder>
   <Project Path="E-Portfolio.vbproj" />
 </Solution>
