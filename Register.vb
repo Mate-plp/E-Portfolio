@@ -52,7 +52,7 @@
             txtConfirm.Focus()
             Return
         End If
-
-
     End Sub
+
+
 End Class
