@@ -44,9 +44,9 @@ Partial Class ucSubmit
         ' 
         Label1.AutoSize = True
         Label1.Dock = DockStyle.Right
-        Label1.Location = New Point(1673, 0)
+        Label1.Location = New Point(1906, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(55, 15)
+        Label1.Size = New Size(69, 20)
         Label1.TabIndex = 1
         Label1.Text = "SUBMIT1"
         ' 
@@ -56,7 +56,7 @@ Partial Class ucSubmit
         Label2.Dock = DockStyle.Fill
         Label2.Location = New Point(0, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(55, 15)
+        Label2.Size = New Size(69, 20)
         Label2.TabIndex = 2
         Label2.Text = "SUBMIT2"
         ' 
@@ -64,9 +64,9 @@ Partial Class ucSubmit
         ' 
         Label3.AutoSize = True
         Label3.Dock = DockStyle.Bottom
-        Label3.Location = New Point(0, 990)
+        Label3.Location = New Point(0, 1320)
         Label3.Name = "Label3"
-        Label3.Size = New Size(55, 15)
+        Label3.Size = New Size(69, 20)
         Label3.TabIndex = 3
         Label3.Text = "SUBMIT3"
         ' 
@@ -75,53 +75,51 @@ Partial Class ucSubmit
         lblID.AutoSize = True
         lblID.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblID.Location = New Point(0, 0)
-        lblID.Margin = New Padding(18, 15, 18, 15)
+        lblID.Margin = New Padding(21, 20, 21, 20)
         lblID.Name = "lblID"
-        lblID.Padding = New Padding(26, 15, 18, 0)
-        lblID.Size = New Size(103, 35)
+        lblID.Padding = New Padding(30, 20, 21, 0)
+        lblID.Size = New Size(123, 45)
         lblID.TabIndex = 6
         lblID.Text = "Title:"
         ' 
         ' tbTitle
         ' 
         tbTitle.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        tbTitle.Location = New Point(105, 8)
-        tbTitle.Margin = New Padding(3, 2, 3, 2)
+        tbTitle.Location = New Point(120, 11)
         tbTitle.Name = "tbTitle"
-        tbTitle.Size = New Size(485, 29)
+        tbTitle.Size = New Size(554, 34)
         tbTitle.TabIndex = 7
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(0, 74)
-        Label4.Margin = New Padding(18, 15, 18, 15)
+        Label4.Location = New Point(0, 99)
+        Label4.Margin = New Padding(21, 20, 21, 20)
         Label4.Name = "Label4"
-        Label4.Padding = New Padding(26, 15, 18, 0)
-        Label4.Size = New Size(169, 35)
+        Label4.Padding = New Padding(30, 20, 21, 0)
+        Label4.Size = New Size(204, 45)
         Label4.TabIndex = 8
         Label4.Text = "Description:"
         ' 
         ' tbDescription
         ' 
         tbDescription.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        tbDescription.Location = New Point(26, 117)
-        tbDescription.Margin = New Padding(3, 2, 3, 2)
+        tbDescription.Location = New Point(30, 156)
         tbDescription.Multiline = True
         tbDescription.Name = "tbDescription"
-        tbDescription.Size = New Size(564, 219)
+        tbDescription.Size = New Size(644, 291)
         tbDescription.TabIndex = 9
         ' 
         ' lblCharLimit
         ' 
         lblCharLimit.AutoSize = True
         lblCharLimit.Font = New Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblCharLimit.Location = New Point(394, 86)
-        lblCharLimit.Margin = New Padding(18, 15, 18, 15)
+        lblCharLimit.Location = New Point(450, 115)
+        lblCharLimit.Margin = New Padding(21, 20, 21, 20)
         lblCharLimit.Name = "lblCharLimit"
-        lblCharLimit.Padding = New Padding(26, 15, 18, 0)
-        lblCharLimit.Size = New Size(188, 32)
+        lblCharLimit.Padding = New Padding(30, 20, 21, 0)
+        lblCharLimit.Size = New Size(225, 40)
         lblCharLimit.TabIndex = 10
         lblCharLimit.Text = "0/250 characters"
         ' 
@@ -129,78 +127,74 @@ Partial Class ucSubmit
         ' 
         Label6.AutoSize = True
         Label6.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label6.Location = New Point(595, 0)
-        Label6.Margin = New Padding(18, 15, 18, 15)
+        Label6.Location = New Point(680, 0)
+        Label6.Margin = New Padding(21, 20, 21, 20)
         Label6.Name = "Label6"
-        Label6.Padding = New Padding(26, 15, 18, 0)
-        Label6.Size = New Size(104, 35)
+        Label6.Padding = New Padding(30, 20, 21, 0)
+        Label6.Size = New Size(126, 45)
         Label6.TabIndex = 11
         Label6.Text = "Date:"
         ' 
         ' dtDate
         ' 
         dtDate.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        dtDate.Location = New Point(690, 8)
-        dtDate.Margin = New Padding(3, 2, 3, 2)
+        dtDate.Location = New Point(789, 11)
         dtDate.Name = "dtDate"
-        dtDate.Size = New Size(296, 29)
+        dtDate.Size = New Size(338, 34)
         dtDate.TabIndex = 12
         ' 
         ' Label7
         ' 
         Label7.AutoSize = True
         Label7.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label7.Location = New Point(595, 82)
-        Label7.Margin = New Padding(18, 15, 18, 15)
+        Label7.Location = New Point(680, 109)
+        Label7.Margin = New Padding(21, 20, 21, 20)
         Label7.Name = "Label7"
-        Label7.Padding = New Padding(26, 15, 18, 0)
-        Label7.Size = New Size(185, 35)
+        Label7.Padding = New Padding(30, 20, 21, 0)
+        Label7.Size = New Size(225, 45)
         Label7.TabIndex = 13
         Label7.Text = "Activity Type:"
         ' 
         ' cbActivity
         ' 
         cbActivity.FormattingEnabled = True
-        cbActivity.Location = New Point(794, 95)
-        cbActivity.Margin = New Padding(3, 2, 3, 2)
+        cbActivity.Location = New Point(907, 127)
         cbActivity.Name = "cbActivity"
-        cbActivity.Size = New Size(153, 23)
+        cbActivity.Size = New Size(174, 28)
         cbActivity.TabIndex = 14
         ' 
         ' Label8
         ' 
         Label8.AutoSize = True
         Label8.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label8.Location = New Point(595, 146)
-        Label8.Margin = New Padding(18, 15, 18, 15)
+        Label8.Location = New Point(680, 195)
+        Label8.Margin = New Padding(21, 20, 21, 20)
         Label8.Name = "Label8"
-        Label8.Padding = New Padding(26, 15, 18, 0)
-        Label8.Size = New Size(217, 35)
+        Label8.Padding = New Padding(30, 20, 21, 0)
+        Label8.Size = New Size(264, 45)
         Label8.TabIndex = 15
         Label8.Text = "Skills Developed:"
         ' 
         ' cbSkills
         ' 
         cbSkills.FormattingEnabled = True
-        cbSkills.Location = New Point(814, 159)
-        cbSkills.Margin = New Padding(3, 2, 3, 2)
+        cbSkills.Location = New Point(930, 212)
         cbSkills.Name = "cbSkills"
-        cbSkills.Size = New Size(133, 23)
+        cbSkills.Size = New Size(151, 28)
         cbSkills.TabIndex = 16
         ' 
         ' dgSkills
         ' 
         dgSkills.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgSkills.Location = New Point(625, 197)
-        dgSkills.Margin = New Padding(3, 2, 3, 2)
+        dgSkills.Location = New Point(714, 263)
         dgSkills.Name = "dgSkills"
         dgSkills.RowHeadersWidth = 51
-        dgSkills.Size = New Size(321, 141)
+        dgSkills.Size = New Size(367, 188)
         dgSkills.TabIndex = 17
         ' 
         ' ucSubmit
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         Controls.Add(dgSkills)
@@ -218,8 +212,9 @@ Partial Class ucSubmit
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "ucSubmit"
-        Size = New Size(1728, 1005)
+        Size = New Size(1975, 1340)
         CType(dgSkills, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
