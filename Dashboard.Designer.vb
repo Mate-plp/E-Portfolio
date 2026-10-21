@@ -24,15 +24,14 @@ Partial Class Dashboard
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         pnlSidebar = New Panel()
-        btnGrades = New Button()
         pnlPortfolio = New Panel()
-        btnView = New Button()
-        btnSubmit = New Button()
-        btnPortfolio = New Button()
-        btnLogout = New Button()
-        btnProfile = New Button()
-        btnDashboard = New Button()
-        SpaceSeparatorVertical1 = New ReaLTaiizor.Controls.SpaceSeparatorVertical()
+        btnView = New RoundedButton()
+        btnSubmit = New RoundedButton()
+        btnPortfolio = New RoundedButton()
+        btnLogout = New RoundedButton()
+        btnProfile = New RoundedButton()
+        btnDashboard = New RoundedButton()
+        SpaceSeparatorVertical1 = New Panel()
         pnlHeader = New Panel()
         PnlHead = New Panel()
         picLogo = New PictureBox()
@@ -51,7 +50,6 @@ Partial Class Dashboard
         pnlSidebar.BackColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
         pnlSidebar.BackgroundImage = CType(resources.GetObject("pnlSidebar.BackgroundImage"), Image)
         pnlSidebar.BackgroundImageLayout = ImageLayout.Stretch
-        pnlSidebar.Controls.Add(btnGrades)
         pnlSidebar.Controls.Add(pnlPortfolio)
         pnlSidebar.Controls.Add(btnLogout)
         pnlSidebar.Controls.Add(btnProfile)
@@ -61,27 +59,8 @@ Partial Class Dashboard
         pnlSidebar.Location = New Point(0, 75)
         pnlSidebar.Name = "pnlSidebar"
         pnlSidebar.Padding = New Padding(0, 0, 0, 161)
-        pnlSidebar.Size = New Size(192, 806)
+        pnlSidebar.Size = New Size(192, 1005)
         pnlSidebar.TabIndex = 0
-        ' 
-        ' btnGrades
-        ' 
-        btnGrades.BackColor = Color.Transparent
-        btnGrades.BackgroundImageLayout = ImageLayout.None
-        btnGrades.Dock = DockStyle.Top
-        btnGrades.FlatAppearance.BorderSize = 0
-        btnGrades.FlatAppearance.MouseDownBackColor = Color.Transparent
-        btnGrades.FlatAppearance.MouseOverBackColor = Color.Transparent
-        btnGrades.FlatStyle = FlatStyle.Flat
-        btnGrades.Font = New Font("Verdana", 18.0F, FontStyle.Bold)
-        btnGrades.ForeColor = Color.White
-        btnGrades.Location = New Point(0, 160)
-        btnGrades.Name = "btnGrades"
-        btnGrades.Size = New Size(192, 50)
-        btnGrades.TabIndex = 6
-        btnGrades.Text = "Grades"
-        btnGrades.TextAlign = ContentAlignment.MiddleLeft
-        btnGrades.UseVisualStyleBackColor = True
         ' 
         ' pnlPortfolio
         ' 
@@ -158,7 +137,7 @@ Partial Class Dashboard
         btnLogout.FlatStyle = FlatStyle.Flat
         btnLogout.Font = New Font("Verdana", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnLogout.ForeColor = Color.White
-        btnLogout.Location = New Point(0, 595)
+        btnLogout.Location = New Point(0, 794)
         btnLogout.Margin = New Padding(4, 8, 9, 8)
         btnLogout.Name = "btnLogout"
         btnLogout.Size = New Size(192, 50)
@@ -208,17 +187,13 @@ Partial Class Dashboard
         ' 
         ' SpaceSeparatorVertical1
         ' 
-        SpaceSeparatorVertical1.Customization = "Kioq/yoqKv8jIyP/Kioq/w=="
         SpaceSeparatorVertical1.Dock = DockStyle.Top
         SpaceSeparatorVertical1.Font = New Font("Verdana", 8.0F)
-        SpaceSeparatorVertical1.Image = Nothing
         SpaceSeparatorVertical1.Location = New Point(0, 0)
         SpaceSeparatorVertical1.Name = "SpaceSeparatorVertical1"
-        SpaceSeparatorVertical1.NoRounding = False
-        SpaceSeparatorVertical1.Size = New Size(4, 10)
+        SpaceSeparatorVertical1.Size = New Size(192, 10)
         SpaceSeparatorVertical1.TabIndex = 9
         SpaceSeparatorVertical1.Text = "SpaceSeparatorVertical1"
-        SpaceSeparatorVertical1.Transparent = False
         ' 
         ' pnlHeader
         ' 
@@ -276,15 +251,15 @@ Partial Class Dashboard
         pnlContent.Location = New Point(192, 75)
         pnlContent.Name = "pnlContent"
         pnlContent.Padding = New Padding(13, 11, 13, 11)
-        pnlContent.Size = New Size(1728, 806)
+        pnlContent.Size = New Size(1728, 1005)
         pnlContent.TabIndex = 0
         ' 
         ' Dashboard
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.WhiteSmoke
-        ClientSize = New Size(1920, 881)
+        ClientSize = New Size(1920, 1080)
         Controls.Add(pnlContent)
         Controls.Add(pnlSidebar)
         Controls.Add(pnlHeader)
@@ -308,16 +283,15 @@ Partial Class Dashboard
     Friend WithEvents pnlSidebar As Panel
     Friend WithEvents pnlHeader As Panel
     Friend WithEvents pnlContent As Panel
-    Friend WithEvents btnLogout As Button
-    Friend WithEvents btnProfile As Button
+    Friend WithEvents btnLogout As RoundedButton
+    Friend WithEvents btnProfile As RoundedButton
     Friend WithEvents pnlPortfolio As Panel
-    Friend WithEvents btnGrades As Button
-    Friend WithEvents btnView As Button
-    Friend WithEvents btnSubmit As Button
-    Friend WithEvents btnPortfolio As Button
+    Friend WithEvents btnView As RoundedButton
+    Friend WithEvents btnSubmit As RoundedButton
+    Friend WithEvents btnPortfolio As RoundedButton
     Friend WithEvents lblTitle As Label
-    Friend WithEvents btnDashboard As Button
+    Friend WithEvents btnDashboard As RoundedButton
     Friend WithEvents PnlHead As Panel
     Friend WithEvents picLogo As PictureBox
-    Friend WithEvents SpaceSeparatorVertical1 As ReaLTaiizor.Controls.SpaceSeparatorVertical
+    Friend WithEvents SpaceSeparatorVertical1 As System.Windows.Forms.Panel
 End Class

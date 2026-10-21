@@ -1,6 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports Org.BouncyCastle.Asn1.IsisMtt.Ocsp
 Public Class Login
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        RoundAll(Me, 10)
+    End Sub
+
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         Dim RegisterForm As New Register()
         RegisterForm.Show()
@@ -8,8 +11,8 @@ Public Class Login
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Dim username As String = txtUsername.TextButton.Trim()
-        Dim password As String = txtPassword.TextButton
+        Dim username As String = txtUsername.Text.Trim()
+        Dim password As String = txtPassword.Text
 
         If username = "" OrElse password = "" Then
             ShowToast(Me, "Please enter your username and password.")
@@ -61,11 +64,6 @@ Public Class Login
     End Sub
 
     Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
-        If chkShowPassword.Checked Then
-            txtPassword.PasswordChar = ControlChars.NullChar
-        Else
-            txtPassword.PasswordChar = "*"c
-        End If
+        txtPassword.UseSystemPasswordChar = Not chkShowPassword.Checked
     End Sub
-
 End Class

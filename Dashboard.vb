@@ -63,10 +63,6 @@
         ShowPage(New ucView(), btnView)
     End Sub
 
-    Private Sub btnGrades_Click(sender As Object, e As EventArgs) Handles btnGrades.Click
-        ShowPage(New ucGrades(), btnGrades)
-    End Sub
-
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to logout?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If result = DialogResult.Yes Then

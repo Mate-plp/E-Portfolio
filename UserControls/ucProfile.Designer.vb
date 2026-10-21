@@ -28,42 +28,56 @@ Partial Class ucProfile
         lblID = New Label()
         Panel1 = New Panel()
         lblName = New Label()
-        cgbUser = New ReaLTaiizor.Controls.CyberGroupBox()
-        btnEditUser = New ReaLTaiizor.Controls.CyberButton()
-        tbMN = New ReaLTaiizor.Controls.BigTextBox()
+        cgbUser = New RoundedPanel()
+        btnLN = New RoundedButton()
+        btnMN = New RoundedButton()
+        btnFN = New RoundedButton()
+        btnUsername = New RoundedButton()
+        tbMN = New TextBox()
         Label9 = New Label()
-        tbLN = New ReaLTaiizor.Controls.BigTextBox()
+        tbLN = New TextBox()
         Label8 = New Label()
         Label5 = New Label()
-        tbFN = New ReaLTaiizor.Controls.BigTextBox()
-        tbUsername = New ReaLTaiizor.Controls.BigTextBox()
-        cgbPass = New ReaLTaiizor.Controls.CyberGroupBox()
-        btnEditPass = New ReaLTaiizor.Controls.CyberButton()
+        tbFN = New TextBox()
+        tbUsername = New TextBox()
+        cgbPass = New RoundedPanel()
+        btnCfmPass = New RoundedButton()
+        btnNewPass = New RoundedButton()
+        btnOldPass = New RoundedButton()
+        tbCfmPass = New TextBox()
+        Label15 = New Label()
         Label7 = New Label()
         Label2 = New Label()
-        tbNewPass = New ReaLTaiizor.Controls.BigTextBox()
-        tbOldPass = New ReaLTaiizor.Controls.BigTextBox()
+        tbNewPass = New TextBox()
+        tbOldPass = New TextBox()
         Label3 = New Label()
-        cgbStudent = New ReaLTaiizor.Controls.CyberGroupBox()
-        btnEditStudent = New ReaLTaiizor.Controls.CyberButton()
+        cgbStudent = New RoundedPanel()
+        btnYear = New RoundedButton()
+        btnProgram = New RoundedButton()
+        btnID = New RoundedButton()
         Label6 = New Label()
-        tbYear = New ReaLTaiizor.Controls.BigTextBox()
-        tbProgram = New ReaLTaiizor.Controls.BigTextBox()
+        tbYear = New TextBox()
+        tbProgram = New TextBox()
         Label4 = New Label()
         Label1 = New Label()
-        tbID = New ReaLTaiizor.Controls.BigTextBox()
-        cgbAdd = New ReaLTaiizor.Controls.CyberGroupBox()
-        btnEditAdd = New ReaLTaiizor.Controls.CyberButton()
-        tbRegion = New ReaLTaiizor.Controls.BigTextBox()
-        tbBar = New ReaLTaiizor.Controls.BigTextBox()
-        tbCity = New ReaLTaiizor.Controls.BigTextBox()
+        tbID = New TextBox()
+        cgbAdd = New RoundedPanel()
+        btnRegion = New RoundedButton()
+        btnBar = New RoundedButton()
+        btnCity = New RoundedButton()
+        btnLine2 = New RoundedButton()
+        btnLine1 = New RoundedButton()
+        tbRegion = New TextBox()
+        tbBar = New TextBox()
+        tbCity = New TextBox()
         Label14 = New Label()
         Label13 = New Label()
         Label12 = New Label()
         Label10 = New Label()
-        tbLine1 = New ReaLTaiizor.Controls.BigTextBox()
-        tbLine2 = New ReaLTaiizor.Controls.BigTextBox()
+        tbLine1 = New TextBox()
+        tbLine2 = New TextBox()
         Label11 = New Label()
+        btnSave = New RoundedButton()
         Panel1.SuspendLayout()
         cgbUser.SuspendLayout()
         cgbPass.SuspendLayout()
@@ -73,9 +87,10 @@ Partial Class ucProfile
         ' 
         ' lblPassword
         ' 
+        lblPassword.Anchor = AnchorStyles.None
         lblPassword.AutoSize = True
         lblPassword.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        lblPassword.Location = New Point(42, 136)
+        lblPassword.Location = New Point(61, 136)
         lblPassword.Margin = New Padding(18, 45, 18, 15)
         lblPassword.Name = "lblPassword"
         lblPassword.Size = New Size(112, 25)
@@ -84,9 +99,10 @@ Partial Class ucProfile
         ' 
         ' lblAddress
         ' 
+        lblAddress.Anchor = AnchorStyles.None
         lblAddress.AutoSize = True
         lblAddress.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        lblAddress.Location = New Point(63, 69)
+        lblAddress.Location = New Point(106, 69)
         lblAddress.Margin = New Padding(18, 45, 18, 15)
         lblAddress.Name = "lblAddress"
         lblAddress.Size = New Size(70, 25)
@@ -95,9 +111,10 @@ Partial Class ucProfile
         ' 
         ' lblUsername
         ' 
+        lblUsername.Anchor = AnchorStyles.None
         lblUsername.AutoSize = True
         lblUsername.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        lblUsername.Location = New Point(46, 75)
+        lblUsername.Location = New Point(65, 75)
         lblUsername.Margin = New Padding(18, 15, 18, 15)
         lblUsername.Name = "lblUsername"
         lblUsername.Size = New Size(106, 25)
@@ -106,9 +123,10 @@ Partial Class ucProfile
         ' 
         ' lblID
         ' 
+        lblID.Anchor = AnchorStyles.None
         lblID.AutoSize = True
         lblID.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblID.Location = New Point(29, 68)
+        lblID.Location = New Point(63, 68)
         lblID.Margin = New Padding(18, 15, 18, 15)
         lblID.Name = "lblID"
         lblID.Size = New Size(113, 25)
@@ -123,7 +141,7 @@ Partial Class ucProfile
         Panel1.Location = New Point(0, 0)
         Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1245, 95)
+        Panel1.Size = New Size(1728, 95)
         Panel1.TabIndex = 8
         ' 
         ' lblName
@@ -135,26 +153,19 @@ Partial Class ucProfile
         lblName.Margin = New Padding(18, 15, 18, 38)
         lblName.Name = "lblName"
         lblName.Padding = New Padding(50, 5, 5, 5)
-        lblName.Size = New Size(1245, 95)
+        lblName.Size = New Size(1728, 95)
         lblName.TabIndex = 3
         lblName.Text = "Mr. Mendoza Dale TEST 3 1 2 wasdadasdasd"
         lblName.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' cgbUser
         ' 
-        cgbUser.Alpha = 20
+        cgbUser.Anchor = AnchorStyles.None
         cgbUser.BackColor = Color.Transparent
-        cgbUser.Background = True
-        cgbUser.Background_WidthPen = 3F
-        cgbUser.BackgroundPen = True
-        cgbUser.ColorBackground = Color.Transparent
-        cgbUser.ColorBackground_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        cgbUser.ColorBackground_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
-        cgbUser.ColorBackground_Pen = Color.FromArgb(CByte(0), CByte(64), CByte(0))
-        cgbUser.ColorLighting = Color.FromArgb(CByte(29), CByte(200), CByte(238))
-        cgbUser.ColorPen_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        cgbUser.ColorPen_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
-        cgbUser.Controls.Add(btnEditUser)
+        cgbUser.Controls.Add(btnLN)
+        cgbUser.Controls.Add(btnMN)
+        cgbUser.Controls.Add(btnFN)
+        cgbUser.Controls.Add(btnUsername)
         cgbUser.Controls.Add(tbMN)
         cgbUser.Controls.Add(Label9)
         cgbUser.Controls.Add(tbLN)
@@ -164,87 +175,86 @@ Partial Class ucProfile
         cgbUser.Controls.Add(tbUsername)
         cgbUser.Controls.Add(lblUsername)
         cgbUser.Controls.Add(lblPassword)
-        cgbUser.CyberGroupBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom
+        cgbUser.CornerRadius = 15
+        cgbUser.FillColor = Color.Transparent
         cgbUser.ForeColor = Color.Black
-        cgbUser.Lighting = False
-        cgbUser.LinearGradient_Background = False
-        cgbUser.LinearGradientPen = False
         cgbUser.Location = New Point(37, 100)
         cgbUser.Name = "cgbUser"
-        cgbUser.PenWidth = 15
-        cgbUser.RGB = False
-        cgbUser.Rounding = True
-        cgbUser.RoundingInt = 15
-        cgbUser.Size = New Size(473, 367)
-        cgbUser.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
+        cgbUser.Size = New Size(547, 367)
         cgbUser.TabIndex = 9
-        cgbUser.Tag = "Cyber"
-        cgbUser.TextRenderingHint = Drawing.Text.TextRenderingHint.ClearTypeGridFit
-        cgbUser.Timer_RGB = 300
         ' 
-        ' btnEditUser
+        ' btnLN
         ' 
-        btnEditUser.Alpha = 20
-        btnEditUser.Anchor = AnchorStyles.None
-        btnEditUser.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditUser.Background = True
-        btnEditUser.Background_WidthPen = 4F
-        btnEditUser.BackgroundPen = True
-        btnEditUser.ColorBackground = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditUser.ColorBackground_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        btnEditUser.ColorBackground_2 = Color.Transparent
-        btnEditUser.ColorBackground_Pen = Color.Transparent
-        btnEditUser.ColorLighting = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditUser.ColorPen_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        btnEditUser.ColorPen_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
-        btnEditUser.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom
-        btnEditUser.Effect_1 = True
-        btnEditUser.Effect_1_ColorBackground = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditUser.Effect_1_Transparency = 25
-        btnEditUser.Effect_2 = True
-        btnEditUser.Effect_2_ColorBackground = Color.White
-        btnEditUser.Effect_2_Transparency = 20
-        btnEditUser.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnEditUser.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnEditUser.Lighting = False
-        btnEditUser.LinearGradient_Background = False
-        btnEditUser.LinearGradientPen = False
-        btnEditUser.Location = New Point(147, 305)
-        btnEditUser.Margin = New Padding(3, 2, 3, 2)
-        btnEditUser.Name = "btnEditUser"
-        btnEditUser.PenWidth = 15
-        btnEditUser.Rounding = True
-        btnEditUser.RoundingInt = 70
-        btnEditUser.Size = New Size(184, 48)
-        btnEditUser.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
-        btnEditUser.TabIndex = 13
-        btnEditUser.Tag = "Cyber"
-        btnEditUser.TextButton = "EDIT"
-        btnEditUser.TextRenderingHint = Drawing.Text.TextRenderingHint.ClearTypeGridFit
-        btnEditUser.Timer_Effect_1 = 5
-        btnEditUser.Timer_RGB = 300
+        btnLN.Anchor = AnchorStyles.None
+        btnLN.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnLN.FlatStyle = FlatStyle.Flat
+        btnLN.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnLN.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnLN.Location = New Point(480, 234)
+        btnLN.Name = "btnLN"
+        btnLN.Size = New Size(50, 50)
+        btnLN.TabIndex = 14
+        btnLN.UseVisualStyleBackColor = False
+        ' 
+        ' btnMN
+        ' 
+        btnMN.Anchor = AnchorStyles.None
+        btnMN.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnMN.FlatStyle = FlatStyle.Flat
+        btnMN.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnMN.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnMN.Location = New Point(480, 178)
+        btnMN.Name = "btnMN"
+        btnMN.Size = New Size(50, 50)
+        btnMN.TabIndex = 14
+        btnMN.UseVisualStyleBackColor = False
+        ' 
+        ' btnFN
+        ' 
+        btnFN.Anchor = AnchorStyles.None
+        btnFN.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnFN.FlatStyle = FlatStyle.Flat
+        btnFN.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnFN.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnFN.Location = New Point(480, 116)
+        btnFN.Name = "btnFN"
+        btnFN.Size = New Size(50, 50)
+        btnFN.TabIndex = 14
+        btnFN.UseVisualStyleBackColor = False
+        ' 
+        ' btnUsername
+        ' 
+        btnUsername.Anchor = AnchorStyles.None
+        btnUsername.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnUsername.FlatStyle = FlatStyle.Flat
+        btnUsername.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnUsername.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnUsername.Location = New Point(480, 56)
+        btnUsername.Name = "btnUsername"
+        btnUsername.Size = New Size(50, 50)
+        btnUsername.TabIndex = 14
+        btnUsername.UseVisualStyleBackColor = False
         ' 
         ' tbMN
         ' 
-        tbMN.BackColor = Color.Transparent
+        tbMN.Anchor = AnchorStyles.None
+        tbMN.BackColor = Color.White
+        tbMN.Enabled = False
         tbMN.Font = New Font("Tahoma", 11F)
-        tbMN.ForeColor = Color.DimGray
-        tbMN.Image = Nothing
-        tbMN.Location = New Point(176, 189)
-        tbMN.MaxLength = 32767
-        tbMN.Multiline = False
+        tbMN.ForeColor = Color.Black
+        tbMN.Location = New Point(195, 189)
         tbMN.Name = "tbMN"
         tbMN.ReadOnly = True
-        tbMN.Size = New Size(266, 41)
+        tbMN.Size = New Size(266, 25)
         tbMN.TabIndex = 3
-        tbMN.TextAlignment = HorizontalAlignment.Left
-        tbMN.UseSystemPasswordChar = False
+        tbMN.TabStop = False
         ' 
         ' Label9
         ' 
+        Label9.Anchor = AnchorStyles.None
         Label9.AutoSize = True
         Label9.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        Label9.Location = New Point(16, 201)
+        Label9.Location = New Point(35, 201)
         Label9.Margin = New Padding(18, 45, 18, 15)
         Label9.Name = "Label9"
         Label9.Size = New Size(136, 25)
@@ -253,25 +263,24 @@ Partial Class ucProfile
         ' 
         ' tbLN
         ' 
-        tbLN.BackColor = Color.Transparent
+        tbLN.Anchor = AnchorStyles.None
+        tbLN.BackColor = Color.White
+        tbLN.Enabled = False
         tbLN.Font = New Font("Tahoma", 11F)
-        tbLN.ForeColor = Color.DimGray
-        tbLN.Image = Nothing
-        tbLN.Location = New Point(176, 251)
-        tbLN.MaxLength = 32767
-        tbLN.Multiline = False
+        tbLN.ForeColor = Color.Black
+        tbLN.Location = New Point(195, 251)
         tbLN.Name = "tbLN"
         tbLN.ReadOnly = True
-        tbLN.Size = New Size(266, 41)
+        tbLN.Size = New Size(266, 25)
         tbLN.TabIndex = 4
-        tbLN.TextAlignment = HorizontalAlignment.Left
-        tbLN.UseSystemPasswordChar = False
+        tbLN.TabStop = False
         ' 
         ' Label8
         ' 
+        Label8.Anchor = AnchorStyles.None
         Label8.AutoSize = True
         Label8.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        Label8.Location = New Point(42, 263)
+        Label8.Location = New Point(61, 263)
         Label8.Margin = New Padding(18, 45, 18, 15)
         Label8.Name = "Label8"
         Label8.Size = New Size(109, 25)
@@ -280,9 +289,10 @@ Partial Class ucProfile
         ' 
         ' Label5
         ' 
+        Label5.Anchor = AnchorStyles.None
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI", 20F, FontStyle.Bold)
-        Label5.Location = New Point(18, 15)
+        Label5.Location = New Point(55, 15)
         Label5.Margin = New Padding(18, 15, 18, 15)
         Label5.Name = "Label5"
         Label5.Size = New Size(134, 37)
@@ -291,121 +301,126 @@ Partial Class ucProfile
         ' 
         ' tbFN
         ' 
-        tbFN.BackColor = Color.Transparent
+        tbFN.Anchor = AnchorStyles.None
+        tbFN.BackColor = Color.White
+        tbFN.Enabled = False
         tbFN.Font = New Font("Tahoma", 11F)
-        tbFN.ForeColor = Color.DimGray
-        tbFN.Image = Nothing
-        tbFN.Location = New Point(176, 128)
-        tbFN.MaxLength = 32767
-        tbFN.Multiline = False
+        tbFN.ForeColor = Color.Black
+        tbFN.Location = New Point(195, 128)
         tbFN.Name = "tbFN"
         tbFN.ReadOnly = True
-        tbFN.Size = New Size(266, 41)
+        tbFN.Size = New Size(266, 25)
         tbFN.TabIndex = 2
-        tbFN.TextAlignment = HorizontalAlignment.Left
-        tbFN.UseSystemPasswordChar = False
+        tbFN.TabStop = False
         ' 
         ' tbUsername
         ' 
-        tbUsername.BackColor = Color.Transparent
+        tbUsername.Anchor = AnchorStyles.None
+        tbUsername.BackColor = Color.White
+        tbUsername.Enabled = False
         tbUsername.Font = New Font("Tahoma", 11F)
-        tbUsername.ForeColor = Color.DimGray
-        tbUsername.Image = Nothing
-        tbUsername.Location = New Point(176, 68)
-        tbUsername.MaxLength = 32767
-        tbUsername.Multiline = False
+        tbUsername.ForeColor = Color.Black
+        tbUsername.Location = New Point(195, 68)
         tbUsername.Name = "tbUsername"
         tbUsername.ReadOnly = True
-        tbUsername.Size = New Size(266, 41)
+        tbUsername.Size = New Size(266, 25)
         tbUsername.TabIndex = 1
-        tbUsername.TextAlignment = HorizontalAlignment.Left
-        tbUsername.UseSystemPasswordChar = False
+        tbUsername.TabStop = False
+        tbUsername.Text = "TEST DELETE THIS"
         ' 
         ' cgbPass
         ' 
-        cgbPass.Alpha = 20
+        cgbPass.Anchor = AnchorStyles.None
         cgbPass.BackColor = Color.Transparent
-        cgbPass.Background = True
-        cgbPass.Background_WidthPen = 3F
-        cgbPass.BackgroundPen = True
-        cgbPass.ColorBackground = Color.Transparent
-        cgbPass.ColorBackground_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        cgbPass.ColorBackground_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
-        cgbPass.ColorBackground_Pen = Color.FromArgb(CByte(0), CByte(64), CByte(0))
-        cgbPass.ColorLighting = Color.FromArgb(CByte(29), CByte(200), CByte(238))
-        cgbPass.ColorPen_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        cgbPass.ColorPen_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
-        cgbPass.Controls.Add(btnEditPass)
+        cgbPass.Controls.Add(btnCfmPass)
+        cgbPass.Controls.Add(btnNewPass)
+        cgbPass.Controls.Add(btnOldPass)
+        cgbPass.Controls.Add(tbCfmPass)
+        cgbPass.Controls.Add(Label15)
         cgbPass.Controls.Add(Label7)
         cgbPass.Controls.Add(Label2)
         cgbPass.Controls.Add(tbNewPass)
         cgbPass.Controls.Add(tbOldPass)
         cgbPass.Controls.Add(Label3)
-        cgbPass.CyberGroupBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom
+        cgbPass.CornerRadius = 15
+        cgbPass.FillColor = Color.Transparent
         cgbPass.ForeColor = Color.Black
-        cgbPass.Lighting = False
-        cgbPass.LinearGradient_Background = False
-        cgbPass.LinearGradientPen = False
         cgbPass.Location = New Point(37, 479)
         cgbPass.Name = "cgbPass"
-        cgbPass.PenWidth = 15
-        cgbPass.RGB = False
-        cgbPass.Rounding = True
-        cgbPass.RoundingInt = 15
-        cgbPass.Size = New Size(473, 277)
-        cgbPass.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
+        cgbPass.Size = New Size(547, 277)
         cgbPass.TabIndex = 10
-        cgbPass.Tag = "Cyber"
-        cgbPass.TextRenderingHint = Drawing.Text.TextRenderingHint.ClearTypeGridFit
-        cgbPass.Timer_RGB = 300
         ' 
-        ' btnEditPass
+        ' btnCfmPass
         ' 
-        btnEditPass.Alpha = 20
-        btnEditPass.Anchor = AnchorStyles.None
-        btnEditPass.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditPass.Background = True
-        btnEditPass.Background_WidthPen = 4F
-        btnEditPass.BackgroundPen = True
-        btnEditPass.ColorBackground = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditPass.ColorBackground_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        btnEditPass.ColorBackground_2 = Color.Transparent
-        btnEditPass.ColorBackground_Pen = Color.Transparent
-        btnEditPass.ColorLighting = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditPass.ColorPen_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        btnEditPass.ColorPen_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
-        btnEditPass.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom
-        btnEditPass.Effect_1 = True
-        btnEditPass.Effect_1_ColorBackground = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditPass.Effect_1_Transparency = 25
-        btnEditPass.Effect_2 = True
-        btnEditPass.Effect_2_ColorBackground = Color.White
-        btnEditPass.Effect_2_Transparency = 20
-        btnEditPass.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnEditPass.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnEditPass.Lighting = False
-        btnEditPass.LinearGradient_Background = False
-        btnEditPass.LinearGradientPen = False
-        btnEditPass.Location = New Point(147, 216)
-        btnEditPass.Margin = New Padding(3, 2, 3, 2)
-        btnEditPass.Name = "btnEditPass"
-        btnEditPass.PenWidth = 15
-        btnEditPass.Rounding = True
-        btnEditPass.RoundingInt = 70
-        btnEditPass.Size = New Size(184, 48)
-        btnEditPass.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
-        btnEditPass.TabIndex = 16
-        btnEditPass.Tag = "Cyber"
-        btnEditPass.TextButton = "EDIT"
-        btnEditPass.TextRenderingHint = Drawing.Text.TextRenderingHint.ClearTypeGridFit
-        btnEditPass.Timer_Effect_1 = 5
-        btnEditPass.Timer_RGB = 300
+        btnCfmPass.Anchor = AnchorStyles.None
+        btnCfmPass.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnCfmPass.FlatStyle = FlatStyle.Flat
+        btnCfmPass.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnCfmPass.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnCfmPass.Location = New Point(494, 195)
+        btnCfmPass.Name = "btnCfmPass"
+        btnCfmPass.Size = New Size(50, 50)
+        btnCfmPass.TabIndex = 14
+        btnCfmPass.UseVisualStyleBackColor = False
+        ' 
+        ' btnNewPass
+        ' 
+        btnNewPass.Anchor = AnchorStyles.None
+        btnNewPass.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnNewPass.FlatStyle = FlatStyle.Flat
+        btnNewPass.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnNewPass.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnNewPass.Location = New Point(480, 119)
+        btnNewPass.Name = "btnNewPass"
+        btnNewPass.Size = New Size(50, 50)
+        btnNewPass.TabIndex = 14
+        btnNewPass.UseVisualStyleBackColor = False
+        ' 
+        ' btnOldPass
+        ' 
+        btnOldPass.Anchor = AnchorStyles.None
+        btnOldPass.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnOldPass.FlatStyle = FlatStyle.Flat
+        btnOldPass.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnOldPass.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnOldPass.Location = New Point(480, 49)
+        btnOldPass.Name = "btnOldPass"
+        btnOldPass.Size = New Size(50, 50)
+        btnOldPass.TabIndex = 14
+        btnOldPass.UseVisualStyleBackColor = False
+        ' 
+        ' tbCfmPass
+        ' 
+        tbCfmPass.Anchor = AnchorStyles.None
+        tbCfmPass.BackColor = Color.White
+        tbCfmPass.Enabled = False
+        tbCfmPass.Font = New Font("Tahoma", 11F)
+        tbCfmPass.ForeColor = Color.Black
+        tbCfmPass.Location = New Point(216, 207)
+        tbCfmPass.Name = "tbCfmPass"
+        tbCfmPass.ReadOnly = True
+        tbCfmPass.Size = New Size(266, 25)
+        tbCfmPass.TabIndex = 17
+        tbCfmPass.TabStop = False
+        ' 
+        ' Label15
+        ' 
+        Label15.Anchor = AnchorStyles.None
+        Label15.AutoSize = True
+        Label15.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
+        Label15.Location = New Point(24, 205)
+        Label15.Margin = New Padding(18, 45, 18, 15)
+        Label15.Name = "Label15"
+        Label15.Size = New Size(180, 25)
+        Label15.TabIndex = 16
+        Label15.Text = "Confirm Password:"
         ' 
         ' Label7
         ' 
+        Label7.Anchor = AnchorStyles.None
         Label7.AutoSize = True
         Label7.Font = New Font("Segoe UI", 20F, FontStyle.Bold)
-        Label7.Location = New Point(18, 15)
+        Label7.Location = New Point(55, 15)
         Label7.Margin = New Padding(18, 15, 18, 15)
         Label7.Name = "Label7"
         Label7.Size = New Size(242, 37)
@@ -414,9 +429,10 @@ Partial Class ucProfile
         ' 
         ' Label2
         ' 
+        Label2.Anchor = AnchorStyles.None
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        Label2.Location = New Point(7, 155)
+        Label2.Location = New Point(31, 155)
         Label2.Margin = New Padding(18, 45, 18, 15)
         Label2.Name = "Label2"
         Label2.Size = New Size(147, 25)
@@ -425,41 +441,38 @@ Partial Class ucProfile
         ' 
         ' tbNewPass
         ' 
-        tbNewPass.BackColor = Color.Transparent
+        tbNewPass.Anchor = AnchorStyles.None
+        tbNewPass.BackColor = Color.White
+        tbNewPass.Enabled = False
         tbNewPass.Font = New Font("Tahoma", 11F)
-        tbNewPass.ForeColor = Color.DimGray
-        tbNewPass.Image = Nothing
-        tbNewPass.Location = New Point(176, 139)
-        tbNewPass.MaxLength = 32767
-        tbNewPass.Multiline = False
+        tbNewPass.ForeColor = Color.Black
+        tbNewPass.Location = New Point(200, 139)
         tbNewPass.Name = "tbNewPass"
         tbNewPass.ReadOnly = True
-        tbNewPass.Size = New Size(266, 41)
+        tbNewPass.Size = New Size(266, 25)
         tbNewPass.TabIndex = 15
-        tbNewPass.TextAlignment = HorizontalAlignment.Left
-        tbNewPass.UseSystemPasswordChar = False
+        tbNewPass.TabStop = False
         ' 
         ' tbOldPass
         ' 
-        tbOldPass.BackColor = Color.Transparent
+        tbOldPass.Anchor = AnchorStyles.None
+        tbOldPass.BackColor = Color.White
+        tbOldPass.Enabled = False
         tbOldPass.Font = New Font("Tahoma", 11F)
-        tbOldPass.ForeColor = Color.DimGray
-        tbOldPass.Image = Nothing
-        tbOldPass.Location = New Point(176, 61)
-        tbOldPass.MaxLength = 32767
-        tbOldPass.Multiline = False
+        tbOldPass.ForeColor = Color.Black
+        tbOldPass.Location = New Point(200, 61)
         tbOldPass.Name = "tbOldPass"
         tbOldPass.ReadOnly = True
-        tbOldPass.Size = New Size(266, 41)
+        tbOldPass.Size = New Size(266, 25)
         tbOldPass.TabIndex = 14
-        tbOldPass.TextAlignment = HorizontalAlignment.Left
-        tbOldPass.UseSystemPasswordChar = False
+        tbOldPass.TabStop = False
         ' 
         ' Label3
         ' 
+        Label3.Anchor = AnchorStyles.None
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        Label3.Location = New Point(13, 72)
+        Label3.Location = New Point(37, 72)
         Label3.Margin = New Padding(18, 45, 18, 15)
         Label3.Name = "Label3"
         Label3.Size = New Size(138, 25)
@@ -468,19 +481,11 @@ Partial Class ucProfile
         ' 
         ' cgbStudent
         ' 
-        cgbStudent.Alpha = 20
+        cgbStudent.Anchor = AnchorStyles.None
         cgbStudent.BackColor = Color.Transparent
-        cgbStudent.Background = True
-        cgbStudent.Background_WidthPen = 3F
-        cgbStudent.BackgroundPen = True
-        cgbStudent.ColorBackground = Color.Transparent
-        cgbStudent.ColorBackground_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        cgbStudent.ColorBackground_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
-        cgbStudent.ColorBackground_Pen = Color.FromArgb(CByte(0), CByte(64), CByte(0))
-        cgbStudent.ColorLighting = Color.FromArgb(CByte(29), CByte(200), CByte(238))
-        cgbStudent.ColorPen_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        cgbStudent.ColorPen_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
-        cgbStudent.Controls.Add(btnEditStudent)
+        cgbStudent.Controls.Add(btnYear)
+        cgbStudent.Controls.Add(btnProgram)
+        cgbStudent.Controls.Add(btnID)
         cgbStudent.Controls.Add(Label6)
         cgbStudent.Controls.Add(tbYear)
         cgbStudent.Controls.Add(tbProgram)
@@ -488,71 +493,59 @@ Partial Class ucProfile
         cgbStudent.Controls.Add(Label1)
         cgbStudent.Controls.Add(tbID)
         cgbStudent.Controls.Add(lblID)
-        cgbStudent.CyberGroupBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom
+        cgbStudent.CornerRadius = 15
+        cgbStudent.FillColor = Color.Transparent
         cgbStudent.ForeColor = Color.Black
-        cgbStudent.Lighting = False
-        cgbStudent.LinearGradient_Background = False
-        cgbStudent.LinearGradientPen = False
-        cgbStudent.Location = New Point(541, 100)
+        cgbStudent.Location = New Point(595, 100)
         cgbStudent.Name = "cgbStudent"
-        cgbStudent.PenWidth = 15
-        cgbStudent.RGB = False
-        cgbStudent.Rounding = True
-        cgbStudent.RoundingInt = 15
-        cgbStudent.Size = New Size(424, 312)
-        cgbStudent.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
+        cgbStudent.Size = New Size(531, 312)
         cgbStudent.TabIndex = 11
-        cgbStudent.Tag = "Cyber"
-        cgbStudent.TextRenderingHint = Drawing.Text.TextRenderingHint.ClearTypeGridFit
-        cgbStudent.Timer_RGB = 300
         ' 
-        ' btnEditStudent
+        ' btnYear
         ' 
-        btnEditStudent.Alpha = 20
-        btnEditStudent.Anchor = AnchorStyles.None
-        btnEditStudent.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditStudent.Background = True
-        btnEditStudent.Background_WidthPen = 4F
-        btnEditStudent.BackgroundPen = True
-        btnEditStudent.ColorBackground = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditStudent.ColorBackground_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        btnEditStudent.ColorBackground_2 = Color.Transparent
-        btnEditStudent.ColorBackground_Pen = Color.Transparent
-        btnEditStudent.ColorLighting = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditStudent.ColorPen_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        btnEditStudent.ColorPen_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
-        btnEditStudent.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom
-        btnEditStudent.Effect_1 = True
-        btnEditStudent.Effect_1_ColorBackground = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditStudent.Effect_1_Transparency = 25
-        btnEditStudent.Effect_2 = True
-        btnEditStudent.Effect_2_ColorBackground = Color.White
-        btnEditStudent.Effect_2_Transparency = 20
-        btnEditStudent.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnEditStudent.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnEditStudent.Lighting = False
-        btnEditStudent.LinearGradient_Background = False
-        btnEditStudent.LinearGradientPen = False
-        btnEditStudent.Location = New Point(125, 240)
-        btnEditStudent.Margin = New Padding(3, 2, 3, 2)
-        btnEditStudent.Name = "btnEditStudent"
-        btnEditStudent.PenWidth = 15
-        btnEditStudent.Rounding = True
-        btnEditStudent.RoundingInt = 70
-        btnEditStudent.Size = New Size(184, 48)
-        btnEditStudent.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
-        btnEditStudent.TabIndex = 14
-        btnEditStudent.Tag = "Cyber"
-        btnEditStudent.TextButton = "EDIT"
-        btnEditStudent.TextRenderingHint = Drawing.Text.TextRenderingHint.ClearTypeGridFit
-        btnEditStudent.Timer_Effect_1 = 5
-        btnEditStudent.Timer_RGB = 300
+        btnYear.Anchor = AnchorStyles.None
+        btnYear.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnYear.FlatStyle = FlatStyle.Flat
+        btnYear.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnYear.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnYear.Location = New Point(441, 158)
+        btnYear.Name = "btnYear"
+        btnYear.Size = New Size(50, 50)
+        btnYear.TabIndex = 14
+        btnYear.UseVisualStyleBackColor = False
+        ' 
+        ' btnProgram
+        ' 
+        btnProgram.Anchor = AnchorStyles.None
+        btnProgram.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnProgram.FlatStyle = FlatStyle.Flat
+        btnProgram.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnProgram.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnProgram.Location = New Point(441, 103)
+        btnProgram.Name = "btnProgram"
+        btnProgram.Size = New Size(50, 50)
+        btnProgram.TabIndex = 14
+        btnProgram.UseVisualStyleBackColor = False
+        ' 
+        ' btnID
+        ' 
+        btnID.Anchor = AnchorStyles.None
+        btnID.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnID.FlatStyle = FlatStyle.Flat
+        btnID.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnID.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnID.Location = New Point(441, 47)
+        btnID.Name = "btnID"
+        btnID.Size = New Size(50, 50)
+        btnID.TabIndex = 14
+        btnID.UseVisualStyleBackColor = False
         ' 
         ' Label6
         ' 
+        Label6.Anchor = AnchorStyles.None
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI", 20F, FontStyle.Bold)
-        Label6.Location = New Point(18, 15)
+        Label6.Location = New Point(71, 15)
         Label6.Margin = New Padding(18, 15, 18, 15)
         Label6.Name = "Label6"
         Label6.Size = New Size(176, 37)
@@ -561,41 +554,38 @@ Partial Class ucProfile
         ' 
         ' tbYear
         ' 
-        tbYear.BackColor = Color.Transparent
+        tbYear.Anchor = AnchorStyles.None
+        tbYear.BackColor = Color.White
+        tbYear.Enabled = False
         tbYear.Font = New Font("Tahoma", 11F)
-        tbYear.ForeColor = Color.DimGray
-        tbYear.Image = Nothing
-        tbYear.Location = New Point(187, 170)
-        tbYear.MaxLength = 32767
-        tbYear.Multiline = False
+        tbYear.ForeColor = Color.Black
+        tbYear.Location = New Point(221, 170)
         tbYear.Name = "tbYear"
         tbYear.ReadOnly = True
-        tbYear.Size = New Size(200, 41)
+        tbYear.Size = New Size(200, 25)
         tbYear.TabIndex = 7
-        tbYear.TextAlignment = HorizontalAlignment.Left
-        tbYear.UseSystemPasswordChar = False
+        tbYear.TabStop = False
         ' 
         ' tbProgram
         ' 
-        tbProgram.BackColor = Color.Transparent
+        tbProgram.Anchor = AnchorStyles.None
+        tbProgram.BackColor = Color.White
+        tbProgram.Enabled = False
         tbProgram.Font = New Font("Tahoma", 11F)
-        tbProgram.ForeColor = Color.DimGray
-        tbProgram.Image = Nothing
-        tbProgram.Location = New Point(187, 116)
-        tbProgram.MaxLength = 32767
-        tbProgram.Multiline = False
+        tbProgram.ForeColor = Color.Black
+        tbProgram.Location = New Point(221, 116)
         tbProgram.Name = "tbProgram"
         tbProgram.ReadOnly = True
-        tbProgram.Size = New Size(200, 41)
+        tbProgram.Size = New Size(200, 25)
         tbProgram.TabIndex = 6
-        tbProgram.TextAlignment = HorizontalAlignment.Left
-        tbProgram.UseSystemPasswordChar = False
+        tbProgram.TabStop = False
         ' 
         ' Label4
         ' 
+        Label4.Anchor = AnchorStyles.None
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(37, 178)
+        Label4.Location = New Point(71, 178)
         Label4.Margin = New Padding(18, 15, 18, 15)
         Label4.Name = "Label4"
         Label4.Size = New Size(105, 25)
@@ -604,9 +594,10 @@ Partial Class ucProfile
         ' 
         ' Label1
         ' 
+        Label1.Anchor = AnchorStyles.None
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(46, 123)
+        Label1.Location = New Point(80, 123)
         Label1.Margin = New Padding(18, 15, 18, 15)
         Label1.Name = "Label1"
         Label1.Size = New Size(96, 25)
@@ -615,35 +606,27 @@ Partial Class ucProfile
         ' 
         ' tbID
         ' 
-        tbID.BackColor = Color.Transparent
+        tbID.Anchor = AnchorStyles.None
+        tbID.BackColor = Color.White
+        tbID.Enabled = False
         tbID.Font = New Font("Tahoma", 11F)
-        tbID.ForeColor = Color.DimGray
-        tbID.Image = Nothing
-        tbID.Location = New Point(187, 59)
-        tbID.MaxLength = 32767
-        tbID.Multiline = False
+        tbID.ForeColor = Color.Black
+        tbID.Location = New Point(221, 59)
         tbID.Name = "tbID"
         tbID.ReadOnly = True
-        tbID.Size = New Size(200, 41)
+        tbID.Size = New Size(200, 25)
         tbID.TabIndex = 5
-        tbID.TextAlignment = HorizontalAlignment.Left
-        tbID.UseSystemPasswordChar = False
+        tbID.TabStop = False
         ' 
         ' cgbAdd
         ' 
-        cgbAdd.Alpha = 20
+        cgbAdd.Anchor = AnchorStyles.None
         cgbAdd.BackColor = Color.Transparent
-        cgbAdd.Background = True
-        cgbAdd.Background_WidthPen = 3F
-        cgbAdd.BackgroundPen = True
-        cgbAdd.ColorBackground = Color.Transparent
-        cgbAdd.ColorBackground_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        cgbAdd.ColorBackground_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
-        cgbAdd.ColorBackground_Pen = Color.FromArgb(CByte(0), CByte(64), CByte(0))
-        cgbAdd.ColorLighting = Color.FromArgb(CByte(29), CByte(200), CByte(238))
-        cgbAdd.ColorPen_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        cgbAdd.ColorPen_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
-        cgbAdd.Controls.Add(btnEditAdd)
+        cgbAdd.Controls.Add(btnRegion)
+        cgbAdd.Controls.Add(btnBar)
+        cgbAdd.Controls.Add(btnCity)
+        cgbAdd.Controls.Add(btnLine2)
+        cgbAdd.Controls.Add(btnLine1)
         cgbAdd.Controls.Add(tbRegion)
         cgbAdd.Controls.Add(tbBar)
         cgbAdd.Controls.Add(tbCity)
@@ -655,119 +638,127 @@ Partial Class ucProfile
         cgbAdd.Controls.Add(tbLine2)
         cgbAdd.Controls.Add(Label11)
         cgbAdd.Controls.Add(lblAddress)
-        cgbAdd.CyberGroupBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom
+        cgbAdd.CornerRadius = 15
+        cgbAdd.FillColor = Color.Transparent
         cgbAdd.ForeColor = Color.Black
-        cgbAdd.Lighting = False
-        cgbAdd.LinearGradient_Background = False
-        cgbAdd.LinearGradientPen = False
-        cgbAdd.Location = New Point(541, 418)
+        cgbAdd.Location = New Point(595, 418)
         cgbAdd.Name = "cgbAdd"
-        cgbAdd.PenWidth = 15
-        cgbAdd.RGB = False
-        cgbAdd.Rounding = True
-        cgbAdd.RoundingInt = 15
-        cgbAdd.Size = New Size(643, 338)
-        cgbAdd.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
+        cgbAdd.Size = New Size(729, 338)
         cgbAdd.TabIndex = 12
-        cgbAdd.Tag = "Cyber"
-        cgbAdd.TextRenderingHint = Drawing.Text.TextRenderingHint.ClearTypeGridFit
-        cgbAdd.Timer_RGB = 300
         ' 
-        ' btnEditAdd
+        ' btnRegion
         ' 
-        btnEditAdd.Alpha = 20
-        btnEditAdd.Anchor = AnchorStyles.None
-        btnEditAdd.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditAdd.Background = True
-        btnEditAdd.Background_WidthPen = 4F
-        btnEditAdd.BackgroundPen = True
-        btnEditAdd.ColorBackground = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditAdd.ColorBackground_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        btnEditAdd.ColorBackground_2 = Color.Transparent
-        btnEditAdd.ColorBackground_Pen = Color.Transparent
-        btnEditAdd.ColorLighting = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditAdd.ColorPen_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        btnEditAdd.ColorPen_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
-        btnEditAdd.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom
-        btnEditAdd.Effect_1 = True
-        btnEditAdd.Effect_1_ColorBackground = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnEditAdd.Effect_1_Transparency = 25
-        btnEditAdd.Effect_2 = True
-        btnEditAdd.Effect_2_ColorBackground = Color.White
-        btnEditAdd.Effect_2_Transparency = 20
-        btnEditAdd.Font = New Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnEditAdd.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnEditAdd.Lighting = False
-        btnEditAdd.LinearGradient_Background = False
-        btnEditAdd.LinearGradientPen = False
-        btnEditAdd.Location = New Point(240, 277)
-        btnEditAdd.Margin = New Padding(3, 2, 3, 2)
-        btnEditAdd.Name = "btnEditAdd"
-        btnEditAdd.PenWidth = 15
-        btnEditAdd.Rounding = True
-        btnEditAdd.RoundingInt = 70
-        btnEditAdd.Size = New Size(184, 48)
-        btnEditAdd.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
-        btnEditAdd.TabIndex = 16
-        btnEditAdd.Tag = "Cyber"
-        btnEditAdd.TextButton = "EDIT"
-        btnEditAdd.TextRenderingHint = Drawing.Text.TextRenderingHint.ClearTypeGridFit
-        btnEditAdd.Timer_Effect_1 = 5
-        btnEditAdd.Timer_RGB = 300
+        btnRegion.Anchor = AnchorStyles.None
+        btnRegion.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnRegion.FlatStyle = FlatStyle.Flat
+        btnRegion.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnRegion.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnRegion.Location = New Point(584, 216)
+        btnRegion.Name = "btnRegion"
+        btnRegion.Size = New Size(50, 50)
+        btnRegion.TabIndex = 14
+        btnRegion.UseVisualStyleBackColor = False
+        ' 
+        ' btnBar
+        ' 
+        btnBar.Anchor = AnchorStyles.None
+        btnBar.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnBar.FlatStyle = FlatStyle.Flat
+        btnBar.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnBar.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnBar.Location = New Point(666, 165)
+        btnBar.Name = "btnBar"
+        btnBar.Size = New Size(50, 50)
+        btnBar.TabIndex = 14
+        btnBar.UseVisualStyleBackColor = False
+        ' 
+        ' btnCity
+        ' 
+        btnCity.Anchor = AnchorStyles.None
+        btnCity.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnCity.FlatStyle = FlatStyle.Flat
+        btnCity.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnCity.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnCity.Location = New Point(253, 165)
+        btnCity.Name = "btnCity"
+        btnCity.Size = New Size(50, 50)
+        btnCity.TabIndex = 14
+        btnCity.UseVisualStyleBackColor = False
+        ' 
+        ' btnLine2
+        ' 
+        btnLine2.Anchor = AnchorStyles.None
+        btnLine2.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnLine2.FlatStyle = FlatStyle.Flat
+        btnLine2.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnLine2.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnLine2.Location = New Point(666, 102)
+        btnLine2.Name = "btnLine2"
+        btnLine2.Size = New Size(50, 50)
+        btnLine2.TabIndex = 14
+        btnLine2.UseVisualStyleBackColor = False
+        ' 
+        ' btnLine1
+        ' 
+        btnLine1.Anchor = AnchorStyles.None
+        btnLine1.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnLine1.FlatStyle = FlatStyle.Flat
+        btnLine1.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnLine1.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnLine1.Location = New Point(666, 41)
+        btnLine1.Name = "btnLine1"
+        btnLine1.Size = New Size(50, 50)
+        btnLine1.TabIndex = 14
+        btnLine1.UseVisualStyleBackColor = False
         ' 
         ' tbRegion
         ' 
-        tbRegion.BackColor = Color.Transparent
+        tbRegion.Anchor = AnchorStyles.None
+        tbRegion.BackColor = Color.White
+        tbRegion.Enabled = False
         tbRegion.Font = New Font("Tahoma", 11F)
-        tbRegion.ForeColor = Color.DimGray
-        tbRegion.Image = Nothing
-        tbRegion.Location = New Point(154, 229)
-        tbRegion.MaxLength = 32767
-        tbRegion.Multiline = False
+        tbRegion.ForeColor = Color.Black
+        tbRegion.Location = New Point(197, 229)
         tbRegion.Name = "tbRegion"
         tbRegion.ReadOnly = True
-        tbRegion.Size = New Size(381, 41)
+        tbRegion.Size = New Size(381, 25)
         tbRegion.TabIndex = 13
-        tbRegion.TextAlignment = HorizontalAlignment.Left
-        tbRegion.UseSystemPasswordChar = False
+        tbRegion.TabStop = False
         ' 
         ' tbBar
         ' 
-        tbBar.BackColor = Color.Transparent
+        tbBar.Anchor = AnchorStyles.None
+        tbBar.BackColor = Color.White
+        tbBar.Enabled = False
         tbBar.Font = New Font("Tahoma", 11F)
-        tbBar.ForeColor = Color.DimGray
-        tbBar.Image = Nothing
-        tbBar.Location = New Point(398, 174)
-        tbBar.MaxLength = 32767
-        tbBar.Multiline = False
+        tbBar.ForeColor = Color.Black
+        tbBar.Location = New Point(441, 174)
         tbBar.Name = "tbBar"
         tbBar.ReadOnly = True
-        tbBar.Size = New Size(219, 41)
+        tbBar.Size = New Size(219, 25)
         tbBar.TabIndex = 11
-        tbBar.TextAlignment = HorizontalAlignment.Left
-        tbBar.UseSystemPasswordChar = False
+        tbBar.TabStop = False
         ' 
         ' tbCity
         ' 
-        tbCity.BackColor = Color.Transparent
+        tbCity.Anchor = AnchorStyles.None
+        tbCity.BackColor = Color.White
+        tbCity.Enabled = False
         tbCity.Font = New Font("Tahoma", 11F)
-        tbCity.ForeColor = Color.DimGray
-        tbCity.Image = Nothing
-        tbCity.Location = New Point(154, 174)
-        tbCity.MaxLength = 32767
-        tbCity.Multiline = False
+        tbCity.ForeColor = Color.Black
+        tbCity.Location = New Point(115, 174)
         tbCity.Name = "tbCity"
         tbCity.ReadOnly = True
-        tbCity.Size = New Size(132, 41)
+        tbCity.Size = New Size(132, 25)
         tbCity.TabIndex = 10
-        tbCity.TextAlignment = HorizontalAlignment.Left
-        tbCity.UseSystemPasswordChar = False
+        tbCity.TabStop = False
         ' 
         ' Label14
         ' 
+        Label14.Anchor = AnchorStyles.None
         Label14.AutoSize = True
         Label14.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label14.Location = New Point(57, 241)
+        Label14.Location = New Point(100, 241)
         Label14.Margin = New Padding(18, 15, 18, 15)
         Label14.Name = "Label14"
         Label14.Size = New Size(80, 25)
@@ -776,9 +767,10 @@ Partial Class ucProfile
         ' 
         ' Label13
         ' 
+        Label13.Anchor = AnchorStyles.None
         Label13.AutoSize = True
         Label13.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label13.Location = New Point(82, 190)
+        Label13.Location = New Point(43, 190)
         Label13.Margin = New Padding(18, 15, 18, 15)
         Label13.Name = "Label13"
         Label13.Size = New Size(51, 25)
@@ -787,9 +779,10 @@ Partial Class ucProfile
         ' 
         ' Label12
         ' 
+        Label12.Anchor = AnchorStyles.None
         Label12.AutoSize = True
         Label12.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        Label12.Location = New Point(63, 127)
+        Label12.Location = New Point(106, 127)
         Label12.Margin = New Padding(18, 45, 18, 15)
         Label12.Name = "Label12"
         Label12.Size = New Size(70, 25)
@@ -798,9 +791,10 @@ Partial Class ucProfile
         ' 
         ' Label10
         ' 
+        Label10.Anchor = AnchorStyles.None
         Label10.AutoSize = True
         Label10.Font = New Font("Segoe UI", 20F, FontStyle.Bold)
-        Label10.Location = New Point(18, 15)
+        Label10.Location = New Point(61, 15)
         Label10.Margin = New Padding(18, 15, 18, 15)
         Label10.Name = "Label10"
         Label10.Size = New Size(120, 37)
@@ -809,46 +803,57 @@ Partial Class ucProfile
         ' 
         ' tbLine1
         ' 
-        tbLine1.BackColor = Color.Transparent
+        tbLine1.Anchor = AnchorStyles.None
+        tbLine1.BackColor = Color.White
+        tbLine1.Enabled = False
         tbLine1.Font = New Font("Tahoma", 11F)
-        tbLine1.ForeColor = Color.DimGray
-        tbLine1.Image = Nothing
-        tbLine1.Location = New Point(154, 53)
-        tbLine1.MaxLength = 32767
-        tbLine1.Multiline = False
+        tbLine1.ForeColor = Color.Black
+        tbLine1.Location = New Point(197, 53)
         tbLine1.Name = "tbLine1"
         tbLine1.ReadOnly = True
-        tbLine1.Size = New Size(463, 41)
+        tbLine1.Size = New Size(463, 25)
         tbLine1.TabIndex = 8
-        tbLine1.TextAlignment = HorizontalAlignment.Left
-        tbLine1.UseSystemPasswordChar = False
+        tbLine1.TabStop = False
         ' 
         ' tbLine2
         ' 
-        tbLine2.BackColor = Color.Transparent
+        tbLine2.Anchor = AnchorStyles.None
+        tbLine2.BackColor = Color.White
+        tbLine2.Enabled = False
         tbLine2.Font = New Font("Tahoma", 11F)
-        tbLine2.ForeColor = Color.DimGray
-        tbLine2.Image = Nothing
-        tbLine2.Location = New Point(154, 111)
-        tbLine2.MaxLength = 32767
-        tbLine2.Multiline = False
+        tbLine2.ForeColor = Color.Black
+        tbLine2.Location = New Point(197, 111)
         tbLine2.Name = "tbLine2"
         tbLine2.ReadOnly = True
-        tbLine2.Size = New Size(463, 41)
+        tbLine2.Size = New Size(463, 25)
         tbLine2.TabIndex = 9
-        tbLine2.TextAlignment = HorizontalAlignment.Left
-        tbLine2.UseSystemPasswordChar = False
+        tbLine2.TabStop = False
         ' 
         ' Label11
         ' 
+        Label11.Anchor = AnchorStyles.None
         Label11.AutoSize = True
         Label11.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label11.Location = New Point(296, 186)
+        Label11.Location = New Point(339, 186)
         Label11.Margin = New Padding(18, 15, 18, 15)
         Label11.Name = "Label11"
         Label11.Size = New Size(101, 25)
         Label11.TabIndex = 9
         Label11.Text = "Barangay:"
+        ' 
+        ' btnSave
+        ' 
+        btnSave.Anchor = AnchorStyles.None
+        btnSave.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnSave.FlatStyle = FlatStyle.Flat
+        btnSave.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnSave.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnSave.Location = New Point(1242, 825)
+        btnSave.Name = "btnSave"
+        btnSave.Size = New Size(174, 50)
+        btnSave.TabIndex = 13
+        btnSave.Text = "SAVE CHANGES"
+        btnSave.UseVisualStyleBackColor = False
         ' 
         ' ucProfile
         ' 
@@ -856,13 +861,14 @@ Partial Class ucProfile
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         BackColor = Color.White
+        Controls.Add(btnSave)
         Controls.Add(cgbAdd)
         Controls.Add(cgbStudent)
         Controls.Add(cgbPass)
         Controls.Add(cgbUser)
         Controls.Add(Panel1)
         Name = "ucProfile"
-        Size = New Size(1245, 777)
+        Size = New Size(1728, 1005)
         Panel1.ResumeLayout(False)
         cgbUser.ResumeLayout(False)
         cgbUser.PerformLayout()
@@ -880,41 +886,55 @@ Partial Class ucProfile
     Friend WithEvents lblID As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lblName As Label
-    Friend WithEvents cgbUser As ReaLTaiizor.Controls.CyberGroupBox
-    Friend WithEvents tbFN As ReaLTaiizor.Controls.BigTextBox
-    Friend WithEvents tbUsername As ReaLTaiizor.Controls.BigTextBox
-    Friend WithEvents cgbPass As ReaLTaiizor.Controls.CyberGroupBox
+    Friend WithEvents cgbUser As RoundedPanel
+    Friend WithEvents tbFN As System.Windows.Forms.TextBox
+    Friend WithEvents tbUsername As System.Windows.Forms.TextBox
+    Friend WithEvents cgbPass As RoundedPanel
     Friend WithEvents Label2 As Label
-    Friend WithEvents tbNewPass As ReaLTaiizor.Controls.BigTextBox
-    Friend WithEvents tbOldPass As ReaLTaiizor.Controls.BigTextBox
+    Friend WithEvents tbNewPass As System.Windows.Forms.TextBox
+    Friend WithEvents tbOldPass As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents cgbStudent As ReaLTaiizor.Controls.CyberGroupBox
-    Friend WithEvents tbID As ReaLTaiizor.Controls.BigTextBox
+    Friend WithEvents cgbStudent As RoundedPanel
+    Friend WithEvents tbID As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents tbYear As ReaLTaiizor.Controls.BigTextBox
-    Friend WithEvents tbProgram As ReaLTaiizor.Controls.BigTextBox
+    Friend WithEvents tbYear As System.Windows.Forms.TextBox
+    Friend WithEvents tbProgram As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents tbMN As ReaLTaiizor.Controls.BigTextBox
+    Friend WithEvents tbMN As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents tbLN As ReaLTaiizor.Controls.BigTextBox
+    Friend WithEvents tbLN As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents cgbAdd As ReaLTaiizor.Controls.CyberGroupBox
+    Friend WithEvents cgbAdd As RoundedPanel
     Friend WithEvents Label14 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents tbLine1 As ReaLTaiizor.Controls.BigTextBox
-    Friend WithEvents tbLine2 As ReaLTaiizor.Controls.BigTextBox
+    Friend WithEvents tbLine1 As System.Windows.Forms.TextBox
+    Friend WithEvents tbLine2 As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents tbRegion As ReaLTaiizor.Controls.BigTextBox
-    Friend WithEvents tbBar As ReaLTaiizor.Controls.BigTextBox
-    Friend WithEvents tbCity As ReaLTaiizor.Controls.BigTextBox
-    Friend WithEvents btnEditUser As ReaLTaiizor.Controls.CyberButton
-    Friend WithEvents btnEditPass As ReaLTaiizor.Controls.CyberButton
-    Friend WithEvents btnEditStudent As ReaLTaiizor.Controls.CyberButton
-    Friend WithEvents btnEditAdd As ReaLTaiizor.Controls.CyberButton
+    Friend WithEvents tbRegion As System.Windows.Forms.TextBox
+    Friend WithEvents tbBar As System.Windows.Forms.TextBox
+    Friend WithEvents tbCity As System.Windows.Forms.TextBox
+    Friend WithEvents tbCfmPass As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents btnSave As RoundedButton
+    Friend WithEvents btnLN As RoundedButton
+    Friend WithEvents btnMN As RoundedButton
+    Friend WithEvents btnFN As RoundedButton
+    Friend WithEvents btnUsername As RoundedButton
+    Friend WithEvents btnOldPass As RoundedButton
+    Friend WithEvents btnYear As RoundedButton
+    Friend WithEvents btnProgram As RoundedButton
+    Friend WithEvents btnID As RoundedButton
+    Friend WithEvents btnCfmPass As RoundedButton
+    Friend WithEvents btnNewPass As RoundedButton
+    Friend WithEvents btnRegion As RoundedButton
+    Friend WithEvents btnBar As RoundedButton
+    Friend WithEvents btnCity As RoundedButton
+    Friend WithEvents btnLine2 As RoundedButton
+    Friend WithEvents btnLine1 As RoundedButton
 
 End Class
