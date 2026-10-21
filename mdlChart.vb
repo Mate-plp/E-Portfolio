@@ -9,11 +9,11 @@ Module mdlChart
 
     Dim skillList As New Dictionary(Of (skillName As String, year As String), (tCount As Int32, vCount As Int32))()
 
-    Dim totalEntries As New Dictionary(Of String, (tCount As Int32, vCount As Int32))()
+    Dim totalEntries As New Dictionary(Of (year As String, month As String), (tCount As Int32, vCount As Int32))()
 
     Sub populateRange(ByVal cb As ComboBox)
         For Each i In totalEntries
-            cb.Items.Add(i.Key)
+            cb.Items.Add(i.Key.year)
         Next
     End Sub
     Sub getUserStats()
@@ -27,7 +27,7 @@ Module mdlChart
                 Dim skillQuery = "Select skill_name, total_count, verified_count, entry_year " &
                     "From vSkillsTotal Where student_id = @s"
 
-                Dim entryQuery = "Select total_entries, verified_entries, month,entries_year " &
+                Dim entryQuery = "Select total_entries, verified_entries, entries_month,entries_year " &
                     "From vYearlyEntries WHERE student_id = @s"
 
                 Using cmd As New MySqlCommand(skillQuery, con)
@@ -51,8 +51,9 @@ Module mdlChart
                             Dim totalEntry As Integer = Convert.ToInt32(reader("total_entries"))
                             Dim verifiedEntry As Integer = Convert.ToInt32(reader("verified_entries"))
                             Dim year As String = reader("entries_year").ToString()
+                            Dim month As String = reader("entries_month").ToString()
 
-                            totalEntries.Add(year, (totalEntry, verifiedEntry))
+                            totalEntries.Add((year, month), (totalEntry, verifiedEntry))
                         End While
                     End Using
                 End Using
@@ -72,9 +73,10 @@ Module mdlChart
         chart.ChartAreas(0).AxisY.Interval = 1
 
         Dim targetYear As String = range
+        Dim monthNames As String() = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
 
         Dim activeSeries As New Series(selectView) With {
-            .ChartType = SeriesChartType.StackedBar,
+            .ChartType = SeriesChartType.StackedColumn,
             .IsXValueIndexed = True}
 
 
@@ -142,15 +144,26 @@ Module mdlChart
                 activeSeries.Color = Color.Blue
 
                 If targetYear = "All" Then
-                    Dim totalSum As Integer = totalEntries.Values.Sum(Function(v) v.tCount)
-                    Dim verifiedSum As Integer = totalEntries.Values.Sum(Function(v) v.vCount)
 
-                    activeSeries.Points.AddXY("Total", totalSum)
-                    activeSeries.Points.AddXY("Verified", verifiedSum)
+                    For m As Integer = 1 To 12
+                        Dim monthKey As String = m.ToString()
+                        Dim monthTotal As Integer = totalEntries _
+                            .Where(Function(i) i.Key.month = monthKey) _
+                            .Sum(Function(i) i.Value.tCount)
+
+                        activeSeries.Points.AddXY(monthNames(m - 1), monthTotal)
+                    Next
                 Else
-                    For Each item In totalEntries.Where(Function(i) i.Key = targetYear)
-                        activeSeries.Points.AddXY("Total", item.Value.tCount)
-                        activeSeries.Points.AddXY("Verified", item.Value.vCount)
+
+                    For m As Integer = 1 To 12
+                        Dim monthKey As String = m.ToString()
+                        Dim count As Integer = 0
+
+                        If totalEntries.ContainsKey((targetYear, monthKey)) Then
+                            count = totalEntries((targetYear, monthKey)).tCount
+                        End If
+
+                        activeSeries.Points.AddXY(monthNames(m - 1), count)
                     Next
                 End If
 
