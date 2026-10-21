@@ -2,10 +2,10 @@
 Imports System.Text.RegularExpressions
 
 Public Class Register
-    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
-        Dim LoginForm As New Login()
-        LoginForm.Show()
-        Me.Close()
+    Private Sub btnBack_Click(sender As Object, e As EventArgs)
+        Dim LoginForm As New Login
+        LoginForm.Show
+        Close
     End Sub
 
     Private Function GetPasswordStrength(pw As String) As Integer
@@ -44,13 +44,13 @@ Public Class Register
         End Select
     End Sub
 
-    Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
-        Dim firstName As String = txtFirstName.Text.Trim()
-        Dim middleName As String = txtMiddleName.Text.Trim()
-        Dim lastName As String = txtLastName.Text.Trim()
-        Dim studentId As String = txtStudentId.Text.Trim()
-        Dim username As String = txtUsername.Text.Trim()
-        Dim password As String = txtPassword.Text
+    Private Sub btnRegister_Click(sender As Object, e As EventArgs)
+        Dim firstName = txtFirstName.Text.Trim
+        Dim middleName = txtMiddleName.Text.Trim
+        Dim lastName = txtLastName.Text.Trim
+        Dim studentId = txtStudentId.Text.Trim
+        Dim username = txtUsername.Text.Trim
+        Dim password = txtPassword.Text
 
         If firstName = "" OrElse lastName = "" OrElse studentId = "" OrElse
        username = "" OrElse password = "" Then
@@ -65,39 +65,39 @@ Public Class Register
 
         If username.Length > 25 Then
             ShowToast(Me, "Username can be at most 25 characters.")
-            txtUsername.Focus()
+            txtUsername.Focus
             Return
         End If
 
         If password.Length > 50 Then
             ShowToast(Me, "Password can be at most 50 characters.")
-            txtPassword.Focus()
+            txtPassword.Focus
             Return
         End If
 
         If Not Regex.IsMatch(studentId, "^\d{2}-\d{5}$") Then
             ShowToast(Me, "Student ID example: 25-00123.")
-            txtStudentId.Focus()
+            txtStudentId.Focus
             Return
         End If
 
         If GetPasswordStrength(password) < 2 Then
             ShowToast(Me, "Password is too weak.")
-            txtPassword.Focus()
+            txtPassword.Focus
             Return
         End If
 
         If password <> txtConfirm.Text Then
             ShowToast(Me, "Passwords do not match.")
-            txtConfirm.Focus()
+            txtConfirm.Focus
             Return
         End If
 
         Try
             Using con As New MySqlConnection(conString)
-                con.Open()
+                con.Open
 
-                Dim checkSql As String =
+                Dim checkSql =
                 "SELECT (SELECT COUNT(*) FROM users WHERE username = @u), " &
                 "(SELECT COUNT(*) FROM student WHERE student_id = @sid)"
 
@@ -105,8 +105,8 @@ Public Class Register
                     checkCmd.Parameters.AddWithValue("@u", username)
                     checkCmd.Parameters.AddWithValue("@sid", studentId)
 
-                    Using r As MySqlDataReader = checkCmd.ExecuteReader()
-                        r.Read()
+                    Using r = checkCmd.ExecuteReader
+                        r.Read
                         If Convert.ToInt32(r(0)) > 0 Then
                             ShowToast(Me, "That username is already taken.")
                             Return
@@ -118,9 +118,9 @@ Public Class Register
                     End Using
                 End Using
 
-                Using tx As MySqlTransaction = con.BeginTransaction()
+                Using tx = con.BeginTransaction
                     Try
-                        Dim userSql As String =
+                        Dim userSql =
                         "INSERT INTO users (username, password, account_type, first_name, middle_name, last_name) " &
                         "VALUES (@u, @p, 'Student', @fn, @mn, @ln)"
 
@@ -128,21 +128,21 @@ Public Class Register
                             cmd.Parameters.AddWithValue("@u", username)
                             cmd.Parameters.AddWithValue("@p", password)
                             cmd.Parameters.AddWithValue("@fn", firstName)
-                            cmd.Parameters.AddWithValue("@mn", If(middleName = "", CObj(DBNull.Value), middleName))
+                            cmd.Parameters.AddWithValue("@mn", If(middleName = "", DBNull.Value, middleName))
                             cmd.Parameters.AddWithValue("@ln", lastName)
-                            cmd.ExecuteNonQuery()
+                            cmd.ExecuteNonQuery
                         End Using
 
                         Using cmd As New MySqlCommand(
                         "INSERT INTO student (student_id, username) VALUES (@sid, @u)", con, tx)
                             cmd.Parameters.AddWithValue("@sid", studentId)
                             cmd.Parameters.AddWithValue("@u", username)
-                            cmd.ExecuteNonQuery()
+                            cmd.ExecuteNonQuery
                         End Using
 
-                        tx.Commit()
+                        tx.Commit
                     Catch
-                        tx.Rollback()
+                        tx.Rollback
                         Throw
                     End Try
                 End Using
@@ -151,9 +151,9 @@ Public Class Register
             MessageBox.Show("Registration Successful! You can now log in.", "Success",
                         MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            Dim LoginForm As New Login()
-            LoginForm.Show()
-            Me.Close()
+            Dim LoginForm As New Login
+            LoginForm.Show
+            Close
 
         Catch ex As Exception
             ShowToast(Me, "Database error: " & ex.Message)
@@ -167,5 +167,13 @@ Public Class Register
     Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
         txtPassword.UseSystemPasswordChar = Not chkShowPassword.Checked
         txtConfirm.UseSystemPasswordChar = Not chkShowPassword.Checked
+    End Sub
+
+    Private Sub lblTitle_Click(sender As Object, e As EventArgs) Handles lblTitle.Click
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
     End Sub
 End Class
