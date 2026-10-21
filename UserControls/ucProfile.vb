@@ -20,7 +20,7 @@ Public Class ucProfile
         Dim sql As String =
         "SELECT u.username, u.first_name, u.middle_name, u.last_name, " &
         "       s.student_id, s.program, s.year_level, " &
-        "       a.address_line_1, a.address_line_2, a.barangay, a.city, a.region, a.zip_code " &
+        "       a.address_line_1, a.address_line_2, a.barangay, a.city, a.region " &
         "FROM student s " &
         "INNER JOIN users u ON u.username = s.username " &
         "LEFT JOIN address a ON a.address_id = u.address_id " &
@@ -53,7 +53,6 @@ Public Class ucProfile
                         tbBar.Text = Txt(r, "barangay")
                         tbCity.Text = Txt(r, "city")
                         tbRegion.Text = Txt(r, "region")
-                        tbZip.Text = Txt(r, "zip_code")
                     End Using
                 End Using
             End Using
@@ -124,10 +123,6 @@ Public Class ucProfile
         editInfo(tbCity)
     End Sub
 
-    Private Sub btnZip_Click(sender As Object, e As EventArgs) Handles btnZip.Click
-        editInfo(tbZip)
-    End Sub
-
     Private Sub btnBar_Click(sender As Object, e As EventArgs) Handles btnBar.Click
         editInfo(tbBar)
     End Sub
@@ -137,7 +132,7 @@ Public Class ucProfile
     End Sub
     Private Sub LockAll()
         For Each tb As TextBox In {tbUsername, tbFN, tbMN, tbLN, tbID, tbProgram, tbYear,
-                               tbLine1, tbLine2, tbBar, tbCity, tbRegion, tbZip,
+                               tbLine1, tbLine2, tbBar, tbCity, tbRegion,
                                tbOldPass, tbNewPass, tbCfmPass}
             tb.Enabled = False
             tb.BackColor = Color.WhiteSmoke
@@ -168,7 +163,6 @@ Public Class ucProfile
         Dim barangay As String = tbBar.Text.Trim()
         Dim city As String = tbCity.Text.Trim()
         Dim region As String = tbRegion.Text.Trim()
-        Dim zip As String = tbZip.Text.Trim()
         Dim oldPass As String = tbOldPass.Text
         Dim newPass As String = tbNewPass.Text
 
@@ -212,14 +206,10 @@ Public Class ucProfile
 
         ' Address
         Dim hasAddress As Boolean = (line1 <> "" OrElse line2 <> "" OrElse barangay <> "" OrElse
-                                 city <> "" OrElse region <> "" OrElse zip <> "")
+                                 city <> "" OrElse region <> "")
         If hasAddress Then
-            If line1 = "" OrElse barangay = "" OrElse city = "" OrElse region = "" OrElse zip = "" Then
-                Notify("Address line 1, barangay, city, region, and ZIP code are required.")
-                Return
-            End If
-            If zip.Length <> 4 OrElse Not zip.All(Function(c) Char.IsDigit(c)) Then
-                Notify("ZIP code must be exactly 4 digits.")
+            If line1 = "" OrElse barangay = "" OrElse city = "" OrElse region = "" Then
+                Notify("Address line 1, barangay, city, and region are required.")
                 Return
             End If
             If line1.Length > 150 OrElse line2.Length > 150 OrElse barangay.Length > 50 OrElse
@@ -306,14 +296,13 @@ Public Class ucProfile
                         If addressId Is DBNull.Value Then
                             Dim newId As Long
                             Using cmd As New MySqlCommand(
-                            "INSERT INTO address (address_line_1, address_line_2, barangay, city, region, zip_code) " &
-                            "VALUES (@l1, @l2, @bar, @city, @reg, @zip)", con, tx)
+                            "INSERT INTO address (address_line_1, address_line_2, barangay, city, region) " &
+                            "VALUES (@l1, @l2, @bar, @city, @reg)", con, tx)
                                 cmd.Parameters.AddWithValue("@l1", line1)
                                 cmd.Parameters.AddWithValue("@l2", NullIfEmpty(line2))
                                 cmd.Parameters.AddWithValue("@bar", barangay)
                                 cmd.Parameters.AddWithValue("@city", city)
                                 cmd.Parameters.AddWithValue("@reg", region)
-                                cmd.Parameters.AddWithValue("@zip", zip)
                                 cmd.ExecuteNonQuery()
                                 newId = cmd.LastInsertedId
                             End Using
@@ -327,13 +316,12 @@ Public Class ucProfile
                         Else
                             Using cmd As New MySqlCommand(
                             "UPDATE address SET address_line_1 = @l1, address_line_2 = @l2, barangay = @bar, " &
-                            "city = @city, region = @reg, zip_code = @zip WHERE address_id = @aid", con, tx)
+                            "city = @city, region = @reg WHERE address_id = @aid", con, tx)
                                 cmd.Parameters.AddWithValue("@l1", line1)
                                 cmd.Parameters.AddWithValue("@l2", NullIfEmpty(line2))
                                 cmd.Parameters.AddWithValue("@bar", barangay)
                                 cmd.Parameters.AddWithValue("@city", city)
                                 cmd.Parameters.AddWithValue("@reg", region)
-                                cmd.Parameters.AddWithValue("@zip", zip)
                                 cmd.Parameters.AddWithValue("@aid", addressId)
                                 cmd.ExecuteNonQuery()
                             End Using

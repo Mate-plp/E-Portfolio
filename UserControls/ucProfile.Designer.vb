@@ -61,9 +61,6 @@ Partial Class ucProfile
         Label1 = New Label()
         tbID = New TextBox()
         cgbAdd = New RoundedPanel()
-        btnZip = New RoundedButton()
-        tbZip = New TextBox()
-        Label16 = New Label()
         btnRegion = New RoundedButton()
         btnBar = New RoundedButton()
         btnCity = New RoundedButton()
@@ -611,9 +608,6 @@ Partial Class ucProfile
         ' 
         cgbAdd.Anchor = AnchorStyles.None
         cgbAdd.BackColor = Color.Transparent
-        cgbAdd.Controls.Add(btnZip)
-        cgbAdd.Controls.Add(tbZip)
-        cgbAdd.Controls.Add(Label16)
         cgbAdd.Controls.Add(btnRegion)
         cgbAdd.Controls.Add(btnBar)
         cgbAdd.Controls.Add(btnCity)
@@ -637,45 +631,6 @@ Partial Class ucProfile
         cgbAdd.Name = "cgbAdd"
         cgbAdd.Size = New Size(729, 338)
         cgbAdd.TabIndex = 12
-        ' 
-        ' btnZip
-        ' 
-        btnZip.Anchor = AnchorStyles.None
-        btnZip.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnZip.FlatStyle = FlatStyle.Flat
-        btnZip.Font = New Font("Arial", 11F, FontStyle.Bold)
-        btnZip.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnZip.Location = New Point(335, 225)
-        btnZip.Name = "btnZip"
-        btnZip.Size = New Size(50, 50)
-        btnZip.TabIndex = 17
-        btnZip.UseVisualStyleBackColor = False
-        ' 
-        ' tbZip
-        ' 
-        tbZip.Anchor = AnchorStyles.None
-        tbZip.BackColor = Color.White
-        tbZip.Enabled = False
-        tbZip.Font = New Font("Tahoma", 11F)
-        tbZip.ForeColor = Color.Black
-        tbZip.Location = New Point(197, 234)
-        tbZip.Name = "tbZip"
-        tbZip.ReadOnly = True
-        tbZip.Size = New Size(132, 25)
-        tbZip.TabIndex = 16
-        tbZip.TabStop = False
-        ' 
-        ' Label16
-        ' 
-        Label16.Anchor = AnchorStyles.None
-        Label16.AutoSize = True
-        Label16.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label16.Location = New Point(83, 232)
-        Label16.Margin = New Padding(18, 15, 18, 15)
-        Label16.Name = "Label16"
-        Label16.Size = New Size(98, 25)
-        Label16.TabIndex = 18
-        Label16.Text = "ZIP Code:"
         ' 
         ' btnRegion
         ' 
@@ -982,8 +937,5 @@ Partial Class ucProfile
     Friend WithEvents btnLine2 As RoundedButton
     Friend WithEvents btnLine1 As RoundedButton
     Friend WithEvents btnDiscard As RoundedButton
-    Friend WithEvents btnZip As RoundedButton
-    Friend WithEvents tbZip As TextBox
-    Friend WithEvents Label16 As Label
 
 End Class
