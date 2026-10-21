@@ -54,7 +54,6 @@ Partial Class ucProfile
         cgbStudent = New RoundedPanel()
         btnYear = New RoundedButton()
         btnProgram = New RoundedButton()
-        btnID = New RoundedButton()
         Label6 = New Label()
         tbYear = New TextBox()
         tbProgram = New TextBox()
@@ -62,6 +61,9 @@ Partial Class ucProfile
         Label1 = New Label()
         tbID = New TextBox()
         cgbAdd = New RoundedPanel()
+        btnZip = New RoundedButton()
+        tbZip = New TextBox()
+        Label16 = New Label()
         btnRegion = New RoundedButton()
         btnBar = New RoundedButton()
         btnCity = New RoundedButton()
@@ -78,6 +80,7 @@ Partial Class ucProfile
         tbLine2 = New TextBox()
         Label11 = New Label()
         btnSave = New RoundedButton()
+        btnDiscard = New RoundedButton()
         Panel1.SuspendLayout()
         cgbUser.SuspendLayout()
         cgbPass.SuspendLayout()
@@ -155,7 +158,7 @@ Partial Class ucProfile
         lblName.Padding = New Padding(50, 5, 5, 5)
         lblName.Size = New Size(1728, 95)
         lblName.TabIndex = 3
-        lblName.Text = "Mr. Mendoza Dale TEST 3 1 2 wasdadasdasd"
+        lblName.Text = "PROFILE"
         lblName.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' cgbUser
@@ -485,7 +488,6 @@ Partial Class ucProfile
         cgbStudent.BackColor = Color.Transparent
         cgbStudent.Controls.Add(btnYear)
         cgbStudent.Controls.Add(btnProgram)
-        cgbStudent.Controls.Add(btnID)
         cgbStudent.Controls.Add(Label6)
         cgbStudent.Controls.Add(tbYear)
         cgbStudent.Controls.Add(tbProgram)
@@ -526,19 +528,6 @@ Partial Class ucProfile
         btnProgram.Size = New Size(50, 50)
         btnProgram.TabIndex = 14
         btnProgram.UseVisualStyleBackColor = False
-        ' 
-        ' btnID
-        ' 
-        btnID.Anchor = AnchorStyles.None
-        btnID.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnID.FlatStyle = FlatStyle.Flat
-        btnID.Font = New Font("Arial", 11F, FontStyle.Bold)
-        btnID.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnID.Location = New Point(441, 47)
-        btnID.Name = "btnID"
-        btnID.Size = New Size(50, 50)
-        btnID.TabIndex = 14
-        btnID.UseVisualStyleBackColor = False
         ' 
         ' Label6
         ' 
@@ -622,6 +611,9 @@ Partial Class ucProfile
         ' 
         cgbAdd.Anchor = AnchorStyles.None
         cgbAdd.BackColor = Color.Transparent
+        cgbAdd.Controls.Add(btnZip)
+        cgbAdd.Controls.Add(tbZip)
+        cgbAdd.Controls.Add(Label16)
         cgbAdd.Controls.Add(btnRegion)
         cgbAdd.Controls.Add(btnBar)
         cgbAdd.Controls.Add(btnCity)
@@ -646,6 +638,45 @@ Partial Class ucProfile
         cgbAdd.Size = New Size(729, 338)
         cgbAdd.TabIndex = 12
         ' 
+        ' btnZip
+        ' 
+        btnZip.Anchor = AnchorStyles.None
+        btnZip.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnZip.FlatStyle = FlatStyle.Flat
+        btnZip.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnZip.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnZip.Location = New Point(335, 225)
+        btnZip.Name = "btnZip"
+        btnZip.Size = New Size(50, 50)
+        btnZip.TabIndex = 17
+        btnZip.UseVisualStyleBackColor = False
+        ' 
+        ' tbZip
+        ' 
+        tbZip.Anchor = AnchorStyles.None
+        tbZip.BackColor = Color.White
+        tbZip.Enabled = False
+        tbZip.Font = New Font("Tahoma", 11F)
+        tbZip.ForeColor = Color.Black
+        tbZip.Location = New Point(197, 234)
+        tbZip.Name = "tbZip"
+        tbZip.ReadOnly = True
+        tbZip.Size = New Size(132, 25)
+        tbZip.TabIndex = 16
+        tbZip.TabStop = False
+        ' 
+        ' Label16
+        ' 
+        Label16.Anchor = AnchorStyles.None
+        Label16.AutoSize = True
+        Label16.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label16.Location = New Point(83, 232)
+        Label16.Margin = New Padding(18, 15, 18, 15)
+        Label16.Name = "Label16"
+        Label16.Size = New Size(98, 25)
+        Label16.TabIndex = 18
+        Label16.Text = "ZIP Code:"
+        ' 
         ' btnRegion
         ' 
         btnRegion.Anchor = AnchorStyles.None
@@ -653,7 +684,7 @@ Partial Class ucProfile
         btnRegion.FlatStyle = FlatStyle.Flat
         btnRegion.Font = New Font("Arial", 11F, FontStyle.Bold)
         btnRegion.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnRegion.Location = New Point(584, 216)
+        btnRegion.Location = New Point(584, 268)
         btnRegion.Name = "btnRegion"
         btnRegion.Size = New Size(50, 50)
         btnRegion.TabIndex = 14
@@ -718,7 +749,7 @@ Partial Class ucProfile
         tbRegion.Enabled = False
         tbRegion.Font = New Font("Tahoma", 11F)
         tbRegion.ForeColor = Color.Black
-        tbRegion.Location = New Point(197, 229)
+        tbRegion.Location = New Point(197, 281)
         tbRegion.Name = "tbRegion"
         tbRegion.ReadOnly = True
         tbRegion.Size = New Size(381, 25)
@@ -758,7 +789,7 @@ Partial Class ucProfile
         Label14.Anchor = AnchorStyles.None
         Label14.AutoSize = True
         Label14.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label14.Location = New Point(100, 241)
+        Label14.Location = New Point(100, 293)
         Label14.Margin = New Padding(18, 15, 18, 15)
         Label14.Name = "Label14"
         Label14.Size = New Size(80, 25)
@@ -855,12 +886,27 @@ Partial Class ucProfile
         btnSave.Text = "SAVE CHANGES"
         btnSave.UseVisualStyleBackColor = False
         ' 
+        ' btnDiscard
+        ' 
+        btnDiscard.Anchor = AnchorStyles.None
+        btnDiscard.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnDiscard.FlatStyle = FlatStyle.Flat
+        btnDiscard.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnDiscard.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnDiscard.Location = New Point(1036, 825)
+        btnDiscard.Name = "btnDiscard"
+        btnDiscard.Size = New Size(174, 50)
+        btnDiscard.TabIndex = 14
+        btnDiscard.Text = "DISCARD CHANGES"
+        btnDiscard.UseVisualStyleBackColor = False
+        ' 
         ' ucProfile
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         BackColor = Color.White
+        Controls.Add(btnDiscard)
         Controls.Add(btnSave)
         Controls.Add(cgbAdd)
         Controls.Add(cgbStudent)
@@ -928,7 +974,6 @@ Partial Class ucProfile
     Friend WithEvents btnOldPass As RoundedButton
     Friend WithEvents btnYear As RoundedButton
     Friend WithEvents btnProgram As RoundedButton
-    Friend WithEvents btnID As RoundedButton
     Friend WithEvents btnCfmPass As RoundedButton
     Friend WithEvents btnNewPass As RoundedButton
     Friend WithEvents btnRegion As RoundedButton
@@ -936,5 +981,9 @@ Partial Class ucProfile
     Friend WithEvents btnCity As RoundedButton
     Friend WithEvents btnLine2 As RoundedButton
     Friend WithEvents btnLine1 As RoundedButton
+    Friend WithEvents btnDiscard As RoundedButton
+    Friend WithEvents btnZip As RoundedButton
+    Friend WithEvents tbZip As TextBox
+    Friend WithEvents Label16 As Label
 
 End Class
