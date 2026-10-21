@@ -32,6 +32,7 @@ Partial Class Dashboard
         btnLogout = New Button()
         btnProfile = New Button()
         btnDashboard = New Button()
+        SpaceSeparatorVertical1 = New ReaLTaiizor.Controls.SpaceSeparatorVertical()
         pnlHeader = New Panel()
         PnlHead = New Panel()
         picLogo = New PictureBox()
@@ -49,33 +50,38 @@ Partial Class Dashboard
         pnlSidebar.AutoScroll = True
         pnlSidebar.BackColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
         pnlSidebar.BackgroundImage = CType(resources.GetObject("pnlSidebar.BackgroundImage"), Image)
-        pnlSidebar.BackgroundImageLayout = ImageLayout.Zoom
+        pnlSidebar.BackgroundImageLayout = ImageLayout.Stretch
         pnlSidebar.Controls.Add(btnGrades)
         pnlSidebar.Controls.Add(pnlPortfolio)
         pnlSidebar.Controls.Add(btnLogout)
         pnlSidebar.Controls.Add(btnProfile)
         pnlSidebar.Controls.Add(btnDashboard)
+        pnlSidebar.Controls.Add(SpaceSeparatorVertical1)
         pnlSidebar.Dock = DockStyle.Left
         pnlSidebar.Location = New Point(0, 75)
         pnlSidebar.Name = "pnlSidebar"
         pnlSidebar.Padding = New Padding(0, 0, 0, 161)
-        pnlSidebar.Size = New Size(192, 1005)
+        pnlSidebar.Size = New Size(192, 806)
         pnlSidebar.TabIndex = 0
         ' 
         ' btnGrades
         ' 
         btnGrades.BackColor = Color.Transparent
+        btnGrades.BackgroundImageLayout = ImageLayout.None
         btnGrades.Dock = DockStyle.Top
         btnGrades.FlatAppearance.BorderSize = 0
+        btnGrades.FlatAppearance.MouseDownBackColor = Color.Transparent
+        btnGrades.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnGrades.FlatStyle = FlatStyle.Flat
+        btnGrades.Font = New Font("Verdana", 18.0F, FontStyle.Bold)
         btnGrades.ForeColor = Color.White
-        btnGrades.Location = New Point(0, 150)
+        btnGrades.Location = New Point(0, 160)
         btnGrades.Name = "btnGrades"
         btnGrades.Size = New Size(192, 50)
         btnGrades.TabIndex = 6
         btnGrades.Text = "Grades"
         btnGrades.TextAlign = ContentAlignment.MiddleLeft
-        btnGrades.UseVisualStyleBackColor = False
+        btnGrades.UseVisualStyleBackColor = True
         ' 
         ' pnlPortfolio
         ' 
@@ -84,7 +90,7 @@ Partial Class Dashboard
         pnlPortfolio.Controls.Add(btnSubmit)
         pnlPortfolio.Controls.Add(btnPortfolio)
         pnlPortfolio.Dock = DockStyle.Top
-        pnlPortfolio.Location = New Point(0, 100)
+        pnlPortfolio.Location = New Point(0, 110)
         pnlPortfolio.Name = "pnlPortfolio"
         pnlPortfolio.Size = New Size(192, 50)
         pnlPortfolio.TabIndex = 5
@@ -93,7 +99,10 @@ Partial Class Dashboard
         ' 
         btnView.Dock = DockStyle.Top
         btnView.FlatAppearance.BorderSize = 0
+        btnView.FlatAppearance.MouseDownBackColor = Color.Transparent
+        btnView.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnView.FlatStyle = FlatStyle.Flat
+        btnView.Font = New Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnView.ForeColor = Color.Black
         btnView.Location = New Point(0, 90)
         btnView.Name = "btnView"
@@ -107,7 +116,10 @@ Partial Class Dashboard
         ' 
         btnSubmit.Dock = DockStyle.Top
         btnSubmit.FlatAppearance.BorderSize = 0
+        btnSubmit.FlatAppearance.MouseDownBackColor = Color.Transparent
+        btnSubmit.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnSubmit.FlatStyle = FlatStyle.Flat
+        btnSubmit.Font = New Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnSubmit.ForeColor = Color.Black
         btnSubmit.Location = New Point(0, 50)
         btnSubmit.Name = "btnSubmit"
@@ -120,9 +132,13 @@ Partial Class Dashboard
         ' btnPortfolio
         ' 
         btnPortfolio.BackColor = Color.Transparent
+        btnPortfolio.BackgroundImageLayout = ImageLayout.None
         btnPortfolio.Dock = DockStyle.Top
         btnPortfolio.FlatAppearance.BorderSize = 0
+        btnPortfolio.FlatAppearance.MouseDownBackColor = Color.Transparent
+        btnPortfolio.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnPortfolio.FlatStyle = FlatStyle.Flat
+        btnPortfolio.Font = New Font("Verdana", 18.0F, FontStyle.Bold)
         btnPortfolio.ForeColor = Color.White
         btnPortfolio.Location = New Point(0, 0)
         btnPortfolio.Name = "btnPortfolio"
@@ -137,9 +153,12 @@ Partial Class Dashboard
         btnLogout.BackColor = Color.Transparent
         btnLogout.Dock = DockStyle.Bottom
         btnLogout.FlatAppearance.BorderSize = 0
+        btnLogout.FlatAppearance.MouseDownBackColor = Color.Transparent
+        btnLogout.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnLogout.FlatStyle = FlatStyle.Flat
+        btnLogout.Font = New Font("Verdana", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnLogout.ForeColor = Color.White
-        btnLogout.Location = New Point(0, 794)
+        btnLogout.Location = New Point(0, 595)
         btnLogout.Margin = New Padding(4, 8, 9, 8)
         btnLogout.Name = "btnLogout"
         btnLogout.Size = New Size(192, 50)
@@ -151,11 +170,15 @@ Partial Class Dashboard
         ' btnProfile
         ' 
         btnProfile.BackColor = Color.Transparent
+        btnProfile.BackgroundImageLayout = ImageLayout.None
         btnProfile.Dock = DockStyle.Top
         btnProfile.FlatAppearance.BorderSize = 0
+        btnProfile.FlatAppearance.MouseDownBackColor = Color.Transparent
+        btnProfile.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnProfile.FlatStyle = FlatStyle.Flat
+        btnProfile.Font = New Font("Verdana", 18.0F, FontStyle.Bold)
         btnProfile.ForeColor = Color.White
-        btnProfile.Location = New Point(0, 50)
+        btnProfile.Location = New Point(0, 60)
         btnProfile.Name = "btnProfile"
         btnProfile.Size = New Size(192, 50)
         btnProfile.TabIndex = 0
@@ -166,17 +189,36 @@ Partial Class Dashboard
         ' btnDashboard
         ' 
         btnDashboard.BackColor = Color.Transparent
+        btnDashboard.BackgroundImageLayout = ImageLayout.None
         btnDashboard.Dock = DockStyle.Top
         btnDashboard.FlatAppearance.BorderSize = 0
+        btnDashboard.FlatAppearance.MouseDownBackColor = Color.Transparent
+        btnDashboard.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnDashboard.FlatStyle = FlatStyle.Flat
+        btnDashboard.Font = New Font("Verdana", 18.0F, FontStyle.Bold)
         btnDashboard.ForeColor = Color.White
-        btnDashboard.Location = New Point(0, 0)
+        btnDashboard.Location = New Point(0, 10)
+        btnDashboard.Margin = New Padding(3, 10, 3, 3)
         btnDashboard.Name = "btnDashboard"
         btnDashboard.Size = New Size(192, 50)
         btnDashboard.TabIndex = 7
         btnDashboard.Text = "Dashboard"
         btnDashboard.TextAlign = ContentAlignment.MiddleLeft
         btnDashboard.UseVisualStyleBackColor = False
+        ' 
+        ' SpaceSeparatorVertical1
+        ' 
+        SpaceSeparatorVertical1.Customization = "Kioq/yoqKv8jIyP/Kioq/w=="
+        SpaceSeparatorVertical1.Dock = DockStyle.Top
+        SpaceSeparatorVertical1.Font = New Font("Verdana", 8.0F)
+        SpaceSeparatorVertical1.Image = Nothing
+        SpaceSeparatorVertical1.Location = New Point(0, 0)
+        SpaceSeparatorVertical1.Name = "SpaceSeparatorVertical1"
+        SpaceSeparatorVertical1.NoRounding = False
+        SpaceSeparatorVertical1.Size = New Size(4, 10)
+        SpaceSeparatorVertical1.TabIndex = 9
+        SpaceSeparatorVertical1.Text = "SpaceSeparatorVertical1"
+        SpaceSeparatorVertical1.Transparent = False
         ' 
         ' pnlHeader
         ' 
@@ -234,15 +276,15 @@ Partial Class Dashboard
         pnlContent.Location = New Point(192, 75)
         pnlContent.Name = "pnlContent"
         pnlContent.Padding = New Padding(13, 11, 13, 11)
-        pnlContent.Size = New Size(1728, 1005)
+        pnlContent.Size = New Size(1728, 806)
         pnlContent.TabIndex = 0
         ' 
         ' Dashboard
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.WhiteSmoke
-        ClientSize = New Size(1920, 1080)
+        ClientSize = New Size(1920, 881)
         Controls.Add(pnlContent)
         Controls.Add(pnlSidebar)
         Controls.Add(pnlHeader)
@@ -277,4 +319,5 @@ Partial Class Dashboard
     Friend WithEvents btnDashboard As Button
     Friend WithEvents PnlHead As Panel
     Friend WithEvents picLogo As PictureBox
+    Friend WithEvents SpaceSeparatorVertical1 As ReaLTaiizor.Controls.SpaceSeparatorVertical
 End Class

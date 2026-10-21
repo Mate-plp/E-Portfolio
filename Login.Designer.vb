@@ -25,15 +25,15 @@ Partial Class Login
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         lblUsername = New Label()
         lblPassword = New Label()
-        txtUsername = New TextBox()
-        txtPassword = New TextBox()
         chkShowPassword = New CheckBox()
-        btnRegister = New Button()
-        btnExit = New Button()
         lblWelcome = New Label()
         lblSubtitle = New Label()
-        Label1 = New Label()
         btnLogin = New ReaLTaiizor.Controls.CyberButton()
+        btnRegister = New ReaLTaiizor.Controls.CyberButton()
+        btnExit = New ReaLTaiizor.Controls.CyberButton()
+        txtPassword = New ReaLTaiizor.Controls.CyberTextBox()
+        txtUsername = New ReaLTaiizor.Controls.CyberTextBox()
+        Label1 = New Label()
         SuspendLayout()
         ' 
         ' lblUsername
@@ -43,7 +43,7 @@ Partial Class Login
         lblUsername.BackColor = Color.Transparent
         lblUsername.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblUsername.ForeColor = Color.White
-        lblUsername.Location = New Point(724, 409)
+        lblUsername.Location = New Point(733, 342)
         lblUsername.Margin = New Padding(4, 0, 4, 0)
         lblUsername.Name = "lblUsername"
         lblUsername.Size = New Size(80, 19)
@@ -57,39 +57,12 @@ Partial Class Login
         lblPassword.BackColor = Color.Transparent
         lblPassword.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblPassword.ForeColor = Color.White
-        lblPassword.Location = New Point(728, 532)
+        lblPassword.Location = New Point(737, 465)
         lblPassword.Margin = New Padding(4, 0, 4, 0)
         lblPassword.Name = "lblPassword"
         lblPassword.Size = New Size(77, 19)
         lblPassword.TabIndex = 1
         lblPassword.Text = "Password:"
-        ' 
-        ' txtUsername
-        ' 
-        txtUsername.Anchor = AnchorStyles.None
-        txtUsername.BackColor = Color.White
-        txtUsername.BorderStyle = BorderStyle.FixedSingle
-        txtUsername.Font = New Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtUsername.ForeColor = Color.Black
-        txtUsername.Location = New Point(724, 433)
-        txtUsername.Margin = New Padding(4, 5, 4, 5)
-        txtUsername.Name = "txtUsername"
-        txtUsername.Size = New Size(453, 27)
-        txtUsername.TabIndex = 2
-        ' 
-        ' txtPassword
-        ' 
-        txtPassword.Anchor = AnchorStyles.None
-        txtPassword.BackColor = Color.White
-        txtPassword.BorderStyle = BorderStyle.FixedSingle
-        txtPassword.Font = New Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtPassword.ForeColor = Color.Black
-        txtPassword.Location = New Point(728, 556)
-        txtPassword.Margin = New Padding(4, 5, 4, 5)
-        txtPassword.Name = "txtPassword"
-        txtPassword.PasswordChar = "*"c
-        txtPassword.Size = New Size(453, 27)
-        txtPassword.TabIndex = 3
         ' 
         ' chkShowPassword
         ' 
@@ -98,45 +71,13 @@ Partial Class Login
         chkShowPassword.BackColor = Color.Transparent
         chkShowPassword.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         chkShowPassword.ForeColor = Color.White
-        chkShowPassword.Location = New Point(728, 593)
+        chkShowPassword.Location = New Point(737, 535)
         chkShowPassword.Margin = New Padding(4, 5, 4, 5)
         chkShowPassword.Name = "chkShowPassword"
         chkShowPassword.Size = New Size(112, 19)
         chkShowPassword.TabIndex = 4
         chkShowPassword.Text = "Show Password"
         chkShowPassword.UseVisualStyleBackColor = False
-        ' 
-        ' btnRegister
-        ' 
-        btnRegister.Anchor = AnchorStyles.None
-        btnRegister.BackColor = Color.Transparent
-        btnRegister.FlatAppearance.BorderSize = 0
-        btnRegister.FlatStyle = FlatStyle.Flat
-        btnRegister.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnRegister.ForeColor = Color.White
-        btnRegister.Location = New Point(865, 764)
-        btnRegister.Margin = New Padding(4, 5, 4, 5)
-        btnRegister.Name = "btnRegister"
-        btnRegister.Size = New Size(174, 50)
-        btnRegister.TabIndex = 6
-        btnRegister.Text = "REGISTER HERE"
-        btnRegister.UseVisualStyleBackColor = False
-        ' 
-        ' btnExit
-        ' 
-        btnExit.Anchor = AnchorStyles.None
-        btnExit.BackColor = Color.Transparent
-        btnExit.FlatAppearance.BorderSize = 0
-        btnExit.FlatStyle = FlatStyle.Flat
-        btnExit.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnExit.ForeColor = Color.White
-        btnExit.Location = New Point(901, 824)
-        btnExit.Margin = New Padding(4, 5, 4, 5)
-        btnExit.Name = "btnExit"
-        btnExit.Size = New Size(103, 36)
-        btnExit.TabIndex = 7
-        btnExit.Text = "Exit"
-        btnExit.UseVisualStyleBackColor = False
         ' 
         ' lblWelcome
         ' 
@@ -145,7 +86,7 @@ Partial Class Login
         lblWelcome.BackColor = Color.Transparent
         lblWelcome.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblWelcome.ForeColor = Color.White
-        lblWelcome.Location = New Point(638, 320)
+        lblWelcome.Location = New Point(647, 253)
         lblWelcome.Margin = New Padding(4, 0, 4, 0)
         lblWelcome.Name = "lblWelcome"
         lblWelcome.Size = New Size(238, 45)
@@ -159,25 +100,12 @@ Partial Class Login
         lblSubtitle.BackColor = Color.Transparent
         lblSubtitle.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         lblSubtitle.ForeColor = Color.White
-        lblSubtitle.Location = New Point(675, 365)
+        lblSubtitle.Location = New Point(684, 298)
         lblSubtitle.Margin = New Padding(4, 0, 4, 0)
         lblSubtitle.Name = "lblSubtitle"
         lblSubtitle.Size = New Size(201, 25)
         lblSubtitle.TabIndex = 9
         lblSubtitle.Text = "Log In to your account"
-        ' 
-        ' Label1
-        ' 
-        Label1.Anchor = AnchorStyles.None
-        Label1.AutoSize = True
-        Label1.BackColor = Color.Transparent
-        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.White
-        Label1.Location = New Point(888, 744)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(128, 15)
-        Label1.TabIndex = 10
-        Label1.Text = "Dont have an account?"
         ' 
         ' btnLogin
         ' 
@@ -189,8 +117,8 @@ Partial Class Login
         btnLogin.BackgroundPen = True
         btnLogin.ColorBackground = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnLogin.ColorBackground_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
-        btnLogin.ColorBackground_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
-        btnLogin.ColorBackground_Pen = Color.White
+        btnLogin.ColorBackground_2 = Color.Transparent
+        btnLogin.ColorBackground_Pen = Color.Transparent
         btnLogin.ColorLighting = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnLogin.ColorPen_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
         btnLogin.ColorPen_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
@@ -206,7 +134,7 @@ Partial Class Login
         btnLogin.Lighting = False
         btnLogin.LinearGradient_Background = False
         btnLogin.LinearGradientPen = False
-        btnLogin.Location = New Point(787, 643)
+        btnLogin.Location = New Point(796, 576)
         btnLogin.Name = "btnLogin"
         btnLogin.PenWidth = 15
         btnLogin.Rounding = True
@@ -220,6 +148,169 @@ Partial Class Login
         btnLogin.Timer_Effect_1 = 5
         btnLogin.Timer_RGB = 300
         ' 
+        ' btnRegister
+        ' 
+        btnRegister.Alpha = 20
+        btnRegister.Anchor = AnchorStyles.None
+        btnRegister.BackColor = Color.Transparent
+        btnRegister.Background = True
+        btnRegister.Background_WidthPen = 4F
+        btnRegister.BackgroundPen = True
+        btnRegister.ColorBackground = Color.Transparent
+        btnRegister.ColorBackground_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
+        btnRegister.ColorBackground_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
+        btnRegister.ColorBackground_Pen = Color.Transparent
+        btnRegister.ColorLighting = Color.FromArgb(CByte(29), CByte(200), CByte(238))
+        btnRegister.ColorPen_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
+        btnRegister.ColorPen_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
+        btnRegister.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom
+        btnRegister.Effect_1 = True
+        btnRegister.Effect_1_ColorBackground = Color.FromArgb(CByte(29), CByte(200), CByte(238))
+        btnRegister.Effect_1_Transparency = 25
+        btnRegister.Effect_2 = True
+        btnRegister.Effect_2_ColorBackground = Color.White
+        btnRegister.Effect_2_Transparency = 20
+        btnRegister.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnRegister.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnRegister.Lighting = False
+        btnRegister.LinearGradient_Background = False
+        btnRegister.LinearGradientPen = False
+        btnRegister.Location = New Point(888, 700)
+        btnRegister.Name = "btnRegister"
+        btnRegister.PenWidth = 15
+        btnRegister.Rounding = True
+        btnRegister.RoundingInt = 70
+        btnRegister.Size = New Size(147, 50)
+        btnRegister.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
+        btnRegister.TabIndex = 12
+        btnRegister.Tag = "Cyber"
+        btnRegister.TextButton = "REGISTER HERE"
+        btnRegister.TextRenderingHint = Drawing.Text.TextRenderingHint.ClearTypeGridFit
+        btnRegister.Timer_Effect_1 = 5
+        btnRegister.Timer_RGB = 300
+        ' 
+        ' btnExit
+        ' 
+        btnExit.Alpha = 20
+        btnExit.Anchor = AnchorStyles.None
+        btnExit.BackColor = Color.Transparent
+        btnExit.Background = True
+        btnExit.Background_WidthPen = 4F
+        btnExit.BackgroundPen = True
+        btnExit.ColorBackground = Color.Transparent
+        btnExit.ColorBackground_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
+        btnExit.ColorBackground_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
+        btnExit.ColorBackground_Pen = Color.Transparent
+        btnExit.ColorLighting = Color.FromArgb(CByte(29), CByte(200), CByte(238))
+        btnExit.ColorPen_1 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
+        btnExit.ColorPen_2 = Color.FromArgb(CByte(41), CByte(63), CByte(86))
+        btnExit.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom
+        btnExit.Effect_1 = True
+        btnExit.Effect_1_ColorBackground = Color.FromArgb(CByte(29), CByte(200), CByte(238))
+        btnExit.Effect_1_Transparency = 25
+        btnExit.Effect_2 = True
+        btnExit.Effect_2_ColorBackground = Color.White
+        btnExit.Effect_2_Transparency = 20
+        btnExit.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnExit.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnExit.Lighting = False
+        btnExit.LinearGradient_Background = False
+        btnExit.LinearGradientPen = False
+        btnExit.Location = New Point(888, 756)
+        btnExit.Name = "btnExit"
+        btnExit.PenWidth = 15
+        btnExit.Rounding = True
+        btnExit.RoundingInt = 70
+        btnExit.Size = New Size(147, 50)
+        btnExit.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
+        btnExit.TabIndex = 13
+        btnExit.Tag = "Cyber"
+        btnExit.TextButton = "Exit"
+        btnExit.TextRenderingHint = Drawing.Text.TextRenderingHint.ClearTypeGridFit
+        btnExit.Timer_Effect_1 = 5
+        btnExit.Timer_RGB = 300
+        ' 
+        ' txtPassword
+        ' 
+        txtPassword.Alpha = 20
+        txtPassword.Anchor = AnchorStyles.None
+        txtPassword.BackColor = Color.Transparent
+        txtPassword.Background_WidthPen = 3F
+        txtPassword.BackgroundPen = True
+        txtPassword.ColorBackground = Color.White
+        txtPassword.ColorBackground_Pen = Color.Black
+        txtPassword.ColorLighting = Color.FromArgb(CByte(29), CByte(200), CByte(238))
+        txtPassword.ColorPen_1 = Color.FromArgb(CByte(29), CByte(200), CByte(238))
+        txtPassword.ColorPen_2 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
+        txtPassword.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom
+        txtPassword.Font = New Font("Arial", 10F)
+        txtPassword.ForeColor = Color.Black
+        txtPassword.Lighting = False
+        txtPassword.LinearGradientPen = False
+        txtPassword.Location = New Point(733, 487)
+        txtPassword.Name = "txtPassword"
+        txtPassword.Password = True
+        txtPassword.PasswordChar = "*"c
+        txtPassword.PenWidth = 15
+        txtPassword.RGB = False
+        txtPassword.Rounding = True
+        txtPassword.RoundingInt = 60
+        txtPassword.Size = New Size(453, 40)
+        txtPassword.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
+        txtPassword.TabIndex = 14
+        txtPassword.Tag = "Cyber"
+        txtPassword.TextAlign = HorizontalAlignment.Left
+        txtPassword.TextButton = ""
+        txtPassword.TextRenderingHint = Drawing.Text.TextRenderingHint.ClearTypeGridFit
+        txtPassword.Timer_RGB = 300
+        ' 
+        ' txtUsername
+        ' 
+        txtUsername.Alpha = 20
+        txtUsername.Anchor = AnchorStyles.None
+        txtUsername.BackColor = Color.Transparent
+        txtUsername.Background_WidthPen = 3F
+        txtUsername.BackgroundPen = True
+        txtUsername.ColorBackground = Color.White
+        txtUsername.ColorBackground_Pen = Color.Black
+        txtUsername.ColorLighting = Color.FromArgb(CByte(29), CByte(200), CByte(238))
+        txtUsername.ColorPen_1 = Color.FromArgb(CByte(29), CByte(200), CByte(238))
+        txtUsername.ColorPen_2 = Color.FromArgb(CByte(37), CByte(52), CByte(68))
+        txtUsername.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom
+        txtUsername.Font = New Font("Arial", 10F)
+        txtUsername.ForeColor = Color.Black
+        txtUsername.Lighting = False
+        txtUsername.LinearGradientPen = False
+        txtUsername.Location = New Point(733, 364)
+        txtUsername.Name = "txtUsername"
+        txtUsername.PasswordChar = "*"c
+        txtUsername.PenWidth = 15
+        txtUsername.RGB = False
+        txtUsername.Rounding = True
+        txtUsername.RoundingInt = 60
+        txtUsername.Size = New Size(453, 40)
+        txtUsername.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
+        txtUsername.TabIndex = 15
+        txtUsername.Tag = "Cyber"
+        txtUsername.TextAlign = HorizontalAlignment.Left
+        txtUsername.TextButton = ""
+        txtUsername.TextRenderingHint = Drawing.Text.TextRenderingHint.ClearTypeGridFit
+        txtUsername.Timer_RGB = 300
+        ' 
+        ' Label1
+        ' 
+        Label1.Anchor = AnchorStyles.None
+        Label1.AutoSize = True
+        Label1.BackColor = Color.Transparent
+        Label1.Font = New Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.White
+        Label1.Location = New Point(885, 672)
+        Label1.Margin = New Padding(4, 0, 4, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(153, 19)
+        Label1.TabIndex = 16
+        Label1.Text = "Don't have an account?"
+        ' 
         ' Login
         ' 
         AutoScaleDimensions = New SizeF(8F, 19F)
@@ -227,25 +318,28 @@ Partial Class Login
         BackColor = Color.White
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Zoom
-        ClientSize = New Size(1904, 1041)
+        ClientSize = New Size(1920, 881)
+        Controls.Add(Label1)
         Controls.Add(btnLogin)
         Controls.Add(txtUsername)
-        Controls.Add(Label1)
-        Controls.Add(lblSubtitle)
-        Controls.Add(lblWelcome)
+        Controls.Add(txtPassword)
         Controls.Add(btnExit)
         Controls.Add(btnRegister)
+        Controls.Add(lblSubtitle)
+        Controls.Add(lblWelcome)
         Controls.Add(chkShowPassword)
-        Controls.Add(txtPassword)
         Controls.Add(lblPassword)
         Controls.Add(lblUsername)
         DoubleBuffered = True
         Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(4, 5, 4, 5)
+        MaximizeBox = False
         MaximumSize = New Size(1920, 1080)
+        MinimizeBox = False
         MinimumSize = New Size(1080, 720)
         Name = "Login"
+        StartPosition = FormStartPosition.CenterParent
         Text = "LogIn"
         TopMost = True
         WindowState = FormWindowState.Maximized
@@ -256,13 +350,13 @@ Partial Class Login
 
     Friend WithEvents lblUsername As Label
     Friend WithEvents lblPassword As Label
-    Friend WithEvents txtUsername As TextBox
-    Friend WithEvents txtPassword As TextBox
     Friend WithEvents chkShowPassword As CheckBox
-    Friend WithEvents btnRegister As Button
-    Friend WithEvents btnExit As Button
     Friend WithEvents lblWelcome As Label
     Friend WithEvents lblSubtitle As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents btnLogin As ReaLTaiizor.Controls.CyberButton
+    Friend WithEvents btnRegister As ReaLTaiizor.Controls.CyberButton
+    Friend WithEvents btnExit As ReaLTaiizor.Controls.CyberButton
+    Friend WithEvents txtPassword As ReaLTaiizor.Controls.CyberTextBox
+    Friend WithEvents txtUsername As ReaLTaiizor.Controls.CyberTextBox
+    Friend WithEvents Label1 As Label
 End Class
