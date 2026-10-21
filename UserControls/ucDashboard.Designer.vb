@@ -27,23 +27,26 @@ Partial Class ucDashboard
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New DataVisualization.Charting.Series()
         Panel2 = New Panel()
         FlowLayoutPanel1 = New FlowLayoutPanel()
+        Panel1 = New Panel()
         CyberGroupBox3 = New RoundedPanel()
-        Label1 = New Label()
         Label2 = New Label()
-        Separator1 = New System.Windows.Forms.Panel()
+        Label1 = New Label()
+        Separator1 = New Panel()
         CyberGroupBox1 = New RoundedPanel()
-        Label4 = New Label()
         Label3 = New Label()
-        Separator2 = New System.Windows.Forms.Panel()
+        Label4 = New Label()
+        Separator2 = New Panel()
         CyberGroupBox2 = New RoundedPanel()
-        Label6 = New Label()
         Label5 = New Label()
-        Chart1 = New DataVisualization.Charting.Chart()
+        Label6 = New Label()
+        cbChartBox = New ComboBox()
+        chtProgress = New DataVisualization.Charting.Chart()
+        cbYear = New ComboBox()
         FlowLayoutPanel1.SuspendLayout()
         CyberGroupBox3.SuspendLayout()
         CyberGroupBox1.SuspendLayout()
         CyberGroupBox2.SuspendLayout()
-        CType(Chart1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(chtProgress, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel2
@@ -58,6 +61,7 @@ Partial Class ucDashboard
         ' FlowLayoutPanel1
         ' 
         FlowLayoutPanel1.BackColor = Color.White
+        FlowLayoutPanel1.Controls.Add(Panel1)
         FlowLayoutPanel1.Controls.Add(CyberGroupBox3)
         FlowLayoutPanel1.Controls.Add(Separator1)
         FlowLayoutPanel1.Controls.Add(CyberGroupBox1)
@@ -71,35 +75,33 @@ Partial Class ucDashboard
         FlowLayoutPanel1.Size = New Size(1728, 272)
         FlowLayoutPanel1.TabIndex = 4
         ' 
+        ' Panel1
+        ' 
+        Panel1.Location = New Point(21, 17)
+        Panel1.Margin = New Padding(3, 2, 3, 2)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(165, 10)
+        Panel1.TabIndex = 8
+        Panel1.Text = "Panel1"
+        ' 
         ' CyberGroupBox3
         ' 
         CyberGroupBox3.BackColor = Color.Transparent
-        CyberGroupBox3.FillColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         CyberGroupBox3.Controls.Add(Label2)
         CyberGroupBox3.Controls.Add(Label1)
+        CyberGroupBox3.CornerRadius = 30
+        CyberGroupBox3.FillColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         CyberGroupBox3.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        CyberGroupBox3.Location = New Point(21, 17)
+        CyberGroupBox3.Location = New Point(192, 17)
         CyberGroupBox3.Margin = New Padding(3, 2, 3, 2)
         CyberGroupBox3.Name = "CyberGroupBox3"
-        CyberGroupBox3.CornerRadius = 30
         CyberGroupBox3.Size = New Size(299, 206)
         CyberGroupBox3.TabIndex = 5
-        ' 
-        ' Label1
-        ' 
-        Label1.Dock = DockStyle.Top
-        Label1.Font = New Font("Segoe UI", 25.0F, FontStyle.Bold)
-        Label1.Location = New Point(0, 0)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(299, 92)
-        Label1.TabIndex = 0
-        Label1.Text = "TOTAL ENTRIES"
-        Label1.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label2
         ' 
         Label2.Dock = DockStyle.Top
-        Label2.Font = New Font("Segoe UI", 55.0F)
+        Label2.Font = New Font("Segoe UI", 55F)
         Label2.Location = New Point(0, 92)
         Label2.Margin = New Padding(26, 0, 3, 0)
         Label2.Name = "Label2"
@@ -108,44 +110,44 @@ Partial Class ucDashboard
         Label2.Text = "0"
         Label2.TextAlign = ContentAlignment.TopCenter
         ' 
+        ' Label1
+        ' 
+        Label1.Dock = DockStyle.Top
+        Label1.Font = New Font("Segoe UI", 25F, FontStyle.Bold)
+        Label1.Location = New Point(0, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(299, 92)
+        Label1.TabIndex = 0
+        Label1.Text = "TOTAL ENTRIES"
+        Label1.TextAlign = ContentAlignment.MiddleCenter
+        ' 
         ' Separator1
         ' 
-        Separator1.Location = New Point(326, 17)
+        Separator1.Location = New Point(497, 17)
         Separator1.Margin = New Padding(3, 2, 3, 2)
         Separator1.Name = "Separator1"
-        Separator1.Size = New Size(70, 9)
+        Separator1.Size = New Size(165, 10)
         Separator1.TabIndex = 6
         Separator1.Text = "Separator1"
         ' 
         ' CyberGroupBox1
         ' 
         CyberGroupBox1.BackColor = Color.Transparent
-        CyberGroupBox1.FillColor = Color.FromArgb(CByte(34), CByte(170), CByte(79))
         CyberGroupBox1.Controls.Add(Label3)
         CyberGroupBox1.Controls.Add(Label4)
+        CyberGroupBox1.CornerRadius = 30
+        CyberGroupBox1.FillColor = Color.FromArgb(CByte(34), CByte(170), CByte(79))
         CyberGroupBox1.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        CyberGroupBox1.Location = New Point(402, 17)
+        CyberGroupBox1.Location = New Point(668, 17)
         CyberGroupBox1.Margin = New Padding(3, 2, 3, 2)
         CyberGroupBox1.Name = "CyberGroupBox1"
-        CyberGroupBox1.CornerRadius = 30
         CyberGroupBox1.Size = New Size(299, 206)
         CyberGroupBox1.TabIndex = 3
-        ' 
-        ' Label4
-        ' 
-        Label4.Dock = DockStyle.Top
-        Label4.Font = New Font("Segoe UI", 25.0F, FontStyle.Bold)
-        Label4.Location = New Point(0, 0)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(299, 92)
-        Label4.TabIndex = 2
-        Label4.Text = "VERIFIED"
-        Label4.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label3
         ' 
         Label3.Dock = DockStyle.Top
-        Label3.Font = New Font("Segoe UI", 55.0F)
+        Label3.Font = New Font("Segoe UI", 55F)
         Label3.Location = New Point(0, 92)
         Label3.Margin = New Padding(26, 0, 3, 0)
         Label3.Name = "Label3"
@@ -154,45 +156,45 @@ Partial Class ucDashboard
         Label3.Text = "0"
         Label3.TextAlign = ContentAlignment.TopCenter
         ' 
+        ' Label4
+        ' 
+        Label4.Dock = DockStyle.Top
+        Label4.Font = New Font("Segoe UI", 25F, FontStyle.Bold)
+        Label4.Location = New Point(0, 0)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(299, 92)
+        Label4.TabIndex = 2
+        Label4.Text = "VERIFIED"
+        Label4.TextAlign = ContentAlignment.MiddleCenter
+        ' 
         ' Separator2
         ' 
         Separator2.ForeColor = Color.Transparent
-        Separator2.Location = New Point(707, 17)
+        Separator2.Location = New Point(973, 17)
         Separator2.Margin = New Padding(3, 2, 3, 2)
         Separator2.Name = "Separator2"
-        Separator2.Size = New Size(70, 9)
+        Separator2.Size = New Size(165, 10)
         Separator2.TabIndex = 7
         Separator2.Text = "Separator2"
         ' 
         ' CyberGroupBox2
         ' 
         CyberGroupBox2.BackColor = Color.Transparent
-        CyberGroupBox2.FillColor = Color.FromArgb(CByte(78), CByte(220), CByte(124))
         CyberGroupBox2.Controls.Add(Label5)
         CyberGroupBox2.Controls.Add(Label6)
+        CyberGroupBox2.CornerRadius = 30
+        CyberGroupBox2.FillColor = Color.FromArgb(CByte(78), CByte(220), CByte(124))
         CyberGroupBox2.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        CyberGroupBox2.Location = New Point(783, 17)
+        CyberGroupBox2.Location = New Point(1144, 17)
         CyberGroupBox2.Margin = New Padding(3, 2, 3, 2)
         CyberGroupBox2.Name = "CyberGroupBox2"
-        CyberGroupBox2.CornerRadius = 30
         CyberGroupBox2.Size = New Size(299, 206)
         CyberGroupBox2.TabIndex = 4
-        ' 
-        ' Label6
-        ' 
-        Label6.Dock = DockStyle.Top
-        Label6.Font = New Font("Segoe UI", 25.0F, FontStyle.Bold)
-        Label6.Location = New Point(0, 0)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(299, 92)
-        Label6.TabIndex = 4
-        Label6.Text = "SKILLS" & vbCrLf & "DEVELOPED"
-        Label6.TextAlign = ContentAlignment.TopCenter
         ' 
         ' Label5
         ' 
         Label5.Dock = DockStyle.Top
-        Label5.Font = New Font("Segoe UI", 55.0F)
+        Label5.Font = New Font("Segoe UI", 55F)
         Label5.Location = New Point(0, 92)
         Label5.Margin = New Padding(3)
         Label5.Name = "Label5"
@@ -201,31 +203,70 @@ Partial Class ucDashboard
         Label5.Text = "0"
         Label5.TextAlign = ContentAlignment.TopCenter
         ' 
-        ' Chart1
+        ' Label6
+        ' 
+        Label6.Dock = DockStyle.Top
+        Label6.Font = New Font("Segoe UI", 25F, FontStyle.Bold)
+        Label6.Location = New Point(0, 0)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(299, 92)
+        Label6.TabIndex = 4
+        Label6.Text = "SKILLS" & vbCrLf & "DEVELOPED"
+        Label6.TextAlign = ContentAlignment.TopCenter
+        ' 
+        ' cbChartBox
+        ' 
+        cbChartBox.AutoCompleteCustomSource.AddRange(New String() {"Total Skills", "Total Verified Skills", "Total Activities", "Total Verified Activities"})
+        cbChartBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+        cbChartBox.AutoCompleteSource = AutoCompleteSource.ListItems
+        cbChartBox.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        cbChartBox.FormattingEnabled = True
+        cbChartBox.Items.AddRange(New Object() {"Total Skills", "Total Verified Skills", "Total Activities"})
+        cbChartBox.Location = New Point(668, 324)
+        cbChartBox.Name = "cbChartBox"
+        cbChartBox.Size = New Size(354, 38)
+        cbChartBox.TabIndex = 6
+        cbChartBox.Text = "Total Skills"
+        ' 
+        ' chtProgress
         ' 
         ChartArea1.Name = "ChartArea1"
-        Chart1.ChartAreas.Add(ChartArea1)
+        chtProgress.ChartAreas.Add(ChartArea1)
         Legend1.Name = "Legend1"
-        Chart1.Legends.Add(Legend1)
-        Chart1.Location = New Point(116, 363)
-        Chart1.Margin = New Padding(3, 2, 3, 2)
-        Chart1.Name = "Chart1"
-        Chart1.Palette = DataVisualization.Charting.ChartColorPalette.Bright
+        chtProgress.Legends.Add(Legend1)
+        chtProgress.Location = New Point(352, 402)
+        chtProgress.Name = "chtProgress"
         Series1.ChartArea = "ChartArea1"
         Series1.Legend = "Legend1"
-        Series1.Name = "Skills"
-        Chart1.Series.Add(Series1)
-        Chart1.Size = New Size(767, 380)
-        Chart1.TabIndex = 5
-        Chart1.Text = "Chart1"
+        Series1.Name = "Series1"
+        chtProgress.Series.Add(Series1)
+        chtProgress.Size = New Size(843, 533)
+        chtProgress.TabIndex = 7
+        chtProgress.Text = "Chart1"
+        ' 
+        ' cbYear
+        ' 
+        cbYear.AutoCompleteCustomSource.AddRange(New String() {"Total Skills", "Total Verified Skills", "Total Activities", "Total Verified Activities"})
+        cbYear.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+        cbYear.AutoCompleteSource = AutoCompleteSource.ListItems
+        cbYear.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        cbYear.FormattingEnabled = True
+        cbYear.Items.AddRange(New Object() {"All"})
+        cbYear.Location = New Point(1054, 324)
+        cbYear.Name = "cbYear"
+        cbYear.Size = New Size(354, 38)
+        cbYear.TabIndex = 8
+        cbYear.Text = "All"
         ' 
         ' ucDashboard
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         BackColor = Color.White
-        Controls.Add(Chart1)
+        Controls.Add(cbYear)
+        Controls.Add(chtProgress)
+        Controls.Add(cbChartBox)
         Controls.Add(FlowLayoutPanel1)
         Controls.Add(Panel2)
         Name = "ucDashboard"
@@ -234,7 +275,7 @@ Partial Class ucDashboard
         CyberGroupBox3.ResumeLayout(False)
         CyberGroupBox1.ResumeLayout(False)
         CyberGroupBox2.ResumeLayout(False)
-        CType(Chart1, ComponentModel.ISupportInitialize).EndInit()
+        CType(chtProgress, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
     Friend WithEvents Panel2 As Panel
@@ -245,11 +286,14 @@ Partial Class ucDashboard
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
     Friend WithEvents CyberGroupBox1 As RoundedPanel
     Friend WithEvents CyberGroupBox3 As RoundedPanel
     Friend WithEvents CyberGroupBox2 As RoundedPanel
     Friend WithEvents Separator1 As System.Windows.Forms.Panel
     Friend WithEvents Separator2 As System.Windows.Forms.Panel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents cbChartBox As ComboBox
+    Friend WithEvents chtProgress As DataVisualization.Charting.Chart
+    Friend WithEvents cbYear As ComboBox
 
 End Class
