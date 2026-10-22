@@ -4,13 +4,13 @@ Public Class Login
         RoundAll(Me, 10)
     End Sub
 
-    Private Sub btnRegister_Click(sender As Object, e As EventArgs)
+    Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         Dim RegisterForm As New Register
         RegisterForm.Show()
         Close()
     End Sub
 
-    Private Sub btnLogin_Click(sender As Object, e As EventArgs)
+    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim username = txtUsername.Text.Trim
         Dim password = txtPassword.Text
 
