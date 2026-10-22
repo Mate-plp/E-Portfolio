@@ -31,11 +31,11 @@ Partial Class Login
         txtPassword = New TextBox()
         txtUsername = New TextBox()
         Label1 = New Label()
-        Button1 = New Button()
-        Button2 = New Button()
-        btnExit = New Button()
         Label2 = New Label()
         Label3 = New Label()
+        btnLogin = New RoundedButton()
+        btnRegister = New RoundedButton()
+        btnExit = New RoundedButton()
         SuspendLayout()
         ' 
         ' lblUsername
@@ -43,9 +43,9 @@ Partial Class Login
         lblUsername.Anchor = AnchorStyles.None
         lblUsername.AutoSize = True
         lblUsername.BackColor = Color.Transparent
-        lblUsername.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblUsername.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0)
         lblUsername.ForeColor = Color.Black
-        lblUsername.Location = New Point(731, 467)
+        lblUsername.Location = New Point(731, 477)
         lblUsername.Margin = New Padding(4, 0, 4, 0)
         lblUsername.Name = "lblUsername"
         lblUsername.Size = New Size(80, 19)
@@ -57,9 +57,9 @@ Partial Class Login
         lblPassword.Anchor = AnchorStyles.None
         lblPassword.AutoSize = True
         lblPassword.BackColor = Color.Transparent
-        lblPassword.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPassword.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0)
         lblPassword.ForeColor = Color.Black
-        lblPassword.Location = New Point(735, 556)
+        lblPassword.Location = New Point(735, 566)
         lblPassword.Margin = New Padding(4, 0, 4, 0)
         lblPassword.Name = "lblPassword"
         lblPassword.Size = New Size(77, 19)
@@ -71,9 +71,9 @@ Partial Class Login
         chkShowPassword.Anchor = AnchorStyles.None
         chkShowPassword.AutoSize = True
         chkShowPassword.BackColor = Color.Transparent
-        chkShowPassword.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        chkShowPassword.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, 0)
         chkShowPassword.ForeColor = Color.Black
-        chkShowPassword.Location = New Point(735, 626)
+        chkShowPassword.Location = New Point(735, 636)
         chkShowPassword.Margin = New Padding(4, 5, 4, 5)
         chkShowPassword.Name = "chkShowPassword"
         chkShowPassword.Size = New Size(112, 19)
@@ -86,9 +86,9 @@ Partial Class Login
         lblWelcome.Anchor = AnchorStyles.None
         lblWelcome.AutoSize = True
         lblWelcome.BackColor = Color.Transparent
-        lblWelcome.Font = New Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblWelcome.Font = New Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0)
         lblWelcome.ForeColor = SystemColors.Desktop
-        lblWelcome.Location = New Point(855, 354)
+        lblWelcome.Location = New Point(855, 364)
         lblWelcome.Margin = New Padding(4, 0, 4, 0)
         lblWelcome.Name = "lblWelcome"
         lblWelcome.Size = New Size(211, 41)
@@ -100,9 +100,9 @@ Partial Class Login
         lblSubtitle.Anchor = AnchorStyles.None
         lblSubtitle.AutoSize = True
         lblSubtitle.BackColor = Color.Transparent
-        lblSubtitle.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblSubtitle.Font = New Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0)
         lblSubtitle.ForeColor = Color.Black
-        lblSubtitle.Location = New Point(860, 413)
+        lblSubtitle.Location = New Point(860, 423)
         lblSubtitle.Margin = New Padding(4, 0, 4, 0)
         lblSubtitle.Name = "lblSubtitle"
         lblSubtitle.Size = New Size(201, 25)
@@ -113,9 +113,9 @@ Partial Class Login
         ' 
         txtPassword.Anchor = AnchorStyles.None
         txtPassword.BackColor = Color.White
-        txtPassword.Font = New Font("Arial", 10F)
+        txtPassword.Font = New Font("Arial", 10.0F)
         txtPassword.ForeColor = Color.Black
-        txtPassword.Location = New Point(731, 583)
+        txtPassword.Location = New Point(731, 593)
         txtPassword.Name = "txtPassword"
         txtPassword.Size = New Size(453, 23)
         txtPassword.TabIndex = 2
@@ -125,9 +125,9 @@ Partial Class Login
         ' 
         txtUsername.Anchor = AnchorStyles.None
         txtUsername.BackColor = Color.White
-        txtUsername.Font = New Font("Arial", 10F)
+        txtUsername.Font = New Font("Arial", 10.0F)
         txtUsername.ForeColor = Color.Black
-        txtUsername.Location = New Point(731, 494)
+        txtUsername.Location = New Point(731, 504)
         txtUsername.Name = "txtUsername"
         txtUsername.Size = New Size(453, 23)
         txtUsername.TabIndex = 1
@@ -137,62 +137,23 @@ Partial Class Login
         Label1.Anchor = AnchorStyles.None
         Label1.AutoSize = True
         Label1.BackColor = Color.Transparent
-        Label1.Font = New Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0)
         Label1.ForeColor = Color.Black
-        Label1.Location = New Point(868, 774)
+        Label1.Location = New Point(887, 784)
         Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(153, 19)
         Label1.TabIndex = 16
         Label1.Text = "Don't have an account?"
         ' 
-        ' Button1
-        ' 
-        Button1.Anchor = AnchorStyles.None
-        Button1.BackColor = Color.FromArgb(CByte(10), CByte(52), CByte(33))
-        Button1.FlatAppearance.BorderColor = Color.FromArgb(CByte(200), CByte(160), CByte(60))
-        Button1.ForeColor = Color.White
-        Button1.Location = New Point(731, 658)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(453, 73)
-        Button1.TabIndex = 17
-        Button1.Text = "Log In"
-        Button1.UseVisualStyleBackColor = False
-        ' 
-        ' Button2
-        ' 
-        Button2.Anchor = AnchorStyles.None
-        Button2.BackColor = Color.FromArgb(CByte(10), CByte(52), CByte(33))
-        Button2.FlatAppearance.BorderColor = Color.FromArgb(CByte(200), CByte(160), CByte(60))
-        Button2.ForeColor = Color.White
-        Button2.Location = New Point(731, 819)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(207, 61)
-        Button2.TabIndex = 18
-        Button2.Text = "Register"
-        Button2.UseVisualStyleBackColor = False
-        ' 
-        ' btnExit
-        ' 
-        btnExit.Anchor = AnchorStyles.None
-        btnExit.BackColor = Color.FromArgb(CByte(10), CByte(52), CByte(33))
-        btnExit.FlatAppearance.BorderColor = Color.FromArgb(CByte(200), CByte(160), CByte(60))
-        btnExit.ForeColor = Color.White
-        btnExit.Location = New Point(977, 819)
-        btnExit.Name = "btnExit"
-        btnExit.Size = New Size(207, 61)
-        btnExit.TabIndex = 19
-        btnExit.Text = "Exit"
-        btnExit.UseVisualStyleBackColor = False
-        ' 
         ' Label2
         ' 
         Label2.Anchor = AnchorStyles.None
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Georgia", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Font = New Font("Georgia", 36.0F, FontStyle.Bold, GraphicsUnit.Point, 0)
         Label2.ForeColor = Color.Green
-        Label2.Location = New Point(864, 214)
+        Label2.Location = New Point(864, 224)
         Label2.Name = "Label2"
         Label2.Size = New Size(193, 56)
         Label2.TabIndex = 20
@@ -203,27 +164,66 @@ Partial Class Login
         Label3.Anchor = AnchorStyles.None
         Label3.AutoSize = True
         Label3.BackColor = Color.Transparent
-        Label3.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, 0)
         Label3.ForeColor = Color.Black
-        Label3.Location = New Point(758, 283)
+        Label3.Location = New Point(758, 293)
         Label3.Name = "Label3"
         Label3.Size = New Size(404, 21)
         Label3.TabIndex = 21
         Label3.Text = "Student Tracker of Achievements and Records System"
         ' 
+        ' btnLogin
+        ' 
+        btnLogin.BackColor = Color.FromArgb(10, 52, 33)
+        btnLogin.FlatAppearance.BorderSize = 0
+        btnLogin.FlatStyle = FlatStyle.Flat
+        btnLogin.ForeColor = Color.White
+        btnLogin.Location = New Point(731, 656)
+        btnLogin.Name = "btnLogin"
+        btnLogin.Size = New Size(453, 65)
+        btnLogin.TabIndex = 22
+        btnLogin.Text = "Log In"
+        btnLogin.UseVisualStyleBackColor = False
+        ' 
+        ' btnRegister
+        ' 
+        btnRegister.BackColor = Color.FromArgb(10, 52, 33)
+        btnRegister.FlatAppearance.BorderSize = 0
+        btnRegister.FlatStyle = FlatStyle.Flat
+        btnRegister.ForeColor = Color.White
+        btnRegister.Location = New Point(731, 829)
+        btnRegister.Name = "btnRegister"
+        btnRegister.Size = New Size(207, 61)
+        btnRegister.TabIndex = 23
+        btnRegister.Text = "Register"
+        btnRegister.UseVisualStyleBackColor = False
+        ' 
+        ' btnExit
+        ' 
+        btnExit.BackColor = Color.FromArgb(10, 52, 33)
+        btnExit.FlatAppearance.BorderSize = 0
+        btnExit.FlatStyle = FlatStyle.Flat
+        btnExit.ForeColor = Color.White
+        btnExit.Location = New Point(977, 829)
+        btnExit.Name = "btnExit"
+        btnExit.Size = New Size(207, 61)
+        btnExit.TabIndex = 24
+        btnExit.Text = "Exit"
+        btnExit.UseVisualStyleBackColor = False
+        ' 
         ' Login
         ' 
-        AutoScaleDimensions = New SizeF(8F, 19F)
+        AutoScaleDimensions = New SizeF(8.0F, 19.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Zoom
-        ClientSize = New Size(1920, 1080)
+        ClientSize = New Size(1920, 1061)
+        Controls.Add(btnExit)
+        Controls.Add(btnRegister)
+        Controls.Add(btnLogin)
         Controls.Add(Label3)
         Controls.Add(Label2)
-        Controls.Add(btnExit)
-        Controls.Add(Button2)
-        Controls.Add(Button1)
         Controls.Add(Label1)
         Controls.Add(txtUsername)
         Controls.Add(txtPassword)
@@ -233,7 +233,7 @@ Partial Class Login
         Controls.Add(lblPassword)
         Controls.Add(lblUsername)
         DoubleBuffered = True
-        Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0)
         FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(4, 5, 4, 5)
         MaximizeBox = False
@@ -258,11 +258,9 @@ Partial Class Login
     Friend WithEvents txtPassword As System.Windows.Forms.TextBox
     Friend WithEvents txtUsername As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnLogin As RoundedButton
     Friend WithEvents btnRegister As RoundedButton
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents btnExit As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents btnLogin As RoundedButton
+    Friend WithEvents btnExit As RoundedButton
 End Class
