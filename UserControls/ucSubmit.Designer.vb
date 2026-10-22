@@ -29,13 +29,20 @@ Partial Class ucSubmit
         txtTitle = New TextBox()
         Label4 = New Label()
         txtDescription = New TextBox()
-        lblCharLimit = New Label()
+        lblCount = New Label()
         Label6 = New Label()
         dtpDate = New DateTimePicker()
         Label7 = New Label()
         cboType = New ComboBox()
         Label8 = New Label()
-        CheckedListBox1 = New CheckedListBox()
+        clbSkills = New CheckedListBox()
+        chkPLP = New CheckBox()
+        btnBrowse = New RoundedButton()
+        btnRemoveFile = New RoundedButton()
+        btnClear = New RoundedButton()
+        btnSubmit = New RoundedButton()
+        cboFaculty = New ComboBox()
+        lblFile = New Label()
         SuspendLayout()
         ' 
         ' Label1
@@ -115,18 +122,18 @@ Partial Class ucSubmit
         txtDescription.Size = New Size(564, 219)
         txtDescription.TabIndex = 9
         ' 
-        ' lblCharLimit
+        ' lblCount
         ' 
-        lblCharLimit.Anchor = AnchorStyles.None
-        lblCharLimit.AutoSize = True
-        lblCharLimit.Font = New Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblCharLimit.Location = New Point(394, 86)
-        lblCharLimit.Margin = New Padding(18, 15, 18, 15)
-        lblCharLimit.Name = "lblCharLimit"
-        lblCharLimit.Padding = New Padding(26, 15, 18, 0)
-        lblCharLimit.Size = New Size(188, 32)
-        lblCharLimit.TabIndex = 10
-        lblCharLimit.Text = "0/250 characters"
+        lblCount.Anchor = AnchorStyles.None
+        lblCount.AutoSize = True
+        lblCount.Font = New Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblCount.Location = New Point(394, 86)
+        lblCount.Margin = New Padding(18, 15, 18, 15)
+        lblCount.Name = "lblCount"
+        lblCount.Padding = New Padding(26, 15, 18, 0)
+        lblCount.Size = New Size(188, 32)
+        lblCount.TabIndex = 10
+        lblCount.Text = "0/250 characters"
         ' 
         ' Label6
         ' 
@@ -187,27 +194,112 @@ Partial Class ucSubmit
         Label8.TabIndex = 15
         Label8.Text = "Skills Developed:"
         ' 
-        ' CheckedListBox1
+        ' clbSkills
         ' 
-        CheckedListBox1.Anchor = AnchorStyles.None
-        CheckedListBox1.FormattingEnabled = True
-        CheckedListBox1.Location = New Point(628, 199)
-        CheckedListBox1.Name = "CheckedListBox1"
-        CheckedListBox1.Size = New Size(319, 202)
-        CheckedListBox1.TabIndex = 16
+        clbSkills.Anchor = AnchorStyles.None
+        clbSkills.FormattingEnabled = True
+        clbSkills.Items.AddRange(New Object() {"Leadership", "Communication", "Teamwork", "Visual Basic", "C#"})
+        clbSkills.Location = New Point(628, 199)
+        clbSkills.Name = "clbSkills"
+        clbSkills.Size = New Size(319, 202)
+        clbSkills.TabIndex = 16
+        ' 
+        ' chkPLP
+        ' 
+        chkPLP.AutoSize = True
+        chkPLP.Location = New Point(640, 421)
+        chkPLP.Name = "chkPLP"
+        chkPLP.Size = New Size(78, 19)
+        chkPLP.TabIndex = 17
+        chkPLP.Text = "PLP Event"
+        chkPLP.UseVisualStyleBackColor = True
+        ' 
+        ' btnBrowse
+        ' 
+        btnBrowse.BackColor = Color.White
+        btnBrowse.FlatAppearance.BorderSize = 0
+        btnBrowse.FlatStyle = FlatStyle.Flat
+        btnBrowse.Location = New Point(53, 376)
+        btnBrowse.Name = "btnBrowse"
+        btnBrowse.Size = New Size(50, 25)
+        btnBrowse.TabIndex = 18
+        btnBrowse.Text = "Add File"
+        btnBrowse.UseVisualStyleBackColor = False
+        ' 
+        ' btnRemoveFile
+        ' 
+        btnRemoveFile.BackColor = Color.White
+        btnRemoveFile.FlatAppearance.BorderSize = 0
+        btnRemoveFile.FlatStyle = FlatStyle.Flat
+        btnRemoveFile.Location = New Point(109, 376)
+        btnRemoveFile.Name = "btnRemoveFile"
+        btnRemoveFile.Size = New Size(161, 25)
+        btnRemoveFile.TabIndex = 19
+        btnRemoveFile.Text = "Remove File"
+        btnRemoveFile.UseVisualStyleBackColor = False
+        ' 
+        ' btnClear
+        ' 
+        btnClear.BackColor = Color.White
+        btnClear.FlatAppearance.BorderSize = 0
+        btnClear.FlatStyle = FlatStyle.Flat
+        btnClear.Location = New Point(595, 490)
+        btnClear.Name = "btnClear"
+        btnClear.Size = New Size(161, 25)
+        btnClear.TabIndex = 20
+        btnClear.Text = "CLEAR"
+        btnClear.UseVisualStyleBackColor = False
+        ' 
+        ' btnSubmit
+        ' 
+        btnSubmit.BackColor = Color.White
+        btnSubmit.FlatAppearance.BorderSize = 0
+        btnSubmit.FlatStyle = FlatStyle.Flat
+        btnSubmit.Location = New Point(784, 490)
+        btnSubmit.Name = "btnSubmit"
+        btnSubmit.Size = New Size(161, 25)
+        btnSubmit.TabIndex = 21
+        btnSubmit.Text = "SUBMIT"
+        btnSubmit.UseVisualStyleBackColor = False
+        ' 
+        ' cboFaculty
+        ' 
+        cboFaculty.Anchor = AnchorStyles.None
+        cboFaculty.FormattingEnabled = True
+        cboFaculty.Location = New Point(733, 419)
+        cboFaculty.Margin = New Padding(3, 2, 3, 2)
+        cboFaculty.Name = "cboFaculty"
+        cboFaculty.Size = New Size(153, 23)
+        cboFaculty.TabIndex = 22
+        ' 
+        ' lblFile
+        ' 
+        lblFile.AutoSize = True
+        lblFile.Location = New Point(62, 419)
+        lblFile.Name = "lblFile"
+        lblFile.Size = New Size(94, 15)
+        lblFile.TabIndex = 23
+        lblFile.Text = "No File Selected."
         ' 
         ' ucSubmit
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
-        Controls.Add(CheckedListBox1)
+        Controls.Add(lblFile)
+        Controls.Add(cboFaculty)
+        Controls.Add(btnSubmit)
+        Controls.Add(btnClear)
+        Controls.Add(btnRemoveFile)
+        Controls.Add(btnBrowse)
+        Controls.Add(chkPLP)
+        Controls.Add(clbSkills)
         Controls.Add(Label8)
         Controls.Add(cboType)
         Controls.Add(Label7)
         Controls.Add(dtpDate)
         Controls.Add(Label6)
-        Controls.Add(lblCharLimit)
+        Controls.Add(lblCount)
         Controls.Add(txtDescription)
         Controls.Add(Label4)
         Controls.Add(txtTitle)
@@ -228,12 +320,19 @@ Partial Class ucSubmit
     Friend WithEvents txtTitle As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents txtDescription As TextBox
-    Friend WithEvents lblCharLimit As Label
+    Friend WithEvents lblCount As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents dtpDate As DateTimePicker
     Friend WithEvents Label7 As Label
     Friend WithEvents cboType As ComboBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents CheckedListBox1 As CheckedListBox
+    Friend WithEvents clbSkills As CheckedListBox
+    Friend WithEvents chkPLP As CheckBox
+    Friend WithEvents btnBrowse As RoundedButton
+    Friend WithEvents btnRemoveFile As RoundedButton
+    Friend WithEvents btnClear As RoundedButton
+    Friend WithEvents btnSubmit As RoundedButton
+    Friend WithEvents cboFaculty As ComboBox
+    Friend WithEvents lblFile As Label
 
 End Class

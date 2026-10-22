@@ -67,7 +67,6 @@ Public Class ucProfile
     End Sub
 
     Private Sub editInfo(txt As TextBox)
-        txt.ReadOnly = Not txt.ReadOnly
         txt.Enabled = Not txt.Enabled
 
         If txt.Enabled Then
