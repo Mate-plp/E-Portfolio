@@ -26,18 +26,16 @@ Partial Class ucSubmit
         Label2 = New Label()
         Label3 = New Label()
         lblID = New Label()
-        tbTitle = New TextBox()
+        txtTitle = New TextBox()
         Label4 = New Label()
-        tbDescription = New TextBox()
+        txtDescription = New TextBox()
         lblCharLimit = New Label()
         Label6 = New Label()
-        dtDate = New DateTimePicker()
+        dtpDate = New DateTimePicker()
         Label7 = New Label()
-        cbActivity = New ComboBox()
+        cboType = New ComboBox()
         Label8 = New Label()
-        cbSkills = New ComboBox()
-        dgSkills = New DataGridView()
-        CType(dgSkills, ComponentModel.ISupportInitialize).BeginInit()
+        CheckedListBox1 = New CheckedListBox()
         SuspendLayout()
         ' 
         ' Label1
@@ -52,8 +50,8 @@ Partial Class ucSubmit
         ' 
         ' Label2
         ' 
+        Label2.Anchor = AnchorStyles.None
         Label2.AutoSize = True
-        Label2.Dock = DockStyle.Fill
         Label2.Location = New Point(0, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(55, 15)
@@ -72,6 +70,7 @@ Partial Class ucSubmit
         ' 
         ' lblID
         ' 
+        lblID.Anchor = AnchorStyles.None
         lblID.AutoSize = True
         lblID.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblID.Location = New Point(0, 0)
@@ -82,17 +81,19 @@ Partial Class ucSubmit
         lblID.TabIndex = 6
         lblID.Text = "Title:"
         ' 
-        ' tbTitle
+        ' txtTitle
         ' 
-        tbTitle.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        tbTitle.Location = New Point(105, 8)
-        tbTitle.Margin = New Padding(3, 2, 3, 2)
-        tbTitle.Name = "tbTitle"
-        tbTitle.Size = New Size(485, 29)
-        tbTitle.TabIndex = 7
+        txtTitle.Anchor = AnchorStyles.None
+        txtTitle.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtTitle.Location = New Point(105, 8)
+        txtTitle.Margin = New Padding(3, 2, 3, 2)
+        txtTitle.Name = "txtTitle"
+        txtTitle.Size = New Size(485, 29)
+        txtTitle.TabIndex = 7
         ' 
         ' Label4
         ' 
+        Label4.Anchor = AnchorStyles.None
         Label4.AutoSize = True
         Label4.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label4.Location = New Point(0, 74)
@@ -103,18 +104,20 @@ Partial Class ucSubmit
         Label4.TabIndex = 8
         Label4.Text = "Description:"
         ' 
-        ' tbDescription
+        ' txtDescription
         ' 
-        tbDescription.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        tbDescription.Location = New Point(26, 117)
-        tbDescription.Margin = New Padding(3, 2, 3, 2)
-        tbDescription.Multiline = True
-        tbDescription.Name = "tbDescription"
-        tbDescription.Size = New Size(564, 219)
-        tbDescription.TabIndex = 9
+        txtDescription.Anchor = AnchorStyles.None
+        txtDescription.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtDescription.Location = New Point(26, 117)
+        txtDescription.Margin = New Padding(3, 2, 3, 2)
+        txtDescription.Multiline = True
+        txtDescription.Name = "txtDescription"
+        txtDescription.Size = New Size(564, 219)
+        txtDescription.TabIndex = 9
         ' 
         ' lblCharLimit
         ' 
+        lblCharLimit.Anchor = AnchorStyles.None
         lblCharLimit.AutoSize = True
         lblCharLimit.Font = New Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblCharLimit.Location = New Point(394, 86)
@@ -127,6 +130,7 @@ Partial Class ucSubmit
         ' 
         ' Label6
         ' 
+        Label6.Anchor = AnchorStyles.None
         Label6.AutoSize = True
         Label6.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label6.Location = New Point(595, 0)
@@ -137,17 +141,19 @@ Partial Class ucSubmit
         Label6.TabIndex = 11
         Label6.Text = "Date:"
         ' 
-        ' dtDate
+        ' dtpDate
         ' 
-        dtDate.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        dtDate.Location = New Point(690, 8)
-        dtDate.Margin = New Padding(3, 2, 3, 2)
-        dtDate.Name = "dtDate"
-        dtDate.Size = New Size(296, 29)
-        dtDate.TabIndex = 12
+        dtpDate.Anchor = AnchorStyles.None
+        dtpDate.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        dtpDate.Location = New Point(690, 8)
+        dtpDate.Margin = New Padding(3, 2, 3, 2)
+        dtpDate.Name = "dtpDate"
+        dtpDate.Size = New Size(296, 29)
+        dtpDate.TabIndex = 12
         ' 
         ' Label7
         ' 
+        Label7.Anchor = AnchorStyles.None
         Label7.AutoSize = True
         Label7.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label7.Location = New Point(595, 82)
@@ -158,17 +164,19 @@ Partial Class ucSubmit
         Label7.TabIndex = 13
         Label7.Text = "Activity Type:"
         ' 
-        ' cbActivity
+        ' cboType
         ' 
-        cbActivity.FormattingEnabled = True
-        cbActivity.Location = New Point(794, 95)
-        cbActivity.Margin = New Padding(3, 2, 3, 2)
-        cbActivity.Name = "cbActivity"
-        cbActivity.Size = New Size(153, 23)
-        cbActivity.TabIndex = 14
+        cboType.Anchor = AnchorStyles.None
+        cboType.FormattingEnabled = True
+        cboType.Location = New Point(794, 95)
+        cboType.Margin = New Padding(3, 2, 3, 2)
+        cboType.Name = "cboType"
+        cboType.Size = New Size(153, 23)
+        cboType.TabIndex = 14
         ' 
         ' Label8
         ' 
+        Label8.Anchor = AnchorStyles.None
         Label8.AutoSize = True
         Label8.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label8.Location = New Point(595, 146)
@@ -179,48 +187,36 @@ Partial Class ucSubmit
         Label8.TabIndex = 15
         Label8.Text = "Skills Developed:"
         ' 
-        ' cbSkills
+        ' CheckedListBox1
         ' 
-        cbSkills.FormattingEnabled = True
-        cbSkills.Location = New Point(814, 159)
-        cbSkills.Margin = New Padding(3, 2, 3, 2)
-        cbSkills.Name = "cbSkills"
-        cbSkills.Size = New Size(133, 23)
-        cbSkills.TabIndex = 16
-        ' 
-        ' dgSkills
-        ' 
-        dgSkills.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgSkills.Location = New Point(625, 197)
-        dgSkills.Margin = New Padding(3, 2, 3, 2)
-        dgSkills.Name = "dgSkills"
-        dgSkills.RowHeadersWidth = 51
-        dgSkills.Size = New Size(321, 141)
-        dgSkills.TabIndex = 17
+        CheckedListBox1.Anchor = AnchorStyles.None
+        CheckedListBox1.FormattingEnabled = True
+        CheckedListBox1.Location = New Point(628, 199)
+        CheckedListBox1.Name = "CheckedListBox1"
+        CheckedListBox1.Size = New Size(319, 202)
+        CheckedListBox1.TabIndex = 16
         ' 
         ' ucSubmit
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
-        Controls.Add(dgSkills)
-        Controls.Add(cbSkills)
+        Controls.Add(CheckedListBox1)
         Controls.Add(Label8)
-        Controls.Add(cbActivity)
+        Controls.Add(cboType)
         Controls.Add(Label7)
-        Controls.Add(dtDate)
+        Controls.Add(dtpDate)
         Controls.Add(Label6)
         Controls.Add(lblCharLimit)
-        Controls.Add(tbDescription)
+        Controls.Add(txtDescription)
         Controls.Add(Label4)
-        Controls.Add(tbTitle)
+        Controls.Add(txtTitle)
         Controls.Add(lblID)
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
         Name = "ucSubmit"
         Size = New Size(1728, 1005)
-        CType(dgSkills, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -229,16 +225,15 @@ Partial Class ucSubmit
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents lblID As Label
-    Friend WithEvents tbTitle As TextBox
+    Friend WithEvents txtTitle As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents tbDescription As TextBox
+    Friend WithEvents txtDescription As TextBox
     Friend WithEvents lblCharLimit As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents dtDate As DateTimePicker
+    Friend WithEvents dtpDate As DateTimePicker
     Friend WithEvents Label7 As Label
-    Friend WithEvents cbActivity As ComboBox
+    Friend WithEvents cboType As ComboBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents cbSkills As ComboBox
-    Friend WithEvents dgSkills As DataGridView
+    Friend WithEvents CheckedListBox1 As CheckedListBox
 
 End Class

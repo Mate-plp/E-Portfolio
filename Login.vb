@@ -56,7 +56,7 @@ Public Class Login
         End Try
     End Sub
 
-    Private Sub btnExit_Click(sender As Object, e As EventArgs)
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         If MessageBox.Show("Are you sure you want to exit?", "Exit",
                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Application.Exit()
@@ -65,17 +65,5 @@ Public Class Login
 
     Private Sub chkShowPassword_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPassword.CheckedChanged
         txtPassword.UseSystemPasswordChar = Not chkShowPassword.Checked
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
-
     End Sub
 End Class
