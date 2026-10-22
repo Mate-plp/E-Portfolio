@@ -244,7 +244,6 @@ Partial Class ucProfile
         tbMN.ForeColor = Color.Black
         tbMN.Location = New Point(195, 189)
         tbMN.Name = "tbMN"
-        tbMN.ReadOnly = True
         tbMN.Size = New Size(266, 25)
         tbMN.TabIndex = 3
         tbMN.TabStop = False
@@ -270,7 +269,6 @@ Partial Class ucProfile
         tbLN.ForeColor = Color.Black
         tbLN.Location = New Point(195, 251)
         tbLN.Name = "tbLN"
-        tbLN.ReadOnly = True
         tbLN.Size = New Size(266, 25)
         tbLN.TabIndex = 4
         tbLN.TabStop = False
@@ -308,7 +306,6 @@ Partial Class ucProfile
         tbFN.ForeColor = Color.Black
         tbFN.Location = New Point(195, 128)
         tbFN.Name = "tbFN"
-        tbFN.ReadOnly = True
         tbFN.Size = New Size(266, 25)
         tbFN.TabIndex = 2
         tbFN.TabStop = False
@@ -322,7 +319,6 @@ Partial Class ucProfile
         tbUsername.ForeColor = Color.Black
         tbUsername.Location = New Point(195, 68)
         tbUsername.Name = "tbUsername"
-        tbUsername.ReadOnly = True
         tbUsername.Size = New Size(266, 25)
         tbUsername.TabIndex = 1
         tbUsername.TabStop = False
@@ -398,7 +394,6 @@ Partial Class ucProfile
         tbCfmPass.ForeColor = Color.Black
         tbCfmPass.Location = New Point(216, 207)
         tbCfmPass.Name = "tbCfmPass"
-        tbCfmPass.ReadOnly = True
         tbCfmPass.Size = New Size(266, 25)
         tbCfmPass.TabIndex = 17
         tbCfmPass.TabStop = False
@@ -448,7 +443,6 @@ Partial Class ucProfile
         tbNewPass.ForeColor = Color.Black
         tbNewPass.Location = New Point(200, 139)
         tbNewPass.Name = "tbNewPass"
-        tbNewPass.ReadOnly = True
         tbNewPass.Size = New Size(266, 25)
         tbNewPass.TabIndex = 15
         tbNewPass.TabStop = False
@@ -462,7 +456,6 @@ Partial Class ucProfile
         tbOldPass.ForeColor = Color.Black
         tbOldPass.Location = New Point(200, 61)
         tbOldPass.Name = "tbOldPass"
-        tbOldPass.ReadOnly = True
         tbOldPass.Size = New Size(266, 25)
         tbOldPass.TabIndex = 14
         tbOldPass.TabStop = False
@@ -547,7 +540,6 @@ Partial Class ucProfile
         tbYear.ForeColor = Color.Black
         tbYear.Location = New Point(221, 170)
         tbYear.Name = "tbYear"
-        tbYear.ReadOnly = True
         tbYear.Size = New Size(200, 25)
         tbYear.TabIndex = 7
         tbYear.TabStop = False
@@ -561,7 +553,6 @@ Partial Class ucProfile
         tbProgram.ForeColor = Color.Black
         tbProgram.Location = New Point(221, 116)
         tbProgram.Name = "tbProgram"
-        tbProgram.ReadOnly = True
         tbProgram.Size = New Size(200, 25)
         tbProgram.TabIndex = 6
         tbProgram.TabStop = False
@@ -599,7 +590,6 @@ Partial Class ucProfile
         tbID.ForeColor = Color.Black
         tbID.Location = New Point(221, 59)
         tbID.Name = "tbID"
-        tbID.ReadOnly = True
         tbID.Size = New Size(200, 25)
         tbID.TabIndex = 5
         tbID.TabStop = False
@@ -706,7 +696,6 @@ Partial Class ucProfile
         tbRegion.ForeColor = Color.Black
         tbRegion.Location = New Point(197, 281)
         tbRegion.Name = "tbRegion"
-        tbRegion.ReadOnly = True
         tbRegion.Size = New Size(381, 25)
         tbRegion.TabIndex = 13
         tbRegion.TabStop = False
@@ -720,7 +709,6 @@ Partial Class ucProfile
         tbBar.ForeColor = Color.Black
         tbBar.Location = New Point(441, 174)
         tbBar.Name = "tbBar"
-        tbBar.ReadOnly = True
         tbBar.Size = New Size(219, 25)
         tbBar.TabIndex = 11
         tbBar.TabStop = False
@@ -734,7 +722,6 @@ Partial Class ucProfile
         tbCity.ForeColor = Color.Black
         tbCity.Location = New Point(115, 174)
         tbCity.Name = "tbCity"
-        tbCity.ReadOnly = True
         tbCity.Size = New Size(132, 25)
         tbCity.TabIndex = 10
         tbCity.TabStop = False
@@ -796,7 +783,6 @@ Partial Class ucProfile
         tbLine1.ForeColor = Color.Black
         tbLine1.Location = New Point(197, 53)
         tbLine1.Name = "tbLine1"
-        tbLine1.ReadOnly = True
         tbLine1.Size = New Size(463, 25)
         tbLine1.TabIndex = 8
         tbLine1.TabStop = False
@@ -810,7 +796,6 @@ Partial Class ucProfile
         tbLine2.ForeColor = Color.Black
         tbLine2.Location = New Point(197, 111)
         tbLine2.Name = "tbLine2"
-        tbLine2.ReadOnly = True
         tbLine2.Size = New Size(463, 25)
         tbLine2.TabIndex = 9
         tbLine2.TabStop = False
