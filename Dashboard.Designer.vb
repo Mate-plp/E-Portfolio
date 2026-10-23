@@ -34,6 +34,7 @@ Partial Class Dashboard
         SpaceSeparatorVertical1 = New Panel()
         pnlHeader = New Panel()
         PnlHead = New Panel()
+        Label1 = New Label()
         picLogo = New PictureBox()
         lblTitle = New Label()
         pnlContent = New Panel()
@@ -81,7 +82,7 @@ Partial Class Dashboard
         btnView.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnView.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnView.FlatStyle = FlatStyle.Flat
-        btnView.Font = New Font("Verdana", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnView.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnView.ForeColor = Color.Black
         btnView.Location = New Point(0, 90)
         btnView.Name = "btnView"
@@ -98,7 +99,7 @@ Partial Class Dashboard
         btnSubmit.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnSubmit.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnSubmit.FlatStyle = FlatStyle.Flat
-        btnSubmit.Font = New Font("Verdana", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnSubmit.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnSubmit.ForeColor = Color.Black
         btnSubmit.Location = New Point(0, 50)
         btnSubmit.Name = "btnSubmit"
@@ -117,7 +118,7 @@ Partial Class Dashboard
         btnPortfolio.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnPortfolio.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnPortfolio.FlatStyle = FlatStyle.Flat
-        btnPortfolio.Font = New Font("Verdana", 18.0F, FontStyle.Bold)
+        btnPortfolio.Font = New Font("Verdana", 18F, FontStyle.Bold)
         btnPortfolio.ForeColor = Color.White
         btnPortfolio.Location = New Point(0, 0)
         btnPortfolio.Name = "btnPortfolio"
@@ -135,10 +136,10 @@ Partial Class Dashboard
         btnLogout.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnLogout.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnLogout.FlatStyle = FlatStyle.Flat
-        btnLogout.Font = New Font("Verdana", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnLogout.Font = New Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnLogout.ForeColor = Color.White
         btnLogout.Location = New Point(0, 794)
-        btnLogout.Margin = New Padding(4, 8, 9, 8)
+        btnLogout.Margin = New Padding(4, 8, 10, 8)
         btnLogout.Name = "btnLogout"
         btnLogout.Size = New Size(192, 50)
         btnLogout.TabIndex = 4
@@ -155,7 +156,7 @@ Partial Class Dashboard
         btnProfile.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnProfile.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnProfile.FlatStyle = FlatStyle.Flat
-        btnProfile.Font = New Font("Verdana", 18.0F, FontStyle.Bold)
+        btnProfile.Font = New Font("Verdana", 18F, FontStyle.Bold)
         btnProfile.ForeColor = Color.White
         btnProfile.Location = New Point(0, 60)
         btnProfile.Name = "btnProfile"
@@ -174,7 +175,7 @@ Partial Class Dashboard
         btnDashboard.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnDashboard.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnDashboard.FlatStyle = FlatStyle.Flat
-        btnDashboard.Font = New Font("Verdana", 18.0F, FontStyle.Bold)
+        btnDashboard.Font = New Font("Verdana", 18F, FontStyle.Bold)
         btnDashboard.ForeColor = Color.White
         btnDashboard.Location = New Point(0, 10)
         btnDashboard.Margin = New Padding(3, 10, 3, 3)
@@ -187,8 +188,9 @@ Partial Class Dashboard
         ' 
         ' SpaceSeparatorVertical1
         ' 
+        SpaceSeparatorVertical1.BackColor = Color.FromArgb(CByte(11), CByte(93), CByte(52))
         SpaceSeparatorVertical1.Dock = DockStyle.Top
-        SpaceSeparatorVertical1.Font = New Font("Verdana", 8.0F)
+        SpaceSeparatorVertical1.Font = New Font("Verdana", 8F)
         SpaceSeparatorVertical1.Location = New Point(0, 0)
         SpaceSeparatorVertical1.Name = "SpaceSeparatorVertical1"
         SpaceSeparatorVertical1.Size = New Size(192, 10)
@@ -206,9 +208,10 @@ Partial Class Dashboard
         ' 
         ' PnlHead
         ' 
-        PnlHead.BackColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
+        PnlHead.BackColor = Color.FromArgb(CByte(11), CByte(93), CByte(52))
         PnlHead.BackgroundImage = CType(resources.GetObject("PnlHead.BackgroundImage"), Image)
         PnlHead.BackgroundImageLayout = ImageLayout.Zoom
+        PnlHead.Controls.Add(Label1)
         PnlHead.Controls.Add(picLogo)
         PnlHead.Controls.Add(lblTitle)
         PnlHead.Dock = DockStyle.Top
@@ -217,6 +220,18 @@ Partial Class Dashboard
         PnlHead.Name = "PnlHead"
         PnlHead.Size = New Size(1920, 75)
         PnlHead.TabIndex = 1
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.BackColor = Color.Transparent
+        Label1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.White
+        Label1.Location = New Point(105, 44)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(98, 17)
+        Label1.TabIndex = 1
+        Label1.Text = "Student Profile"
         ' 
         ' picLogo
         ' 
@@ -234,17 +249,18 @@ Partial Class Dashboard
         ' 
         lblTitle.AutoSize = True
         lblTitle.BackColor = Color.Transparent
+        lblTitle.Font = New Font("Georgia", 20F, FontStyle.Bold)
         lblTitle.ForeColor = Color.White
-        lblTitle.Location = New Point(118, 28)
+        lblTitle.Location = New Point(101, 12)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(30, 15)
+        lblTitle.Size = New Size(92, 31)
         lblTitle.TabIndex = 0
-        lblTitle.Text = "Title"
+        lblTitle.Text = "STAR"
         lblTitle.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' pnlContent
         ' 
-        pnlContent.BackColor = Color.WhiteSmoke
+        pnlContent.BackColor = Color.FromArgb(CByte(13), CByte(34), CByte(24))
         pnlContent.BackgroundImageLayout = ImageLayout.Zoom
         pnlContent.Dock = DockStyle.Fill
         pnlContent.ForeColor = SystemColors.ControlText
@@ -256,7 +272,7 @@ Partial Class Dashboard
         ' 
         ' Dashboard
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.WhiteSmoke
         ClientSize = New Size(1920, 1080)
@@ -294,4 +310,5 @@ Partial Class Dashboard
     Friend WithEvents PnlHead As Panel
     Friend WithEvents picLogo As PictureBox
     Friend WithEvents SpaceSeparatorVertical1 As System.Windows.Forms.Panel
+    Friend WithEvents Label1 As Label
 End Class

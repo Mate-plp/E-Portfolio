@@ -22,43 +22,60 @@ Partial Class ucView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Label1 = New Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucView))
         dgvEntries = New DataGridView()
+        RoundedPanel1 = New RoundedPanel()
+        lblSubmitActivity = New Label()
         CType(dgvEntries, ComponentModel.ISupportInitialize).BeginInit()
+        RoundedPanel1.SuspendLayout()
         SuspendLayout()
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(50, 68)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(34, 15)
-        Label1.TabIndex = 1
-        Label1.Text = "VIEW"
         ' 
         ' dgvEntries
         ' 
         dgvEntries.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvEntries.Location = New Point(50, 96)
+        dgvEntries.Location = New Point(65, 96)
         dgvEntries.Name = "dgvEntries"
         dgvEntries.Size = New Size(1598, 859)
         dgvEntries.TabIndex = 2
+        ' 
+        ' RoundedPanel1
+        ' 
+        RoundedPanel1.BackColor = Color.Transparent
+        RoundedPanel1.Controls.Add(lblSubmitActivity)
+        RoundedPanel1.FillColor = Color.FromArgb(CByte(12), CByte(69), CByte(36))
+        RoundedPanel1.Location = New Point(11, 9)
+        RoundedPanel1.Name = "RoundedPanel1"
+        RoundedPanel1.Size = New Size(1707, 70)
+        RoundedPanel1.TabIndex = 3
+        ' 
+        ' lblSubmitActivity
+        ' 
+        lblSubmitActivity.AutoSize = True
+        lblSubmitActivity.Font = New Font("Georgia", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblSubmitActivity.ForeColor = Color.FromArgb(CByte(243), CByte(185), CByte(39))
+        lblSubmitActivity.Location = New Point(739, 20)
+        lblSubmitActivity.Name = "lblSubmitActivity"
+        lblSubmitActivity.Size = New Size(220, 31)
+        lblSubmitActivity.TabIndex = 1
+        lblSubmitActivity.Text = "View Activities"
         ' 
         ' ucView
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        Controls.Add(RoundedPanel1)
         Controls.Add(dgvEntries)
-        Controls.Add(Label1)
         Name = "ucView"
         Size = New Size(1728, 1005)
         CType(dgvEntries, ComponentModel.ISupportInitialize).EndInit()
+        RoundedPanel1.ResumeLayout(False)
+        RoundedPanel1.PerformLayout()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
-
-    Friend WithEvents Label1 As Label
     Friend WithEvents dgvEntries As DataGridView
+    Friend WithEvents RoundedPanel1 As RoundedPanel
+    Friend WithEvents lblSubmitActivity As Label
 
 End Class

@@ -22,9 +22,9 @@ Partial Class ucDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New DataVisualization.Charting.Series()
         Panel2 = New Panel()
         FlowLayoutPanel1 = New FlowLayoutPanel()
         Panel1 = New Panel()
@@ -232,16 +232,16 @@ Partial Class ucDashboard
         ' 
         ' chtProgress
         ' 
-        ChartArea3.Name = "ChartArea1"
-        chtProgress.ChartAreas.Add(ChartArea3)
-        Legend3.Name = "Legend1"
-        chtProgress.Legends.Add(Legend3)
+        ChartArea1.Name = "ChartArea1"
+        chtProgress.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        chtProgress.Legends.Add(Legend1)
         chtProgress.Location = New Point(93, 324)
         chtProgress.Name = "chtProgress"
-        Series3.ChartArea = "ChartArea1"
-        Series3.Legend = "Legend1"
-        Series3.Name = "Series1"
-        chtProgress.Series.Add(Series3)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        chtProgress.Series.Add(Series1)
         chtProgress.Size = New Size(941, 595)
         chtProgress.TabIndex = 7
         chtProgress.Text = "Chart1"
