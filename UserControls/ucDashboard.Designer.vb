@@ -22,26 +22,28 @@ Partial Class ucDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New DataVisualization.Charting.Series()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New DataVisualization.Charting.Series()
         Panel2 = New Panel()
         FlowLayoutPanel1 = New FlowLayoutPanel()
         Panel1 = New Panel()
         CyberGroupBox3 = New RoundedPanel()
-        Label2 = New Label()
+        lblTotal = New Label()
         Label1 = New Label()
         Separator1 = New Panel()
         CyberGroupBox1 = New RoundedPanel()
-        Label3 = New Label()
+        lblVerified = New Label()
         Label4 = New Label()
         Separator2 = New Panel()
         CyberGroupBox2 = New RoundedPanel()
-        Label5 = New Label()
+        lblSkills = New Label()
         Label6 = New Label()
         cbChartBox = New ComboBox()
         chtProgress = New DataVisualization.Charting.Chart()
         cbYear = New ComboBox()
+        Label2 = New Label()
+        Label3 = New Label()
         FlowLayoutPanel1.SuspendLayout()
         CyberGroupBox3.SuspendLayout()
         CyberGroupBox1.SuspendLayout()
@@ -87,7 +89,7 @@ Partial Class ucDashboard
         ' CyberGroupBox3
         ' 
         CyberGroupBox3.BackColor = Color.Transparent
-        CyberGroupBox3.Controls.Add(Label2)
+        CyberGroupBox3.Controls.Add(lblTotal)
         CyberGroupBox3.Controls.Add(Label1)
         CyberGroupBox3.CornerRadius = 30
         CyberGroupBox3.FillColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
@@ -98,17 +100,17 @@ Partial Class ucDashboard
         CyberGroupBox3.Size = New Size(299, 206)
         CyberGroupBox3.TabIndex = 5
         ' 
-        ' Label2
+        ' lblTotal
         ' 
-        Label2.Dock = DockStyle.Top
-        Label2.Font = New Font("Segoe UI", 55F)
-        Label2.Location = New Point(0, 92)
-        Label2.Margin = New Padding(26, 0, 3, 0)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(299, 92)
-        Label2.TabIndex = 1
-        Label2.Text = "0"
-        Label2.TextAlign = ContentAlignment.TopCenter
+        lblTotal.Dock = DockStyle.Top
+        lblTotal.Font = New Font("Segoe UI", 55F)
+        lblTotal.Location = New Point(0, 92)
+        lblTotal.Margin = New Padding(26, 0, 3, 0)
+        lblTotal.Name = "lblTotal"
+        lblTotal.Size = New Size(299, 92)
+        lblTotal.TabIndex = 1
+        lblTotal.Text = "0"
+        lblTotal.TextAlign = ContentAlignment.TopCenter
         ' 
         ' Label1
         ' 
@@ -133,7 +135,7 @@ Partial Class ucDashboard
         ' CyberGroupBox1
         ' 
         CyberGroupBox1.BackColor = Color.Transparent
-        CyberGroupBox1.Controls.Add(Label3)
+        CyberGroupBox1.Controls.Add(lblVerified)
         CyberGroupBox1.Controls.Add(Label4)
         CyberGroupBox1.CornerRadius = 30
         CyberGroupBox1.FillColor = Color.FromArgb(CByte(34), CByte(170), CByte(79))
@@ -144,17 +146,17 @@ Partial Class ucDashboard
         CyberGroupBox1.Size = New Size(299, 206)
         CyberGroupBox1.TabIndex = 3
         ' 
-        ' Label3
+        ' lblVerified
         ' 
-        Label3.Dock = DockStyle.Top
-        Label3.Font = New Font("Segoe UI", 55F)
-        Label3.Location = New Point(0, 92)
-        Label3.Margin = New Padding(26, 0, 3, 0)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(299, 92)
-        Label3.TabIndex = 3
-        Label3.Text = "0"
-        Label3.TextAlign = ContentAlignment.TopCenter
+        lblVerified.Dock = DockStyle.Top
+        lblVerified.Font = New Font("Segoe UI", 55F)
+        lblVerified.Location = New Point(0, 92)
+        lblVerified.Margin = New Padding(26, 0, 3, 0)
+        lblVerified.Name = "lblVerified"
+        lblVerified.Size = New Size(299, 92)
+        lblVerified.TabIndex = 3
+        lblVerified.Text = "0"
+        lblVerified.TextAlign = ContentAlignment.TopCenter
         ' 
         ' Label4
         ' 
@@ -180,7 +182,7 @@ Partial Class ucDashboard
         ' CyberGroupBox2
         ' 
         CyberGroupBox2.BackColor = Color.Transparent
-        CyberGroupBox2.Controls.Add(Label5)
+        CyberGroupBox2.Controls.Add(lblSkills)
         CyberGroupBox2.Controls.Add(Label6)
         CyberGroupBox2.CornerRadius = 30
         CyberGroupBox2.FillColor = Color.FromArgb(CByte(78), CByte(220), CByte(124))
@@ -191,17 +193,17 @@ Partial Class ucDashboard
         CyberGroupBox2.Size = New Size(299, 206)
         CyberGroupBox2.TabIndex = 4
         ' 
-        ' Label5
+        ' lblSkills
         ' 
-        Label5.Dock = DockStyle.Top
-        Label5.Font = New Font("Segoe UI", 55F)
-        Label5.Location = New Point(0, 92)
-        Label5.Margin = New Padding(3)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(299, 99)
-        Label5.TabIndex = 5
-        Label5.Text = "0"
-        Label5.TextAlign = ContentAlignment.TopCenter
+        lblSkills.Dock = DockStyle.Top
+        lblSkills.Font = New Font("Segoe UI", 55F)
+        lblSkills.Location = New Point(0, 92)
+        lblSkills.Margin = New Padding(3)
+        lblSkills.Name = "lblSkills"
+        lblSkills.Size = New Size(299, 99)
+        lblSkills.TabIndex = 5
+        lblSkills.Text = "0"
+        lblSkills.TextAlign = ContentAlignment.TopCenter
         ' 
         ' Label6
         ' 
@@ -222,7 +224,7 @@ Partial Class ucDashboard
         cbChartBox.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         cbChartBox.FormattingEnabled = True
         cbChartBox.Items.AddRange(New Object() {"Total Skills", "Total Verified Skills", "Total Activities"})
-        cbChartBox.Location = New Point(668, 324)
+        cbChartBox.Location = New Point(1144, 451)
         cbChartBox.Name = "cbChartBox"
         cbChartBox.Size = New Size(354, 38)
         cbChartBox.TabIndex = 6
@@ -230,17 +232,17 @@ Partial Class ucDashboard
         ' 
         ' chtProgress
         ' 
-        ChartArea1.Name = "ChartArea1"
-        chtProgress.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        chtProgress.Legends.Add(Legend1)
-        chtProgress.Location = New Point(352, 402)
+        ChartArea3.Name = "ChartArea1"
+        chtProgress.ChartAreas.Add(ChartArea3)
+        Legend3.Name = "Legend1"
+        chtProgress.Legends.Add(Legend3)
+        chtProgress.Location = New Point(93, 324)
         chtProgress.Name = "chtProgress"
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        chtProgress.Series.Add(Series1)
-        chtProgress.Size = New Size(843, 533)
+        Series3.ChartArea = "ChartArea1"
+        Series3.Legend = "Legend1"
+        Series3.Name = "Series1"
+        chtProgress.Series.Add(Series3)
+        chtProgress.Size = New Size(941, 595)
         chtProgress.TabIndex = 7
         chtProgress.Text = "Chart1"
         ' 
@@ -252,11 +254,31 @@ Partial Class ucDashboard
         cbYear.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         cbYear.FormattingEnabled = True
         cbYear.Items.AddRange(New Object() {"All"})
-        cbYear.Location = New Point(1054, 324)
+        cbYear.Location = New Point(1144, 344)
         cbYear.Name = "cbYear"
         cbYear.Size = New Size(354, 38)
         cbYear.TabIndex = 8
         cbYear.Text = "All"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 24F, FontStyle.Bold)
+        Label2.Location = New Point(1144, 296)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(93, 45)
+        Label2.TabIndex = 9
+        Label2.Text = "Year:"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI", 24F, FontStyle.Bold)
+        Label3.Location = New Point(1144, 403)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(166, 45)
+        Label3.TabIndex = 10
+        Label3.Text = "Category:"
         ' 
         ' ucDashboard
         ' 
@@ -264,6 +286,8 @@ Partial Class ucDashboard
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         BackColor = Color.White
+        Controls.Add(Label3)
+        Controls.Add(Label2)
         Controls.Add(cbYear)
         Controls.Add(chtProgress)
         Controls.Add(cbChartBox)
@@ -277,14 +301,15 @@ Partial Class ucDashboard
         CyberGroupBox2.ResumeLayout(False)
         CType(chtProgress, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
     Friend WithEvents Panel2 As Panel
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblTotal As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblVerified As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblSkills As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents CyberGroupBox1 As RoundedPanel
     Friend WithEvents CyberGroupBox3 As RoundedPanel
@@ -295,5 +320,7 @@ Partial Class ucDashboard
     Friend WithEvents cbChartBox As ComboBox
     Friend WithEvents chtProgress As DataVisualization.Charting.Chart
     Friend WithEvents cbYear As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 
 End Class

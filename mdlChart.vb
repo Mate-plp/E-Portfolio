@@ -1,30 +1,82 @@
-﻿Imports System.ComponentModel.Design.Serialization
-Imports System.Numerics
-Imports System.Text
+﻿Imports System.Text.RegularExpressions
 Imports System.Windows.Forms.DataVisualization.Charting
 Imports Google.Protobuf.WellKnownTypes
 Imports MySql.Data.MySqlClient
-Imports Org.BouncyCastle.Tls
 
+Public Class SkillData
+    Public Property Year As String
+    Public Property Month As Integer
+    Public Property SkillName As String
+    Public Property TotalCount As Integer
+    Public Property VerifiedCount As Integer
+End Class
+Public Class EntryData
+    Public Property Year As String
+    Public Property Month As Integer
+    Public Property TotalEntry As Integer
+    Public Property VerifiedEntry As Integer
+End Class
 Module mdlChart
+    Dim skillList As New List(Of SkillData)()
+    Dim entryList As New List(Of EntryData)()
+    Sub PopulateCombos(ByVal yearCB As ComboBox)
+        If entryList Is Nothing OrElse entryList.Count = 0 Then
+            yearCB.DataSource = New List(Of String) From {"All"}
+            Return
+        End If
 
-    Dim skillList As New Dictionary(Of (year As String, month As Int32, skillName As String), (tCount As Int32, vCount As Int32))()
+        Dim years = entryList.Select(Function(e) e.Year).Distinct().OrderBy(Function(y) y).ToList()
 
-    Dim totalEntries As New Dictionary(Of (year As String, month As String), (tCount As Int32, vCount As Int32))()
+        years.Insert(0, "All")
 
-    Sub populateRange(ByVal cb As ComboBox)
-        For Each i In totalEntries
-            If Not (cb.Items.Contains(i.Key.year)) Then
-                cb.Items.Add(i.Key.year)
-            End If
-
-        Next
+        yearCB.DataSource = years
     End Sub
-    Sub getUserStats()
 
+    Sub SwitchChart(ByVal chart As Chart, ByVal table As String, ByVal year As String)
+        Select Case table
+            Case "Total Skills"
+                SkillChart(chart, year, False)
+            Case "Total Verified Skills"
+                SkillChart(chart, year, True)
+            Case "Total Activities"
+                EntryChart(chart, year)
+        End Select
+    End Sub
+    Public Sub DebugShowLoadedData()
+        Dim sb As New System.Text.StringBuilder()
+
+        ' 1. Format Entry Data
+        sb.AppendLine($"=== ENTRY DATA ({entryList.Count} Records) ===")
+        If entryList.Count = 0 Then
+            sb.AppendLine("No entry records found.")
+        Else
+            For i As Integer = 0 To entryList.Count - 1
+                Dim e = entryList(i)
+                sb.AppendLine($"[{i + 1}] Year: '{e.Year}' | Month: {e.Month} | TotalEntry: {e.TotalEntry} | VerifiedEntry: {e.VerifiedEntry}")
+            Next
+        End If
+
+        sb.AppendLine()
+
+        ' 2. Format Skill Data
+        sb.AppendLine($"=== SKILL DATA ({skillList.Count} Records) ===")
+        If skillList.Count = 0 Then
+            sb.AppendLine("No skill records found.")
+        Else
+            For i As Integer = 0 To skillList.Count - 1
+                Dim s = skillList(i)
+                sb.AppendLine($"[{i + 1}] Year: '{s.Year}' | Month: {s.Month} | Skill: '{s.SkillName}' | TotalCount: {s.TotalCount} | VerifiedCount: {s.VerifiedCount}")
+            Next
+        End If
+
+        ' 3. Show in MessageBox
+        MessageBox.Show(sb.ToString(), "In-Memory Data Inspector", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Sub getUserStats()
         Try
             skillList.Clear()
-            totalEntries.Clear()
+            entryList.Clear()
             Using con As New MySqlConnection(conString)
                 con.Open()
 
@@ -38,14 +90,16 @@ Module mdlChart
                     cmd.Parameters.AddWithValue("@s", CurrentStudentId)
                     Using reader As MySqlDataReader = cmd.ExecuteReader()
                         While reader.Read()
-                            Dim skillName As String = reader("skill_name").ToString()
-                            Dim totalCount As Integer = Convert.ToInt32(reader("total_count"))
-                            Dim verifiedCount As Integer = Convert.ToInt32(reader("verified_count"))
-                            Dim month As Int32 = Convert.ToInt32(reader("entry_month"))
-                            Dim year As String = reader("entry_year").ToString()
+                            Dim skill As New SkillData With {
+                            .SkillName = reader("skill_name").ToString(),
+                            .TotalCount = Convert.ToInt32(reader("total_count")),
+                            .VerifiedCount = Convert.ToInt32(reader("verified_count")),
+                            .Month = Convert.ToInt32(reader("entry_month")),
+                            .Year = reader("entry_year").ToString()
+                            }
 
                             Try
-                                skillList.Add((year, month, skillName), (totalCount, verifiedCount))
+                                skillList.Add(skill)
                             Catch ex As Exception
                                 MsgBox("mdlChart Error: " + ex.ToString())
                             End Try
@@ -57,12 +111,14 @@ Module mdlChart
                     cmd.Parameters.AddWithValue("@s", CurrentStudentId)
                     Using reader As MySqlDataReader = cmd.ExecuteReader()
                         While reader.Read()
-                            Dim totalEntry As Integer = Convert.ToInt32(reader("total_entries"))
-                            Dim verifiedEntry As Integer = Convert.ToInt32(reader("verified_entries"))
-                            Dim year As String = reader("entries_year").ToString()
-                            Dim month As String = reader("entries_month").ToString()
+                            Dim entry As New EntryData With {
+                                .TotalEntry = Convert.ToInt32(reader("total_entries")),
+                                .VerifiedEntry = Convert.ToInt32(reader("verified_entries")),
+                                .Month = Convert.ToInt32(reader("entries_month")),
+                                .Year = reader("entries_year").ToString()}
+
                             Try
-                                totalEntries.Add((year, month), (totalEntry, verifiedEntry))
+                                entryList.Add(entry)
                             Catch ex As Exception
                                 MsgBox("mdlChart Error: " + ex.ToString())
                             End Try
@@ -77,133 +133,133 @@ Module mdlChart
         Catch ex As Exception
             MsgBox("Something went Very Wrong: " + ex.ToString())
         End Try
+        DebugShowLoadedData()
     End Sub
-    Sub CreateSkillSeries(ByVal chart As Chart)
-        For Each item In skillList
-            Dim series As New Series(item.Key.skillName) With {
-                .ChartType = SeriesChartType.StackedColumn,
-                .IsXValueIndexed = True}
-            series.Points.AddXY(item.Key.month, item.Value.tCount)
-        Next
-    End Sub
+    Public Sub SkillChart(ByVal chart As Chart,
+                      ByVal year As String,
+                      ByVal verified As Boolean)
 
-    Sub CreateTotalSeries(ByVal chart As Chart)
-
-    End Sub
-    Sub PopulateChart(ByVal chart As Chart, ByVal selectView As String, ByVal range As String)
         chart.Series.Clear()
-        chart.Titles.Clear()
 
-        chart.ChartAreas(0).AxisY.Interval = 1
+        If year = "All" Then
+            Dim yearlyData = skillList.
+            GroupBy(Function(s) New With {Key s.Year, Key s.SkillName}).
+            Select(Function(g) New With {
+                .Year = g.Key.Year,
+                .SkillName = g.Key.SkillName,
+                .Total = g.Sum(Function(x) x.TotalCount),
+                .Verified = g.Sum(Function(x) x.VerifiedCount)
+            }).ToList()
 
-        Dim targetYear As String = range
-        Dim monthNames As String() = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
+            Dim uniqueSkills = yearlyData.Select(Function(s) s.SkillName).Distinct().ToList()
 
-        Dim activeSeries As New Series(selectView) With {
-            .ChartType = SeriesChartType.StackedColumn,
-            .IsXValueIndexed = True}
+            For Each skill In uniqueSkills
+                Dim dynamicSeries As New Series(skill)
+                dynamicSeries.ChartType = SeriesChartType.Column
 
+                Dim thisSkillData = yearlyData.Where(Function(s) s.SkillName = skill).ToList()
 
-        Select Case selectView
-            Case "Total Skills"
-                chart.Titles.Add("Total Skills Developed")
+                Dim xValues = thisSkillData.Select(Function(s) s.Year).ToArray()
+                Dim yValues As Integer()
 
-                If targetYear = "All" Then
-                    For Each item In skillList
-                        Dim skillName As String = item.Key.skillName
-                        Dim series As Series = chart.Series.FindByName(skillName)
-
-                        Dim xValue As Object = If(targetYear = "All",
-                              CObj(item.Key.year),
-                              CObj(monthNames(item.Key.month)))
-
-                        If series Is Nothing Then
-                            series = New Series(skillName) With {
-                        .ChartType = SeriesChartType.StackedColumn,
-                        .IsXValueIndexed = True}
-                            chart.Series.Add(series)
-                        End If
-                        series.Points.AddXY(xValue, item.Value.tCount)
-                    Next
+                If verified = True Then
+                    yValues = thisSkillData.Select(Function(s) s.Verified).ToArray()
                 Else
-
-                    For Each item In skillList
-                        Dim mName As String = monthNames(item.Key.month)
-                        Dim skillName As String = item.Key.skillName
-                        Dim series As Series = chart.Series.FindByName(skillName)
-                        If series Is Nothing Then
-                            series = New Series(skillName) With {
-                        .ChartType = SeriesChartType.StackedColumn,
-                        .IsXValueIndexed = True
-        }
-                            chart.Series.Add(series)
-                        End If
-                        series.Points.AddXY(mName, item.Value.tCount)
-                    Next
+                    yValues = thisSkillData.Select(Function(s) s.Total).ToArray()
                 End If
 
-            Case "Total Verified Skills"
-                chart.Titles.Add("Verified Skills Developed")
-                If targetYear = "All" Then
-                    For Each item In skillList
-                        Dim skillName As String = item.Key.skillName
-                        Dim series As Series = chart.Series.FindByName(skillName)
-                        If series Is Nothing Then
-                            series = New Series(skillName) With {
-                        .ChartType = SeriesChartType.StackedColumn,
-                        .IsXValueIndexed = True}
-                            chart.Series.Add(series)
-                        End If
-                        series.Points.AddXY(item.Key.year, item.Value.vCount)
-                    Next
-                Else
+                dynamicSeries.Points.DataBindXY(xValues, yValues)
+                dynamicSeries.IsValueShownAsLabel = True
+                dynamicSeries.IsXValueIndexed = True
+                chart.Series.Add(dynamicSeries)
+            Next
 
-                    For Each item In skillList
-                        Dim mName As String = monthNames(item.Key.month)
-                        Dim skillName As String = item.Key.skillName
-                        Dim series As Series = chart.Series.FindByName(skillName)
-                        If series Is Nothing Then
-                            series = New Series(skillName) With {
-                        .ChartType = SeriesChartType.StackedColumn,
-                        .IsXValueIndexed = True
-        }
-                            chart.Series.Add(series)
-                        End If
-                        series.Points.AddXY(mName, item.Value.vCount)
-                    Next
+        Else
+            Dim yearSkillData = skillList.Where(Function(s) s.Year = year).ToList()
+
+            Dim uniqueSkills = yearSkillData.Select(Function(s) s.SkillName).Distinct().ToList()
+
+            For Each skill In uniqueSkills
+                Dim dynamicSeries As New Series(skill)
+                dynamicSeries.ChartType = SeriesChartType.Column
+
+                Dim thisSkillData = yearSkillData.Where(Function(s) s.SkillName = skill).ToList()
+
+                Dim xValues = thisSkillData.Select(Function(s) MonthName(s.Month, True)).ToArray()
+                Dim yValues As Integer()
+
+                If verified = True Then
+                    yValues = thisSkillData.Select(Function(s) s.VerifiedCount).ToArray()
+                Else
+                    yValues = thisSkillData.Select(Function(s) s.TotalCount).ToArray()
                 End If
 
-            Case "Total Activities"
-                chart.Titles.Add($"Total & Verified Activities ({targetYear})")
-                activeSeries.Color = Color.Blue
+                dynamicSeries.Points.DataBindXY(xValues, yValues)
+                dynamicSeries.IsValueShownAsLabel = True
+                dynamicSeries.IsXValueIndexed = True
+                chart.Series.Add(dynamicSeries)
+            Next
+        End If
 
-                If targetYear = "All" Then
+        chart.ChartAreas(0).AxisX.Interval = 1
+    End Sub
 
-                    For m As Integer = 1 To 12
-                        Dim monthKey As String = m.ToString()
-                        Dim monthTotal As Integer = totalEntries _
-                            .Where(Function(i) i.Key.month = monthKey) _
-                            .Sum(Function(i) i.Value.tCount)
+    Sub EntryChart(ByVal chart As Chart, ByVal year As String)
+        chart.Series.Clear()
 
-                        activeSeries.Points.AddXY(monthNames(m - 1), monthTotal)
-                    Next
-                Else
+        Dim xValues As String()
+        Dim yTotal As Integer()
+        Dim yVerified As Integer()
 
-                    For m As Integer = 1 To 12
-                        Dim monthKey As String = m.ToString()
-                        Dim count As Integer = 0
+        If year = "All" Then
+            Dim yearlyTotals = entryList.
+            GroupBy(Function(e) e.Year).
+            Select(Function(s) New With {
+                .Year = s.Key,
+                .Total = s.Sum(Function(e) e.TotalEntry),
+                .Verified = s.Sum(Function(e) e.VerifiedEntry)
+            }).ToList()
 
-                        If totalEntries.ContainsKey((targetYear, monthKey)) Then
-                            count = totalEntries((targetYear, monthKey)).tCount
-                        End If
+            xValues = yearlyTotals.Select(Function(y) y.Year).ToArray()
+            yTotal = yearlyTotals.Select(Function(y) y.Total).ToArray()
+            yVerified = yearlyTotals.Select(Function(y) y.Verified).ToArray()
+        Else
+            Dim monthlyData = entryList.Where(Function(e) e.Year = year).ToList()
 
-                        activeSeries.Points.AddXY(monthNames(m - 1), count)
-                    Next
-                End If
+            xValues = monthlyData.Select(Function(m) MonthName(m.Month, True)).ToArray()
+            yTotal = monthlyData.Select(Function(m) m.TotalEntry).ToArray()
+            yVerified = monthlyData.Select(Function(m) m.VerifiedEntry).ToArray()
+        End If
 
+        chart.Series.Clear()
 
-        End Select
+        Dim seriesTotal As New Series("Total Entries")
+        seriesTotal.ChartType = SeriesChartType.Column
+        seriesTotal.Points.DataBindXY(xValues, yTotal)
 
-        chart.Series.Add(activeSeries)
+        Dim seriesVerified As New Series("Verified Entries")
+        seriesVerified.ChartType = SeriesChartType.Column
+        seriesVerified.Points.DataBindXY(xValues, yVerified)
+
+        seriesVerified.IsValueShownAsLabel = True
+        seriesTotal.IsValueShownAsLabel = True
+
+        seriesVerified.IsXValueIndexed = True
+        seriesTotal.IsXValueIndexed = True
+
+        chart.Series.Add(seriesTotal)
+        chart.Series.Add(seriesVerified)
+
+        chart.ChartAreas(0).AxisX.Interval = 1
+    End Sub
+
+    Sub PopulateTotals(ByVal lblT As Label, ByVal lblV As Label, ByVal lblS As Label)
+        Dim total As Integer = entryList.Sum(Function(e) e.TotalEntry)
+        Dim verified As Integer = entryList.Sum(Function(e) e.VerifiedEntry)
+        Dim skills As Integer = skillList.Select(Function(s) s.SkillName).Distinct().Count()
+
+        lblT.Text = total.ToString()
+        lblV.Text = verified.ToString()
+        lblS.Text = skills.ToString()
     End Sub
 End Module
