@@ -95,7 +95,7 @@ Partial Class ucSubmit
         txtDescription.Anchor = AnchorStyles.None
         txtDescription.BackColor = Color.White
         txtDescription.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtDescription.ForeColor = Color.Transparent
+        txtDescription.ForeColor = Color.Black
         txtDescription.Location = New Point(98, 271)
         txtDescription.Margin = New Padding(3, 2, 3, 2)
         txtDescription.Multiline = True

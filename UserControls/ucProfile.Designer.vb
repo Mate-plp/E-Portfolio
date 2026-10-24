@@ -53,12 +53,9 @@ Partial Class ucProfile
         tbOldPass = New TextBox()
         Label3 = New Label()
         cgbStudent = New RoundedPanel()
-        btnYear = New RoundedButton()
         btnProgram = New RoundedButton()
         Label6 = New Label()
-        tbYear = New TextBox()
         tbProgram = New TextBox()
-        Label4 = New Label()
         Label1 = New Label()
         tbID = New TextBox()
         cgbAdd = New RoundedPanel()
@@ -476,12 +473,9 @@ Partial Class ucProfile
         ' 
         cgbStudent.Anchor = AnchorStyles.None
         cgbStudent.BackColor = Color.Transparent
-        cgbStudent.Controls.Add(btnYear)
         cgbStudent.Controls.Add(btnProgram)
         cgbStudent.Controls.Add(Label6)
-        cgbStudent.Controls.Add(tbYear)
         cgbStudent.Controls.Add(tbProgram)
-        cgbStudent.Controls.Add(Label4)
         cgbStudent.Controls.Add(Label1)
         cgbStudent.Controls.Add(tbID)
         cgbStudent.Controls.Add(lblID)
@@ -491,19 +485,6 @@ Partial Class ucProfile
         cgbStudent.Name = "cgbStudent"
         cgbStudent.Size = New Size(531, 312)
         cgbStudent.TabIndex = 11
-        ' 
-        ' btnYear
-        ' 
-        btnYear.Anchor = AnchorStyles.None
-        btnYear.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnYear.FlatStyle = FlatStyle.Flat
-        btnYear.Font = New Font("Arial", 11F, FontStyle.Bold)
-        btnYear.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnYear.Location = New Point(394, 155)
-        btnYear.Name = "btnYear"
-        btnYear.Size = New Size(50, 50)
-        btnYear.TabIndex = 14
-        btnYear.UseVisualStyleBackColor = False
         ' 
         ' btnProgram
         ' 
@@ -530,19 +511,6 @@ Partial Class ucProfile
         Label6.TabIndex = 12
         Label6.Text = "Student Info"
         ' 
-        ' tbYear
-        ' 
-        tbYear.Anchor = AnchorStyles.None
-        tbYear.BackColor = Color.White
-        tbYear.Enabled = False
-        tbYear.Font = New Font("Tahoma", 11F)
-        tbYear.ForeColor = Color.Black
-        tbYear.Location = New Point(182, 171)
-        tbYear.Name = "tbYear"
-        tbYear.Size = New Size(200, 25)
-        tbYear.TabIndex = 7
-        tbYear.TabStop = False
-        ' 
         ' tbProgram
         ' 
         tbProgram.Anchor = AnchorStyles.None
@@ -555,18 +523,6 @@ Partial Class ucProfile
         tbProgram.Size = New Size(200, 25)
         tbProgram.TabIndex = 6
         tbProgram.TabStop = False
-        ' 
-        ' Label4
-        ' 
-        Label4.Anchor = AnchorStyles.None
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(71, 170)
-        Label4.Margin = New Padding(18, 15, 18, 15)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(105, 25)
-        Label4.TabIndex = 9
-        Label4.Text = "Year Level:"
         ' 
         ' Label1
         ' 
@@ -641,7 +597,7 @@ Partial Class ucProfile
         btnBar.FlatStyle = FlatStyle.Flat
         btnBar.Font = New Font("Arial", 11F, FontStyle.Bold)
         btnBar.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnBar.Location = New Point(665, 164)
+        btnBar.Location = New Point(357, 183)
         btnBar.Name = "btnBar"
         btnBar.Size = New Size(50, 50)
         btnBar.TabIndex = 14
@@ -654,7 +610,7 @@ Partial Class ucProfile
         btnCity.FlatStyle = FlatStyle.Flat
         btnCity.Font = New Font("Arial", 11F, FontStyle.Bold)
         btnCity.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnCity.Location = New Point(277, 162)
+        btnCity.Location = New Point(648, 170)
         btnCity.Name = "btnCity"
         btnCity.Size = New Size(50, 50)
         btnCity.TabIndex = 14
@@ -706,7 +662,7 @@ Partial Class ucProfile
         tbBar.Enabled = False
         tbBar.Font = New Font("Tahoma", 11F)
         tbBar.ForeColor = Color.Black
-        tbBar.Location = New Point(439, 173)
+        tbBar.Location = New Point(131, 192)
         tbBar.Name = "tbBar"
         tbBar.Size = New Size(219, 25)
         tbBar.TabIndex = 11
@@ -719,7 +675,7 @@ Partial Class ucProfile
         tbCity.Enabled = False
         tbCity.Font = New Font("Tahoma", 11F)
         tbCity.ForeColor = Color.Black
-        tbCity.Location = New Point(139, 174)
+        tbCity.Location = New Point(510, 182)
         tbCity.Name = "tbCity"
         tbCity.Size = New Size(132, 25)
         tbCity.TabIndex = 10
@@ -742,7 +698,7 @@ Partial Class ucProfile
         Label13.Anchor = AnchorStyles.None
         Label13.AutoSize = True
         Label13.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label13.Location = New Point(80, 174)
+        Label13.Location = New Point(451, 182)
         Label13.Margin = New Padding(18, 15, 18, 15)
         Label13.Name = "Label13"
         Label13.Size = New Size(51, 25)
@@ -804,7 +760,7 @@ Partial Class ucProfile
         Label11.Anchor = AnchorStyles.None
         Label11.AutoSize = True
         Label11.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label11.Location = New Point(339, 172)
+        Label11.Location = New Point(31, 191)
         Label11.Margin = New Padding(18, 15, 18, 15)
         Label11.Name = "Label11"
         Label11.Size = New Size(101, 25)
@@ -886,9 +842,7 @@ Partial Class ucProfile
     Friend WithEvents Label5 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents tbYear As System.Windows.Forms.TextBox
     Friend WithEvents tbProgram As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents tbMN As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As Label
@@ -913,7 +867,6 @@ Partial Class ucProfile
     Friend WithEvents btnFN As RoundedButton
     Friend WithEvents btnUsername As RoundedButton
     Friend WithEvents btnOldPass As RoundedButton
-    Friend WithEvents btnYear As RoundedButton
     Friend WithEvents btnProgram As RoundedButton
     Friend WithEvents btnCfmPass As RoundedButton
     Friend WithEvents btnNewPass As RoundedButton

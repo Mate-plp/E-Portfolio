@@ -1,4 +1,6 @@
-﻿Imports MigraDoc.DocumentObjectModel
+﻿Imports System.IO
+Imports System.Windows.Forms.DataVisualization.Charting
+Imports MigraDoc.DocumentObjectModel
 Imports MigraDoc.Rendering
 Imports MySql.Data.MySqlClient
 
@@ -33,6 +35,31 @@ Module mdlExport
         p.AddText(value)
     End Sub
 
+    Private Function VerifiedSkillsChartBase64() As String
+        getUserStats()
+
+        Using ch As New Chart()
+            ch.Size = New System.Drawing.Size(1200, 600)
+            ch.BackColor = System.Drawing.Color.White
+
+            Dim area As New ChartArea("main")
+            area.BackColor = System.Drawing.Color.White
+            ch.ChartAreas.Add(area)
+            ch.Legends.Add(New Legend("legend"))
+
+            SwitchChart(ch, "Total Verified Skills", "All")
+
+            Dim hasData As Boolean = ch.Series.Any(
+                Function(s) s.Points.Any(Function(pt) pt.YValues(0) > 0))
+            If Not hasData Then Return ""
+
+            Using ms As New MemoryStream()
+                ch.SaveImage(ms, ChartImageFormat.Png)
+                Return Convert.ToBase64String(ms.ToArray())
+            End Using
+        End Using
+    End Function
+
     Public Sub CreatePortfolioPdf(studentId As String, filePath As String)
         Dim profile As New DataTable()
         Dim entries As New DataTable()
@@ -59,7 +86,7 @@ Module mdlExport
                 "INNER JOIN activity_type t ON t.type_id = e.type_id " &
                 "LEFT JOIN faculty f ON f.professor_id = e.professor_id " &
                 "LEFT JOIN users u ON u.username = f.username " &
-                "WHERE e.student_id = @id ORDER BY e.`date` DESC, e.entry_id DESC", con)
+                "WHERE e.student_id = @id AND e.verified = 1 ORDER BY e.`date` DESC, e.entry_id DESC", con)
                 da.SelectCommand.Parameters.AddWithValue("@id", studentId)
                 da.Fill(entries)
             End Using
@@ -117,30 +144,30 @@ Module mdlExport
         AddHeading(sec, "Profile")
         AddField(sec, "Full name", fullName)
         AddField(sec, "Student ID", Cell(p0, "student_id"))
-        AddField(sec, "Username", Cell(p0, "username"))
         AddField(sec, "Program", Cell(p0, "program"))
-        AddField(sec, "Year level", Cell(p0, "year_level"))
 
         Dim addr As New List(Of String) From {
             Cell(p0, "address_line_1"), Cell(p0, "address_line_2"),
             Cell(p0, "barangay"), Cell(p0, "city"), Cell(p0, "region")}
         AddField(sec, "Address", String.Join(", ", addr.Where(Function(s) s <> "")))
 
+        AddHeading(sec, "Skill Growth")
+        Dim chartData As String = VerifiedSkillsChartBase64()
+        If chartData = "" Then
+            sec.AddParagraph("No verified skills yet.")
+        Else
+            Dim pic = sec.AddImage("base64:" & chartData)
+            pic.LockAspectRatio = True
+            pic.Width = Unit.FromCentimeter(17)
+        End If
+
         ' Entries
+        sec.AddPageBreak()
         AddHeading(sec, "Portfolio entries (" & entries.Rows.Count & ")")
         If entries.Rows.Count = 0 Then sec.AddParagraph("No entries yet.")
 
         For Each row As DataRow In entries.Rows
             Dim id As Integer = Convert.ToInt32(row("entry_id"))
-            Dim isVerified As Boolean = (Convert.ToInt32(row("verified")) = 1)
-            Dim verifier As String = Cell(row, "verifier")
-
-            Dim status As String
-            If isVerified Then
-                status = If(verifier <> "", "Verified by " & verifier, "Verified")
-            Else
-                status = If(verifier <> "", "Pending verification by " & verifier, "Pending verification")
-            End If
 
             Dim head As Paragraph = sec.AddParagraph(Cell(row, "activity_title"))
             head.Format.Font.Bold = True
@@ -150,7 +177,7 @@ Module mdlExport
 
             Dim meta As Paragraph = sec.AddParagraph(
                 Convert.ToDateTime(row("date")).ToString("MMM d, yyyy") & "  |  " &
-                Cell(row, "type_name") & "  |  " & status)
+                Cell(row, "type_name"))
             meta.Format.Font.Size = 9
             meta.Format.Font.Color = Gray
             meta.Format.KeepWithNext = True
@@ -161,16 +188,6 @@ Module mdlExport
                 AddField(sec, "Skills", String.Join(", ", skillsByEntry(id)))
             End If
         Next
-
-        ' Footer with page numbers
-        Dim foot As Paragraph = sec.Footers.Primary.AddParagraph()
-        foot.Format.Alignment = ParagraphAlignment.Center
-        foot.Format.Font.Size = 8
-        foot.Format.Font.Color = Gray
-        foot.AddText("Page ")
-        foot.AddPageField()
-        foot.AddText(" of ")
-        foot.AddNumPagesField()
 
         ' ---- Write the file ----
         Dim renderer As New PdfDocumentRenderer() With {.Document = doc}

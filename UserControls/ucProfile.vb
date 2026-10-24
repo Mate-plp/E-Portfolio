@@ -45,7 +45,6 @@ Public Class ucProfile
                         ' Student info
                         tbID.Text = Txt(r, "student_id")
                         tbProgram.Text = Txt(r, "program")
-                        tbYear.Text = Txt(r, "year_level")
 
                         ' Address
                         tbLine1.Text = Txt(r, "address_line_1")
@@ -106,10 +105,6 @@ Public Class ucProfile
         editInfo(tbProgram)
     End Sub
 
-    Private Sub btnYear_Click(sender As Object, e As EventArgs) Handles btnYear.Click
-        editInfo(tbYear)
-    End Sub
-
     Private Sub btnLine1_Click(sender As Object, e As EventArgs) Handles btnLine1.Click
         editInfo(tbLine1)
     End Sub
@@ -130,7 +125,7 @@ Public Class ucProfile
         editInfo(tbRegion)
     End Sub
     Private Sub LockAll()
-        For Each tb As TextBox In {tbUsername, tbFN, tbMN, tbLN, tbID, tbProgram, tbYear,
+        For Each tb As TextBox In {tbUsername, tbFN, tbMN, tbLN, tbID, tbProgram,
                                tbLine1, tbLine2, tbBar, tbCity, tbRegion,
                                tbOldPass, tbNewPass, tbCfmPass}
             tb.Enabled = False
@@ -156,7 +151,6 @@ Public Class ucProfile
         Dim middleName As String = tbMN.Text.Trim()
         Dim lastName As String = tbLN.Text.Trim()
         Dim program As String = tbProgram.Text.Trim()
-        Dim yearText As String = tbYear.Text.Trim()
         Dim line1 As String = tbLine1.Text.Trim()
         Dim line2 As String = tbLine2.Text.Trim()
         Dim barangay As String = tbBar.Text.Trim()
@@ -171,20 +165,29 @@ Public Class ucProfile
             Return
         End If
 
-        If username.Length > 25 OrElse middleName.Length > 25 OrElse
-       firstName.Length > 50 OrElse lastName.Length > 50 OrElse program.Length > 10 Then
-            Notify("One of the fields is too long.")
+        If username.Length > 25 Then
+            Notify("Username is too long.")
             Return
         End If
 
-        Dim yearValue As Object = DBNull.Value
-        If yearText <> "" Then
-            Dim y As Integer
-            If Not Integer.TryParse(yearText, y) OrElse y < 1 OrElse y > 6 Then
-                Notify("Year level must be a number from 1 to 6.")
-                Return
-            End If
-            yearValue = y
+        If middleName.Length > 25 Then
+            Notify("Middle Name is too long.")
+            Return
+        End If
+
+        If firstName.Length > 50 Then
+            Notify("First Name is too long.")
+            Return
+        End If
+
+        If lastName.Length > 50 Then
+            Notify("Last Name is too long.")
+            Return
+        End If
+
+        If program.Length > 10 Then
+            Notify("Program is too long.")
+            Return
         End If
 
         Dim changePass As Boolean = (oldPass <> "" OrElse newPass <> "")
@@ -283,9 +286,8 @@ Public Class ucProfile
 
                     ' student
                     Using cmd As New MySqlCommand(
-                    "UPDATE student SET program = @prog, year_level = @yr WHERE student_id = @id", con, tx)
+                    "UPDATE student SET program = @prog WHERE student_id = @id", con, tx)
                         cmd.Parameters.AddWithValue("@prog", NullIfEmpty(program))
-                        cmd.Parameters.AddWithValue("@yr", yearValue)
                         cmd.Parameters.AddWithValue("@id", CurrentStudentId)
                         cmd.ExecuteNonQuery()
                     End Using
