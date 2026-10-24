@@ -7,6 +7,7 @@ Public Class ucView
 
         SetupGrid()
         LoadEntries()
+        RoundAll(Me, 10)
     End Sub
 
     Private Sub SetupGrid()
@@ -53,6 +54,7 @@ Public Class ucView
             dgvEntries.Columns("entry_id").Visible = False
             dgvEntries.Columns("Date").DefaultCellStyle.Format = "MMM dd, yyyy"
             dgvEntries.ClearSelection()
+            ApplySearch()
 
         Catch ex As Exception
             MessageBox.Show("Could not load entries: " & ex.Message)
@@ -70,5 +72,36 @@ Public Class ucView
                 ShowToast(Me.FindForm(), dlg.ResultMessage)
             End If
         End Using
+    End Sub
+
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        ApplySearch()
+    End Sub
+
+    Private Sub ApplySearch()
+        Dim dt = TryCast(dgvEntries.DataSource, DataTable)
+        If dt Is Nothing Then Return
+
+        Dim s As String = txtSearch.Text.Trim()
+        If s = "" Then
+            dt.DefaultView.RowFilter = ""
+            Return
+        End If
+
+        Dim sb As New System.Text.StringBuilder()
+        For Each c As Char In s
+            Select Case c
+                Case "*"c, "%"c, "["c, "]"c
+                    sb.Append("[").Append(c).Append("]")
+                Case "'"c
+                    sb.Append("''")
+                Case Else
+                    sb.Append(c)
+            End Select
+        Next
+
+        dt.DefaultView.RowFilter = String.Format(
+            "[Title] LIKE '%{0}%' OR [Type] LIKE '%{0}%' OR [Status] LIKE '%{0}%' OR [Verifier] LIKE '%{0}%'",
+            sb.ToString())
     End Sub
 End Class

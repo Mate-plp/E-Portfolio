@@ -26,6 +26,7 @@ Partial Class ucView
         dgvEntries = New DataGridView()
         RoundedPanel1 = New RoundedPanel()
         lblSubmitActivity = New Label()
+        txtSearch = New TextBox()
         CType(dgvEntries, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
         SuspendLayout()
@@ -33,9 +34,9 @@ Partial Class ucView
         ' dgvEntries
         ' 
         dgvEntries.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvEntries.Location = New Point(65, 96)
+        dgvEntries.Location = New Point(65, 140)
         dgvEntries.Name = "dgvEntries"
-        dgvEntries.Size = New Size(1598, 859)
+        dgvEntries.Size = New Size(1598, 815)
         dgvEntries.TabIndex = 2
         ' 
         ' RoundedPanel1
@@ -59,12 +60,22 @@ Partial Class ucView
         lblSubmitActivity.TabIndex = 1
         lblSubmitActivity.Text = "View Activities"
         ' 
+        ' txtSearch
+        ' 
+        txtSearch.Font = New Font("Segoe UI", 12F)
+        txtSearch.Location = New Point(65, 102)
+        txtSearch.Name = "txtSearch"
+        txtSearch.PlaceholderText = "Search by title, type, status, or verifier..."
+        txtSearch.Size = New Size(1598, 29)
+        txtSearch.TabIndex = 4
+        ' 
         ' ucView
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        Controls.Add(txtSearch)
         Controls.Add(RoundedPanel1)
         Controls.Add(dgvEntries)
         DoubleBuffered = True
@@ -74,9 +85,11 @@ Partial Class ucView
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
     Friend WithEvents dgvEntries As DataGridView
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents lblSubmitActivity As Label
+    Friend WithEvents txtSearch As TextBox
 
 End Class
