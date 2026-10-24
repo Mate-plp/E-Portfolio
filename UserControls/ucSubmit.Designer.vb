@@ -45,9 +45,12 @@ Partial Class ucSubmit
         RoundedPanel1 = New RoundedPanel()
         RoundedPanel2 = New RoundedPanel()
         RoundedPanel3 = New RoundedPanel()
+        pbFile = New PictureBox()
+        btnCancel = New RoundedButton()
         RoundedPanel1.SuspendLayout()
         RoundedPanel2.SuspendLayout()
         RoundedPanel3.SuspendLayout()
+        CType(pbFile, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' lblID
@@ -312,12 +315,38 @@ Partial Class ucSubmit
         RoundedPanel3.Size = New Size(557, 398)
         RoundedPanel3.TabIndex = 27
         ' 
+        ' pbFile
+        ' 
+        pbFile.Anchor = AnchorStyles.None
+        pbFile.BackColor = Color.Transparent
+        pbFile.BackgroundImageLayout = ImageLayout.Zoom
+        pbFile.Location = New Point(652, 697)
+        pbFile.Name = "pbFile"
+        pbFile.Size = New Size(250, 250)
+        pbFile.TabIndex = 28
+        pbFile.TabStop = False
+        ' 
+        ' btnCancel
+        ' 
+        btnCancel.BackColor = Color.White
+        btnCancel.FlatAppearance.BorderSize = 0
+        btnCancel.FlatStyle = FlatStyle.Flat
+        btnCancel.Location = New Point(1137, 626)
+        btnCancel.Name = "btnCancel"
+        btnCancel.Size = New Size(211, 56)
+        btnCancel.TabIndex = 29
+        btnCancel.Text = "CANCEL"
+        btnCancel.UseVisualStyleBackColor = False
+        btnCancel.Visible = False
+        ' 
         ' ucSubmit
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        Controls.Add(btnCancel)
+        Controls.Add(pbFile)
         Controls.Add(RoundedPanel3)
         Controls.Add(RoundedPanel1)
         Controls.Add(lblFile)
@@ -331,6 +360,7 @@ Partial Class ucSubmit
         Controls.Add(txtTitle)
         Controls.Add(lblID)
         Controls.Add(RoundedPanel2)
+        DoubleBuffered = True
         Name = "ucSubmit"
         Size = New Size(1728, 1005)
         RoundedPanel1.ResumeLayout(False)
@@ -339,6 +369,7 @@ Partial Class ucSubmit
         RoundedPanel2.PerformLayout()
         RoundedPanel3.ResumeLayout(False)
         RoundedPanel3.PerformLayout()
+        CType(pbFile, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -364,5 +395,7 @@ Partial Class ucSubmit
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents RoundedPanel2 As RoundedPanel
     Friend WithEvents RoundedPanel3 As RoundedPanel
+    Friend WithEvents pbFile As PictureBox
+    Friend WithEvents btnCancel As RoundedButton
 
 End Class

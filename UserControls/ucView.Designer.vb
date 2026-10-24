@@ -67,6 +67,7 @@ Partial Class ucView
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         Controls.Add(RoundedPanel1)
         Controls.Add(dgvEntries)
+        DoubleBuffered = True
         Name = "ucView"
         Size = New Size(1728, 1005)
         CType(dgvEntries, ComponentModel.ISupportInitialize).EndInit()

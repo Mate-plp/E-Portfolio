@@ -58,4 +58,17 @@ Public Class ucView
             MessageBox.Show("Could not load entries: " & ex.Message)
         End Try
     End Sub
+
+    Private Sub dgvEntries_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEntries.CellDoubleClick
+        If e.RowIndex < 0 Then Return
+
+        Dim entryId As Integer = Convert.ToInt32(dgvEntries.Rows(e.RowIndex).Cells("entry_id").Value)
+
+        Using dlg As New frmEditEntry(entryId)
+            If dlg.ShowDialog(Me.FindForm()) = DialogResult.OK Then
+                LoadEntries()
+                ShowToast(Me.FindForm(), dlg.ResultMessage)
+            End If
+        End Using
+    End Sub
 End Class

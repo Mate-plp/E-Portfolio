@@ -293,6 +293,7 @@ Partial Class ucDashboard
         Controls.Add(cbChartBox)
         Controls.Add(FlowLayoutPanel1)
         Controls.Add(Panel2)
+        DoubleBuffered = True
         Name = "ucDashboard"
         Size = New Size(1728, 1005)
         FlowLayoutPanel1.ResumeLayout(False)

@@ -324,7 +324,6 @@ Partial Class ucProfile
         tbUsername.Size = New Size(266, 25)
         tbUsername.TabIndex = 1
         tbUsername.TabStop = False
-        tbUsername.Text = "TEST DELETE THIS"
         ' 
         ' cgbPass
         ' 
@@ -854,6 +853,7 @@ Partial Class ucProfile
         Controls.Add(cgbPass)
         Controls.Add(cgbUser)
         Controls.Add(Panel1)
+        DoubleBuffered = True
         Name = "ucProfile"
         Size = New Size(1728, 1005)
         Panel1.ResumeLayout(False)
