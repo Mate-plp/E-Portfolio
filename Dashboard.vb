@@ -1,6 +1,9 @@
-﻿Public Class Dashboard
+﻿Imports PdfSharp
+
+Public Class Dashboard
 
     Private Sub frmDashboardLoad(sender As Object, e As EventArgs) Handles MyBase.Load
+        PdfSharpLicense.SetAgplLicense()
         ShowPage(New ucDashboard(), btnDashboard)
     End Sub
 
@@ -64,23 +67,26 @@
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-        Dim result As DialogResult = MessageBox.Show("Are you sure you want to logout?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim result = MessageBox.Show("Are you sure you want to logout?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If result = DialogResult.Yes Then
-            Me.Hide()
-            Dim loginForm As New Login()
+            Hide()
+            Dim loginForm As New Login
             loginForm.ShowDialog()
         End If
     End Sub
 
-    Private Sub lblTitle_Click(sender As Object, e As EventArgs) Handles lblTitle.Click
+    Private Sub btnExport_Click(sender As Object, e As EventArgs) Handles btnExport.Click
+        Using dlg As New SaveFileDialog()
+            dlg.Filter = "PDF file|*.pdf"
+            dlg.FileName = "Portfolio_" & CurrentStudentId & ".pdf"
+            If dlg.ShowDialog() <> DialogResult.OK Then Return
 
-    End Sub
-
-    Private Sub pnlSidebar_Paint(sender As Object, e As PaintEventArgs) Handles pnlSidebar.Paint
-
-    End Sub
-
-    Private Sub PapnlBannernel_Paint(sender As Object, e As PaintEventArgs)
-
+            Try
+                CreatePortfolioPdf(CurrentStudentId, dlg.FileName)
+                Process.Start(New ProcessStartInfo(dlg.FileName) With {.UseShellExecute = True})
+            Catch ex As Exception
+                ShowToast(Me, "Could not create the PDF: " & ex.Message)
+            End Try
+        End Using
     End Sub
 End Class
