@@ -133,7 +133,6 @@ Module mdlChart
         Catch ex As Exception
             MsgBox("Something went Very Wrong: " + ex.ToString())
         End Try
-        DebugShowLoadedData()
     End Sub
     Public Sub SkillChart(ByVal chart As Chart,
                       ByVal year As String,
