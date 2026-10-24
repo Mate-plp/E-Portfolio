@@ -15,23 +15,21 @@ Public Class ucProfile
     End Function
 
     Private Sub LoadProfile()
-        If String.IsNullOrEmpty(CurrentStudentId) Then Return
+        If String.IsNullOrEmpty(CurrentProfessorId) Then Return
 
         Dim sql As String =
         "SELECT u.username, u.first_name, u.middle_name, u.last_name, " &
-        "       s.student_id, s.program, s.year_level, " &
-        "       a.address_line_1, a.address_line_2, a.barangay, a.city, a.region " &
-        "FROM student s " &
-        "INNER JOIN users u ON u.username = s.username " &
-        "LEFT JOIN address a ON a.address_id = u.address_id " &
-        "WHERE s.student_id = @id " &
+        "       f.professor_id, f.position " &
+        "FROM faculty f " &
+        "INNER JOIN users u ON u.username = f.username " &
+        "WHERE f.professor_id = @id " &
         "LIMIT 1"
 
         Try
             Using con As New MySqlConnection(conString)
                 con.Open()
                 Using cmd As New MySqlCommand(sql, con)
-                    cmd.Parameters.AddWithValue("@id", CurrentStudentId)
+                    cmd.Parameters.AddWithValue("@id", CurrentProfessorId)
 
                     Using r As MySqlDataReader = cmd.ExecuteReader()
                         If Not r.Read() Then Return
@@ -42,16 +40,9 @@ Public Class ucProfile
                         tbMN.Text = Txt(r, "middle_name")
                         tbLN.Text = Txt(r, "last_name")
 
-                        ' Student info
-                        tbID.Text = Txt(r, "student_id")
-                        tbProgram.Text = Txt(r, "program")
-
-                        ' Address
-                        tbLine1.Text = Txt(r, "address_line_1")
-                        tbLine2.Text = Txt(r, "address_line_2")
-                        tbBar.Text = Txt(r, "barangay")
-                        tbCity.Text = Txt(r, "city")
-                        tbRegion.Text = Txt(r, "region")
+                        ' Faculty info
+                        tbID.Text = Txt(r, "professor_id")
+                        tbPosition.Text = Txt(r, "position")
                     End Using
                 End Using
             End Using
@@ -101,32 +92,12 @@ Public Class ucProfile
         editInfo(tbCfmPass)
     End Sub
 
-    Private Sub btnProgram_Click(sender As Object, e As EventArgs) Handles btnProgram.Click
-        editInfo(tbProgram)
+    Private Sub btnPosition_Click(sender As Object, e As EventArgs) Handles btnPosition.Click
+        editInfo(tbPosition)
     End Sub
 
-    Private Sub btnLine1_Click(sender As Object, e As EventArgs) Handles btnLine1.Click
-        editInfo(tbLine1)
-    End Sub
-
-    Private Sub btnLine2_Click(sender As Object, e As EventArgs) Handles btnLine2.Click
-        editInfo(tbLine2)
-    End Sub
-
-    Private Sub btnCity_Click(sender As Object, e As EventArgs) Handles btnCity.Click
-        editInfo(tbCity)
-    End Sub
-
-    Private Sub btnBar_Click(sender As Object, e As EventArgs) Handles btnBar.Click
-        editInfo(tbBar)
-    End Sub
-
-    Private Sub btnRegion_Click(sender As Object, e As EventArgs) Handles btnRegion.Click
-        editInfo(tbRegion)
-    End Sub
     Private Sub LockAll()
-        For Each tb As TextBox In {tbUsername, tbFN, tbMN, tbLN, tbID, tbProgram,
-                               tbLine1, tbLine2, tbBar, tbCity, tbRegion,
+        For Each tb As TextBox In {tbUsername, tbFN, tbMN, tbLN, tbID, tbPosition,
                                tbOldPass, tbNewPass, tbCfmPass}
             tb.Enabled = False
             tb.BackColor = Color.WhiteSmoke
@@ -150,12 +121,7 @@ Public Class ucProfile
         Dim firstName As String = tbFN.Text.Trim()
         Dim middleName As String = tbMN.Text.Trim()
         Dim lastName As String = tbLN.Text.Trim()
-        Dim program As String = tbProgram.Text.Trim()
-        Dim line1 As String = tbLine1.Text.Trim()
-        Dim line2 As String = tbLine2.Text.Trim()
-        Dim barangay As String = tbBar.Text.Trim()
-        Dim city As String = tbCity.Text.Trim()
-        Dim region As String = tbRegion.Text.Trim()
+        Dim position As String = tbPosition.Text.Trim()
         Dim oldPass As String = tbOldPass.Text
         Dim newPass As String = tbNewPass.Text
 
@@ -185,8 +151,8 @@ Public Class ucProfile
             Return
         End If
 
-        If program.Length > 10 Then
-            Notify("Program is too long.")
+        If position.Length > 20 Then
+            Notify("Position can be at most 20 characters.")
             Return
         End If
 
@@ -206,37 +172,21 @@ Public Class ucProfile
             End If
         End If
 
-        ' Address
-        Dim hasAddress As Boolean = (line1 <> "" OrElse line2 <> "" OrElse barangay <> "" OrElse
-                                 city <> "" OrElse region <> "")
-        If hasAddress Then
-            If line1 = "" OrElse barangay = "" OrElse city = "" OrElse region = "" Then
-                Notify("Address line 1, barangay, city, and region are required.")
-                Return
-            End If
-            If line1.Length > 150 OrElse line2.Length > 150 OrElse barangay.Length > 50 OrElse
-           city.Length > 50 OrElse region.Length > 50 Then
-                Notify("An address field is too long.")
-                Return
-            End If
-        End If
-
         ' ---- Save ----
         Try
             Using con As New MySqlConnection(conString)
                 con.Open()
 
                 Using tx As MySqlTransaction = con.BeginTransaction()
-                    ' Current values for this student
+                    ' Current values for this faculty member
                     Dim oldUsername As String = ""
                     Dim currentPass As String = ""
-                    Dim addressId As Object = DBNull.Value
 
                     Using cmd As New MySqlCommand(
-                    "SELECT u.username, u.password, u.address_id " &
-                    "FROM student s INNER JOIN users u ON u.username = s.username " &
-                    "WHERE s.student_id = @id", con, tx)
-                        cmd.Parameters.AddWithValue("@id", CurrentStudentId)
+                    "SELECT u.username, u.password " &
+                    "FROM faculty f INNER JOIN users u ON u.username = f.username " &
+                    "WHERE f.professor_id = @id", con, tx)
+                        cmd.Parameters.AddWithValue("@id", CurrentProfessorId)
                         Using r As MySqlDataReader = cmd.ExecuteReader()
                             If Not r.Read() Then
                                 Notify("Could not find your account.")
@@ -244,9 +194,6 @@ Public Class ucProfile
                             End If
                             oldUsername = r.GetString("username")
                             currentPass = r.GetString("password")
-                            If Not r.IsDBNull(r.GetOrdinal("address_id")) Then
-                                addressId = r.GetInt32("address_id")
-                            End If
                         End Using
                     End Using
 
@@ -284,57 +231,21 @@ Public Class ucProfile
                         cmd.ExecuteNonQuery()
                     End Using
 
-                    ' student
+                    ' faculty (position cannot be NULL, so a blank box saves as "Pending")
                     Using cmd As New MySqlCommand(
-                    "UPDATE student SET program = @prog WHERE student_id = @id", con, tx)
-                        cmd.Parameters.AddWithValue("@prog", NullIfEmpty(program))
-                        cmd.Parameters.AddWithValue("@id", CurrentStudentId)
+                    "UPDATE faculty SET position = @pos WHERE professor_id = @id", con, tx)
+                        cmd.Parameters.AddWithValue("@pos", If(position = "", "Pending", position))
+                        cmd.Parameters.AddWithValue("@id", CurrentProfessorId)
                         cmd.ExecuteNonQuery()
                     End Using
-
-                    ' address
-                    If hasAddress Then
-                        If addressId Is DBNull.Value Then
-                            Dim newId As Long
-                            Using cmd As New MySqlCommand(
-                            "INSERT INTO address (address_line_1, address_line_2, barangay, city, region) " &
-                            "VALUES (@l1, @l2, @bar, @city, @reg)", con, tx)
-                                cmd.Parameters.AddWithValue("@l1", line1)
-                                cmd.Parameters.AddWithValue("@l2", NullIfEmpty(line2))
-                                cmd.Parameters.AddWithValue("@bar", barangay)
-                                cmd.Parameters.AddWithValue("@city", city)
-                                cmd.Parameters.AddWithValue("@reg", region)
-                                cmd.ExecuteNonQuery()
-                                newId = cmd.LastInsertedId
-                            End Using
-
-                            Using cmd As New MySqlCommand(
-                            "UPDATE users SET address_id = @aid WHERE username = @u", con, tx)
-                                cmd.Parameters.AddWithValue("@aid", newId)
-                                cmd.Parameters.AddWithValue("@u", username)
-                                cmd.ExecuteNonQuery()
-                            End Using
-                        Else
-                            Using cmd As New MySqlCommand(
-                            "UPDATE address SET address_line_1 = @l1, address_line_2 = @l2, barangay = @bar, " &
-                            "city = @city, region = @reg WHERE address_id = @aid", con, tx)
-                                cmd.Parameters.AddWithValue("@l1", line1)
-                                cmd.Parameters.AddWithValue("@l2", NullIfEmpty(line2))
-                                cmd.Parameters.AddWithValue("@bar", barangay)
-                                cmd.Parameters.AddWithValue("@city", city)
-                                cmd.Parameters.AddWithValue("@reg", region)
-                                cmd.Parameters.AddWithValue("@aid", addressId)
-                                cmd.ExecuteNonQuery()
-                            End Using
-                        End If
-                    End If
 
                     tx.Commit()
                 End Using
             End Using
 
             ' ---- After a successful save ----
-            CurrentStudentName = firstName & " " & lastName
+            CurrentProfessorName = firstName & " " & lastName
+            If position = "" Then tbPosition.Text = "Pending"
 
             LockAll()
 

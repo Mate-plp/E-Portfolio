@@ -1,10 +1,10 @@
-﻿Imports PdfSharp
+﻿Imports MySql.Data.MySqlClient
 
 Public Class Dashboard
 
     Private Sub frmDashboardLoad(sender As Object, e As EventArgs) Handles MyBase.Load
-        PdfSharpLicense.SetAgplLicense()
-        ShowPage(New ucDashboard(), btnDashboard)
+        LoadWelcome()
+        ShowPage(New ucView(), btnView)
     End Sub
 
     Private Sub ShowPage(page As UserControl, activeButton As Button)
@@ -32,9 +32,7 @@ Public Class Dashboard
             If TypeOf ctrl Is Button Then
                 Dim btn As Button = DirectCast(ctrl, Button)
 
-                ctrl.BackColor = If(ctrl.Parent Is pnlPortfolio AndAlso ctrl IsNot btnPortfolio,
-                                Color.Transparent, 'unselected sub buttons
-                                Color.Transparent) 'unselected main buttons
+                ctrl.BackColor = Color.Transparent
                 btn.FlatAppearance.BorderSize = 0
             ElseIf ctrl.HasChildren Then
                 ResetButtons(ctrl)
@@ -42,24 +40,8 @@ Public Class Dashboard
         Next
     End Sub
 
-    Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
-        ShowPage(New ucDashboard(), btnDashboard)
-    End Sub
-
     Private Sub btnProfile_Click(sender As Object, e As EventArgs) Handles btnProfile.Click
         ShowPage(New ucProfile(), btnProfile)
-    End Sub
-
-    Private Sub btnPortfolio_Click(sender As Object, e As EventArgs) Handles btnPortfolio.Click
-        If pnlPortfolio.Height = 50 Then
-            pnlPortfolio.Height = 130
-        Else
-            pnlPortfolio.Height = 50
-        End If
-    End Sub
-
-    Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
-        ShowPage(New ucSubmit(), btnSubmit)
     End Sub
 
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
@@ -75,18 +57,16 @@ Public Class Dashboard
         End If
     End Sub
 
-    Private Sub btnExport_Click(sender As Object, e As EventArgs) Handles btnExport.Click
-        Using dlg As New SaveFileDialog()
-            dlg.Filter = "PDF file|*.pdf"
-            dlg.FileName = "Portfolio_" & CurrentStudentId & ".pdf"
-            If dlg.ShowDialog() <> DialogResult.OK Then Return
-
-            Try
-                CreatePortfolioPdf(CurrentStudentId, dlg.FileName)
-                Process.Start(New ProcessStartInfo(dlg.FileName) With {.UseShellExecute = True})
-            Catch ex As Exception
-                ShowToast(Me, "Could not create the PDF: " & ex.Message)
-            End Try
+    Private Sub LoadWelcome()
+        Using con As New MySqlConnection(conString)
+            con.Open()
+            Using cmd As New MySqlCommand(
+                "SELECT u.first_name FROM users u " &
+                "INNER JOIN faculty f ON f.username = u.username " &
+                "WHERE f.professor_id = @id", con)
+                cmd.Parameters.AddWithValue("@id", CurrentProfessorId)
+                lblWelcome.Text = "Welcome, " & Convert.ToString(cmd.ExecuteScalar())
+            End Using
         End Using
     End Sub
 End Class

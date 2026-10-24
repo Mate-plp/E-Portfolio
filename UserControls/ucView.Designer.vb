@@ -53,11 +53,11 @@ Partial Class ucView
         lblSubmitActivity.AutoSize = True
         lblSubmitActivity.Font = New Font("Georgia", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblSubmitActivity.ForeColor = Color.FromArgb(CByte(243), CByte(185), CByte(39))
-        lblSubmitActivity.Location = New Point(739, 20)
+        lblSubmitActivity.Location = New Point(671, 20)
         lblSubmitActivity.Name = "lblSubmitActivity"
-        lblSubmitActivity.Size = New Size(220, 31)
+        lblSubmitActivity.Size = New Size(365, 31)
         lblSubmitActivity.TabIndex = 1
-        lblSubmitActivity.Text = "View Activities"
+        lblSubmitActivity.Text = "Requests for Verification"
         ' 
         ' ucView
         ' 

@@ -1,4 +1,4 @@
 ﻿Module mdlSession
-    Public CurrentStudentId As String
-    Public CurrentStudentName As String
+    Public CurrentProfessorId As String
+    Public CurrentProfessorName As String
 End Module

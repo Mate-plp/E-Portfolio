@@ -25,11 +25,11 @@ Public Class Login
                 con.Open()
 
                 Dim sql =
-                    "SELECT s.student_id, u.first_name, u.last_name " &
-                    "FROM users u " &
-                    "INNER JOIN student s ON s.username = u.username " &
-                    "WHERE u.username = @u AND u.password = @p AND u.account_type = 'Student' " &
-                    "LIMIT 1"
+                "SELECT f.professor_id, u.first_name, u.last_name " &
+                "FROM users u " &
+                "INNER JOIN faculty f ON f.username = u.username " &
+                "WHERE u.username = @u AND u.password = @p AND u.account_type = 'Faculty' " &
+                "LIMIT 1"
 
                 Using cmd As New MySqlCommand(sql, con)
                     cmd.Parameters.AddWithValue("@u", username)
@@ -37,14 +37,12 @@ Public Class Login
 
                     Using reader = cmd.ExecuteReader
                         If reader.Read Then
-                            Dim studentId = reader("student_id").ToString
-                            Dim fullName = reader("first_name").ToString & " " & reader("last_name").ToString
+                            CurrentProfessorId = reader("professor_id").ToString
+                            CurrentProfessorName = reader("first_name").ToString & " " & reader("last_name").ToString
 
-                            CurrentStudentId = studentId
-                            CurrentStudentName = fullName
 
-                            Dim DashboardForm As New Dashboard
-                            DashboardForm.Show()
+                            Dim FacultyForm As New Dashboard
+                            FacultyForm.Show()
                             Close()
                         Else
                             ShowToast(Me, "Invalid username or password.")

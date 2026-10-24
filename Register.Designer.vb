@@ -30,7 +30,7 @@ Partial Class Register
         chkShowPassword = New CheckBox()
         lblPasswordStrength = New Label()
         Label1 = New Label()
-        txtStudentId = New TextBox()
+        txtProfessorId = New TextBox()
         lblStudentId = New Label()
         txtLastName = New TextBox()
         lblLastName = New Label()
@@ -45,6 +45,7 @@ Partial Class Register
         Label3 = New Label()
         btnRegister = New RoundedButton()
         btnBack = New RoundedButton()
+        Label4 = New Label()
         SuspendLayout()
         ' 
         ' lblTitle
@@ -138,16 +139,16 @@ Partial Class Register
         Label1.TabIndex = 29
         Label1.Text = "Password Strength:"
         ' 
-        ' txtStudentId
+        ' txtProfessorId
         ' 
-        txtStudentId.Anchor = AnchorStyles.None
-        txtStudentId.BackColor = Color.White
-        txtStudentId.Font = New Font("Arial", 8F)
-        txtStudentId.ForeColor = Color.Black
-        txtStudentId.Location = New Point(555, 611)
-        txtStudentId.Name = "txtStudentId"
-        txtStudentId.Size = New Size(350, 20)
-        txtStudentId.TabIndex = 28
+        txtProfessorId.Anchor = AnchorStyles.None
+        txtProfessorId.BackColor = Color.White
+        txtProfessorId.Font = New Font("Arial", 8F)
+        txtProfessorId.ForeColor = Color.Black
+        txtProfessorId.Location = New Point(555, 611)
+        txtProfessorId.Name = "txtProfessorId"
+        txtProfessorId.Size = New Size(350, 20)
+        txtProfessorId.TabIndex = 28
         ' 
         ' lblStudentId
         ' 
@@ -158,9 +159,9 @@ Partial Class Register
         lblStudentId.ForeColor = Color.FromArgb(CByte(28), CByte(43), CByte(34))
         lblStudentId.Location = New Point(555, 585)
         lblStudentId.Name = "lblStudentId"
-        lblStudentId.Size = New Size(84, 19)
+        lblStudentId.Size = New Size(80, 19)
         lblStudentId.TabIndex = 27
-        lblStudentId.Text = "Student ID*"
+        lblStudentId.Text = "Faculty ID*"
         ' 
         ' txtLastName
         ' 
@@ -289,9 +290,9 @@ Partial Class Register
         Label3.ForeColor = Color.FromArgb(CByte(90), CByte(104), CByte(96))
         Label3.Location = New Point(753, 372)
         Label3.Name = "Label3"
-        Label3.Size = New Size(424, 45)
+        Label3.Size = New Size(420, 45)
         Label3.TabIndex = 34
-        Label3.Text = " Fill out the required information to register for your STAR portal student access" & vbCrLf & vbCrLf & " " & vbCrLf
+        Label3.Text = " Fill out the required information to register for your STAR portal faculty access" & vbCrLf & vbCrLf & " " & vbCrLf
         ' 
         ' btnRegister
         ' 
@@ -323,6 +324,19 @@ Partial Class Register
         btnBack.Text = "BACK TO LOGIN"
         btnBack.UseVisualStyleBackColor = False
         ' 
+        ' Label4
+        ' 
+        Label4.Anchor = AnchorStyles.None
+        Label4.AutoSize = True
+        Label4.BackColor = Color.Transparent
+        Label4.Font = New Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label4.ForeColor = Color.Gray
+        Label4.Location = New Point(793, 588)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(112, 15)
+        Label4.TabIndex = 37
+        Label4.Text = "(Example: 12-34567)"
+        ' 
         ' Register
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -330,13 +344,13 @@ Partial Class Register
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Zoom
         ClientSize = New Size(1920, 1080)
+        Controls.Add(Label4)
         Controls.Add(btnBack)
         Controls.Add(btnRegister)
-        Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(txtUsername)
-        Controls.Add(txtStudentId)
+        Controls.Add(txtProfessorId)
         Controls.Add(txtConfirm)
         Controls.Add(lblTitle)
         Controls.Add(txtPassword)
@@ -352,6 +366,7 @@ Partial Class Register
         Controls.Add(lblLastName)
         Controls.Add(lblMiddleName)
         Controls.Add(txtMiddleName)
+        Controls.Add(Label3)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
         MaximumSize = New Size(1920, 1080)
@@ -374,7 +389,7 @@ Partial Class Register
     Friend WithEvents txtConfirm As System.Windows.Forms.TextBox
     Friend WithEvents txtPassword As System.Windows.Forms.TextBox
     Friend WithEvents txtUsername As System.Windows.Forms.TextBox
-    Friend WithEvents txtStudentId As System.Windows.Forms.TextBox
+    Friend WithEvents txtProfessorId As System.Windows.Forms.TextBox
     Friend WithEvents lblStudentId As Label
     Friend WithEvents txtLastName As System.Windows.Forms.TextBox
     Friend WithEvents lblLastName As Label
@@ -387,4 +402,5 @@ Partial Class Register
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class

@@ -23,7 +23,7 @@ Public Class ucView
     End Sub
 
     Public Sub LoadEntries()
-        If String.IsNullOrEmpty(CurrentStudentId) Then Return
+        If String.IsNullOrEmpty(CurrentProfessorId) Then Return
 
         Dim sql As String =
         "SELECT e.entry_id, " &
@@ -43,7 +43,7 @@ Public Class ucView
             Using con As New MySqlConnection(conString)
                 con.Open()
                 Using da As New MySqlDataAdapter(sql, con)
-                    da.SelectCommand.Parameters.AddWithValue("@id", CurrentStudentId)
+                    da.SelectCommand.Parameters.AddWithValue("@id", CurrentProfessorId)
                     Dim dt As New DataTable()
                     da.Fill(dt)
                     dgvEntries.DataSource = dt
@@ -57,18 +57,5 @@ Public Class ucView
         Catch ex As Exception
             MessageBox.Show("Could not load entries: " & ex.Message)
         End Try
-    End Sub
-
-    Private Sub dgvEntries_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEntries.CellDoubleClick
-        If e.RowIndex < 0 Then Return
-
-        Dim entryId As Integer = Convert.ToInt32(dgvEntries.Rows(e.RowIndex).Cells("entry_id").Value)
-
-        Using dlg As New frmEditEntry(entryId)
-            If dlg.ShowDialog(Me.FindForm()) = DialogResult.OK Then
-                LoadEntries()
-                ShowToast(Me.FindForm(), dlg.ResultMessage)
-            End If
-        End Using
     End Sub
 End Class

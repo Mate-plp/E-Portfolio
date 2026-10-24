@@ -48,12 +48,12 @@ Public Class Register
         Dim firstName = txtFirstName.Text.Trim
         Dim middleName = txtMiddleName.Text.Trim
         Dim lastName = txtLastName.Text.Trim
-        Dim studentId = txtStudentId.Text.Trim
+        Dim professorId = txtProfessorId.Text.Trim
         Dim username = txtUsername.Text.Trim
         Dim password = txtPassword.Text
 
-        If firstName = "" OrElse lastName = "" OrElse studentId = "" OrElse
-       username = "" OrElse password = "" Then
+        If firstName = "" OrElse lastName = "" OrElse professorId = "" OrElse
+   username = "" OrElse password = "" Then
             ShowToast(Me, "Please fill in all required fields.")
             Return
         End If
@@ -75,9 +75,9 @@ Public Class Register
             Return
         End If
 
-        If Not Regex.IsMatch(studentId, "^\d{2}-\d{5}$") Then
-            ShowToast(Me, "Student ID example: 25-00123.")
-            txtStudentId.Focus()
+        If Not Regex.IsMatch(professorId, "^\d{2}-\d{5}$") Then
+            ShowToast(Me, "Faculty ID example: 25-00123.")
+            txtProfessorId.Focus()
             Return
         End If
 
@@ -98,12 +98,12 @@ Public Class Register
                 con.Open()
 
                 Dim checkSql =
-                "SELECT (SELECT COUNT(*) FROM users WHERE username = @u), " &
-                "(SELECT COUNT(*) FROM student WHERE student_id = @sid)"
+            "SELECT (SELECT COUNT(*) FROM users WHERE username = @u), " &
+            "(SELECT COUNT(*) FROM faculty WHERE professor_id = @pid)"
 
                 Using checkCmd As New MySqlCommand(checkSql, con)
                     checkCmd.Parameters.AddWithValue("@u", username)
-                    checkCmd.Parameters.AddWithValue("@sid", studentId)
+                    checkCmd.Parameters.AddWithValue("@pid", professorId)
 
                     Using r = checkCmd.ExecuteReader
                         r.Read()
@@ -113,7 +113,7 @@ Public Class Register
                             Return
                         End If
                         If Convert.ToInt32(r(1)) > 0 Then
-                            ShowToast(Me, "That student ID is already registered.")
+                            ShowToast(Me, "That faculty ID is already registered.")
                             Return
                         End If
                     End Using
@@ -122,8 +122,8 @@ Public Class Register
                 Using tx = con.BeginTransaction
                     Try
                         Dim userSql =
-                        "INSERT INTO users (username, password, account_type, first_name, middle_name, last_name) " &
-                        "VALUES (@u, @p, 'Student', @fn, @mn, @ln)"
+                    "INSERT INTO users (username, password, account_type, first_name, middle_name, last_name) " &
+                    "VALUES (@u, @p, 'Faculty', @fn, @mn, @ln)"
 
                         Using cmd As New MySqlCommand(userSql, con, tx)
                             cmd.Parameters.AddWithValue("@u", username)
@@ -135,8 +135,8 @@ Public Class Register
                         End Using
 
                         Using cmd As New MySqlCommand(
-                        "INSERT INTO student (student_id, username) VALUES (@sid, @u)", con, tx)
-                            cmd.Parameters.AddWithValue("@sid", studentId)
+                    "INSERT INTO faculty (professor_id, username) VALUES (@pid, @u)", con, tx)
+                            cmd.Parameters.AddWithValue("@pid", professorId)
                             cmd.Parameters.AddWithValue("@u", username)
                             cmd.ExecuteNonQuery()
                         End Using
@@ -150,7 +150,7 @@ Public Class Register
             End Using
 
             MessageBox.Show("Registration Successful! You can now log in.", "Success",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Dim LoginForm As New Login
             LoginForm.Show()

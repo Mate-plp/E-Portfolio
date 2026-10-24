@@ -24,7 +24,6 @@ Partial Class ucProfile
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucProfile))
         lblPassword = New Label()
-        lblAddress = New Label()
         lblUsername = New Label()
         lblID = New Label()
         Panel1 = New Panel()
@@ -53,34 +52,17 @@ Partial Class ucProfile
         tbOldPass = New TextBox()
         Label3 = New Label()
         cgbStudent = New RoundedPanel()
-        btnProgram = New RoundedButton()
+        btnPosition = New RoundedButton()
         Label6 = New Label()
-        tbProgram = New TextBox()
+        tbPosition = New TextBox()
         Label1 = New Label()
         tbID = New TextBox()
-        cgbAdd = New RoundedPanel()
-        btnRegion = New RoundedButton()
-        btnBar = New RoundedButton()
-        btnCity = New RoundedButton()
-        btnLine2 = New RoundedButton()
-        btnLine1 = New RoundedButton()
-        tbRegion = New TextBox()
-        tbBar = New TextBox()
-        tbCity = New TextBox()
-        Label14 = New Label()
-        Label13 = New Label()
-        Label12 = New Label()
-        Label10 = New Label()
-        tbLine1 = New TextBox()
-        tbLine2 = New TextBox()
-        Label11 = New Label()
         btnSave = New RoundedButton()
         btnDiscard = New RoundedButton()
         Panel1.SuspendLayout()
         cgbUser.SuspendLayout()
         cgbPass.SuspendLayout()
         cgbStudent.SuspendLayout()
-        cgbAdd.SuspendLayout()
         SuspendLayout()
         ' 
         ' lblPassword
@@ -94,18 +76,6 @@ Partial Class ucProfile
         lblPassword.Size = New Size(112, 25)
         lblPassword.TabIndex = 6
         lblPassword.Text = "First Name:"
-        ' 
-        ' lblAddress
-        ' 
-        lblAddress.Anchor = AnchorStyles.None
-        lblAddress.AutoSize = True
-        lblAddress.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        lblAddress.Location = New Point(106, 69)
-        lblAddress.Margin = New Padding(18, 45, 18, 15)
-        lblAddress.Name = "lblAddress"
-        lblAddress.Size = New Size(70, 25)
-        lblAddress.TabIndex = 7
-        lblAddress.Text = "Line 1:"
         ' 
         ' lblUsername
         ' 
@@ -127,9 +97,9 @@ Partial Class ucProfile
         lblID.Location = New Point(63, 60)
         lblID.Margin = New Padding(18, 15, 18, 15)
         lblID.Name = "lblID"
-        lblID.Size = New Size(113, 25)
+        lblID.Size = New Size(127, 25)
         lblID.TabIndex = 5
-        lblID.Text = "Student ID:"
+        lblID.Text = "Professor ID:"
         ' 
         ' Panel1
         ' 
@@ -473,9 +443,9 @@ Partial Class ucProfile
         ' 
         cgbStudent.Anchor = AnchorStyles.None
         cgbStudent.BackColor = Color.Transparent
-        cgbStudent.Controls.Add(btnProgram)
+        cgbStudent.Controls.Add(btnPosition)
         cgbStudent.Controls.Add(Label6)
-        cgbStudent.Controls.Add(tbProgram)
+        cgbStudent.Controls.Add(tbPosition)
         cgbStudent.Controls.Add(Label1)
         cgbStudent.Controls.Add(tbID)
         cgbStudent.Controls.Add(lblID)
@@ -486,18 +456,18 @@ Partial Class ucProfile
         cgbStudent.Size = New Size(531, 312)
         cgbStudent.TabIndex = 11
         ' 
-        ' btnProgram
+        ' btnPosition
         ' 
-        btnProgram.Anchor = AnchorStyles.None
-        btnProgram.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnProgram.FlatStyle = FlatStyle.Flat
-        btnProgram.Font = New Font("Arial", 11F, FontStyle.Bold)
-        btnProgram.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnProgram.Location = New Point(394, 100)
-        btnProgram.Name = "btnProgram"
-        btnProgram.Size = New Size(50, 50)
-        btnProgram.TabIndex = 14
-        btnProgram.UseVisualStyleBackColor = False
+        btnPosition.Anchor = AnchorStyles.None
+        btnPosition.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnPosition.FlatStyle = FlatStyle.Flat
+        btnPosition.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnPosition.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnPosition.Location = New Point(394, 100)
+        btnPosition.Name = "btnPosition"
+        btnPosition.Size = New Size(50, 50)
+        btnPosition.TabIndex = 14
+        btnPosition.UseVisualStyleBackColor = False
         ' 
         ' Label6
         ' 
@@ -507,22 +477,22 @@ Partial Class ucProfile
         Label6.Location = New Point(71, 15)
         Label6.Margin = New Padding(18, 15, 18, 15)
         Label6.Name = "Label6"
-        Label6.Size = New Size(176, 37)
+        Label6.Size = New Size(167, 37)
         Label6.TabIndex = 12
-        Label6.Text = "Student Info"
+        Label6.Text = "Faculty Info"
         ' 
-        ' tbProgram
+        ' tbPosition
         ' 
-        tbProgram.Anchor = AnchorStyles.None
-        tbProgram.BackColor = Color.White
-        tbProgram.Enabled = False
-        tbProgram.Font = New Font("Tahoma", 11F)
-        tbProgram.ForeColor = Color.Black
-        tbProgram.Location = New Point(182, 117)
-        tbProgram.Name = "tbProgram"
-        tbProgram.Size = New Size(200, 25)
-        tbProgram.TabIndex = 6
-        tbProgram.TabStop = False
+        tbPosition.Anchor = AnchorStyles.None
+        tbPosition.BackColor = Color.White
+        tbPosition.Enabled = False
+        tbPosition.Font = New Font("Tahoma", 11F)
+        tbPosition.ForeColor = Color.Black
+        tbPosition.Location = New Point(182, 117)
+        tbPosition.Name = "tbPosition"
+        tbPosition.Size = New Size(200, 25)
+        tbPosition.TabIndex = 6
+        tbPosition.TabStop = False
         ' 
         ' Label1
         ' 
@@ -532,9 +502,9 @@ Partial Class ucProfile
         Label1.Location = New Point(80, 115)
         Label1.Margin = New Padding(18, 15, 18, 15)
         Label1.Name = "Label1"
-        Label1.Size = New Size(96, 25)
+        Label1.Size = New Size(84, 25)
         Label1.TabIndex = 8
-        Label1.Text = "Program:"
+        Label1.Text = "Position"
         ' 
         ' tbID
         ' 
@@ -543,229 +513,11 @@ Partial Class ucProfile
         tbID.Enabled = False
         tbID.Font = New Font("Tahoma", 11F)
         tbID.ForeColor = Color.Black
-        tbID.Location = New Point(182, 60)
+        tbID.Location = New Point(187, 60)
         tbID.Name = "tbID"
         tbID.Size = New Size(200, 25)
         tbID.TabIndex = 5
         tbID.TabStop = False
-        ' 
-        ' cgbAdd
-        ' 
-        cgbAdd.Anchor = AnchorStyles.None
-        cgbAdd.BackColor = Color.White
-        cgbAdd.Controls.Add(btnRegion)
-        cgbAdd.Controls.Add(btnBar)
-        cgbAdd.Controls.Add(btnCity)
-        cgbAdd.Controls.Add(btnLine2)
-        cgbAdd.Controls.Add(btnLine1)
-        cgbAdd.Controls.Add(tbRegion)
-        cgbAdd.Controls.Add(tbBar)
-        cgbAdd.Controls.Add(tbCity)
-        cgbAdd.Controls.Add(Label14)
-        cgbAdd.Controls.Add(Label13)
-        cgbAdd.Controls.Add(Label12)
-        cgbAdd.Controls.Add(Label10)
-        cgbAdd.Controls.Add(tbLine1)
-        cgbAdd.Controls.Add(tbLine2)
-        cgbAdd.Controls.Add(Label11)
-        cgbAdd.Controls.Add(lblAddress)
-        cgbAdd.CornerRadius = 15
-        cgbAdd.FillColor = Color.Transparent
-        cgbAdd.ForeColor = Color.Black
-        cgbAdd.Location = New Point(595, 439)
-        cgbAdd.Name = "cgbAdd"
-        cgbAdd.Size = New Size(729, 338)
-        cgbAdd.TabIndex = 12
-        ' 
-        ' btnRegion
-        ' 
-        btnRegion.Anchor = AnchorStyles.None
-        btnRegion.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnRegion.FlatStyle = FlatStyle.Flat
-        btnRegion.Font = New Font("Arial", 11F, FontStyle.Bold)
-        btnRegion.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnRegion.Location = New Point(664, 226)
-        btnRegion.Name = "btnRegion"
-        btnRegion.Size = New Size(50, 50)
-        btnRegion.TabIndex = 14
-        btnRegion.UseVisualStyleBackColor = False
-        ' 
-        ' btnBar
-        ' 
-        btnBar.Anchor = AnchorStyles.None
-        btnBar.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnBar.FlatStyle = FlatStyle.Flat
-        btnBar.Font = New Font("Arial", 11F, FontStyle.Bold)
-        btnBar.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnBar.Location = New Point(357, 183)
-        btnBar.Name = "btnBar"
-        btnBar.Size = New Size(50, 50)
-        btnBar.TabIndex = 14
-        btnBar.UseVisualStyleBackColor = False
-        ' 
-        ' btnCity
-        ' 
-        btnCity.Anchor = AnchorStyles.None
-        btnCity.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnCity.FlatStyle = FlatStyle.Flat
-        btnCity.Font = New Font("Arial", 11F, FontStyle.Bold)
-        btnCity.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnCity.Location = New Point(648, 170)
-        btnCity.Name = "btnCity"
-        btnCity.Size = New Size(50, 50)
-        btnCity.TabIndex = 14
-        btnCity.UseVisualStyleBackColor = False
-        ' 
-        ' btnLine2
-        ' 
-        btnLine2.Anchor = AnchorStyles.None
-        btnLine2.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnLine2.FlatStyle = FlatStyle.Flat
-        btnLine2.Font = New Font("Arial", 11F, FontStyle.Bold)
-        btnLine2.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnLine2.Location = New Point(666, 102)
-        btnLine2.Name = "btnLine2"
-        btnLine2.Size = New Size(50, 50)
-        btnLine2.TabIndex = 14
-        btnLine2.UseVisualStyleBackColor = False
-        ' 
-        ' btnLine1
-        ' 
-        btnLine1.Anchor = AnchorStyles.None
-        btnLine1.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnLine1.FlatStyle = FlatStyle.Flat
-        btnLine1.Font = New Font("Arial", 11F, FontStyle.Bold)
-        btnLine1.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnLine1.Location = New Point(666, 41)
-        btnLine1.Name = "btnLine1"
-        btnLine1.Size = New Size(50, 50)
-        btnLine1.TabIndex = 14
-        btnLine1.UseVisualStyleBackColor = False
-        ' 
-        ' tbRegion
-        ' 
-        tbRegion.Anchor = AnchorStyles.None
-        tbRegion.BackColor = Color.White
-        tbRegion.Enabled = False
-        tbRegion.Font = New Font("Tahoma", 11F)
-        tbRegion.ForeColor = Color.Black
-        tbRegion.Location = New Point(277, 239)
-        tbRegion.Name = "tbRegion"
-        tbRegion.Size = New Size(381, 25)
-        tbRegion.TabIndex = 13
-        tbRegion.TabStop = False
-        ' 
-        ' tbBar
-        ' 
-        tbBar.Anchor = AnchorStyles.None
-        tbBar.BackColor = Color.White
-        tbBar.Enabled = False
-        tbBar.Font = New Font("Tahoma", 11F)
-        tbBar.ForeColor = Color.Black
-        tbBar.Location = New Point(131, 192)
-        tbBar.Name = "tbBar"
-        tbBar.Size = New Size(219, 25)
-        tbBar.TabIndex = 11
-        tbBar.TabStop = False
-        ' 
-        ' tbCity
-        ' 
-        tbCity.Anchor = AnchorStyles.None
-        tbCity.BackColor = Color.White
-        tbCity.Enabled = False
-        tbCity.Font = New Font("Tahoma", 11F)
-        tbCity.ForeColor = Color.Black
-        tbCity.Location = New Point(510, 182)
-        tbCity.Name = "tbCity"
-        tbCity.Size = New Size(132, 25)
-        tbCity.TabIndex = 10
-        tbCity.TabStop = False
-        ' 
-        ' Label14
-        ' 
-        Label14.Anchor = AnchorStyles.None
-        Label14.AutoSize = True
-        Label14.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label14.Location = New Point(193, 238)
-        Label14.Margin = New Padding(18, 15, 18, 15)
-        Label14.Name = "Label14"
-        Label14.Size = New Size(80, 25)
-        Label14.TabIndex = 15
-        Label14.Text = "Region:"
-        ' 
-        ' Label13
-        ' 
-        Label13.Anchor = AnchorStyles.None
-        Label13.AutoSize = True
-        Label13.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label13.Location = New Point(451, 182)
-        Label13.Margin = New Padding(18, 15, 18, 15)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(51, 25)
-        Label13.TabIndex = 14
-        Label13.Text = "City:"
-        ' 
-        ' Label12
-        ' 
-        Label12.Anchor = AnchorStyles.None
-        Label12.AutoSize = True
-        Label12.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        Label12.Location = New Point(106, 127)
-        Label12.Margin = New Padding(18, 45, 18, 15)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(70, 25)
-        Label12.TabIndex = 13
-        Label12.Text = "Line 2:"
-        ' 
-        ' Label10
-        ' 
-        Label10.Anchor = AnchorStyles.None
-        Label10.AutoSize = True
-        Label10.Font = New Font("Segoe UI", 20F, FontStyle.Bold)
-        Label10.Location = New Point(61, 15)
-        Label10.Margin = New Padding(18, 15, 18, 15)
-        Label10.Name = "Label10"
-        Label10.Size = New Size(120, 37)
-        Label10.TabIndex = 12
-        Label10.Text = "Address"
-        ' 
-        ' tbLine1
-        ' 
-        tbLine1.Anchor = AnchorStyles.None
-        tbLine1.BackColor = Color.White
-        tbLine1.Enabled = False
-        tbLine1.Font = New Font("Tahoma", 11F)
-        tbLine1.ForeColor = Color.Black
-        tbLine1.Location = New Point(197, 53)
-        tbLine1.Name = "tbLine1"
-        tbLine1.Size = New Size(463, 25)
-        tbLine1.TabIndex = 8
-        tbLine1.TabStop = False
-        ' 
-        ' tbLine2
-        ' 
-        tbLine2.Anchor = AnchorStyles.None
-        tbLine2.BackColor = Color.White
-        tbLine2.Enabled = False
-        tbLine2.Font = New Font("Tahoma", 11F)
-        tbLine2.ForeColor = Color.Black
-        tbLine2.Location = New Point(197, 111)
-        tbLine2.Name = "tbLine2"
-        tbLine2.Size = New Size(463, 25)
-        tbLine2.TabIndex = 9
-        tbLine2.TabStop = False
-        ' 
-        ' Label11
-        ' 
-        Label11.Anchor = AnchorStyles.None
-        Label11.AutoSize = True
-        Label11.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label11.Location = New Point(31, 191)
-        Label11.Margin = New Padding(18, 15, 18, 15)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(101, 25)
-        Label11.TabIndex = 9
-        Label11.Text = "Barangay:"
         ' 
         ' btnSave
         ' 
@@ -804,7 +556,6 @@ Partial Class ucProfile
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         Controls.Add(btnDiscard)
         Controls.Add(btnSave)
-        Controls.Add(cgbAdd)
         Controls.Add(cgbStudent)
         Controls.Add(cgbPass)
         Controls.Add(cgbUser)
@@ -819,12 +570,9 @@ Partial Class ucProfile
         cgbPass.PerformLayout()
         cgbStudent.ResumeLayout(False)
         cgbStudent.PerformLayout()
-        cgbAdd.ResumeLayout(False)
-        cgbAdd.PerformLayout()
         ResumeLayout(False)
     End Sub
     Friend WithEvents lblPassword As Label
-    Friend WithEvents lblAddress As Label
     Friend WithEvents lblUsername As Label
     Friend WithEvents lblID As Label
     Friend WithEvents Panel1 As Panel
@@ -842,23 +590,12 @@ Partial Class ucProfile
     Friend WithEvents Label5 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents tbProgram As System.Windows.Forms.TextBox
+    Friend WithEvents tbPosition As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents tbMN As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents tbLN As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents cgbAdd As RoundedPanel
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents tbLine1 As System.Windows.Forms.TextBox
-    Friend WithEvents tbLine2 As System.Windows.Forms.TextBox
-    Friend WithEvents Label11 As Label
-    Friend WithEvents tbRegion As System.Windows.Forms.TextBox
-    Friend WithEvents tbBar As System.Windows.Forms.TextBox
-    Friend WithEvents tbCity As System.Windows.Forms.TextBox
     Friend WithEvents tbCfmPass As TextBox
     Friend WithEvents Label15 As Label
     Friend WithEvents btnSave As RoundedButton
@@ -867,14 +604,9 @@ Partial Class ucProfile
     Friend WithEvents btnFN As RoundedButton
     Friend WithEvents btnUsername As RoundedButton
     Friend WithEvents btnOldPass As RoundedButton
-    Friend WithEvents btnProgram As RoundedButton
+    Friend WithEvents btnPosition As RoundedButton
     Friend WithEvents btnCfmPass As RoundedButton
     Friend WithEvents btnNewPass As RoundedButton
-    Friend WithEvents btnRegion As RoundedButton
-    Friend WithEvents btnBar As RoundedButton
-    Friend WithEvents btnCity As RoundedButton
-    Friend WithEvents btnLine2 As RoundedButton
-    Friend WithEvents btnLine1 As RoundedButton
     Friend WithEvents btnDiscard As RoundedButton
 
 End Class
