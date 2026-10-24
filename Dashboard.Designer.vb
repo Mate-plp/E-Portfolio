@@ -67,15 +67,15 @@ Partial Class Dashboard
         ' 
         ' btnExport
         ' 
+        btnExport.Anchor = AnchorStyles.None
         btnExport.BackColor = Color.Transparent
-        btnExport.Dock = DockStyle.Bottom
         btnExport.FlatAppearance.BorderSize = 0
         btnExport.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnExport.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnExport.FlatStyle = FlatStyle.Flat
-        btnExport.Font = New Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnExport.Font = New Font("Verdana", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnExport.ForeColor = Color.White
-        btnExport.Location = New Point(0, 744)
+        btnExport.Location = New Point(0, 630)
         btnExport.Margin = New Padding(4, 8, 10, 8)
         btnExport.Name = "btnExport"
         btnExport.Size = New Size(192, 50)
@@ -151,15 +151,15 @@ Partial Class Dashboard
         ' 
         ' btnLogout
         ' 
+        btnLogout.Anchor = AnchorStyles.None
         btnLogout.BackColor = Color.Transparent
-        btnLogout.Dock = DockStyle.Bottom
         btnLogout.FlatAppearance.BorderSize = 0
         btnLogout.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnLogout.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnLogout.FlatStyle = FlatStyle.Flat
         btnLogout.Font = New Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnLogout.ForeColor = Color.White
-        btnLogout.Location = New Point(0, 794)
+        btnLogout.Location = New Point(0, 691)
         btnLogout.Margin = New Padding(4, 8, 10, 8)
         btnLogout.Name = "btnLogout"
         btnLogout.Size = New Size(192, 50)
@@ -281,7 +281,7 @@ Partial Class Dashboard
         ' 
         ' pnlContent
         ' 
-        pnlContent.BackColor = Color.FromArgb(CByte(13), CByte(34), CByte(24))
+        pnlContent.BackColor = Color.FromArgb(CByte(8), CByte(35), CByte(18))
         pnlContent.BackgroundImageLayout = ImageLayout.Zoom
         pnlContent.Dock = DockStyle.Fill
         pnlContent.ForeColor = SystemColors.ControlText

@@ -88,7 +88,7 @@ Partial Class ucProfile
         lblPassword.Anchor = AnchorStyles.None
         lblPassword.AutoSize = True
         lblPassword.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        lblPassword.Location = New Point(61, 128)
+        lblPassword.Location = New Point(61, 129)
         lblPassword.Margin = New Padding(18, 45, 18, 15)
         lblPassword.Name = "lblPassword"
         lblPassword.Size = New Size(112, 25)
@@ -100,7 +100,7 @@ Partial Class ucProfile
         lblAddress.Anchor = AnchorStyles.None
         lblAddress.AutoSize = True
         lblAddress.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        lblAddress.Location = New Point(106, 69)
+        lblAddress.Location = New Point(106, 53)
         lblAddress.Margin = New Padding(18, 45, 18, 15)
         lblAddress.Name = "lblAddress"
         lblAddress.Size = New Size(70, 25)
@@ -112,7 +112,7 @@ Partial Class ucProfile
         lblUsername.Anchor = AnchorStyles.None
         lblUsername.AutoSize = True
         lblUsername.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        lblUsername.Location = New Point(65, 67)
+        lblUsername.Location = New Point(65, 69)
         lblUsername.Margin = New Padding(18, 15, 18, 15)
         lblUsername.Name = "lblUsername"
         lblUsername.Size = New Size(106, 25)
@@ -241,7 +241,7 @@ Partial Class ucProfile
         tbMN.Enabled = False
         tbMN.Font = New Font("Tahoma", 11F)
         tbMN.ForeColor = Color.Black
-        tbMN.Location = New Point(182, 190)
+        tbMN.Location = New Point(183, 192)
         tbMN.Name = "tbMN"
         tbMN.Size = New Size(266, 25)
         tbMN.TabIndex = 3
@@ -252,7 +252,7 @@ Partial Class ucProfile
         Label9.Anchor = AnchorStyles.None
         Label9.AutoSize = True
         Label9.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        Label9.Location = New Point(35, 193)
+        Label9.Location = New Point(36, 192)
         Label9.Margin = New Padding(18, 45, 18, 15)
         Label9.Name = "Label9"
         Label9.Size = New Size(136, 25)
@@ -266,7 +266,7 @@ Partial Class ucProfile
         tbLN.Enabled = False
         tbLN.Font = New Font("Tahoma", 11F)
         tbLN.ForeColor = Color.Black
-        tbLN.Location = New Point(182, 252)
+        tbLN.Location = New Point(184, 249)
         tbLN.Name = "tbLN"
         tbLN.Size = New Size(266, 25)
         tbLN.TabIndex = 4
@@ -277,7 +277,7 @@ Partial Class ucProfile
         Label8.Anchor = AnchorStyles.None
         Label8.AutoSize = True
         Label8.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        Label8.Location = New Point(61, 253)
+        Label8.Location = New Point(61, 250)
         Label8.Margin = New Padding(18, 45, 18, 15)
         Label8.Name = "Label8"
         Label8.Size = New Size(109, 25)
@@ -289,7 +289,7 @@ Partial Class ucProfile
         Label5.Anchor = AnchorStyles.None
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI", 20F, FontStyle.Bold)
-        Label5.Location = New Point(55, 15)
+        Label5.Location = New Point(36, 15)
         Label5.Margin = New Padding(18, 15, 18, 15)
         Label5.Name = "Label5"
         Label5.Size = New Size(134, 37)
@@ -303,7 +303,7 @@ Partial Class ucProfile
         tbFN.Enabled = False
         tbFN.Font = New Font("Tahoma", 11F)
         tbFN.ForeColor = Color.Black
-        tbFN.Location = New Point(182, 129)
+        tbFN.Location = New Point(183, 130)
         tbFN.Name = "tbFN"
         tbFN.Size = New Size(266, 25)
         tbFN.TabIndex = 2
@@ -350,7 +350,7 @@ Partial Class ucProfile
         btnCfmPass.FlatStyle = FlatStyle.Flat
         btnCfmPass.Font = New Font("Arial", 11F, FontStyle.Bold)
         btnCfmPass.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnCfmPass.Location = New Point(480, 164)
+        btnCfmPass.Location = New Point(480, 165)
         btnCfmPass.Name = "btnCfmPass"
         btnCfmPass.Size = New Size(50, 50)
         btnCfmPass.TabIndex = 14
@@ -363,7 +363,7 @@ Partial Class ucProfile
         btnNewPass.FlatStyle = FlatStyle.Flat
         btnNewPass.Font = New Font("Arial", 11F, FontStyle.Bold)
         btnNewPass.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnNewPass.Location = New Point(480, 106)
+        btnNewPass.Location = New Point(480, 107)
         btnNewPass.Name = "btnNewPass"
         btnNewPass.Size = New Size(50, 50)
         btnNewPass.TabIndex = 14
@@ -389,7 +389,7 @@ Partial Class ucProfile
         tbCfmPass.Enabled = False
         tbCfmPass.Font = New Font("Tahoma", 11F)
         tbCfmPass.ForeColor = Color.Black
-        tbCfmPass.Location = New Point(200, 175)
+        tbCfmPass.Location = New Point(204, 178)
         tbCfmPass.Name = "tbCfmPass"
         tbCfmPass.Size = New Size(266, 25)
         tbCfmPass.TabIndex = 17
@@ -412,7 +412,7 @@ Partial Class ucProfile
         Label7.Anchor = AnchorStyles.None
         Label7.AutoSize = True
         Label7.Font = New Font("Segoe UI", 20F, FontStyle.Bold)
-        Label7.Location = New Point(55, 15)
+        Label7.Location = New Point(36, 15)
         Label7.Margin = New Padding(18, 15, 18, 15)
         Label7.Name = "Label7"
         Label7.Size = New Size(242, 37)
@@ -424,7 +424,7 @@ Partial Class ucProfile
         Label2.Anchor = AnchorStyles.None
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        Label2.Location = New Point(50, 119)
+        Label2.Location = New Point(49, 119)
         Label2.Margin = New Padding(18, 45, 18, 15)
         Label2.Name = "Label2"
         Label2.Size = New Size(147, 25)
@@ -438,7 +438,7 @@ Partial Class ucProfile
         tbNewPass.Enabled = False
         tbNewPass.Font = New Font("Tahoma", 11F)
         tbNewPass.ForeColor = Color.Black
-        tbNewPass.Location = New Point(200, 121)
+        tbNewPass.Location = New Point(204, 120)
         tbNewPass.Name = "tbNewPass"
         tbNewPass.Size = New Size(266, 25)
         tbNewPass.TabIndex = 15
@@ -451,7 +451,7 @@ Partial Class ucProfile
         tbOldPass.Enabled = False
         tbOldPass.Font = New Font("Tahoma", 11F)
         tbOldPass.ForeColor = Color.Black
-        tbOldPass.Location = New Point(200, 61)
+        tbOldPass.Location = New Point(204, 62)
         tbOldPass.Name = "tbOldPass"
         tbOldPass.Size = New Size(266, 25)
         tbOldPass.TabIndex = 14
@@ -504,7 +504,7 @@ Partial Class ucProfile
         Label6.Anchor = AnchorStyles.None
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI", 20F, FontStyle.Bold)
-        Label6.Location = New Point(71, 15)
+        Label6.Location = New Point(31, 15)
         Label6.Margin = New Padding(18, 15, 18, 15)
         Label6.Name = "Label6"
         Label6.Size = New Size(176, 37)
@@ -584,7 +584,7 @@ Partial Class ucProfile
         btnRegion.FlatStyle = FlatStyle.Flat
         btnRegion.Font = New Font("Arial", 11F, FontStyle.Bold)
         btnRegion.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnRegion.Location = New Point(664, 226)
+        btnRegion.Location = New Point(651, 219)
         btnRegion.Name = "btnRegion"
         btnRegion.Size = New Size(50, 50)
         btnRegion.TabIndex = 14
@@ -597,7 +597,7 @@ Partial Class ucProfile
         btnBar.FlatStyle = FlatStyle.Flat
         btnBar.Font = New Font("Arial", 11F, FontStyle.Bold)
         btnBar.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnBar.Location = New Point(357, 183)
+        btnBar.Location = New Point(394, 163)
         btnBar.Name = "btnBar"
         btnBar.Size = New Size(50, 50)
         btnBar.TabIndex = 14
@@ -610,7 +610,7 @@ Partial Class ucProfile
         btnCity.FlatStyle = FlatStyle.Flat
         btnCity.Font = New Font("Arial", 11F, FontStyle.Bold)
         btnCity.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnCity.Location = New Point(648, 170)
+        btnCity.Location = New Point(651, 161)
         btnCity.Name = "btnCity"
         btnCity.Size = New Size(50, 50)
         btnCity.TabIndex = 14
@@ -623,7 +623,7 @@ Partial Class ucProfile
         btnLine2.FlatStyle = FlatStyle.Flat
         btnLine2.Font = New Font("Arial", 11F, FontStyle.Bold)
         btnLine2.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnLine2.Location = New Point(666, 102)
+        btnLine2.Location = New Point(651, 102)
         btnLine2.Name = "btnLine2"
         btnLine2.Size = New Size(50, 50)
         btnLine2.TabIndex = 14
@@ -636,7 +636,7 @@ Partial Class ucProfile
         btnLine1.FlatStyle = FlatStyle.Flat
         btnLine1.Font = New Font("Arial", 11F, FontStyle.Bold)
         btnLine1.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnLine1.Location = New Point(666, 41)
+        btnLine1.Location = New Point(651, 43)
         btnLine1.Name = "btnLine1"
         btnLine1.Size = New Size(50, 50)
         btnLine1.TabIndex = 14
@@ -649,7 +649,7 @@ Partial Class ucProfile
         tbRegion.Enabled = False
         tbRegion.Font = New Font("Tahoma", 11F)
         tbRegion.ForeColor = Color.Black
-        tbRegion.Location = New Point(277, 239)
+        tbRegion.Location = New Point(261, 232)
         tbRegion.Name = "tbRegion"
         tbRegion.Size = New Size(381, 25)
         tbRegion.TabIndex = 13
@@ -662,7 +662,7 @@ Partial Class ucProfile
         tbBar.Enabled = False
         tbBar.Font = New Font("Tahoma", 11F)
         tbBar.ForeColor = Color.Black
-        tbBar.Location = New Point(131, 192)
+        tbBar.Location = New Point(167, 176)
         tbBar.Name = "tbBar"
         tbBar.Size = New Size(219, 25)
         tbBar.TabIndex = 11
@@ -675,7 +675,7 @@ Partial Class ucProfile
         tbCity.Enabled = False
         tbCity.Font = New Font("Tahoma", 11F)
         tbCity.ForeColor = Color.Black
-        tbCity.Location = New Point(510, 182)
+        tbCity.Location = New Point(513, 176)
         tbCity.Name = "tbCity"
         tbCity.Size = New Size(132, 25)
         tbCity.TabIndex = 10
@@ -686,7 +686,7 @@ Partial Class ucProfile
         Label14.Anchor = AnchorStyles.None
         Label14.AutoSize = True
         Label14.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label14.Location = New Point(193, 238)
+        Label14.Location = New Point(172, 232)
         Label14.Margin = New Padding(18, 15, 18, 15)
         Label14.Name = "Label14"
         Label14.Size = New Size(80, 25)
@@ -698,7 +698,7 @@ Partial Class ucProfile
         Label13.Anchor = AnchorStyles.None
         Label13.AutoSize = True
         Label13.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label13.Location = New Point(451, 182)
+        Label13.Location = New Point(451, 176)
         Label13.Margin = New Padding(18, 15, 18, 15)
         Label13.Name = "Label13"
         Label13.Size = New Size(51, 25)
@@ -710,7 +710,7 @@ Partial Class ucProfile
         Label12.Anchor = AnchorStyles.None
         Label12.AutoSize = True
         Label12.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        Label12.Location = New Point(106, 127)
+        Label12.Location = New Point(106, 112)
         Label12.Margin = New Padding(18, 45, 18, 15)
         Label12.Name = "Label12"
         Label12.Size = New Size(70, 25)
@@ -722,7 +722,7 @@ Partial Class ucProfile
         Label10.Anchor = AnchorStyles.None
         Label10.AutoSize = True
         Label10.Font = New Font("Segoe UI", 20F, FontStyle.Bold)
-        Label10.Location = New Point(61, 15)
+        Label10.Location = New Point(31, 15)
         Label10.Margin = New Padding(18, 15, 18, 15)
         Label10.Name = "Label10"
         Label10.Size = New Size(120, 37)
@@ -736,7 +736,7 @@ Partial Class ucProfile
         tbLine1.Enabled = False
         tbLine1.Font = New Font("Tahoma", 11F)
         tbLine1.ForeColor = Color.Black
-        tbLine1.Location = New Point(197, 53)
+        tbLine1.Location = New Point(182, 55)
         tbLine1.Name = "tbLine1"
         tbLine1.Size = New Size(463, 25)
         tbLine1.TabIndex = 8
@@ -749,7 +749,7 @@ Partial Class ucProfile
         tbLine2.Enabled = False
         tbLine2.Font = New Font("Tahoma", 11F)
         tbLine2.ForeColor = Color.Black
-        tbLine2.Location = New Point(197, 111)
+        tbLine2.Location = New Point(182, 114)
         tbLine2.Name = "tbLine2"
         tbLine2.Size = New Size(463, 25)
         tbLine2.TabIndex = 9
@@ -760,7 +760,7 @@ Partial Class ucProfile
         Label11.Anchor = AnchorStyles.None
         Label11.AutoSize = True
         Label11.Font = New Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label11.Location = New Point(31, 191)
+        Label11.Location = New Point(62, 175)
         Label11.Margin = New Padding(18, 15, 18, 15)
         Label11.Name = "Label11"
         Label11.Size = New Size(101, 25)
@@ -774,7 +774,7 @@ Partial Class ucProfile
         btnSave.FlatStyle = FlatStyle.Flat
         btnSave.Font = New Font("Arial", 11F, FontStyle.Bold)
         btnSave.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnSave.Location = New Point(1094, 806)
+        btnSave.Location = New Point(1150, 795)
         btnSave.Name = "btnSave"
         btnSave.Size = New Size(174, 50)
         btnSave.TabIndex = 13
@@ -788,7 +788,7 @@ Partial Class ucProfile
         btnDiscard.FlatStyle = FlatStyle.Flat
         btnDiscard.Font = New Font("Arial", 11F, FontStyle.Bold)
         btnDiscard.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnDiscard.Location = New Point(888, 806)
+        btnDiscard.Location = New Point(970, 795)
         btnDiscard.Name = "btnDiscard"
         btnDiscard.Size = New Size(174, 50)
         btnDiscard.TabIndex = 14

@@ -44,13 +44,18 @@ Partial Class ucSubmit
         lblSubmitActivity = New Label()
         RoundedPanel1 = New RoundedPanel()
         RoundedPanel2 = New RoundedPanel()
+        RoundedPanel4 = New RoundedPanel()
         RoundedPanel3 = New RoundedPanel()
         pbFile = New PictureBox()
         btnCancel = New RoundedButton()
+        RoundedPanel5 = New RoundedPanel()
+        Label1 = New Label()
         RoundedPanel1.SuspendLayout()
         RoundedPanel2.SuspendLayout()
+        RoundedPanel4.SuspendLayout()
         RoundedPanel3.SuspendLayout()
         CType(pbFile, ComponentModel.ISupportInitialize).BeginInit()
+        RoundedPanel5.SuspendLayout()
         SuspendLayout()
         ' 
         ' lblID
@@ -82,7 +87,7 @@ Partial Class ucSubmit
         Label4.AutoSize = True
         Label4.BackColor = Color.Transparent
         Label4.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(3, 12)
+        Label4.Location = New Point(2, 11)
         Label4.Margin = New Padding(18, 15, 18, 15)
         Label4.Name = "Label4"
         Label4.Padding = New Padding(26, 15, 18, 0)
@@ -96,7 +101,7 @@ Partial Class ucSubmit
         txtDescription.BackColor = Color.White
         txtDescription.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         txtDescription.ForeColor = Color.Black
-        txtDescription.Location = New Point(98, 271)
+        txtDescription.Location = New Point(98, 270)
         txtDescription.Margin = New Padding(3, 2, 3, 2)
         txtDescription.Multiline = True
         txtDescription.Name = "txtDescription"
@@ -109,7 +114,7 @@ Partial Class ucSubmit
         lblCount.AutoSize = True
         lblCount.BackColor = Color.Transparent
         lblCount.Font = New Font("Verdana", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblCount.Location = New Point(679, 357)
+        lblCount.Location = New Point(676, 356)
         lblCount.Margin = New Padding(18, 15, 18, 15)
         lblCount.Name = "lblCount"
         lblCount.Padding = New Padding(26, 15, 18, 0)
@@ -147,7 +152,7 @@ Partial Class ucSubmit
         Label7.AutoSize = True
         Label7.BackColor = Color.Transparent
         Label7.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label7.Location = New Point(37, 32)
+        Label7.Location = New Point(35, 11)
         Label7.Margin = New Padding(18, 15, 18, 15)
         Label7.Name = "Label7"
         Label7.Padding = New Padding(26, 15, 18, 0)
@@ -159,7 +164,7 @@ Partial Class ucSubmit
         ' 
         cboType.Anchor = AnchorStyles.None
         cboType.FormattingEnabled = True
-        cboType.Location = New Point(230, 45)
+        cboType.Location = New Point(228, 24)
         cboType.Margin = New Padding(3, 2, 3, 2)
         cboType.Name = "cboType"
         cboType.Size = New Size(153, 23)
@@ -171,7 +176,7 @@ Partial Class ucSubmit
         Label8.AutoSize = True
         Label8.BackColor = Color.Transparent
         Label8.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label8.Location = New Point(37, 108)
+        Label8.Location = New Point(35, 167)
         Label8.Margin = New Padding(18, 15, 18, 15)
         Label8.Name = "Label8"
         Label8.Padding = New Padding(26, 15, 18, 0)
@@ -184,7 +189,7 @@ Partial Class ucSubmit
         clbSkills.Anchor = AnchorStyles.None
         clbSkills.FormattingEnabled = True
         clbSkills.Items.AddRange(New Object() {"Leadership", "Communication", "Teamwork", "Visual Basic", "C#"})
-        clbSkills.Location = New Point(70, 161)
+        clbSkills.Location = New Point(79, 220)
         clbSkills.Name = "clbSkills"
         clbSkills.Size = New Size(352, 148)
         clbSkills.TabIndex = 16
@@ -193,7 +198,7 @@ Partial Class ucSubmit
         ' 
         chkPLP.AutoSize = True
         chkPLP.BackColor = Color.Transparent
-        chkPLP.Location = New Point(70, 329)
+        chkPLP.Location = New Point(79, 391)
         chkPLP.Name = "chkPLP"
         chkPLP.Size = New Size(78, 19)
         chkPLP.TabIndex = 17
@@ -202,12 +207,15 @@ Partial Class ucSubmit
         ' 
         ' btnBrowse
         ' 
-        btnBrowse.BackColor = Color.White
+        btnBrowse.BackColor = Color.FromArgb(CByte(10), CByte(52), CByte(33))
+        btnBrowse.FlatAppearance.BorderColor = Color.Yellow
         btnBrowse.FlatAppearance.BorderSize = 0
         btnBrowse.FlatStyle = FlatStyle.Flat
-        btnBrowse.Location = New Point(636, 613)
+        btnBrowse.Font = New Font("Segoe UI", 11.25F, FontStyle.Bold)
+        btnBrowse.ForeColor = Color.White
+        btnBrowse.Location = New Point(29, 286)
         btnBrowse.Name = "btnBrowse"
-        btnBrowse.Size = New Size(110, 39)
+        btnBrowse.Size = New Size(134, 39)
         btnBrowse.TabIndex = 18
         btnBrowse.Text = "Add File"
         btnBrowse.UseVisualStyleBackColor = False
@@ -217,7 +225,8 @@ Partial Class ucSubmit
         btnRemoveFile.BackColor = Color.White
         btnRemoveFile.FlatAppearance.BorderSize = 0
         btnRemoveFile.FlatStyle = FlatStyle.Flat
-        btnRemoveFile.Location = New Point(752, 613)
+        btnRemoveFile.Font = New Font("Segoe UI", 11.25F, FontStyle.Bold)
+        btnRemoveFile.Location = New Point(171, 286)
         btnRemoveFile.Name = "btnRemoveFile"
         btnRemoveFile.Size = New Size(192, 39)
         btnRemoveFile.TabIndex = 19
@@ -229,7 +238,7 @@ Partial Class ucSubmit
         btnClear.BackColor = Color.White
         btnClear.FlatAppearance.BorderSize = 0
         btnClear.FlatStyle = FlatStyle.Flat
-        btnClear.Location = New Point(1137, 626)
+        btnClear.Location = New Point(1127, 882)
         btnClear.Name = "btnClear"
         btnClear.Size = New Size(211, 56)
         btnClear.TabIndex = 20
@@ -238,10 +247,12 @@ Partial Class ucSubmit
         ' 
         ' btnSubmit
         ' 
-        btnSubmit.BackColor = Color.White
+        btnSubmit.BackColor = Color.FromArgb(CByte(10), CByte(52), CByte(33))
         btnSubmit.FlatAppearance.BorderSize = 0
         btnSubmit.FlatStyle = FlatStyle.Flat
-        btnSubmit.Location = New Point(1354, 626)
+        btnSubmit.Font = New Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnSubmit.ForeColor = Color.White
+        btnSubmit.Location = New Point(1344, 882)
         btnSubmit.Name = "btnSubmit"
         btnSubmit.Size = New Size(211, 56)
         btnSubmit.TabIndex = 21
@@ -252,7 +263,7 @@ Partial Class ucSubmit
         ' 
         cboFaculty.Anchor = AnchorStyles.None
         cboFaculty.FormattingEnabled = True
-        cboFaculty.Location = New Point(163, 327)
+        cboFaculty.Location = New Point(163, 387)
         cboFaculty.Margin = New Padding(3, 2, 3, 2)
         cboFaculty.Name = "cboFaculty"
         cboFaculty.Size = New Size(153, 23)
@@ -262,7 +273,7 @@ Partial Class ucSubmit
         ' 
         lblFile.AutoSize = True
         lblFile.BackColor = Color.Transparent
-        lblFile.Location = New Point(652, 667)
+        lblFile.Location = New Point(371, 298)
         lblFile.Name = "lblFile"
         lblFile.Size = New Size(94, 15)
         lblFile.TabIndex = 23
@@ -292,13 +303,23 @@ Partial Class ucSubmit
         ' RoundedPanel2
         ' 
         RoundedPanel2.BackColor = Color.Transparent
-        RoundedPanel2.Controls.Add(Label4)
-        RoundedPanel2.Controls.Add(lblCount)
+        RoundedPanel2.Controls.Add(RoundedPanel4)
         RoundedPanel2.FillColor = Color.FromArgb(CByte(180), CByte(255), CByte(255), CByte(255))
         RoundedPanel2.Location = New Point(66, 200)
         RoundedPanel2.Name = "RoundedPanel2"
         RoundedPanel2.Size = New Size(878, 395)
         RoundedPanel2.TabIndex = 26
+        ' 
+        ' RoundedPanel4
+        ' 
+        RoundedPanel4.BackColor = Color.Transparent
+        RoundedPanel4.Controls.Add(Label4)
+        RoundedPanel4.Controls.Add(lblCount)
+        RoundedPanel4.FillColor = Color.FromArgb(CByte(180), CByte(255), CByte(255), CByte(255))
+        RoundedPanel4.Location = New Point(3, 1)
+        RoundedPanel4.Name = "RoundedPanel4"
+        RoundedPanel4.Size = New Size(877, 398)
+        RoundedPanel4.TabIndex = 11
         ' 
         ' RoundedPanel3
         ' 
@@ -312,17 +333,17 @@ Partial Class ucSubmit
         RoundedPanel3.FillColor = Color.FromArgb(CByte(180), CByte(255), CByte(255), CByte(255))
         RoundedPanel3.Location = New Point(1008, 200)
         RoundedPanel3.Name = "RoundedPanel3"
-        RoundedPanel3.Size = New Size(557, 398)
+        RoundedPanel3.Size = New Size(557, 661)
         RoundedPanel3.TabIndex = 27
         ' 
         ' pbFile
         ' 
         pbFile.Anchor = AnchorStyles.None
-        pbFile.BackColor = Color.Transparent
+        pbFile.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
         pbFile.BackgroundImageLayout = ImageLayout.Zoom
-        pbFile.Location = New Point(652, 697)
+        pbFile.Location = New Point(29, 60)
         pbFile.Name = "pbFile"
-        pbFile.Size = New Size(250, 250)
+        pbFile.Size = New Size(817, 210)
         pbFile.TabIndex = 28
         pbFile.TabStop = False
         ' 
@@ -331,13 +352,38 @@ Partial Class ucSubmit
         btnCancel.BackColor = Color.White
         btnCancel.FlatAppearance.BorderSize = 0
         btnCancel.FlatStyle = FlatStyle.Flat
-        btnCancel.Location = New Point(1137, 626)
+        btnCancel.Font = New Font("Segoe UI", 11.25F, FontStyle.Bold)
+        btnCancel.Location = New Point(1127, 882)
         btnCancel.Name = "btnCancel"
         btnCancel.Size = New Size(211, 56)
         btnCancel.TabIndex = 29
         btnCancel.Text = "CANCEL"
         btnCancel.UseVisualStyleBackColor = False
         btnCancel.Visible = False
+        ' 
+        ' RoundedPanel5
+        ' 
+        RoundedPanel5.BackColor = Color.Transparent
+        RoundedPanel5.Controls.Add(Label1)
+        RoundedPanel5.Controls.Add(lblFile)
+        RoundedPanel5.Controls.Add(pbFile)
+        RoundedPanel5.Controls.Add(btnBrowse)
+        RoundedPanel5.Controls.Add(btnRemoveFile)
+        RoundedPanel5.FillColor = Color.FromArgb(CByte(180), CByte(255), CByte(255), CByte(255))
+        RoundedPanel5.Location = New Point(70, 613)
+        RoundedPanel5.Name = "RoundedPanel5"
+        RoundedPanel5.Size = New Size(877, 339)
+        RoundedPanel5.TabIndex = 30
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Verdana", 12.2F, FontStyle.Bold)
+        Label1.Location = New Point(29, 31)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(291, 20)
+        Label1.TabIndex = 29
+        Label1.Text = "Attach Documentation/Media" & vbCrLf
         ' 
         ' ucSubmit
         ' 
@@ -346,30 +392,30 @@ Partial Class ucSubmit
         AutoSize = True
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         Controls.Add(btnCancel)
-        Controls.Add(pbFile)
         Controls.Add(RoundedPanel3)
         Controls.Add(RoundedPanel1)
-        Controls.Add(lblFile)
         Controls.Add(btnSubmit)
         Controls.Add(btnClear)
-        Controls.Add(btnRemoveFile)
-        Controls.Add(btnBrowse)
         Controls.Add(dtpDate)
         Controls.Add(Label6)
         Controls.Add(txtDescription)
         Controls.Add(txtTitle)
         Controls.Add(lblID)
         Controls.Add(RoundedPanel2)
+        Controls.Add(RoundedPanel5)
         DoubleBuffered = True
         Name = "ucSubmit"
         Size = New Size(1728, 1005)
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
         RoundedPanel2.ResumeLayout(False)
-        RoundedPanel2.PerformLayout()
+        RoundedPanel4.ResumeLayout(False)
+        RoundedPanel4.PerformLayout()
         RoundedPanel3.ResumeLayout(False)
         RoundedPanel3.PerformLayout()
         CType(pbFile, ComponentModel.ISupportInitialize).EndInit()
+        RoundedPanel5.ResumeLayout(False)
+        RoundedPanel5.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -397,5 +443,8 @@ Partial Class ucSubmit
     Friend WithEvents RoundedPanel3 As RoundedPanel
     Friend WithEvents pbFile As PictureBox
     Friend WithEvents btnCancel As RoundedButton
+    Friend WithEvents RoundedPanel4 As RoundedPanel
+    Friend WithEvents RoundedPanel5 As RoundedPanel
+    Friend WithEvents Label1 As Label
 
 End Class
