@@ -1,9 +1,11 @@
-﻿Imports PdfSharp
+﻿Imports MySql.Data.MySqlClient
+Imports PdfSharp
 
 Public Class Dashboard
 
     Private Sub frmDashboardLoad(sender As Object, e As EventArgs) Handles MyBase.Load
         PdfSharpLicense.SetAgplLicense()
+        LoadWelcome()
         ShowPage(New ucDashboard(), btnDashboard)
     End Sub
 
@@ -87,6 +89,19 @@ Public Class Dashboard
             Catch ex As Exception
                 ShowToast(Me, "Could not create the PDF: " & ex.Message)
             End Try
+        End Using
+    End Sub
+
+    Private Sub LoadWelcome()
+        Using con As New MySqlConnection(conString)
+            con.Open()
+            Using cmd As New MySqlCommand(
+                "SELECT u.first_name FROM users u " &
+                "INNER JOIN student s ON s.username = u.username " &
+                "WHERE s.student_id = @id", con)
+                cmd.Parameters.AddWithValue("@id", CurrentStudentId)
+                lblWelcome.Text = "Welcome, " & Convert.ToString(cmd.ExecuteScalar())
+            End Using
         End Using
     End Sub
 End Class
