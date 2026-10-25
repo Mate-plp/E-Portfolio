@@ -58,4 +58,30 @@ Public Class ucView
             MessageBox.Show("Could not load entries: " & ex.Message)
         End Try
     End Sub
+
+    Private Sub dgvEntries_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEntries.CellDoubleClick
+        If e.RowIndex < 0 Then Return
+
+        Dim entryId = Convert.ToInt32(dgvEntries.Rows(e.RowIndex).Cells("entry_id").Value)
+
+        If MessageBox.Show("Mark this entry as verified?", "Verify entry",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) <> DialogResult.Yes Then Return
+
+        Try
+            Using con As New MySqlConnection(conString)
+                con.Open()
+                Using cmd As New MySqlCommand(
+                    "UPDATE portfolio_entries SET verified = 1 " &
+                    "WHERE entry_id = @e AND professor_id = @pid AND verified = 0", con)
+                    cmd.Parameters.AddWithValue("@e", entryId)
+                    cmd.Parameters.AddWithValue("@pid", CurrentProfessorId)
+                    Dim changed = cmd.ExecuteNonQuery()
+                    ShowToast(Me.FindForm(), If(changed = 1, "Entry verified.", "This entry is already verified."))
+                End Using
+            End Using
+            LoadEntries()
+        Catch ex As Exception
+            ShowToast(Me.FindForm(), "Could not verify: " & ex.Message)
+        End Try
+    End Sub
 End Class
