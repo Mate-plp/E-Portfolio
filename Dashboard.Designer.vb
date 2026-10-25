@@ -73,9 +73,9 @@ Partial Class Dashboard
         btnExport.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnExport.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnExport.FlatStyle = FlatStyle.Flat
-        btnExport.Font = New Font("Verdana", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnExport.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         btnExport.ForeColor = Color.White
-        btnExport.Location = New Point(0, 630)
+        btnExport.Location = New Point(0, 677)
         btnExport.Margin = New Padding(4, 8, 10, 8)
         btnExport.Name = "btnExport"
         btnExport.Size = New Size(192, 50)
@@ -139,7 +139,7 @@ Partial Class Dashboard
         btnPortfolio.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnPortfolio.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnPortfolio.FlatStyle = FlatStyle.Flat
-        btnPortfolio.Font = New Font("Verdana", 18F, FontStyle.Bold)
+        btnPortfolio.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
         btnPortfolio.ForeColor = Color.White
         btnPortfolio.Location = New Point(0, 0)
         btnPortfolio.Name = "btnPortfolio"
@@ -157,9 +157,9 @@ Partial Class Dashboard
         btnLogout.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnLogout.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnLogout.FlatStyle = FlatStyle.Flat
-        btnLogout.Font = New Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnLogout.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         btnLogout.ForeColor = Color.White
-        btnLogout.Location = New Point(0, 691)
+        btnLogout.Location = New Point(0, 730)
         btnLogout.Margin = New Padding(4, 8, 10, 8)
         btnLogout.Name = "btnLogout"
         btnLogout.Size = New Size(192, 50)
@@ -177,7 +177,7 @@ Partial Class Dashboard
         btnProfile.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnProfile.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnProfile.FlatStyle = FlatStyle.Flat
-        btnProfile.Font = New Font("Verdana", 18F, FontStyle.Bold)
+        btnProfile.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
         btnProfile.ForeColor = Color.White
         btnProfile.Location = New Point(0, 60)
         btnProfile.Name = "btnProfile"
@@ -196,8 +196,8 @@ Partial Class Dashboard
         btnDashboard.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnDashboard.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnDashboard.FlatStyle = FlatStyle.Flat
-        btnDashboard.Font = New Font("Verdana", 18F, FontStyle.Bold)
-        btnDashboard.ForeColor = Color.White
+        btnDashboard.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnDashboard.ForeColor = SystemColors.Window
         btnDashboard.Location = New Point(0, 10)
         btnDashboard.Margin = New Padding(3, 10, 3, 3)
         btnDashboard.Name = "btnDashboard"

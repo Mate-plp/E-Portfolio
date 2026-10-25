@@ -30,14 +30,17 @@ Partial Class ucDashboard
         FlowLayoutPanel1 = New FlowLayoutPanel()
         Panel1 = New Panel()
         CyberGroupBox3 = New RoundedPanel()
+        PictureBox1 = New PictureBox()
         lblTotal = New Label()
         Label1 = New Label()
         Separator1 = New Panel()
         CyberGroupBox1 = New RoundedPanel()
+        PictureBox2 = New PictureBox()
         lblVerified = New Label()
         Label4 = New Label()
         Separator2 = New Panel()
         CyberGroupBox2 = New RoundedPanel()
+        PictureBox3 = New PictureBox()
         lblSkills = New Label()
         Label6 = New Label()
         cbChartBox = New ComboBox()
@@ -49,8 +52,11 @@ Partial Class ucDashboard
         RoundedPanel1 = New RoundedPanel()
         FlowLayoutPanel1.SuspendLayout()
         CyberGroupBox3.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CyberGroupBox1.SuspendLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CyberGroupBox2.SuspendLayout()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(chtProgress, ComponentModel.ISupportInitialize).BeginInit()
         Panel3.SuspendLayout()
         RoundedPanel1.SuspendLayout()
@@ -96,16 +102,27 @@ Partial Class ucDashboard
         ' CyberGroupBox3
         ' 
         CyberGroupBox3.BackColor = Color.Transparent
+        CyberGroupBox3.Controls.Add(PictureBox1)
         CyberGroupBox3.Controls.Add(lblTotal)
         CyberGroupBox3.Controls.Add(Label1)
         CyberGroupBox3.CornerRadius = 30
-        CyberGroupBox3.FillColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        CyberGroupBox3.FillColor = Color.FromArgb(CByte(11), CByte(102), CByte(68))
         CyberGroupBox3.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
         CyberGroupBox3.Location = New Point(192, 17)
         CyberGroupBox3.Margin = New Padding(3, 2, 3, 2)
         CyberGroupBox3.Name = "CyberGroupBox3"
         CyberGroupBox3.Size = New Size(299, 206)
         CyberGroupBox3.TabIndex = 5
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
+        PictureBox1.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox1.Location = New Point(192, 10)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(78, 79)
+        PictureBox1.TabIndex = 2
+        PictureBox1.TabStop = False
         ' 
         ' lblTotal
         ' 
@@ -122,13 +139,15 @@ Partial Class ucDashboard
         ' Label1
         ' 
         Label1.Dock = DockStyle.Top
-        Label1.Font = New Font("Segoe UI", 25F, FontStyle.Bold)
+        Label1.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ImageAlign = ContentAlignment.MiddleRight
         Label1.Location = New Point(0, 0)
         Label1.Name = "Label1"
+        Label1.RightToLeft = RightToLeft.No
         Label1.Size = New Size(299, 92)
         Label1.TabIndex = 0
-        Label1.Text = "TOTAL ENTRIES"
-        Label1.TextAlign = ContentAlignment.MiddleCenter
+        Label1.Text = "   TOTAL ENTRIES"
+        Label1.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Separator1
         ' 
@@ -143,16 +162,27 @@ Partial Class ucDashboard
         ' CyberGroupBox1
         ' 
         CyberGroupBox1.BackColor = Color.Transparent
+        CyberGroupBox1.Controls.Add(PictureBox2)
         CyberGroupBox1.Controls.Add(lblVerified)
         CyberGroupBox1.Controls.Add(Label4)
         CyberGroupBox1.CornerRadius = 30
-        CyberGroupBox1.FillColor = Color.FromArgb(CByte(34), CByte(170), CByte(79))
+        CyberGroupBox1.FillColor = Color.FromArgb(CByte(11), CByte(102), CByte(68))
         CyberGroupBox1.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
         CyberGroupBox1.Location = New Point(668, 17)
         CyberGroupBox1.Margin = New Padding(3, 2, 3, 2)
         CyberGroupBox1.Name = "CyberGroupBox1"
         CyberGroupBox1.Size = New Size(299, 206)
         CyberGroupBox1.TabIndex = 3
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), Image)
+        PictureBox2.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox2.Location = New Point(190, 10)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(78, 79)
+        PictureBox2.TabIndex = 4
+        PictureBox2.TabStop = False
         ' 
         ' lblVerified
         ' 
@@ -169,13 +199,14 @@ Partial Class ucDashboard
         ' Label4
         ' 
         Label4.Dock = DockStyle.Top
-        Label4.Font = New Font("Segoe UI", 25F, FontStyle.Bold)
+        Label4.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold)
+        Label4.ImageAlign = ContentAlignment.MiddleRight
         Label4.Location = New Point(0, 0)
         Label4.Name = "Label4"
         Label4.Size = New Size(299, 92)
         Label4.TabIndex = 2
-        Label4.Text = "VERIFIED"
-        Label4.TextAlign = ContentAlignment.MiddleCenter
+        Label4.Text = "   VERIFIED"
+        Label4.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Separator2
         ' 
@@ -191,16 +222,27 @@ Partial Class ucDashboard
         ' CyberGroupBox2
         ' 
         CyberGroupBox2.BackColor = Color.Transparent
+        CyberGroupBox2.Controls.Add(PictureBox3)
         CyberGroupBox2.Controls.Add(lblSkills)
         CyberGroupBox2.Controls.Add(Label6)
         CyberGroupBox2.CornerRadius = 30
-        CyberGroupBox2.FillColor = Color.FromArgb(CByte(78), CByte(220), CByte(124))
+        CyberGroupBox2.FillColor = Color.FromArgb(CByte(11), CByte(102), CByte(68))
         CyberGroupBox2.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
         CyberGroupBox2.Location = New Point(1144, 17)
         CyberGroupBox2.Margin = New Padding(3, 2, 3, 2)
         CyberGroupBox2.Name = "CyberGroupBox2"
         CyberGroupBox2.Size = New Size(299, 206)
         CyberGroupBox2.TabIndex = 4
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), Image)
+        PictureBox3.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox3.Location = New Point(195, 10)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(78, 79)
+        PictureBox3.TabIndex = 6
+        PictureBox3.TabStop = False
         ' 
         ' lblSkills
         ' 
@@ -217,13 +259,13 @@ Partial Class ucDashboard
         ' Label6
         ' 
         Label6.Dock = DockStyle.Top
-        Label6.Font = New Font("Segoe UI", 25F, FontStyle.Bold)
+        Label6.Font = New Font("Segoe UI", 15.75F, FontStyle.Bold)
         Label6.Location = New Point(0, 0)
         Label6.Name = "Label6"
         Label6.Size = New Size(299, 92)
         Label6.TabIndex = 4
-        Label6.Text = "SKILLS" & vbCrLf & "DEVELOPED"
-        Label6.TextAlign = ContentAlignment.TopCenter
+        Label6.Text = "    SKILLS  " & vbCrLf & "    DEVELOPED"
+        Label6.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' cbChartBox
         ' 
@@ -297,14 +339,16 @@ Partial Class ucDashboard
         ' 
         ' Panel3
         ' 
-        Panel3.BackColor = Color.Transparent
+        Panel3.BackColor = Color.FromArgb(CByte(255), CByte(244), CByte(194))
+        Panel3.BackgroundImage = CType(resources.GetObject("Panel3.BackgroundImage"), Image)
+        Panel3.BackgroundImageLayout = ImageLayout.Zoom
         Panel3.BorderStyle = BorderStyle.FixedSingle
         Panel3.Controls.Add(cbYear)
         Panel3.Controls.Add(cbChartBox)
         Panel3.Controls.Add(Label2)
         Panel3.Controls.Add(Label3)
         Panel3.ForeColor = SystemColors.ActiveCaptionText
-        Panel3.Location = New Point(1281, 324)
+        Panel3.Location = New Point(1266, 304)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(400, 268)
         Panel3.TabIndex = 11
@@ -313,7 +357,7 @@ Partial Class ucDashboard
         ' 
         RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.Controls.Add(chtProgress)
-        RoundedPanel1.Location = New Point(93, 324)
+        RoundedPanel1.Location = New Point(79, 303)
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(1130, 662)
         RoundedPanel1.TabIndex = 12
@@ -323,7 +367,7 @@ Partial Class ucDashboard
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
-        BackColor = Color.White
+        BackColor = Color.FromArgb(CByte(255), CByte(251), CByte(234))
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         Controls.Add(RoundedPanel1)
         Controls.Add(FlowLayoutPanel1)
@@ -334,8 +378,11 @@ Partial Class ucDashboard
         Size = New Size(1728, 1005)
         FlowLayoutPanel1.ResumeLayout(False)
         CyberGroupBox3.ResumeLayout(False)
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CyberGroupBox1.ResumeLayout(False)
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CyberGroupBox2.ResumeLayout(False)
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(chtProgress, ComponentModel.ISupportInitialize).EndInit()
         Panel3.ResumeLayout(False)
         Panel3.PerformLayout()
@@ -363,5 +410,8 @@ Partial Class ucDashboard
     Friend WithEvents cbYear As ComboBox
     Friend WithEvents Panel3 As Panel
     Friend WithEvents RoundedPanel1 As RoundedPanel
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
 
 End Class
