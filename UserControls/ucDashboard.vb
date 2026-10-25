@@ -13,6 +13,7 @@
 
         PopulateTotals(lblTotal, lblVerified, lblSkills)
 
+        FormatChart(chtProgress)
     End Sub
 
     Private Sub cbChartBox_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cbChartBox.SelectedIndexChanged

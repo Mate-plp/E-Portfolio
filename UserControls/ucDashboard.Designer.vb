@@ -23,9 +23,9 @@ Partial Class ucDashboard
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucDashboard))
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New DataVisualization.Charting.Series()
         Panel2 = New Panel()
         FlowLayoutPanel1 = New FlowLayoutPanel()
         Panel1 = New Panel()
@@ -46,12 +46,14 @@ Partial Class ucDashboard
         Label2 = New Label()
         cbYear = New ComboBox()
         Panel3 = New Panel()
+        RoundedPanel1 = New RoundedPanel()
         FlowLayoutPanel1.SuspendLayout()
         CyberGroupBox3.SuspendLayout()
         CyberGroupBox1.SuspendLayout()
         CyberGroupBox2.SuspendLayout()
         CType(chtProgress, ComponentModel.ISupportInitialize).BeginInit()
         Panel3.SuspendLayout()
+        RoundedPanel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel2
@@ -232,7 +234,7 @@ Partial Class ucDashboard
         cbChartBox.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         cbChartBox.FormattingEnabled = True
         cbChartBox.Items.AddRange(New Object() {"Total Skills", "Total Verified Skills", "Total Activities"})
-        cbChartBox.Location = New Point(1163, 512)
+        cbChartBox.Location = New Point(19, 194)
         cbChartBox.Name = "cbChartBox"
         cbChartBox.Size = New Size(354, 38)
         cbChartBox.TabIndex = 6
@@ -240,17 +242,17 @@ Partial Class ucDashboard
         ' 
         ' chtProgress
         ' 
-        ChartArea2.Name = "ChartArea1"
-        chtProgress.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        chtProgress.Legends.Add(Legend2)
-        chtProgress.Location = New Point(93, 324)
+        ChartArea1.Name = "ChartArea1"
+        chtProgress.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        chtProgress.Legends.Add(Legend1)
+        chtProgress.Location = New Point(26, 19)
         chtProgress.Name = "chtProgress"
-        Series2.ChartArea = "ChartArea1"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        chtProgress.Series.Add(Series2)
-        chtProgress.Size = New Size(941, 595)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        chtProgress.Series.Add(Series1)
+        chtProgress.Size = New Size(1075, 627)
         chtProgress.TabIndex = 7
         chtProgress.Text = "Chart1"
         ' 
@@ -287,7 +289,7 @@ Partial Class ucDashboard
         cbYear.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         cbYear.FormattingEnabled = True
         cbYear.Items.AddRange(New Object() {"All"})
-        cbYear.Location = New Point(1163, 402)
+        cbYear.Location = New Point(19, 78)
         cbYear.Name = "cbYear"
         cbYear.Size = New Size(354, 38)
         cbYear.TabIndex = 8
@@ -297,13 +299,24 @@ Partial Class ucDashboard
         ' 
         Panel3.BackColor = Color.Transparent
         Panel3.BorderStyle = BorderStyle.FixedSingle
+        Panel3.Controls.Add(cbYear)
+        Panel3.Controls.Add(cbChartBox)
         Panel3.Controls.Add(Label2)
         Panel3.Controls.Add(Label3)
         Panel3.ForeColor = SystemColors.ActiveCaptionText
-        Panel3.Location = New Point(1143, 319)
+        Panel3.Location = New Point(1281, 324)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(400, 268)
         Panel3.TabIndex = 11
+        ' 
+        ' RoundedPanel1
+        ' 
+        RoundedPanel1.BackColor = Color.Transparent
+        RoundedPanel1.Controls.Add(chtProgress)
+        RoundedPanel1.Location = New Point(93, 324)
+        RoundedPanel1.Name = "RoundedPanel1"
+        RoundedPanel1.Size = New Size(1130, 662)
+        RoundedPanel1.TabIndex = 12
         ' 
         ' ucDashboard
         ' 
@@ -312,9 +325,7 @@ Partial Class ucDashboard
         AutoSize = True
         BackColor = Color.White
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
-        Controls.Add(cbYear)
-        Controls.Add(chtProgress)
-        Controls.Add(cbChartBox)
+        Controls.Add(RoundedPanel1)
         Controls.Add(FlowLayoutPanel1)
         Controls.Add(Panel2)
         Controls.Add(Panel3)
@@ -328,6 +339,7 @@ Partial Class ucDashboard
         CType(chtProgress, ComponentModel.ISupportInitialize).EndInit()
         Panel3.ResumeLayout(False)
         Panel3.PerformLayout()
+        RoundedPanel1.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
     Friend WithEvents Panel2 As Panel
@@ -350,5 +362,6 @@ Partial Class ucDashboard
     Friend WithEvents Label2 As Label
     Friend WithEvents cbYear As ComboBox
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents RoundedPanel1 As RoundedPanel
 
 End Class

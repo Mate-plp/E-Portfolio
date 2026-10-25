@@ -42,6 +42,16 @@ Module mdlChart
                 EntryChart(chart, year)
         End Select
     End Sub
+    Sub FormatChart(ByVal chart As Chart)
+        If chart.Legends.Count > 0 Then
+            With chart.Legends(0)
+                .Docking = Docking.Bottom
+                .Alignment = StringAlignment.Center
+                .Font = New Font("Segoe UI", 12, FontStyle.Bold)
+                .BackColor = Color.Transparent
+            End With
+        End If
+    End Sub
     Public Sub DebugShowLoadedData()
         Dim sb As New System.Text.StringBuilder()
 
@@ -141,61 +151,71 @@ Module mdlChart
         chart.Series.Clear()
 
         If year = "All" Then
-            Dim yearlyData = skillList.
-            GroupBy(Function(s) New With {Key s.Year, Key s.SkillName}).
-            Select(Function(g) New With {
-                .Year = g.Key.Year,
-                .SkillName = g.Key.SkillName,
-                .Total = g.Sum(Function(x) x.TotalCount),
-                .Verified = g.Sum(Function(x) x.VerifiedCount)
-            }).ToList()
-
-            Dim uniqueSkills = yearlyData.Select(Function(s) s.SkillName).Distinct().ToList()
+            Dim allYears = skillList.Select(Function(s) s.Year.Trim()).Distinct().OrderBy(Function(y) y).ToList()
+            Dim uniqueSkills = skillList.Select(Function(s) s.SkillName).Distinct().ToList()
 
             For Each skill In uniqueSkills
                 Dim dynamicSeries As New Series(skill)
                 dynamicSeries.ChartType = SeriesChartType.Column
-
-                Dim thisSkillData = yearlyData.Where(Function(s) s.SkillName = skill).ToList()
-
-                Dim xValues = thisSkillData.Select(Function(s) s.Year).ToArray()
-                Dim yValues As Integer()
-
-                If verified = True Then
-                    yValues = thisSkillData.Select(Function(s) s.Verified).ToArray()
-                Else
-                    yValues = thisSkillData.Select(Function(s) s.Total).ToArray()
-                End If
-
-                dynamicSeries.Points.DataBindXY(xValues, yValues)
-                dynamicSeries.IsValueShownAsLabel = True
                 dynamicSeries.IsXValueIndexed = True
+
+                Dim skillNameCopy = skill
+                Dim runningTotal As Integer = 0
+                Dim xValues As New List(Of String)()
+                Dim yValues As New List(Of Integer)()
+
+                For Each y In allYears
+                    Dim periodCount As Integer
+                    If verified Then
+                        periodCount = skillList.Where(Function(s) s.Year.Trim() = y AndAlso s.SkillName = skillNameCopy).Sum(Function(s) s.VerifiedCount)
+                    Else
+                        periodCount = skillList.Where(Function(s) s.Year.Trim() = y AndAlso s.SkillName = skillNameCopy).Sum(Function(s) s.TotalCount)
+                    End If
+
+                    runningTotal += periodCount
+
+                    xValues.Add(y)
+                    yValues.Add(runningTotal)
+                Next
+
+                dynamicSeries.Points.DataBindXY(xValues.ToArray(), yValues.ToArray())
                 chart.Series.Add(dynamicSeries)
             Next
 
         Else
-            Dim yearSkillData = skillList.Where(Function(s) s.Year = year).ToList()
-
+            Dim allMonths = Enumerable.Range(1, 12).ToList()
+            Dim yearSkillData = skillList.Where(Function(s) s.Year.Trim() = year.Trim()).ToList()
             Dim uniqueSkills = yearSkillData.Select(Function(s) s.SkillName).Distinct().ToList()
 
             For Each skill In uniqueSkills
                 Dim dynamicSeries As New Series(skill)
                 dynamicSeries.ChartType = SeriesChartType.Column
-
-                Dim thisSkillData = yearSkillData.Where(Function(s) s.SkillName = skill).ToList()
-
-                Dim xValues = thisSkillData.Select(Function(s) MonthName(s.Month, True)).ToArray()
-                Dim yValues As Integer()
-
-                If verified = True Then
-                    yValues = thisSkillData.Select(Function(s) s.VerifiedCount).ToArray()
-                Else
-                    yValues = thisSkillData.Select(Function(s) s.TotalCount).ToArray()
-                End If
-
-                dynamicSeries.Points.DataBindXY(xValues, yValues)
-                dynamicSeries.IsValueShownAsLabel = True
                 dynamicSeries.IsXValueIndexed = True
+
+                Dim skillNameCopy = skill
+                Dim runningTotal As Integer = 0
+
+                Dim selectedYearInt As Integer = Convert.ToInt32(year.Trim())
+                runningTotal = skillList.Where(Function(s) Convert.ToInt32(s.Year.Trim()) < selectedYearInt AndAlso s.SkillName = skillNameCopy).Sum(Function(s) If(verified, s.VerifiedCount, s.TotalCount))
+
+                Dim xValues As New List(Of String)()
+                Dim yValues As New List(Of Integer)()
+
+                For Each m In allMonths
+                    Dim periodCount As Integer
+                    If verified Then
+                        periodCount = yearSkillData.Where(Function(s) s.Month = m AndAlso s.SkillName = skillNameCopy).Sum(Function(s) s.VerifiedCount)
+                    Else
+                        periodCount = yearSkillData.Where(Function(s) s.Month = m AndAlso s.SkillName = skillNameCopy).Sum(Function(s) s.TotalCount)
+                    End If
+
+                    runningTotal += periodCount
+
+                    xValues.Add(MonthName(m, True))
+                    yValues.Add(runningTotal)
+                Next
+
+                dynamicSeries.Points.DataBindXY(xValues.ToArray(), yValues.ToArray())
                 chart.Series.Add(dynamicSeries)
             Next
         End If
