@@ -36,6 +36,7 @@ Partial Class Login
         btnLogin = New RoundedButton()
         btnRegister = New RoundedButton()
         btnExit = New RoundedButton()
+        Label4 = New Label()
         SuspendLayout()
         ' 
         ' lblUsername
@@ -214,6 +215,19 @@ Partial Class Login
         btnExit.Text = "Exit"
         btnExit.UseVisualStyleBackColor = False
         ' 
+        ' Label4
+        ' 
+        Label4.Anchor = AnchorStyles.None
+        Label4.AutoSize = True
+        Label4.BackColor = Color.Transparent
+        Label4.Font = New Font("Georgia", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label4.ForeColor = Color.White
+        Label4.Location = New Point(758, 126)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(388, 56)
+        Label4.TabIndex = 25
+        Label4.Text = "FOR FACULTY"
+        ' 
         ' Login
         ' 
         AutoScaleDimensions = New SizeF(8F, 19F)
@@ -222,6 +236,7 @@ Partial Class Login
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Zoom
         ClientSize = New Size(1920, 1061)
+        Controls.Add(Label4)
         Controls.Add(btnExit)
         Controls.Add(btnRegister)
         Controls.Add(btnLogin)
@@ -266,4 +281,5 @@ Partial Class Login
     Friend WithEvents Label3 As Label
     Friend WithEvents btnLogin As RoundedButton
     Friend WithEvents btnExit As RoundedButton
+    Friend WithEvents Label4 As Label
 End Class

@@ -33,9 +33,9 @@ Partial Class ucView
         ' dgvEntries
         ' 
         dgvEntries.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvEntries.Location = New Point(65, 96)
+        dgvEntries.Location = New Point(65, 159)
         dgvEntries.Name = "dgvEntries"
-        dgvEntries.Size = New Size(1598, 859)
+        dgvEntries.Size = New Size(1598, 796)
         dgvEntries.TabIndex = 2
         ' 
         ' RoundedPanel1
