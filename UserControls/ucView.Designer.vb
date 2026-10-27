@@ -26,8 +26,9 @@ Partial Class ucView
         dgvEntries = New DataGridView()
         RoundedPanel1 = New RoundedPanel()
         lblSubmitActivity = New Label()
-        TextBox1 = New TextBox()
+        txtSearch = New TextBox()
         Label1 = New Label()
+        btnStatusChange = New RoundedButton()
         CType(dgvEntries, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
         SuspendLayout()
@@ -61,22 +62,36 @@ Partial Class ucView
         lblSubmitActivity.TabIndex = 1
         lblSubmitActivity.Text = "Requests for Verification"
         ' 
-        ' TextBox1
+        ' txtSearch
         ' 
-        TextBox1.Location = New Point(65, 130)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(1286, 23)
-        TextBox1.TabIndex = 4
+        txtSearch.Location = New Point(65, 130)
+        txtSearch.Name = "txtSearch"
+        txtSearch.Size = New Size(1286, 23)
+        txtSearch.TabIndex = 4
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
-        Label1.Location = New Point(261, 82)
+        Label1.Location = New Point(155, 82)
         Label1.Name = "Label1"
-        Label1.Size = New Size(388, 21)
+        Label1.Size = New Size(1103, 21)
         Label1.TabIndex = 5
-        Label1.Text = "LOYOLA AYUSIN MO TO OK (also delete this label)"
+        Label1.Text = "LOYOLA AYUSIN MO TO OK KAHIT SAN MO LAGAY YUNG BUTTON BASTA MAGANDA TIGNAN TAPOS NAGMAMAKE SENSE (also delete this label)"
+        ' 
+        ' btnStatusChange
+        ' 
+        btnStatusChange.Anchor = AnchorStyles.None
+        btnStatusChange.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnStatusChange.FlatStyle = FlatStyle.Flat
+        btnStatusChange.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnStatusChange.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnStatusChange.Location = New Point(1320, 74)
+        btnStatusChange.Name = "btnStatusChange"
+        btnStatusChange.Size = New Size(354, 79)
+        btnStatusChange.TabIndex = 15
+        btnStatusChange.Text = "verify/unverify all visible entries " & vbCrLf & "(pwede mo rin iseparate yung text na " & vbCrLf & "to lagay mo sa label kung mas maganda"
+        btnStatusChange.UseVisualStyleBackColor = False
         ' 
         ' ucView
         ' 
@@ -84,8 +99,9 @@ Partial Class ucView
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        Controls.Add(btnStatusChange)
         Controls.Add(Label1)
-        Controls.Add(TextBox1)
+        Controls.Add(txtSearch)
         Controls.Add(RoundedPanel1)
         Controls.Add(dgvEntries)
         DoubleBuffered = True
@@ -100,7 +116,8 @@ Partial Class ucView
     Friend WithEvents dgvEntries As DataGridView
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents lblSubmitActivity As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtSearch As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents btnStatusChange As RoundedButton
 
 End Class

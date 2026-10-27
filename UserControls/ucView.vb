@@ -60,51 +60,91 @@ Public Class ucView
     End Sub
 
     Private Sub dgvEntries_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEntries.CellDoubleClick
+
         If e.RowIndex < 0 Then Return
 
-        Dim entryId = Convert.ToInt32(dgvEntries.Rows(e.RowIndex).Cells("entry_id").Value)
-        Dim status = dgvEntries.Rows(e.RowIndex).Cells("Status").Value.ToString()
+        Dim row = dgvEntries.Rows(e.RowIndex)
+        Dim entryId As Integer = Convert.ToInt32(row.Cells("entry_id").Value)
+        Dim status As String = row.Cells("Status").Value?.ToString()
+        Dim isCurrentlyVerified As Boolean = (status = "Verified")
 
-        If status = "Verified" Then
-            If MessageBox.Show("Would you like to unverify this entry?", "Unverify entry",
-                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) <> DialogResult.Yes Then Return
-            Try
-                Using con As New MySqlConnection(conString)
-                    con.Open()
-                    Using cmd As New MySqlCommand(
-                        "UPDATE portfolio_entries SET verified = 0 " &
-                        "WHERE entry_id = @e AND professor_id = @pid AND verified = 1", con)
-                        cmd.Parameters.AddWithValue("@e", entryId)
-                        cmd.Parameters.AddWithValue("@pid", CurrentProfessorId)
-                        cmd.ExecuteNonQuery()
-                    End Using
-                End Using
-                LoadEntries()
-            Catch ex As Exception
-                ShowToast(Me.FindForm(), "Could not unverify: " & ex.Message)
-            End Try
-            Return
-        End If
+        Dim newStatus As Boolean = Not isCurrentlyVerified
 
-        If MessageBox.Show("Mark this entry as verified?", "Verify entry",
-                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) <> DialogResult.Yes Then Return
+        Dim message As String = If(isCurrentlyVerified, "Would you like to unverify this entry?", "Mark this entry as verified?")
+
+        Dim title As String = If(isCurrentlyVerified, "Unverify entry", "Verify entry")
+
+        If MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) <> DialogResult.Yes Then Return
 
         Try
             Using con As New MySqlConnection(conString)
                 con.Open()
-                Using cmd As New MySqlCommand(
-                    "UPDATE portfolio_entries SET verified = 1 " &
-                    "WHERE entry_id = @e AND professor_id = @pid AND verified = 0", con)
-                    cmd.Parameters.AddWithValue("@e", entryId)
-                    cmd.Parameters.AddWithValue("@pid", CurrentProfessorId)
-                    cmd.ExecuteNonQuery()
-                End Using
+
+                Dim affectedRows As Integer = SetEntryVerification(con, entryId, newStatus)
+
+                If affectedRows = 0 Then
+                    ShowToast(Me.FindForm(), "Entry was not updated. Its status may have changed.")
+                End If
             End Using
+
             LoadEntries()
+
         Catch ex As Exception
-            ShowToast(Me.FindForm(), "Could not verify: " & ex.Message)
+            ShowToast(Me.FindForm(), "Could not update entry: " & ex.Message)
         End Try
+
     End Sub
 
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        ApplySearch()
+    End Sub
 
+    Private Sub ApplySearch()
+        Dim dt = TryCast(dgvEntries.DataSource, DataTable)
+        If dt Is Nothing Then Return
+
+        Dim s As String = txtSearch.Text.Trim()
+        If s = "" Then
+            dt.DefaultView.RowFilter = ""
+            Return
+        End If
+
+        Dim sb As New System.Text.StringBuilder()
+        For Each c As Char In s
+            Select Case c
+                Case "*"c, "%"c, "["c, "]"c
+                    sb.Append("[").Append(c).Append("]")
+                Case "'"c
+                    sb.Append("''")
+                Case Else
+                    sb.Append(c)
+            End Select
+        Next
+
+        dt.DefaultView.RowFilter = String.Format(
+            "[Student Name] LIKE '%{0}%' OR [Student ID] LIKE '%{0}%' OR [Title] LIKE '%{0}%' OR [Type] LIKE '%{0}%' OR [Status] LIKE '%{0}%'",
+            sb.ToString())
+    End Sub
+
+    Private Function SetEntryVerification(
+    con As MySqlConnection,
+    entryId As Integer,
+    isVerified As Boolean,
+    Optional transaction As MySqlTransaction = Nothing
+) As Integer
+
+        Using cmd As New MySqlCommand(
+            "UPDATE portfolio_entries SET verified = @verified " &
+            "WHERE entry_id = @e AND professor_id = @pid " &
+            "AND verified <> @verified", con)
+
+            cmd.Transaction = transaction
+            cmd.Parameters.AddWithValue("@verified", If(isVerified, 1, 0))
+            cmd.Parameters.AddWithValue("@e", entryId)
+            cmd.Parameters.AddWithValue("@pid", CurrentProfessorId)
+
+            Return cmd.ExecuteNonQuery()
+        End Using
+
+    End Function
 End Class
