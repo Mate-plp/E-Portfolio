@@ -19,7 +19,7 @@ Public Class ucProfile
 
         Dim sql As String =
         "SELECT u.username, u.first_name, u.middle_name, u.last_name, " &
-        "       s.student_id, s.program, s.year_level, " &
+        "       s.student_id, s.program, s.year_level, s.student_bio, " &
         "       a.address_line_1, a.address_line_2, a.barangay, a.city, a.region " &
         "FROM student s " &
         "INNER JOIN users u ON u.username = s.username " &
@@ -45,6 +45,7 @@ Public Class ucProfile
                         ' Student info
                         tbID.Text = Txt(r, "student_id")
                         tbProgram.Text = Txt(r, "program")
+                        tbBio.Text = Txt(r, "student_bio")
 
                         ' Address
                         tbLine1.Text = Txt(r, "address_line_1")
@@ -124,8 +125,12 @@ Public Class ucProfile
     Private Sub btnRegion_Click(sender As Object, e As EventArgs) Handles btnRegion.Click
         editInfo(tbRegion)
     End Sub
+
+    Private Sub btnBio_Click(sender As Object, e As EventArgs) Handles btnBio.Click
+        editInfo(tbBio)
+    End Sub
     Private Sub LockAll()
-        For Each tb As TextBox In {tbUsername, tbFN, tbMN, tbLN, tbID, tbProgram,
+        For Each tb As TextBox In {tbUsername, tbFN, tbMN, tbLN, tbID, tbProgram, tbBio,
                                tbLine1, tbLine2, tbBar, tbCity, tbRegion,
                                tbOldPass, tbNewPass, tbCfmPass}
             tb.Enabled = False
@@ -156,6 +161,7 @@ Public Class ucProfile
         Dim barangay As String = tbBar.Text.Trim()
         Dim city As String = tbCity.Text.Trim()
         Dim region As String = tbRegion.Text.Trim()
+        Dim bio As String = tbBio.Text.Trim()
         Dim oldPass As String = tbOldPass.Text
         Dim newPass As String = tbNewPass.Text
 
@@ -187,6 +193,11 @@ Public Class ucProfile
 
         If program.Length > 10 Then
             Notify("Program is too long.")
+            Return
+        End If
+
+        If bio.Length > 250 Then
+            Notify("Student bio must not exceed 250 characters.")
             Return
         End If
 
@@ -286,8 +297,9 @@ Public Class ucProfile
 
                     ' student
                     Using cmd As New MySqlCommand(
-                    "UPDATE student SET program = @prog WHERE student_id = @id", con, tx)
+                    "UPDATE student SET program = @prog, student_bio = @bio WHERE student_id = @id", con, tx)
                         cmd.Parameters.AddWithValue("@prog", NullIfEmpty(program))
+                        cmd.Parameters.AddWithValue("@bio", NullIfEmpty(bio))
                         cmd.Parameters.AddWithValue("@id", CurrentStudentId)
                         cmd.ExecuteNonQuery()
                     End Using

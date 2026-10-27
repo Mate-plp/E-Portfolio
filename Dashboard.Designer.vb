@@ -24,11 +24,9 @@ Partial Class Dashboard
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         pnlSidebar = New Panel()
-        btnExport = New RoundedButton()
-        pnlPortfolio = New Panel()
         btnView = New RoundedButton()
+        btnExport = New RoundedButton()
         btnSubmit = New RoundedButton()
-        btnPortfolio = New RoundedButton()
         btnLogout = New RoundedButton()
         btnProfile = New RoundedButton()
         btnDashboard = New RoundedButton()
@@ -40,7 +38,6 @@ Partial Class Dashboard
         lblTitle = New Label()
         pnlContent = New Panel()
         pnlSidebar.SuspendLayout()
-        pnlPortfolio.SuspendLayout()
         pnlHeader.SuspendLayout()
         PnlHead.SuspendLayout()
         CType(picLogo, ComponentModel.ISupportInitialize).BeginInit()
@@ -52,8 +49,9 @@ Partial Class Dashboard
         pnlSidebar.BackColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
         pnlSidebar.BackgroundImage = CType(resources.GetObject("pnlSidebar.BackgroundImage"), Image)
         pnlSidebar.BackgroundImageLayout = ImageLayout.Stretch
+        pnlSidebar.Controls.Add(btnView)
         pnlSidebar.Controls.Add(btnExport)
-        pnlSidebar.Controls.Add(pnlPortfolio)
+        pnlSidebar.Controls.Add(btnSubmit)
         pnlSidebar.Controls.Add(btnLogout)
         pnlSidebar.Controls.Add(btnProfile)
         pnlSidebar.Controls.Add(btnDashboard)
@@ -64,6 +62,24 @@ Partial Class Dashboard
         pnlSidebar.Padding = New Padding(0, 0, 0, 161)
         pnlSidebar.Size = New Size(192, 1005)
         pnlSidebar.TabIndex = 0
+        ' 
+        ' btnView
+        ' 
+        btnView.BackColor = Color.Transparent
+        btnView.Dock = DockStyle.Top
+        btnView.FlatAppearance.BorderSize = 0
+        btnView.FlatAppearance.MouseDownBackColor = Color.Transparent
+        btnView.FlatAppearance.MouseOverBackColor = Color.Transparent
+        btnView.FlatStyle = FlatStyle.Flat
+        btnView.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnView.ForeColor = Color.Black
+        btnView.Location = New Point(0, 150)
+        btnView.Name = "btnView"
+        btnView.Size = New Size(192, 40)
+        btnView.TabIndex = 8
+        btnView.Text = "View Activities"
+        btnView.TextAlign = ContentAlignment.MiddleLeft
+        btnView.UseVisualStyleBackColor = False
         ' 
         ' btnExport
         ' 
@@ -84,37 +100,9 @@ Partial Class Dashboard
         btnExport.TextAlign = ContentAlignment.MiddleLeft
         btnExport.UseVisualStyleBackColor = False
         ' 
-        ' pnlPortfolio
-        ' 
-        pnlPortfolio.BackColor = Color.Transparent
-        pnlPortfolio.Controls.Add(btnView)
-        pnlPortfolio.Controls.Add(btnSubmit)
-        pnlPortfolio.Controls.Add(btnPortfolio)
-        pnlPortfolio.Dock = DockStyle.Top
-        pnlPortfolio.Location = New Point(0, 110)
-        pnlPortfolio.Name = "pnlPortfolio"
-        pnlPortfolio.Size = New Size(192, 50)
-        pnlPortfolio.TabIndex = 5
-        ' 
-        ' btnView
-        ' 
-        btnView.Dock = DockStyle.Top
-        btnView.FlatAppearance.BorderSize = 0
-        btnView.FlatAppearance.MouseDownBackColor = Color.Transparent
-        btnView.FlatAppearance.MouseOverBackColor = Color.Transparent
-        btnView.FlatStyle = FlatStyle.Flat
-        btnView.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnView.ForeColor = Color.Black
-        btnView.Location = New Point(0, 90)
-        btnView.Name = "btnView"
-        btnView.Size = New Size(192, 40)
-        btnView.TabIndex = 8
-        btnView.Text = "View Activities"
-        btnView.TextAlign = ContentAlignment.MiddleLeft
-        btnView.UseVisualStyleBackColor = True
-        ' 
         ' btnSubmit
         ' 
+        btnSubmit.BackColor = Color.Transparent
         btnSubmit.Dock = DockStyle.Top
         btnSubmit.FlatAppearance.BorderSize = 0
         btnSubmit.FlatAppearance.MouseDownBackColor = Color.Transparent
@@ -122,32 +110,13 @@ Partial Class Dashboard
         btnSubmit.FlatStyle = FlatStyle.Flat
         btnSubmit.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnSubmit.ForeColor = Color.Black
-        btnSubmit.Location = New Point(0, 50)
+        btnSubmit.Location = New Point(0, 110)
         btnSubmit.Name = "btnSubmit"
         btnSubmit.Size = New Size(192, 40)
         btnSubmit.TabIndex = 7
         btnSubmit.Text = "Submit Activity"
         btnSubmit.TextAlign = ContentAlignment.MiddleLeft
-        btnSubmit.UseVisualStyleBackColor = True
-        ' 
-        ' btnPortfolio
-        ' 
-        btnPortfolio.BackColor = Color.Transparent
-        btnPortfolio.BackgroundImageLayout = ImageLayout.None
-        btnPortfolio.Dock = DockStyle.Top
-        btnPortfolio.FlatAppearance.BorderSize = 0
-        btnPortfolio.FlatAppearance.MouseDownBackColor = Color.Transparent
-        btnPortfolio.FlatAppearance.MouseOverBackColor = Color.Transparent
-        btnPortfolio.FlatStyle = FlatStyle.Flat
-        btnPortfolio.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
-        btnPortfolio.ForeColor = Color.White
-        btnPortfolio.Location = New Point(0, 0)
-        btnPortfolio.Name = "btnPortfolio"
-        btnPortfolio.Size = New Size(192, 50)
-        btnPortfolio.TabIndex = 6
-        btnPortfolio.Text = "Portfolio"
-        btnPortfolio.TextAlign = ContentAlignment.MiddleLeft
-        btnPortfolio.UseVisualStyleBackColor = False
+        btnSubmit.UseVisualStyleBackColor = False
         ' 
         ' btnLogout
         ' 
@@ -309,7 +278,6 @@ Partial Class Dashboard
         Text = "Dashboard"
         WindowState = FormWindowState.Maximized
         pnlSidebar.ResumeLayout(False)
-        pnlPortfolio.ResumeLayout(False)
         pnlHeader.ResumeLayout(False)
         PnlHead.ResumeLayout(False)
         PnlHead.PerformLayout()
@@ -322,10 +290,8 @@ Partial Class Dashboard
     Friend WithEvents pnlContent As Panel
     Friend WithEvents btnLogout As RoundedButton
     Friend WithEvents btnProfile As RoundedButton
-    Friend WithEvents pnlPortfolio As Panel
     Friend WithEvents btnView As RoundedButton
     Friend WithEvents btnSubmit As RoundedButton
-    Friend WithEvents btnPortfolio As RoundedButton
     Friend WithEvents lblTitle As Label
     Friend WithEvents btnDashboard As RoundedButton
     Friend WithEvents PnlHead As Panel

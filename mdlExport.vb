@@ -71,7 +71,7 @@ Module mdlExport
 
             Using da As New MySqlDataAdapter(
                 "SELECT u.username, u.first_name, u.middle_name, u.last_name, s.student_id, " &
-                "s.program, s.year_level, a.address_line_1, a.address_line_2, a.barangay, a.city, a.region " &
+                "s.program, s.year_level, s.student_bio, a.address_line_1, a.address_line_2, a.barangay, a.city, a.region " &
                 "FROM student s INNER JOIN users u ON u.username = s.username " &
                 "LEFT JOIN address a ON a.address_id = u.address_id " &
                 "WHERE s.student_id = @id", con)
@@ -150,6 +150,8 @@ Module mdlExport
             Cell(p0, "address_line_1"), Cell(p0, "address_line_2"),
             Cell(p0, "barangay"), Cell(p0, "city"), Cell(p0, "region")}
         AddField(sec, "Address", String.Join(", ", addr.Where(Function(s) s <> "")))
+
+        AddField(sec, "Bio", Cell(p0, "student_bio"))
 
         AddHeading(sec, "Skill Growth")
         Dim chartData As String = VerifiedSkillsChartBase64()

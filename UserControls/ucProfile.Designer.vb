@@ -76,6 +76,8 @@ Partial Class ucProfile
         Label11 = New Label()
         btnSave = New RoundedButton()
         btnDiscard = New RoundedButton()
+        tbBio = New TextBox()
+        btnBio = New RoundedButton()
         Panel1.SuspendLayout()
         cgbUser.SuspendLayout()
         cgbPass.SuspendLayout()
@@ -809,6 +811,36 @@ Partial Class ucProfile
         btnDiscard.Text = "DISCARD CHANGES"
         btnDiscard.UseVisualStyleBackColor = False
         ' 
+        ' tbBio
+        ' 
+        tbBio.Anchor = AnchorStyles.None
+        tbBio.BackColor = Color.White
+        tbBio.Enabled = False
+        tbBio.Font = New Font("Tahoma", 11F)
+        tbBio.ForeColor = Color.Black
+        tbBio.Location = New Point(1141, 178)
+        tbBio.MaxLength = 250
+        tbBio.Multiline = True
+        tbBio.Name = "tbBio"
+        tbBio.ScrollBars = ScrollBars.Horizontal
+        tbBio.Size = New Size(513, 190)
+        tbBio.TabIndex = 15
+        tbBio.TabStop = False
+        ' 
+        ' btnBio
+        ' 
+        btnBio.Anchor = AnchorStyles.None
+        btnBio.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnBio.FlatStyle = FlatStyle.Flat
+        btnBio.Font = New Font("Arial", 9F, FontStyle.Bold)
+        btnBio.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnBio.Location = New Point(1660, 251)
+        btnBio.Name = "btnBio"
+        btnBio.Size = New Size(50, 50)
+        btnBio.TabIndex = 15
+        btnBio.Text = "EDIT"
+        btnBio.UseVisualStyleBackColor = False
+        ' 
         ' ucProfile
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -816,6 +848,8 @@ Partial Class ucProfile
         AutoSize = True
         BackColor = Color.White
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        Controls.Add(btnBio)
+        Controls.Add(tbBio)
         Controls.Add(btnDiscard)
         Controls.Add(btnSave)
         Controls.Add(cgbAdd)
@@ -836,6 +870,7 @@ Partial Class ucProfile
         cgbAdd.ResumeLayout(False)
         cgbAdd.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
     Friend WithEvents lblPassword As Label
     Friend WithEvents lblAddress As Label
@@ -890,5 +925,7 @@ Partial Class ucProfile
     Friend WithEvents btnLine2 As RoundedButton
     Friend WithEvents btnLine1 As RoundedButton
     Friend WithEvents btnDiscard As RoundedButton
+    Friend WithEvents tbBio As TextBox
+    Friend WithEvents btnBio As RoundedButton
 
 End Class

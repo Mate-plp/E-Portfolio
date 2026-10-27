@@ -23,10 +23,7 @@ Public Class Dashboard
 
     Private Sub HighlightButton(active As Button)
         ResetButtons(pnlSidebar)
-        active.BackColor = Color.Transparent 'selected
-        active.FlatAppearance.BorderSize = 2
-        active.FlatAppearance.BorderColor = Color.Gold
-
+        active.BackColor = Color.Green
     End Sub
 
     Private Sub ResetButtons(parent As Control)
@@ -34,9 +31,7 @@ Public Class Dashboard
             If TypeOf ctrl Is Button Then
                 Dim btn As Button = DirectCast(ctrl, Button)
 
-                ctrl.BackColor = If(ctrl.Parent Is pnlPortfolio AndAlso ctrl IsNot btnPortfolio,
-                                Color.Transparent, 'unselected sub buttons
-                                Color.Transparent) 'unselected main buttons
+                btn.BackColor = Color.Transparent
                 btn.FlatAppearance.BorderSize = 0
             ElseIf ctrl.HasChildren Then
                 ResetButtons(ctrl)
@@ -50,14 +45,6 @@ Public Class Dashboard
 
     Private Sub btnProfile_Click(sender As Object, e As EventArgs) Handles btnProfile.Click
         ShowPage(New ucProfile(), btnProfile)
-    End Sub
-
-    Private Sub btnPortfolio_Click(sender As Object, e As EventArgs) Handles btnPortfolio.Click
-        If pnlPortfolio.Height = 50 Then
-            pnlPortfolio.Height = 130
-        Else
-            pnlPortfolio.Height = 50
-        End If
     End Sub
 
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
