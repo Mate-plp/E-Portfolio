@@ -28,7 +28,8 @@ Partial Class ucView
         lblSubmitActivity = New Label()
         txtSearch = New TextBox()
         Label1 = New Label()
-        btnStatusChange = New RoundedButton()
+        btnVerifyAll = New RoundedButton()
+        btnUnverifyAll = New RoundedButton()
         CType(dgvEntries, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
         SuspendLayout()
@@ -72,26 +73,42 @@ Partial Class ucView
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = SystemColors.ActiveCaptionText
         Label1.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
-        Label1.Location = New Point(155, 82)
+        Label1.ForeColor = Color.White
+        Label1.Location = New Point(134, 82)
         Label1.Name = "Label1"
-        Label1.Size = New Size(1103, 21)
+        Label1.Size = New Size(603, 42)
         Label1.TabIndex = 5
-        Label1.Text = "LOYOLA AYUSIN MO TO OK KAHIT SAN MO LAGAY YUNG BUTTON BASTA MAGANDA TIGNAN TAPOS NAGMAMAKE SENSE (also delete this label)"
+        Label1.Text = "LOYOLA AYUSIN MO TO OK KAHIT SAN MO LAGAY YUNG BUTTON " & vbCrLf & "BASTA MAGANDA TIGNAN TAPOS NAGMAMAKE SENSE (also delete this label)"
         ' 
-        ' btnStatusChange
+        ' btnVerifyAll
         ' 
-        btnStatusChange.Anchor = AnchorStyles.None
-        btnStatusChange.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
-        btnStatusChange.FlatStyle = FlatStyle.Flat
-        btnStatusChange.Font = New Font("Arial", 11F, FontStyle.Bold)
-        btnStatusChange.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnStatusChange.Location = New Point(1320, 74)
-        btnStatusChange.Name = "btnStatusChange"
-        btnStatusChange.Size = New Size(354, 79)
-        btnStatusChange.TabIndex = 15
-        btnStatusChange.Text = "verify/unverify all visible entries " & vbCrLf & "(pwede mo rin iseparate yung text na " & vbCrLf & "to lagay mo sa label kung mas maganda"
-        btnStatusChange.UseVisualStyleBackColor = False
+        btnVerifyAll.Anchor = AnchorStyles.None
+        btnVerifyAll.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnVerifyAll.FlatStyle = FlatStyle.Flat
+        btnVerifyAll.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnVerifyAll.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnVerifyAll.Location = New Point(983, 63)
+        btnVerifyAll.Name = "btnVerifyAll"
+        btnVerifyAll.Size = New Size(354, 79)
+        btnVerifyAll.TabIndex = 15
+        btnVerifyAll.Text = "verify all visible entries " & vbCrLf & "(pwede mo rin iseparate yung text na " & vbCrLf & "to lagay mo sa label kung mas maganda"
+        btnVerifyAll.UseVisualStyleBackColor = False
+        ' 
+        ' btnUnverifyAll
+        ' 
+        btnUnverifyAll.Anchor = AnchorStyles.None
+        btnUnverifyAll.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
+        btnUnverifyAll.FlatStyle = FlatStyle.Flat
+        btnUnverifyAll.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnUnverifyAll.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
+        btnUnverifyAll.Location = New Point(1343, 74)
+        btnUnverifyAll.Name = "btnUnverifyAll"
+        btnUnverifyAll.Size = New Size(354, 79)
+        btnUnverifyAll.TabIndex = 16
+        btnUnverifyAll.Text = "UNverify all visible entries " & vbCrLf & "(pwede mo rin iseparate yung text na " & vbCrLf & "to lagay mo sa label kung mas maganda"
+        btnUnverifyAll.UseVisualStyleBackColor = False
         ' 
         ' ucView
         ' 
@@ -99,8 +116,9 @@ Partial Class ucView
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
-        Controls.Add(btnStatusChange)
+        Controls.Add(btnUnverifyAll)
         Controls.Add(Label1)
+        Controls.Add(btnVerifyAll)
         Controls.Add(txtSearch)
         Controls.Add(RoundedPanel1)
         Controls.Add(dgvEntries)
@@ -118,6 +136,7 @@ Partial Class ucView
     Friend WithEvents lblSubmitActivity As Label
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnStatusChange As RoundedButton
+    Friend WithEvents btnVerifyAll As RoundedButton
+    Friend WithEvents btnUnverifyAll As RoundedButton
 
 End Class

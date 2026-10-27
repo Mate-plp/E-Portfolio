@@ -47,6 +47,7 @@ Public Class ucView
                     Dim dt As New DataTable()
                     da.Fill(dt)
                     dgvEntries.DataSource = dt
+                    ApplySearch()
                 End Using
             End Using
 
@@ -126,13 +127,7 @@ Public Class ucView
             sb.ToString())
     End Sub
 
-    Private Function SetEntryVerification(
-    con As MySqlConnection,
-    entryId As Integer,
-    isVerified As Boolean,
-    Optional transaction As MySqlTransaction = Nothing
-) As Integer
-
+    Private Function SetEntryVerification(con As MySqlConnection, entryId As Integer, isVerified As Boolean, Optional transaction As MySqlTransaction = Nothing) As Integer
         Using cmd As New MySqlCommand(
             "UPDATE portfolio_entries SET verified = @verified " &
             "WHERE entry_id = @e AND professor_id = @pid " &
@@ -142,9 +137,63 @@ Public Class ucView
             cmd.Parameters.AddWithValue("@verified", If(isVerified, 1, 0))
             cmd.Parameters.AddWithValue("@e", entryId)
             cmd.Parameters.AddWithValue("@pid", CurrentProfessorId)
-
             Return cmd.ExecuteNonQuery()
         End Using
-
     End Function
+
+    Private Sub SetVisibleEntriesVerification(isVerified As Boolean)
+        Dim visibleEntryIds As New List(Of Integer)
+
+        For Each row As DataGridViewRow In dgvEntries.Rows
+            If row.IsNewRow OrElse Not row.Visible Then Continue For
+            If row.Cells("entry_id").Value Is Nothing OrElse row.Cells("entry_id").Value Is DBNull.Value Then Continue For
+
+            visibleEntryIds.Add(Convert.ToInt32(row.Cells("entry_id").Value))
+        Next
+
+        Dim action As String = If(isVerified, "verify", "unverify")
+
+        If visibleEntryIds.Count = 0 Then
+            ShowToast(Me.FindForm(), $"There are no visible entries to {action}.")
+            Return
+        End If
+
+        Dim title As String = If(isVerified, "Verify All", "Unverify All")
+        Dim message As String = $"Are you sure you want to {action} all {visibleEntryIds.Count} visible entries?"
+
+        If MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) <> DialogResult.Yes Then Return
+
+        Try
+            Using con As New MySqlConnection(conString)
+                con.Open()
+
+                Using transaction As MySqlTransaction = con.BeginTransaction()
+                    Try
+                        For Each entryId As Integer In visibleEntryIds
+                            SetEntryVerification(con, entryId, isVerified, transaction)
+                        Next
+
+                        transaction.Commit()
+                    Catch
+                        transaction.Rollback()
+                        Throw
+                    End Try
+                End Using
+            End Using
+
+            LoadEntries()
+            ShowToast(Me.FindForm(), $"All visible entries have been {If(isVerified, "verified", "unverified")}.")
+
+        Catch ex As Exception
+            ShowToast(Me.FindForm(), $"Could not {action} entries: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnVerifyAll_Click(sender As Object, e As EventArgs) Handles btnVerifyAll.Click
+        SetVisibleEntriesVerification(True)
+    End Sub
+
+    Private Sub btnUnverifyAll_Click(sender As Object, e As EventArgs) Handles btnUnverifyAll.Click
+        SetVisibleEntriesVerification(False)
+    End Sub
 End Class
