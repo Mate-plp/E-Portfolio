@@ -26,7 +26,7 @@ Public Class ucView
         If String.IsNullOrEmpty(CurrentProfessorId) Then Return
 
         Dim sql As String = "SELECT e.entry_id, " &
-                            "       CONCAT(u.first_name, ' ', u.last_name) AS 'Student Name', " &
+                            "       CONCAT(u.first_name, ' ', u.last_name) AS 'Name', " &
                             "       e.student_id AS `Student ID`, " &
                             "       e.activity_title AS Title, " &
                             "       e.`date` AS `Date`, " &
@@ -123,7 +123,7 @@ Public Class ucView
         Next
 
         dt.DefaultView.RowFilter = String.Format(
-            "[Student Name] LIKE '%{0}%' OR [Student ID] LIKE '%{0}%' OR [Title] LIKE '%{0}%' OR [Type] LIKE '%{0}%' OR [Status] LIKE '%{0}%'",
+            "[Name] LIKE '%{0}%' OR [Student ID] LIKE '%{0}%' OR [Title] LIKE '%{0}%' OR [Type] LIKE '%{0}%' OR [Status] LIKE '%{0}%'",
             sb.ToString())
     End Sub
 

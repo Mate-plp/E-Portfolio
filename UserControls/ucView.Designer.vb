@@ -67,6 +67,7 @@ Partial Class ucView
         ' 
         txtSearch.Location = New Point(65, 130)
         txtSearch.Name = "txtSearch"
+        txtSearch.PlaceholderText = "Search by Name, Student ID, Title, Type, or Status..."
         txtSearch.Size = New Size(1286, 23)
         txtSearch.TabIndex = 4
         ' 
