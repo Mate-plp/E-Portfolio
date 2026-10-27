@@ -25,19 +25,19 @@ Public Class ucView
     Public Sub LoadEntries()
         If String.IsNullOrEmpty(CurrentProfessorId) Then Return
 
-        Dim sql As String =
-        "SELECT e.entry_id, " &
-        "       e.activity_title AS Title, " &
-        "       e.`date` AS `Date`, " &
-        "       t.type_name AS Type, " &
-        "       IF(e.verified = 1, 'Verified', 'Pending') AS Status, " &
-        "       COALESCE(CONCAT(u.first_name, ' ', u.last_name), '-') AS Verifier " &
-        "FROM portfolio_entries e " &
-        "INNER JOIN activity_type t ON t.type_id = e.type_id " &
-        "LEFT JOIN faculty f ON f.professor_id = e.professor_id " &
-        "LEFT JOIN users u ON u.username = f.username " &
-        "WHERE e.student_id = @id " &
-        "ORDER BY e.`date` DESC, e.entry_id DESC"
+        Dim sql As String = "SELECT e.entry_id, " &
+                            "       CONCAT(u.first_name, ' ', u.last_name) AS Student, " &
+                            "       e.student_id AS `Student ID`, " &
+                            "       e.activity_title AS Title, " &
+                            "       e.`date` AS `Date`, " &
+                            "       t.type_name AS Type, " &
+                            "       IF(e.verified = 1, 'Verified', 'Unverified') AS Status " &
+                            "FROM portfolio_entries e " &
+                            "INNER JOIN activity_type t ON t.type_id = e.type_id " &
+                            "INNER JOIN student s ON s.student_id = e.student_id " &
+                            "INNER JOIN users u ON u.username = s.username " &
+                            "WHERE e.professor_id = @id " &
+                            "ORDER BY e.verified ASC, e.`date` DESC, e.entry_id DESC"
 
         Try
             Using con As New MySqlConnection(conString)
@@ -63,6 +63,28 @@ Public Class ucView
         If e.RowIndex < 0 Then Return
 
         Dim entryId = Convert.ToInt32(dgvEntries.Rows(e.RowIndex).Cells("entry_id").Value)
+        Dim status = dgvEntries.Rows(e.RowIndex).Cells("Status").Value.ToString()
+
+        If status = "Verified" Then
+            If MessageBox.Show("Would you like to unverify this entry?", "Unverify entry",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) <> DialogResult.Yes Then Return
+            Try
+                Using con As New MySqlConnection(conString)
+                    con.Open()
+                    Using cmd As New MySqlCommand(
+                        "UPDATE portfolio_entries SET verified = 0 " &
+                        "WHERE entry_id = @e AND professor_id = @pid AND verified = 1", con)
+                        cmd.Parameters.AddWithValue("@e", entryId)
+                        cmd.Parameters.AddWithValue("@pid", CurrentProfessorId)
+                        cmd.ExecuteNonQuery()
+                    End Using
+                End Using
+                LoadEntries()
+            Catch ex As Exception
+                ShowToast(Me.FindForm(), "Could not unverify: " & ex.Message)
+            End Try
+            Return
+        End If
 
         If MessageBox.Show("Mark this entry as verified?", "Verify entry",
                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) <> DialogResult.Yes Then Return
@@ -75,8 +97,7 @@ Public Class ucView
                     "WHERE entry_id = @e AND professor_id = @pid AND verified = 0", con)
                     cmd.Parameters.AddWithValue("@e", entryId)
                     cmd.Parameters.AddWithValue("@pid", CurrentProfessorId)
-                    Dim changed = cmd.ExecuteNonQuery()
-                    ShowToast(Me.FindForm(), If(changed = 1, "Entry verified.", "This entry is already verified."))
+                    cmd.ExecuteNonQuery()
                 End Using
             End Using
             LoadEntries()
