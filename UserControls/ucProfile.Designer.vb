@@ -186,12 +186,13 @@ Partial Class ucProfile
         btnLN.Anchor = AnchorStyles.None
         btnLN.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnLN.FlatStyle = FlatStyle.Flat
-        btnLN.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnLN.Font = New Font("Arial", 9F, FontStyle.Bold)
         btnLN.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
         btnLN.Location = New Point(459, 236)
         btnLN.Name = "btnLN"
         btnLN.Size = New Size(50, 50)
         btnLN.TabIndex = 14
+        btnLN.Text = "EDIT"
         btnLN.UseVisualStyleBackColor = False
         ' 
         ' btnMN
@@ -199,12 +200,13 @@ Partial Class ucProfile
         btnMN.Anchor = AnchorStyles.None
         btnMN.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnMN.FlatStyle = FlatStyle.Flat
-        btnMN.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnMN.Font = New Font("Arial", 9F, FontStyle.Bold)
         btnMN.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
         btnMN.Location = New Point(459, 179)
         btnMN.Name = "btnMN"
         btnMN.Size = New Size(50, 50)
         btnMN.TabIndex = 14
+        btnMN.Text = "EDIT"
         btnMN.UseVisualStyleBackColor = False
         ' 
         ' btnFN
@@ -212,12 +214,13 @@ Partial Class ucProfile
         btnFN.Anchor = AnchorStyles.None
         btnFN.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnFN.FlatStyle = FlatStyle.Flat
-        btnFN.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnFN.Font = New Font("Arial", 9F, FontStyle.Bold)
         btnFN.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
         btnFN.Location = New Point(459, 117)
         btnFN.Name = "btnFN"
         btnFN.Size = New Size(50, 50)
         btnFN.TabIndex = 14
+        btnFN.Text = "EDIT"
         btnFN.UseVisualStyleBackColor = False
         ' 
         ' btnUsername
@@ -226,13 +229,14 @@ Partial Class ucProfile
         btnUsername.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnUsername.BackgroundImageLayout = ImageLayout.Zoom
         btnUsername.FlatStyle = FlatStyle.Flat
-        btnUsername.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnUsername.Font = New Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnUsername.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
         btnUsername.Image = CType(resources.GetObject("btnUsername.Image"), Image)
         btnUsername.Location = New Point(459, 57)
         btnUsername.Name = "btnUsername"
         btnUsername.Size = New Size(50, 50)
         btnUsername.TabIndex = 14
+        btnUsername.Text = "EDIT"
         btnUsername.UseVisualStyleBackColor = False
         ' 
         ' tbMN
@@ -349,12 +353,13 @@ Partial Class ucProfile
         btnCfmPass.Anchor = AnchorStyles.None
         btnCfmPass.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnCfmPass.FlatStyle = FlatStyle.Flat
-        btnCfmPass.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnCfmPass.Font = New Font("Arial", 9F, FontStyle.Bold)
         btnCfmPass.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
         btnCfmPass.Location = New Point(482, 165)
         btnCfmPass.Name = "btnCfmPass"
         btnCfmPass.Size = New Size(50, 50)
         btnCfmPass.TabIndex = 14
+        btnCfmPass.Text = "EDIT"
         btnCfmPass.UseVisualStyleBackColor = False
         ' 
         ' btnNewPass
@@ -362,12 +367,13 @@ Partial Class ucProfile
         btnNewPass.Anchor = AnchorStyles.None
         btnNewPass.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnNewPass.FlatStyle = FlatStyle.Flat
-        btnNewPass.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnNewPass.Font = New Font("Arial", 9F, FontStyle.Bold)
         btnNewPass.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
         btnNewPass.Location = New Point(482, 107)
         btnNewPass.Name = "btnNewPass"
         btnNewPass.Size = New Size(50, 50)
         btnNewPass.TabIndex = 14
+        btnNewPass.Text = "EDIT"
         btnNewPass.UseVisualStyleBackColor = False
         ' 
         ' btnOldPass
@@ -375,12 +381,13 @@ Partial Class ucProfile
         btnOldPass.Anchor = AnchorStyles.None
         btnOldPass.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnOldPass.FlatStyle = FlatStyle.Flat
-        btnOldPass.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnOldPass.Font = New Font("Arial", 9F, FontStyle.Bold)
         btnOldPass.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
         btnOldPass.Location = New Point(482, 49)
         btnOldPass.Name = "btnOldPass"
         btnOldPass.Size = New Size(50, 50)
         btnOldPass.TabIndex = 14
+        btnOldPass.Text = "EDIT"
         btnOldPass.UseVisualStyleBackColor = False
         ' 
         ' tbCfmPass
@@ -492,12 +499,13 @@ Partial Class ucProfile
         btnProgram.Anchor = AnchorStyles.None
         btnProgram.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnProgram.FlatStyle = FlatStyle.Flat
-        btnProgram.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnProgram.Font = New Font("Arial", 9F, FontStyle.Bold)
         btnProgram.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
         btnProgram.Location = New Point(394, 100)
         btnProgram.Name = "btnProgram"
         btnProgram.Size = New Size(50, 50)
         btnProgram.TabIndex = 14
+        btnProgram.Text = "EDIT"
         btnProgram.UseVisualStyleBackColor = False
         ' 
         ' Label6
@@ -583,12 +591,13 @@ Partial Class ucProfile
         btnRegion.Anchor = AnchorStyles.None
         btnRegion.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnRegion.FlatStyle = FlatStyle.Flat
-        btnRegion.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnRegion.Font = New Font("Arial", 9F, FontStyle.Bold)
         btnRegion.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnRegion.Location = New Point(654, 216)
+        btnRegion.Location = New Point(656, 216)
         btnRegion.Name = "btnRegion"
         btnRegion.Size = New Size(50, 50)
         btnRegion.TabIndex = 14
+        btnRegion.Text = "EDIT"
         btnRegion.UseVisualStyleBackColor = False
         ' 
         ' btnBar
@@ -596,12 +605,13 @@ Partial Class ucProfile
         btnBar.Anchor = AnchorStyles.None
         btnBar.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnBar.FlatStyle = FlatStyle.Flat
-        btnBar.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnBar.Font = New Font("Arial", 9F, FontStyle.Bold)
         btnBar.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
         btnBar.Location = New Point(397, 163)
         btnBar.Name = "btnBar"
         btnBar.Size = New Size(50, 50)
         btnBar.TabIndex = 14
+        btnBar.Text = "EDIT"
         btnBar.UseVisualStyleBackColor = False
         ' 
         ' btnCity
@@ -609,12 +619,13 @@ Partial Class ucProfile
         btnCity.Anchor = AnchorStyles.None
         btnCity.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnCity.FlatStyle = FlatStyle.Flat
-        btnCity.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnCity.Font = New Font("Arial", 9F, FontStyle.Bold)
         btnCity.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnCity.Location = New Point(654, 158)
+        btnCity.Location = New Point(656, 158)
         btnCity.Name = "btnCity"
         btnCity.Size = New Size(50, 50)
         btnCity.TabIndex = 14
+        btnCity.Text = "EDIT"
         btnCity.UseVisualStyleBackColor = False
         ' 
         ' btnLine2
@@ -622,12 +633,13 @@ Partial Class ucProfile
         btnLine2.Anchor = AnchorStyles.None
         btnLine2.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnLine2.FlatStyle = FlatStyle.Flat
-        btnLine2.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnLine2.Font = New Font("Arial", 9F, FontStyle.Bold)
         btnLine2.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnLine2.Location = New Point(654, 99)
+        btnLine2.Location = New Point(656, 99)
         btnLine2.Name = "btnLine2"
         btnLine2.Size = New Size(50, 50)
         btnLine2.TabIndex = 14
+        btnLine2.Text = "EDIT"
         btnLine2.UseVisualStyleBackColor = False
         ' 
         ' btnLine1
@@ -635,12 +647,13 @@ Partial Class ucProfile
         btnLine1.Anchor = AnchorStyles.None
         btnLine1.BackColor = Color.FromArgb(CByte(25), CByte(105), CByte(80))
         btnLine1.FlatStyle = FlatStyle.Flat
-        btnLine1.Font = New Font("Arial", 11F, FontStyle.Bold)
+        btnLine1.Font = New Font("Arial", 9F, FontStyle.Bold)
         btnLine1.ForeColor = Color.FromArgb(CByte(245), CByte(245), CByte(245))
-        btnLine1.Location = New Point(654, 40)
+        btnLine1.Location = New Point(656, 40)
         btnLine1.Name = "btnLine1"
         btnLine1.Size = New Size(50, 50)
         btnLine1.TabIndex = 14
+        btnLine1.Text = "EDIT"
         btnLine1.UseVisualStyleBackColor = False
         ' 
         ' tbRegion
