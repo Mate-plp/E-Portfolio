@@ -26,7 +26,7 @@ Public Class ucView
         If String.IsNullOrEmpty(CurrentProfessorId) Then Return
 
         Dim sql As String = "SELECT e.entry_id, " &
-                            "       CONCAT(u.first_name, ' ', u.last_name) AS Student, " &
+                            "       CONCAT(u.first_name, ' ', u.last_name) AS 'Student Name', " &
                             "       e.student_id AS `Student ID`, " &
                             "       e.activity_title AS Title, " &
                             "       e.`date` AS `Date`, " &
@@ -105,4 +105,6 @@ Public Class ucView
             ShowToast(Me.FindForm(), "Could not verify: " & ex.Message)
         End Try
     End Sub
+
+
 End Class

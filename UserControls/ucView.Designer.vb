@@ -26,6 +26,8 @@ Partial Class ucView
         dgvEntries = New DataGridView()
         RoundedPanel1 = New RoundedPanel()
         lblSubmitActivity = New Label()
+        TextBox1 = New TextBox()
+        Label1 = New Label()
         CType(dgvEntries, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
         SuspendLayout()
@@ -59,12 +61,31 @@ Partial Class ucView
         lblSubmitActivity.TabIndex = 1
         lblSubmitActivity.Text = "Requests for Verification"
         ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(65, 130)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(1286, 23)
+        TextBox1.TabIndex = 4
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
+        Label1.Location = New Point(261, 82)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(388, 21)
+        Label1.TabIndex = 5
+        Label1.Text = "LOYOLA AYUSIN MO TO OK (also delete this label)"
+        ' 
         ' ucView
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        Controls.Add(Label1)
+        Controls.Add(TextBox1)
         Controls.Add(RoundedPanel1)
         Controls.Add(dgvEntries)
         DoubleBuffered = True
@@ -74,9 +95,12 @@ Partial Class ucView
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
     Friend WithEvents dgvEntries As DataGridView
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents lblSubmitActivity As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label1 As Label
 
 End Class
