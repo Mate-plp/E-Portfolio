@@ -75,12 +75,6 @@ Public Class Register
             Return
         End If
 
-        If Not Regex.IsMatch(professorId, "^\d{2}-\d{5}$") Then
-            ShowToast(Me, "Faculty ID example: 25-00123.")
-            txtProfessorId.Focus()
-            Return
-        End If
-
         If GetPasswordStrength(password) < 2 Then
             ShowToast(Me, "Password is too weak.")
             txtPassword.Focus()

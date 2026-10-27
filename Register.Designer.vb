@@ -45,7 +45,6 @@ Partial Class Register
         Label3 = New Label()
         btnRegister = New RoundedButton()
         btnBack = New RoundedButton()
-        Label4 = New Label()
         SuspendLayout()
         ' 
         ' lblTitle
@@ -324,19 +323,6 @@ Partial Class Register
         btnBack.Text = "BACK TO LOGIN"
         btnBack.UseVisualStyleBackColor = False
         ' 
-        ' Label4
-        ' 
-        Label4.Anchor = AnchorStyles.None
-        Label4.AutoSize = True
-        Label4.BackColor = Color.Transparent
-        Label4.Font = New Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Label4.ForeColor = Color.Gray
-        Label4.Location = New Point(793, 588)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(112, 15)
-        Label4.TabIndex = 37
-        Label4.Text = "(Example: 12-34567)"
-        ' 
         ' Register
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -344,7 +330,6 @@ Partial Class Register
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Zoom
         ClientSize = New Size(1920, 1080)
-        Controls.Add(Label4)
         Controls.Add(btnBack)
         Controls.Add(btnRegister)
         Controls.Add(Label2)
@@ -402,5 +387,4 @@ Partial Class Register
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
 End Class
