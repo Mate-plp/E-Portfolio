@@ -27,6 +27,7 @@ Partial Class ucView
         RoundedPanel1 = New RoundedPanel()
         lblSubmitActivity = New Label()
         txtSearch = New TextBox()
+        Label4 = New Label()
         CType(dgvEntries, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
         SuspendLayout()
@@ -69,12 +70,26 @@ Partial Class ucView
         txtSearch.Size = New Size(1598, 29)
         txtSearch.TabIndex = 4
         ' 
+        ' Label4
+        ' 
+        Label4.Anchor = AnchorStyles.None
+        Label4.AutoSize = True
+        Label4.BackColor = Color.Transparent
+        Label4.Font = New Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        Label4.ForeColor = Color.DimGray
+        Label4.Location = New Point(1507, 82)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(156, 15)
+        Label4.TabIndex = 38
+        Label4.Text = "Double click to edit an entry."
+        ' 
         ' ucView
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        Controls.Add(Label4)
         Controls.Add(txtSearch)
         Controls.Add(RoundedPanel1)
         Controls.Add(dgvEntries)
@@ -91,5 +106,6 @@ Partial Class ucView
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents lblSubmitActivity As Label
     Friend WithEvents txtSearch As TextBox
+    Friend WithEvents Label4 As Label
 
 End Class

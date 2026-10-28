@@ -109,7 +109,7 @@ Partial Class Register
         chkShowPassword.Location = New Point(1014, 572)
         chkShowPassword.Name = "chkShowPassword"
         chkShowPassword.Size = New Size(108, 19)
-        chkShowPassword.TabIndex = 7
+        chkShowPassword.TabIndex = 8
         chkShowPassword.Text = "Show Password"
         chkShowPassword.UseVisualStyleBackColor = False
         ' 
@@ -148,7 +148,7 @@ Partial Class Register
         txtStudentId.Location = New Point(555, 611)
         txtStudentId.Name = "txtStudentId"
         txtStudentId.Size = New Size(350, 20)
-        txtStudentId.TabIndex = 28
+        txtStudentId.TabIndex = 4
         ' 
         ' lblStudentId
         ' 
@@ -172,7 +172,7 @@ Partial Class Register
         txtLastName.Location = New Point(555, 552)
         txtLastName.Name = "txtLastName"
         txtLastName.Size = New Size(350, 20)
-        txtLastName.TabIndex = 26
+        txtLastName.TabIndex = 3
         ' 
         ' lblLastName
         ' 
@@ -196,7 +196,7 @@ Partial Class Register
         txtMiddleName.Location = New Point(555, 493)
         txtMiddleName.Name = "txtMiddleName"
         txtMiddleName.Size = New Size(350, 20)
-        txtMiddleName.TabIndex = 24
+        txtMiddleName.TabIndex = 2
         ' 
         ' lblMiddleName
         ' 
@@ -220,7 +220,7 @@ Partial Class Register
         txtFirstName.Location = New Point(555, 434)
         txtFirstName.Name = "txtFirstName"
         txtFirstName.Size = New Size(350, 20)
-        txtFirstName.TabIndex = 22
+        txtFirstName.TabIndex = 1
         ' 
         ' lblFirstName
         ' 
@@ -244,7 +244,7 @@ Partial Class Register
         txtUsername.Location = New Point(1016, 434)
         txtUsername.Name = "txtUsername"
         txtUsername.Size = New Size(350, 20)
-        txtUsername.TabIndex = 19
+        txtUsername.TabIndex = 5
         ' 
         ' txtConfirm
         ' 
@@ -255,7 +255,7 @@ Partial Class Register
         txtConfirm.Location = New Point(1014, 540)
         txtConfirm.Name = "txtConfirm"
         txtConfirm.Size = New Size(350, 20)
-        txtConfirm.TabIndex = 18
+        txtConfirm.TabIndex = 7
         txtConfirm.UseSystemPasswordChar = True
         ' 
         ' txtPassword
@@ -267,7 +267,7 @@ Partial Class Register
         txtPassword.Location = New Point(1015, 487)
         txtPassword.Name = "txtPassword"
         txtPassword.Size = New Size(350, 20)
-        txtPassword.TabIndex = 17
+        txtPassword.TabIndex = 6
         txtPassword.UseSystemPasswordChar = True
         ' 
         ' Label2
@@ -305,7 +305,7 @@ Partial Class Register
         btnRegister.Location = New Point(1207, 751)
         btnRegister.Name = "btnRegister"
         btnRegister.Size = New Size(200, 38)
-        btnRegister.TabIndex = 35
+        btnRegister.TabIndex = 10
         btnRegister.Text = "REGISTER"
         btnRegister.UseVisualStyleBackColor = False
         ' 
@@ -320,7 +320,7 @@ Partial Class Register
         btnBack.Location = New Point(555, 751)
         btnBack.Name = "btnBack"
         btnBack.Size = New Size(156, 38)
-        btnBack.TabIndex = 36
+        btnBack.TabIndex = 9
         btnBack.Text = "BACK TO LOGIN"
         btnBack.UseVisualStyleBackColor = False
         ' 
