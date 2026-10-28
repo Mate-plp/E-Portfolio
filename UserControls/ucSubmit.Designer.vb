@@ -152,7 +152,7 @@ Partial Class ucSubmit
         Label7.AutoSize = True
         Label7.BackColor = Color.Transparent
         Label7.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label7.Location = New Point(35, 11)
+        Label7.Location = New Point(80, 75)
         Label7.Margin = New Padding(18, 15, 18, 15)
         Label7.Name = "Label7"
         Label7.Padding = New Padding(26, 15, 18, 0)
@@ -164,10 +164,10 @@ Partial Class ucSubmit
         ' 
         cboType.Anchor = AnchorStyles.None
         cboType.FormattingEnabled = True
-        cboType.Location = New Point(228, 24)
+        cboType.Location = New Point(273, 88)
         cboType.Margin = New Padding(3, 2, 3, 2)
         cboType.Name = "cboType"
-        cboType.Size = New Size(153, 23)
+        cboType.Size = New Size(203, 23)
         cboType.TabIndex = 14
         ' 
         ' Label8
@@ -176,7 +176,7 @@ Partial Class ucSubmit
         Label8.AutoSize = True
         Label8.BackColor = Color.Transparent
         Label8.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label8.Location = New Point(35, 167)
+        Label8.Location = New Point(80, 266)
         Label8.Margin = New Padding(18, 15, 18, 15)
         Label8.Name = "Label8"
         Label8.Padding = New Padding(26, 15, 18, 0)
@@ -189,7 +189,7 @@ Partial Class ucSubmit
         clbSkills.Anchor = AnchorStyles.None
         clbSkills.FormattingEnabled = True
         clbSkills.Items.AddRange(New Object() {"Leadership", "Communication", "Teamwork", "Visual Basic", "C#"})
-        clbSkills.Location = New Point(79, 220)
+        clbSkills.Location = New Point(124, 319)
         clbSkills.Name = "clbSkills"
         clbSkills.Size = New Size(352, 148)
         clbSkills.TabIndex = 16
@@ -198,7 +198,7 @@ Partial Class ucSubmit
         ' 
         chkPLP.AutoSize = True
         chkPLP.BackColor = Color.Transparent
-        chkPLP.Location = New Point(79, 391)
+        chkPLP.Location = New Point(124, 490)
         chkPLP.Name = "chkPLP"
         chkPLP.Size = New Size(78, 19)
         chkPLP.TabIndex = 17
@@ -263,10 +263,10 @@ Partial Class ucSubmit
         ' 
         cboFaculty.Anchor = AnchorStyles.None
         cboFaculty.FormattingEnabled = True
-        cboFaculty.Location = New Point(163, 387)
+        cboFaculty.Location = New Point(208, 486)
         cboFaculty.Margin = New Padding(3, 2, 3, 2)
         cboFaculty.Name = "cboFaculty"
-        cboFaculty.Size = New Size(153, 23)
+        cboFaculty.Size = New Size(268, 23)
         cboFaculty.TabIndex = 22
         ' 
         ' lblFile
@@ -331,7 +331,7 @@ Partial Class ucSubmit
         RoundedPanel3.Controls.Add(Label8)
         RoundedPanel3.Controls.Add(clbSkills)
         RoundedPanel3.FillColor = Color.FromArgb(CByte(180), CByte(255), CByte(255), CByte(255))
-        RoundedPanel3.Location = New Point(1008, 200)
+        RoundedPanel3.Location = New Point(1008, 201)
         RoundedPanel3.Name = "RoundedPanel3"
         RoundedPanel3.Size = New Size(557, 661)
         RoundedPanel3.TabIndex = 27
