@@ -152,7 +152,7 @@ Partial Class ucSubmit
         Label7.AutoSize = True
         Label7.BackColor = Color.Transparent
         Label7.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label7.Location = New Point(80, 75)
+        Label7.Location = New Point(73, 75)
         Label7.Margin = New Padding(18, 15, 18, 15)
         Label7.Name = "Label7"
         Label7.Padding = New Padding(26, 15, 18, 0)
@@ -176,7 +176,7 @@ Partial Class ucSubmit
         Label8.AutoSize = True
         Label8.BackColor = Color.Transparent
         Label8.Font = New Font("Verdana", 12.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label8.Location = New Point(80, 266)
+        Label8.Location = New Point(73, 266)
         Label8.Margin = New Padding(18, 15, 18, 15)
         Label8.Name = "Label8"
         Label8.Padding = New Padding(26, 15, 18, 0)
