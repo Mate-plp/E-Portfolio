@@ -369,6 +369,7 @@ Partial Class Register
         Controls.Add(Label3)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MaximumSize = New Size(1920, 1080)
         MinimumSize = New Size(1280, 720)
         Name = "Register"

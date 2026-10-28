@@ -238,6 +238,7 @@ Partial Class Login
         DoubleBuffered = True
         Font = New Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         FormBorderStyle = FormBorderStyle.None
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(4, 5, 4, 5)
         MaximizeBox = False
         MaximumSize = New Size(1920, 1080)

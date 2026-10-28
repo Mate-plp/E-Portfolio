@@ -355,6 +355,7 @@ Partial Class Dashboard
         Controls.Add(pnlHeader)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MaximumSize = New Size(1920, 1080)
         MinimumSize = New Size(1080, 720)
         Name = "Dashboard"
