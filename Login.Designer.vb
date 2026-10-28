@@ -37,6 +37,7 @@ Partial Class Login
         btnRegister = New RoundedButton()
         btnExit = New RoundedButton()
         Label4 = New Label()
+        Label5 = New Label()
         SuspendLayout()
         ' 
         ' lblUsername
@@ -154,11 +155,11 @@ Partial Class Login
         Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Georgia", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.ForeColor = Color.Green
-        Label2.Location = New Point(864, 209)
+        Label2.Location = New Point(714, 207)
         Label2.Name = "Label2"
-        Label2.Size = New Size(193, 56)
+        Label2.Size = New Size(492, 56)
         Label2.TabIndex = 20
-        Label2.Text = "STARS"
+        Label2.Text = "FACULTY PORTAL"
         ' 
         ' Label3
         ' 
@@ -167,7 +168,7 @@ Partial Class Login
         Label3.BackColor = Color.Transparent
         Label3.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label3.ForeColor = Color.Black
-        Label3.Location = New Point(758, 278)
+        Label3.Location = New Point(758, 306)
         Label3.Name = "Label3"
         Label3.Size = New Size(404, 21)
         Label3.TabIndex = 21
@@ -220,13 +221,27 @@ Partial Class Login
         Label4.Anchor = AnchorStyles.None
         Label4.AutoSize = True
         Label4.BackColor = Color.Transparent
-        Label4.Font = New Font("Georgia", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.ForeColor = Color.White
-        Label4.Location = New Point(758, 126)
+        Label4.Font = New Font("Georgia", 20F, FontStyle.Bold)
+        Label4.ForeColor = Color.FromArgb(CByte(10), CByte(52), CByte(33))
+        Label4.Location = New Point(767, 268)
         Label4.Name = "Label4"
-        Label4.Size = New Size(388, 56)
+        Label4.Size = New Size(386, 31)
         Label4.TabIndex = 25
-        Label4.Text = "FOR FACULTY"
+        Label4.Text = "STARS FOR CCS FACULTY"
+        ' 
+        ' Label5
+        ' 
+        Label5.Anchor = AnchorStyles.None
+        Label5.AutoSize = True
+        Label5.BackColor = Color.Transparent
+        Label5.Font = New Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label5.ForeColor = Color.Black
+        Label5.Location = New Point(880, 883)
+        Label5.Margin = New Padding(4, 0, 4, 0)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(160, 19)
+        Label5.TabIndex = 26
+        Label5.Text = "For faculty and staff only"
         ' 
         ' Login
         ' 
@@ -236,6 +251,7 @@ Partial Class Login
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Zoom
         ClientSize = New Size(1920, 1061)
+        Controls.Add(Label5)
         Controls.Add(Label4)
         Controls.Add(btnExit)
         Controls.Add(btnRegister)
@@ -260,7 +276,7 @@ Partial Class Login
         MinimumSize = New Size(1080, 720)
         Name = "Login"
         StartPosition = FormStartPosition.CenterParent
-        Text = "LogIn"
+        Text = "F"
         TopMost = True
         WindowState = FormWindowState.Maximized
         ResumeLayout(False)
@@ -282,4 +298,5 @@ Partial Class Login
     Friend WithEvents btnLogin As RoundedButton
     Friend WithEvents btnExit As RoundedButton
     Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
 End Class

@@ -33,10 +33,16 @@ Partial Class Dashboard
         picLogo = New PictureBox()
         lblTitle = New Label()
         pnlContent = New Panel()
+        PictureBox1 = New PictureBox()
+        PictureBox2 = New PictureBox()
+        PictureBox3 = New PictureBox()
         pnlSidebar.SuspendLayout()
         pnlHeader.SuspendLayout()
         PnlHead.SuspendLayout()
         CType(picLogo, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' pnlSidebar
@@ -45,6 +51,9 @@ Partial Class Dashboard
         pnlSidebar.BackColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
         pnlSidebar.BackgroundImage = CType(resources.GetObject("pnlSidebar.BackgroundImage"), Image)
         pnlSidebar.BackgroundImageLayout = ImageLayout.Stretch
+        pnlSidebar.Controls.Add(PictureBox3)
+        pnlSidebar.Controls.Add(PictureBox2)
+        pnlSidebar.Controls.Add(PictureBox1)
         pnlSidebar.Controls.Add(btnLogout)
         pnlSidebar.Controls.Add(btnProfile)
         pnlSidebar.Controls.Add(btnView)
@@ -57,18 +66,18 @@ Partial Class Dashboard
         ' 
         ' btnLogout
         ' 
+        btnLogout.Anchor = AnchorStyles.None
         btnLogout.BackColor = Color.Transparent
-        btnLogout.Dock = DockStyle.Bottom
         btnLogout.FlatAppearance.BorderSize = 0
         btnLogout.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnLogout.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnLogout.FlatStyle = FlatStyle.Flat
-        btnLogout.Font = New Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnLogout.Font = New Font("Segoe UI", 13F, FontStyle.Bold)
         btnLogout.ForeColor = Color.White
-        btnLogout.Location = New Point(0, 794)
+        btnLogout.Location = New Point(-27, 695)
         btnLogout.Margin = New Padding(4, 8, 10, 8)
         btnLogout.Name = "btnLogout"
-        btnLogout.Size = New Size(192, 50)
+        btnLogout.Size = New Size(218, 50)
         btnLogout.TabIndex = 4
         btnLogout.Text = "Log Out"
         btnLogout.TextAlign = ContentAlignment.MiddleLeft
@@ -76,39 +85,39 @@ Partial Class Dashboard
         ' 
         ' btnProfile
         ' 
+        btnProfile.Anchor = AnchorStyles.None
         btnProfile.BackColor = Color.Transparent
         btnProfile.BackgroundImageLayout = ImageLayout.None
-        btnProfile.Dock = DockStyle.Top
         btnProfile.FlatAppearance.BorderSize = 0
         btnProfile.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnProfile.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnProfile.FlatStyle = FlatStyle.Flat
-        btnProfile.Font = New Font("Verdana", 18F, FontStyle.Bold)
+        btnProfile.Font = New Font("Segoe UI", 13F, FontStyle.Bold)
         btnProfile.ForeColor = Color.White
-        btnProfile.Location = New Point(0, 50)
+        btnProfile.Location = New Point(-64, 99)
         btnProfile.Name = "btnProfile"
-        btnProfile.Size = New Size(192, 50)
+        btnProfile.Size = New Size(255, 50)
         btnProfile.TabIndex = 0
-        btnProfile.Text = "Profile"
+        btnProfile.Text = "    Profile"
         btnProfile.TextAlign = ContentAlignment.MiddleLeft
         btnProfile.UseVisualStyleBackColor = False
         ' 
         ' btnView
         ' 
+        btnView.Anchor = AnchorStyles.None
         btnView.BackColor = Color.Transparent
         btnView.BackgroundImageLayout = ImageLayout.None
-        btnView.Dock = DockStyle.Top
         btnView.FlatAppearance.BorderSize = 0
         btnView.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnView.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnView.FlatStyle = FlatStyle.Flat
-        btnView.Font = New Font("Verdana", 18F, FontStyle.Bold)
+        btnView.Font = New Font("Segoe UI", 13F, FontStyle.Bold)
         btnView.ForeColor = Color.White
-        btnView.Location = New Point(0, 0)
+        btnView.Location = New Point(-47, 30)
         btnView.Name = "btnView"
-        btnView.Size = New Size(192, 50)
+        btnView.Size = New Size(239, 50)
         btnView.TabIndex = 5
-        btnView.Text = "Requests"
+        btnView.Text = "    Requests"
         btnView.TextAlign = ContentAlignment.MiddleLeft
         btnView.UseVisualStyleBackColor = False
         ' 
@@ -185,6 +194,39 @@ Partial Class Dashboard
         pnlContent.Size = New Size(1728, 1005)
         pnlContent.TabIndex = 0
         ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
+        PictureBox1.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox1.Location = New Point(10, 109)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(30, 30)
+        PictureBox1.TabIndex = 6
+        PictureBox1.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), Image)
+        PictureBox2.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox2.Location = New Point(10, 41)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(30, 30)
+        PictureBox2.TabIndex = 7
+        PictureBox2.TabStop = False
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.BackColor = Color.Transparent
+        PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), Image)
+        PictureBox3.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox3.Location = New Point(10, 707)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(30, 30)
+        PictureBox3.TabIndex = 8
+        PictureBox3.TabStop = False
+        ' 
         ' Dashboard
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -207,6 +249,9 @@ Partial Class Dashboard
         PnlHead.ResumeLayout(False)
         PnlHead.PerformLayout()
         CType(picLogo, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -220,4 +265,7 @@ Partial Class Dashboard
     Friend WithEvents picLogo As PictureBox
     Friend WithEvents lblWelcome As Label
     Friend WithEvents btnView As RoundedButton
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
