@@ -33,6 +33,29 @@ Module mdlChart
     End Sub
 
     Sub SwitchChart(ByVal chart As Chart, ByVal table As String, ByVal year As String)
+
+
+        With chart.ChartAreas(0).AxisX
+            .IntervalAutoMode = True
+            .IntervalType = DateTimeIntervalType.Number
+            .IntervalOffset = 0
+            .LabelAutoFitMaxFontSize = 16
+            .LabelAutoFitMinFontSize = 12
+            .LabelAutoFitStyle = True
+        End With
+
+        With chart.ChartAreas(0).AxisY
+            .Minimum = Double.NaN
+            .Maximum = Double.NaN
+            .Interval = Double.NaN
+            .LabelAutoFitMaxFontSize = 16
+            .LabelAutoFitMinFontSize = 12
+            .LabelAutoFitStyle = True
+        End With
+
+        chart.ChartAreas(0).Position.Auto = True
+        chart.ChartAreas(0).InnerPlotPosition.Auto = True
+
         Select Case table
             Case "Total Skills"
                 SkillChart(chart, year, False)
@@ -41,6 +64,8 @@ Module mdlChart
             Case "Total Activities"
                 EntryChart(chart, year)
         End Select
+
+        chart.ChartAreas(0).RecalculateAxesScale()
     End Sub
     Sub FormatChart(ByVal chart As Chart)
         If chart.Legends.Count > 0 Then
@@ -144,9 +169,7 @@ Module mdlChart
             MsgBox("Something went Very Wrong: " + ex.ToString())
         End Try
     End Sub
-    Public Sub SkillChart(ByVal chart As Chart,
-                      ByVal year As String,
-                      ByVal verified As Boolean)
+    Public Sub SkillChart(ByVal chart As Chart, ByVal year As String, ByVal verified As Boolean)
 
         chart.Series.Clear()
 
@@ -220,7 +243,6 @@ Module mdlChart
             Next
         End If
 
-        chart.ChartAreas(0).AxisX.Interval = 1
     End Sub
 
     Sub EntryChart(ByVal chart As Chart, ByVal year As String)
@@ -269,7 +291,7 @@ Module mdlChart
         chart.Series.Add(seriesTotal)
         chart.Series.Add(seriesVerified)
 
-        chart.ChartAreas(0).AxisX.Interval = 1
+
     End Sub
 
     Sub PopulateTotals(ByVal lblT As Label, ByVal lblV As Label, ByVal lblS As Label)
