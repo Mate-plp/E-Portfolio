@@ -155,7 +155,7 @@ Partial Class Dashboard
         btnView.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnView.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnView.FlatStyle = FlatStyle.Flat
-        btnView.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnView.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
         btnView.ForeColor = Color.White
         btnView.Location = New Point(-19, 196)
         btnView.Name = "btnView"
@@ -192,7 +192,7 @@ Partial Class Dashboard
         btnSubmit.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnSubmit.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnSubmit.FlatStyle = FlatStyle.Flat
-        btnSubmit.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnSubmit.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
         btnSubmit.ForeColor = Color.White
         btnSubmit.Location = New Point(-19, 139)
         btnSubmit.Name = "btnSubmit"
