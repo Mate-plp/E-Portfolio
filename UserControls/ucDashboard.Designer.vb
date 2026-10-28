@@ -348,7 +348,7 @@ Partial Class ucDashboard
         Panel3.Controls.Add(Label2)
         Panel3.Controls.Add(Label3)
         Panel3.ForeColor = SystemColors.ActiveCaptionText
-        Panel3.Location = New Point(1266, 304)
+        Panel3.Location = New Point(1266, 302)
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(400, 268)
         Panel3.TabIndex = 11
@@ -357,7 +357,7 @@ Partial Class ucDashboard
         ' 
         RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.Controls.Add(chtProgress)
-        RoundedPanel1.Location = New Point(79, 303)
+        RoundedPanel1.Location = New Point(79, 301)
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(1130, 662)
         RoundedPanel1.TabIndex = 12

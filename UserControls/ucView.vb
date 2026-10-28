@@ -31,7 +31,7 @@ Public Class ucView
         "       e.activity_title AS Title, " &
         "       e.`date` AS `Date`, " &
         "       t.type_name AS Type, " &
-        "       IF(e.verified = 1, 'Verified', 'Pending') AS Status, " &
+        "       IF(e.verified = 1, 'Verified', 'Unverified') AS Status, " &
         "       COALESCE(CONCAT(u.first_name, ' ', u.last_name), '-') AS Verifier " &
         "FROM portfolio_entries e " &
         "INNER JOIN activity_type t ON t.type_id = e.type_id " &

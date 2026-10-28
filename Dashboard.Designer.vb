@@ -24,11 +24,15 @@ Partial Class Dashboard
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         pnlSidebar = New Panel()
-        btnExport = New RoundedButton()
-        pnlPortfolio = New Panel()
+        PictureBox6 = New PictureBox()
+        PictureBox5 = New PictureBox()
+        PictureBox4 = New PictureBox()
+        PictureBox3 = New PictureBox()
+        PictureBox2 = New PictureBox()
+        PictureBox1 = New PictureBox()
         btnView = New RoundedButton()
+        btnExport = New RoundedButton()
         btnSubmit = New RoundedButton()
-        btnPortfolio = New RoundedButton()
         btnLogout = New RoundedButton()
         btnProfile = New RoundedButton()
         btnDashboard = New RoundedButton()
@@ -40,7 +44,12 @@ Partial Class Dashboard
         lblTitle = New Label()
         pnlContent = New Panel()
         pnlSidebar.SuspendLayout()
-        pnlPortfolio.SuspendLayout()
+        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         pnlHeader.SuspendLayout()
         PnlHead.SuspendLayout()
         CType(picLogo, ComponentModel.ISupportInitialize).BeginInit()
@@ -52,8 +61,15 @@ Partial Class Dashboard
         pnlSidebar.BackColor = Color.FromArgb(CByte(0), CByte(64), CByte(0))
         pnlSidebar.BackgroundImage = CType(resources.GetObject("pnlSidebar.BackgroundImage"), Image)
         pnlSidebar.BackgroundImageLayout = ImageLayout.Stretch
+        pnlSidebar.Controls.Add(PictureBox6)
+        pnlSidebar.Controls.Add(PictureBox5)
+        pnlSidebar.Controls.Add(PictureBox4)
+        pnlSidebar.Controls.Add(PictureBox3)
+        pnlSidebar.Controls.Add(PictureBox2)
+        pnlSidebar.Controls.Add(PictureBox1)
+        pnlSidebar.Controls.Add(btnView)
         pnlSidebar.Controls.Add(btnExport)
-        pnlSidebar.Controls.Add(pnlPortfolio)
+        pnlSidebar.Controls.Add(btnSubmit)
         pnlSidebar.Controls.Add(btnLogout)
         pnlSidebar.Controls.Add(btnProfile)
         pnlSidebar.Controls.Add(btnDashboard)
@@ -65,6 +81,90 @@ Partial Class Dashboard
         pnlSidebar.Size = New Size(192, 1005)
         pnlSidebar.TabIndex = 0
         ' 
+        ' PictureBox6
+        ' 
+        PictureBox6.BackColor = Color.Transparent
+        PictureBox6.BackgroundImage = CType(resources.GetObject("PictureBox6.BackgroundImage"), Image)
+        PictureBox6.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox6.Location = New Point(16, 742)
+        PictureBox6.Name = "PictureBox6"
+        PictureBox6.Size = New Size(30, 30)
+        PictureBox6.TabIndex = 15
+        PictureBox6.TabStop = False
+        ' 
+        ' PictureBox5
+        ' 
+        PictureBox5.BackColor = Color.Transparent
+        PictureBox5.BackgroundImage = CType(resources.GetObject("PictureBox5.BackgroundImage"), Image)
+        PictureBox5.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox5.Location = New Point(16, 685)
+        PictureBox5.Name = "PictureBox5"
+        PictureBox5.Size = New Size(30, 30)
+        PictureBox5.TabIndex = 14
+        PictureBox5.TabStop = False
+        ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.BackColor = Color.Transparent
+        PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), Image)
+        PictureBox4.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox4.Location = New Point(14, 206)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(30, 30)
+        PictureBox4.TabIndex = 13
+        PictureBox4.TabStop = False
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.BackColor = Color.Transparent
+        PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), Image)
+        PictureBox3.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox3.Location = New Point(12, 148)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(30, 30)
+        PictureBox3.TabIndex = 12
+        PictureBox3.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), Image)
+        PictureBox2.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox2.Location = New Point(12, 92)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(30, 30)
+        PictureBox2.TabIndex = 11
+        PictureBox2.TabStop = False
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
+        PictureBox1.BackgroundImageLayout = ImageLayout.Zoom
+        PictureBox1.Location = New Point(11, 34)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(30, 30)
+        PictureBox1.TabIndex = 2
+        PictureBox1.TabStop = False
+        ' 
+        ' btnView
+        ' 
+        btnView.Anchor = AnchorStyles.None
+        btnView.BackColor = Color.Transparent
+        btnView.FlatAppearance.BorderSize = 0
+        btnView.FlatAppearance.MouseDownBackColor = Color.Transparent
+        btnView.FlatAppearance.MouseOverBackColor = Color.Transparent
+        btnView.FlatStyle = FlatStyle.Flat
+        btnView.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnView.ForeColor = Color.White
+        btnView.Location = New Point(-19, 196)
+        btnView.Name = "btnView"
+        btnView.Size = New Size(211, 50)
+        btnView.TabIndex = 8
+        btnView.Text = "          View Activities"
+        btnView.TextAlign = ContentAlignment.MiddleLeft
+        btnView.UseVisualStyleBackColor = False
+        ' 
         ' btnExport
         ' 
         btnExport.Anchor = AnchorStyles.None
@@ -75,79 +175,32 @@ Partial Class Dashboard
         btnExport.FlatStyle = FlatStyle.Flat
         btnExport.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         btnExport.ForeColor = Color.White
-        btnExport.Location = New Point(0, 677)
+        btnExport.Location = New Point(0, 676)
         btnExport.Margin = New Padding(4, 8, 10, 8)
         btnExport.Name = "btnExport"
         btnExport.Size = New Size(192, 50)
         btnExport.TabIndex = 10
-        btnExport.Text = "Export to PDF"
+        btnExport.Text = " Export to PDF"
         btnExport.TextAlign = ContentAlignment.MiddleLeft
         btnExport.UseVisualStyleBackColor = False
         ' 
-        ' pnlPortfolio
-        ' 
-        pnlPortfolio.BackColor = Color.Transparent
-        pnlPortfolio.Controls.Add(btnView)
-        pnlPortfolio.Controls.Add(btnSubmit)
-        pnlPortfolio.Controls.Add(btnPortfolio)
-        pnlPortfolio.Dock = DockStyle.Top
-        pnlPortfolio.Location = New Point(0, 110)
-        pnlPortfolio.Name = "pnlPortfolio"
-        pnlPortfolio.Size = New Size(192, 50)
-        pnlPortfolio.TabIndex = 5
-        ' 
-        ' btnView
-        ' 
-        btnView.Dock = DockStyle.Top
-        btnView.FlatAppearance.BorderSize = 0
-        btnView.FlatAppearance.MouseDownBackColor = Color.Transparent
-        btnView.FlatAppearance.MouseOverBackColor = Color.Transparent
-        btnView.FlatStyle = FlatStyle.Flat
-        btnView.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnView.ForeColor = Color.Black
-        btnView.Location = New Point(0, 90)
-        btnView.Name = "btnView"
-        btnView.Size = New Size(192, 40)
-        btnView.TabIndex = 8
-        btnView.Text = "View Activities"
-        btnView.TextAlign = ContentAlignment.MiddleLeft
-        btnView.UseVisualStyleBackColor = True
-        ' 
         ' btnSubmit
         ' 
-        btnSubmit.Dock = DockStyle.Top
+        btnSubmit.Anchor = AnchorStyles.None
+        btnSubmit.BackColor = Color.Transparent
         btnSubmit.FlatAppearance.BorderSize = 0
         btnSubmit.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnSubmit.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnSubmit.FlatStyle = FlatStyle.Flat
         btnSubmit.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnSubmit.ForeColor = Color.Black
-        btnSubmit.Location = New Point(0, 50)
+        btnSubmit.ForeColor = Color.White
+        btnSubmit.Location = New Point(-19, 139)
         btnSubmit.Name = "btnSubmit"
-        btnSubmit.Size = New Size(192, 40)
+        btnSubmit.Size = New Size(211, 50)
         btnSubmit.TabIndex = 7
-        btnSubmit.Text = "Submit Activity"
+        btnSubmit.Text = "          Submit Activity"
         btnSubmit.TextAlign = ContentAlignment.MiddleLeft
-        btnSubmit.UseVisualStyleBackColor = True
-        ' 
-        ' btnPortfolio
-        ' 
-        btnPortfolio.BackColor = Color.Transparent
-        btnPortfolio.BackgroundImageLayout = ImageLayout.None
-        btnPortfolio.Dock = DockStyle.Top
-        btnPortfolio.FlatAppearance.BorderSize = 0
-        btnPortfolio.FlatAppearance.MouseDownBackColor = Color.Transparent
-        btnPortfolio.FlatAppearance.MouseOverBackColor = Color.Transparent
-        btnPortfolio.FlatStyle = FlatStyle.Flat
-        btnPortfolio.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
-        btnPortfolio.ForeColor = Color.White
-        btnPortfolio.Location = New Point(0, 0)
-        btnPortfolio.Name = "btnPortfolio"
-        btnPortfolio.Size = New Size(192, 50)
-        btnPortfolio.TabIndex = 6
-        btnPortfolio.Text = "Portfolio"
-        btnPortfolio.TextAlign = ContentAlignment.MiddleLeft
-        btnPortfolio.UseVisualStyleBackColor = False
+        btnSubmit.UseVisualStyleBackColor = False
         ' 
         ' btnLogout
         ' 
@@ -159,10 +212,10 @@ Partial Class Dashboard
         btnLogout.FlatStyle = FlatStyle.Flat
         btnLogout.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         btnLogout.ForeColor = Color.White
-        btnLogout.Location = New Point(0, 730)
+        btnLogout.Location = New Point(11, 731)
         btnLogout.Margin = New Padding(4, 8, 10, 8)
         btnLogout.Name = "btnLogout"
-        btnLogout.Size = New Size(192, 50)
+        btnLogout.Size = New Size(171, 50)
         btnLogout.TabIndex = 4
         btnLogout.Text = "Log Out"
         btnLogout.TextAlign = ContentAlignment.MiddleLeft
@@ -170,38 +223,38 @@ Partial Class Dashboard
         ' 
         ' btnProfile
         ' 
+        btnProfile.Anchor = AnchorStyles.None
         btnProfile.BackColor = Color.Transparent
         btnProfile.BackgroundImageLayout = ImageLayout.None
-        btnProfile.Dock = DockStyle.Top
         btnProfile.FlatAppearance.BorderSize = 0
         btnProfile.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnProfile.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnProfile.FlatStyle = FlatStyle.Flat
         btnProfile.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
         btnProfile.ForeColor = Color.White
-        btnProfile.Location = New Point(0, 60)
+        btnProfile.Location = New Point(-46, 81)
         btnProfile.Name = "btnProfile"
-        btnProfile.Size = New Size(192, 50)
+        btnProfile.Size = New Size(238, 50)
         btnProfile.TabIndex = 0
         btnProfile.Text = "Profile"
-        btnProfile.TextAlign = ContentAlignment.MiddleLeft
         btnProfile.UseVisualStyleBackColor = False
         ' 
         ' btnDashboard
         ' 
+        btnDashboard.Anchor = AnchorStyles.None
         btnDashboard.BackColor = Color.Transparent
         btnDashboard.BackgroundImageLayout = ImageLayout.None
-        btnDashboard.Dock = DockStyle.Top
         btnDashboard.FlatAppearance.BorderSize = 0
         btnDashboard.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnDashboard.FlatAppearance.MouseOverBackColor = Color.Transparent
         btnDashboard.FlatStyle = FlatStyle.Flat
         btnDashboard.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnDashboard.ForeColor = SystemColors.Window
-        btnDashboard.Location = New Point(0, 10)
+        btnDashboard.ImageAlign = ContentAlignment.MiddleLeft
+        btnDashboard.Location = New Point(-17, 23)
         btnDashboard.Margin = New Padding(3, 10, 3, 3)
         btnDashboard.Name = "btnDashboard"
-        btnDashboard.Size = New Size(192, 50)
+        btnDashboard.Size = New Size(209, 50)
         btnDashboard.TabIndex = 7
         btnDashboard.Text = "Dashboard"
         btnDashboard.TextAlign = ContentAlignment.MiddleLeft
@@ -309,7 +362,12 @@ Partial Class Dashboard
         Text = "Dashboard"
         WindowState = FormWindowState.Maximized
         pnlSidebar.ResumeLayout(False)
-        pnlPortfolio.ResumeLayout(False)
+        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         pnlHeader.ResumeLayout(False)
         PnlHead.ResumeLayout(False)
         PnlHead.PerformLayout()
@@ -322,10 +380,8 @@ Partial Class Dashboard
     Friend WithEvents pnlContent As Panel
     Friend WithEvents btnLogout As RoundedButton
     Friend WithEvents btnProfile As RoundedButton
-    Friend WithEvents pnlPortfolio As Panel
     Friend WithEvents btnView As RoundedButton
     Friend WithEvents btnSubmit As RoundedButton
-    Friend WithEvents btnPortfolio As RoundedButton
     Friend WithEvents lblTitle As Label
     Friend WithEvents btnDashboard As RoundedButton
     Friend WithEvents PnlHead As Panel
@@ -333,4 +389,10 @@ Partial Class Dashboard
     Friend WithEvents SpaceSeparatorVertical1 As System.Windows.Forms.Panel
     Friend WithEvents lblWelcome As Label
     Friend WithEvents btnExport As RoundedButton
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
