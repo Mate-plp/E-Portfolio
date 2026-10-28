@@ -359,7 +359,7 @@ Partial Class Dashboard
         MinimumSize = New Size(1080, 720)
         Name = "Dashboard"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Dashboard"
+        Text = "STARS - DASHBOARD"
         WindowState = FormWindowState.Maximized
         pnlSidebar.ResumeLayout(False)
         CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()

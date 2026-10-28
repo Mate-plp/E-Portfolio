@@ -245,7 +245,7 @@ Partial Class Login
         MinimumSize = New Size(1080, 720)
         Name = "Login"
         StartPosition = FormStartPosition.CenterParent
-        Text = "LogIn"
+        Text = "STARS - LOG IN"
         TopMost = True
         WindowState = FormWindowState.Maximized
         ResumeLayout(False)

@@ -373,7 +373,7 @@ Partial Class Register
         MinimumSize = New Size(1280, 720)
         Name = "Register"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Registraion Form"
+        Text = "STARS - REGISTER"
         WindowState = FormWindowState.Maximized
         ResumeLayout(False)
         PerformLayout()
